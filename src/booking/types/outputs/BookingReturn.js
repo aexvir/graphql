@@ -11,8 +11,8 @@ import { nodeInterface } from '../../../node/node';
 import { register } from '../../../node/typeStore';
 
 export type InboundOutboundData = {
-  inbound: TripData,
-  outbound: TripData,
+  inbound?: TripData,
+  outbound?: TripData,
 };
 
 export type BookingReturnData = BookingInterfaceData & InboundOutboundData;

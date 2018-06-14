@@ -36,7 +36,7 @@ export default new GraphQLObjectType({
       type: GraphQLString,
       resolve: (
         { iataCode, fromDate, toDate }: AncestorType,
-        args: {||},
+        args: {},
         context: GraphqlContextType,
       ): string | null => {
         if (ParkingServiceAvailability[iataCode] !== true) {

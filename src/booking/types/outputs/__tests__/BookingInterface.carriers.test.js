@@ -14,8 +14,11 @@ beforeEach(() => {
 });
 
 const legs = [
+  // $FlowExpectedError: just a subset necessary for the test
   { airlineCode: 'FR' },
+  // $FlowExpectedError: just a subset necessary for the test
   { airlineCode: 'FR' },
+  // $FlowExpectedError: just a subset necessary for the test
   { airlineCode: 'FLIXBUS' },
 ];
 

@@ -20,7 +20,7 @@ export default new GraphQLObjectType({
       type: GraphQLList(CarRentalServiceRelevantCities),
       resolve: async (
         ancestor: CarRentalServiceType,
-        _: {||},
+        args: {},
         context: GraphqlContextType,
       ): Promise<CarRentalServiceRelevantCitiesType[]> => {
         const locations = await Promise.all(

@@ -2,7 +2,10 @@
 <PROJECT_ROOT>/node_modules/config-chain/test/broken.json
 
 [untyped]
-<PROJECT_ROOT>/node_modules/graphql/.*
+<PROJECT_ROOT>/node_modules/graphql-relay/lib/connection/connection.js
+<PROJECT_ROOT>/node_modules/graphql/error/locatedError.js
+<PROJECT_ROOT>/node_modules/graphql/jsutils/objectValues.js
+<PROJECT_ROOT>/node_modules/graphql/subscription/mapAsyncIterator.js
 
 [include]
 
@@ -21,4 +24,4 @@ suppress_comment=\\(.\\|\n\\)*\\$FlowExpectedError: .+
 suppress_comment=\\(.\\|\n\\)*\\$FlowIssue: https://github.com/facebook/flow/issues/[0-9]+
 
 [version]
-^0.71.0
+^0.74.0

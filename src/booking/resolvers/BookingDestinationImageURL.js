@@ -17,7 +17,7 @@ export function castURL(
     : ''}.jpg`;
 }
 
-export default (booking: Booking, args: {| dimensions: string |}): string => {
+export default (booking: Booking, args: { dimensions: string }): string => {
   const isPast = isPastBooking(booking);
 
   if (booking.type === 'BookingOneWay') {

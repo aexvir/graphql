@@ -65,7 +65,7 @@ export default new GraphQLObjectType({
       type: GraphQLString,
       resolve: (
         { location, pickup, dropoff }: CarRentalServiceRelevantCitiesType,
-        args: {||},
+        args: {},
         context: GraphqlContextType,
       ): string => {
         let language = context.locale.language;

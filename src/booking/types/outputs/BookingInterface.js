@@ -182,7 +182,7 @@ export const commonFields = {
     },
     resolve: (
       { id, authToken }: BookingInterfaceData,
-      args: {| deeplinkTo?: string |},
+      args: { deeplinkTo?: string },
     ): string => {
       const baseURL = `https://kiwi.com/content/manage/${id}/${authToken}`;
       if (args.deeplinkTo !== undefined) {

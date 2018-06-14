@@ -1,6 +1,6 @@
 // @flow
 
-import { GraphQLNonNull, type GraphQLFieldConfig } from 'graphql';
+import { GraphQLNonNull } from 'graphql';
 import { fromGlobalId } from 'graphql-relay';
 
 import GraphQLAvailableHotelSearchInput from '../types/inputs/AvailableHotelSearchInput';
@@ -10,7 +10,7 @@ import type { GraphqlContextType } from '../../common/services/GraphqlContext';
 import GraphQLAvailableHotelOptionsInput from '../types/inputs/AvailableHotelOptionsInput';
 import { prepareAvailableHotelsQueryArgs } from '../services/ParametersFormatter';
 
-export default ({
+export default {
   type: GraphQLHotelAvailability,
   description:
     "Search for single available hotel by its ID. It's necessary to send " +
@@ -48,4 +48,4 @@ export default ({
       args: args.search, // pass search arguments down
     }))[0]; // fetch only the first one (should be the only one)
   },
-}: GraphQLFieldConfig<mixed, GraphqlContextType>);
+};
