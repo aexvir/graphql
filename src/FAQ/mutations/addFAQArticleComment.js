@@ -97,7 +97,7 @@ export default {
     if (response.message !== successfulResponse.message) {
       throw new ProxiedError(
         response.message ? response.message : 'Article commenting failed',
-        response.error_code ? response.error_code : 0,
+        response.error_code ? response.error_code : '-1',
         config.restApiEndpoint.FAQArticleComment(originalId),
       );
     }

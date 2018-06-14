@@ -3,8 +3,8 @@
 import 'dotenv/config';
 import express from 'express';
 import graphqlHTTP from 'express-graphql';
-import cors from 'cors';
 import compression from 'compression';
+import cors from 'cors';
 
 import type { $Request, $Response } from 'express';
 import {
@@ -16,7 +16,6 @@ import {
 import Schema from './Schema';
 import { createContext } from './common/services/GraphqlContext';
 import Logger from './common/services/Logger';
-import { ProxiedError } from './common/services/errors/ProxiedError';
 
 process.on('unhandledRejection', reason => {
   Logger.error(reason);
@@ -54,21 +53,6 @@ function createGraphqlServer(schema, context) {
     pretty: false,
     graphiql: true,
     context: context,
-    formatError(error) {
-      let errorMessage = `${error.name}: ${error.message}`;
-
-      const originalError = error.originalError;
-      if (originalError instanceof ProxiedError) {
-        error._proxy = {
-          statusCode: originalError.originStatusCode,
-          url: originalError.originUrl,
-        };
-        errorMessage += ` ${originalError.originUrl}`;
-      }
-
-      Logger.error(errorMessage);
-      return error;
-    },
     extensions: () => {
       const traceCollector = context._traceCollector;
       if (!traceCollector) return {};

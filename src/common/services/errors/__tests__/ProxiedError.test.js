@@ -14,10 +14,6 @@ it('is throwable', () => {
   }).toThrow('custom message');
 });
 
-it('works with origin status code', () => {
-  expect(error).toHaveProperty('originStatusCode', 123);
-});
-
-it('works with origin URL', () => {
-  expect(error).toHaveProperty('originUrl', 'http://a.b');
+it('adds correct extensions', () => {
+  expect(error.extensions).toMatchSnapshot();
 });
