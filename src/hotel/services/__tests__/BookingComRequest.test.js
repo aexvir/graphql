@@ -32,19 +32,14 @@ describe('GET request in production', () => {
   });
 
   it('throws exception during invalid return status code', async () => {
-    expect.assertions(4);
+    expect.assertions(3);
 
     try {
       await get('https://path/to/api?status=500');
     } catch (error) {
-      // $FlowExpectedError: toBeInstanceOf expects classes but ProxiedError is a function
       expect(error).toBeInstanceOf(ProxiedError);
-      expect(error).toHaveProperty('message', 'Status Text');
-      expect(error).toHaveProperty('originStatusCode', 500);
-      expect(error).toHaveProperty(
-        'originUrl',
-        'https://path/to/api?status=500',
-      );
+      expect(error.message).toBe('Status Text');
+      expect(error.extensions).toMatchSnapshot();
     }
   });
 });

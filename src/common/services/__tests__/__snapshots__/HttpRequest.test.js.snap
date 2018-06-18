@@ -42,6 +42,21 @@ Object {
 }
 `;
 
+exports[`GET request in production throws exception during invalid return status code 1`] = `
+Object {
+  "_proxy": Object {
+    "statusCode": "500",
+    "url": "https://path/to/api?status=500",
+  },
+  "extensions": Object {
+    "proxy": Object {
+      "statusCode": "500",
+      "url": "https://path/to/api?status=500",
+    },
+  },
+}
+`;
+
 exports[`POST request in production adds default content type header 1`] = `
 Object {
   "hint": "this is a mocked response",
@@ -101,5 +116,20 @@ Object {
     "method": "POST",
   },
   "url": "https://path/to/api",
+}
+`;
+
+exports[`POST request in production throws exception during invalid return status code 1`] = `
+Object {
+  "_proxy": Object {
+    "statusCode": "500",
+    "url": "https://path/to/api?status=500",
+  },
+  "extensions": Object {
+    "proxy": Object {
+      "statusCode": "500",
+      "url": "https://path/to/api?status=500",
+    },
+  },
 }
 `;
