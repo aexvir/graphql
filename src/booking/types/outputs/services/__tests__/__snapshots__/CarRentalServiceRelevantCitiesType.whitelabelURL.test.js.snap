@@ -2,7 +2,7 @@
 
 exports[`resolves to the correct URL 1`] = `
 Array [
-  "http://cars.kiwi.com/SearchLoaderRC.do?preflang=cs",
+  "https://cars.kiwi.com/SearchLoaderRC.do?preflang=cs",
   "affiliateCode=skypicker",
   "driversAge=21",
   "from=PRG",
@@ -21,7 +21,7 @@ Array [
 
 exports[`works with unexpected locale 1`] = `
 Array [
-  "http://cars.kiwi.com/SearchLoaderRC.do?preflang=en",
+  "https://cars.kiwi.com/SearchLoaderRC.do?preflang=en",
   "affiliateCode=skypicker",
   "driversAge=21",
   "from=PRG",

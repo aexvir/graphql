@@ -78,7 +78,7 @@ export default new GraphQLObjectType({
         const drop = DateTime.fromJSDate(dropoff, { zone: 'utc' });
 
         return (
-          'http://cars.kiwi.com/SearchLoaderRC.do?' +
+          'https://cars.kiwi.com/SearchLoaderRC.do?' +
           querystring.stringify({
             preflang: language,
             affiliateCode: 'skypicker',
