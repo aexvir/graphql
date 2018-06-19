@@ -72,6 +72,10 @@ function prepareParams(params: SearchParameters) {
     },
     Language: 'en', // FIX: use language input
     Currency: params.currency || 'EUR',
+    Ordering: {
+      Value: 'Price',
+      Type: 'Ascending',
+    },
   };
 }
 
