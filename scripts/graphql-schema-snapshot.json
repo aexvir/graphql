@@ -6567,22 +6567,7 @@
           {
             "name": "lounge",
             "description": null,
-            "args": [
-              {
-                "name": "departureTime",
-                "description": null,
-                "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "DateTime",
-                    "ofType": null
-                  }
-                },
-                "defaultValue": null
-              }
-            ],
+            "args": [],
             "type": {
               "kind": "OBJECT",
               "name": "LoungeService",
@@ -6594,36 +6579,7 @@
           {
             "name": "parking",
             "description": null,
-            "args": [
-              {
-                "name": "fromDate",
-                "description": null,
-                "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "DateTime",
-                    "ofType": null
-                  }
-                },
-                "defaultValue": null
-              },
-              {
-                "name": "toDate",
-                "description": null,
-                "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "DateTime",
-                    "ofType": null
-                  }
-                },
-                "defaultValue": null
-              }
-            ],
+            "args": [],
             "type": {
               "kind": "OBJECT",
               "name": "ParkingService",
@@ -6635,36 +6591,7 @@
           {
             "name": "carRental",
             "description": null,
-            "args": [
-              {
-                "name": "pickup",
-                "description": null,
-                "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "DateTime",
-                    "ofType": null
-                  }
-                },
-                "defaultValue": null
-              },
-              {
-                "name": "dropoff",
-                "description": null,
-                "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "DateTime",
-                    "ofType": null
-                  }
-                },
-                "defaultValue": null
-              }
-            ],
+            "args": [],
             "type": {
               "kind": "OBJECT",
               "name": "CarRentalService",

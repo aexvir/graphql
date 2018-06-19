@@ -15,17 +15,17 @@ export default new DataLoader(
   async (
     keys: $ReadOnlyArray<{|
       iataCode: string,
-      departureTime: Date,
+      departureDate: Date,
     |}>,
   ) => {
     const iataCodes = keys.map(key => key.iataCode);
     const loungesByIata = await LoungesDataloader.loadMany(iataCodes);
 
     return loungesByIata.map((lounges, index) => {
-      const { departureTime } = keys[index];
+      const { departureDate } = keys[index];
 
       const relevantLounges = lounges.filter(lounge => {
-        const diff = DateTime.fromJSDate(departureTime)
+        const diff = DateTime.fromJSDate(departureDate)
           .diff(DateTime.fromJSDate(new Date()), 'hours')
           .toObject().hours;
 

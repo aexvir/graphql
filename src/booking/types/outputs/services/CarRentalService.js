@@ -7,11 +7,13 @@ import CarRentalServiceRelevantCities, {
 } from './CarRentalServiceRelevantCities';
 import { type GraphqlContextType } from '../../../../common/services/GraphqlContext';
 
-export type CarRentalServiceType = {|
-  +locationCodes: $ReadOnlyArray<string>,
-  +pickup: Date,
-  +dropoff: Date,
-|};
+export type CarRentalServiceType = Map<
+  string,
+  {|
+    +pickup: Date,
+    +dropoff: Date,
+  |},
+>;
 
 export default new GraphQLObjectType({
   name: 'CarRentalService',
@@ -24,16 +26,23 @@ export default new GraphQLObjectType({
         context: GraphqlContextType,
       ): Promise<CarRentalServiceRelevantCitiesType[]> => {
         const locations = await Promise.all(
-          ancestor.locationCodes.map(IATA =>
+          Array.from(ancestor.keys()).map(IATA =>
             context.dataLoader.location.loadById(IATA),
           ),
         );
 
-        return locations.map(location => ({
-          location,
-          pickup: ancestor.pickup,
-          dropoff: ancestor.dropoff,
-        }));
+        return locations.map(location => {
+          const ancestorValue = ancestor.get(location.locationId) || {
+            pickup: new Date(),
+            dropoff: new Date(),
+          };
+
+          return {
+            location,
+            pickup: ancestorValue.pickup,
+            dropoff: ancestorValue.dropoff,
+          };
+        });
       },
     },
   },

@@ -43,11 +43,11 @@ it('loads lounges correctly', async () => {
   // this must be first
   await expect(
     AvailableLoungesDataloader.loadMany([
-      { iataCode: 'PRG', departureTime: new Date(2) },
-      { iataCode: 'LHR', departureTime: new Date(3) },
-      { iataCode: 'unknown1', departureTime: new Date(10) },
-      { iataCode: 'unknown2', departureTime: new Date(10) },
-      { iataCode: 'unknown3', departureTime: new Date(10) },
+      { iataCode: 'PRG', departureDate: new Date(2) },
+      { iataCode: 'LHR', departureDate: new Date(3) },
+      { iataCode: 'unknown1', departureDate: new Date(10) },
+      { iataCode: 'unknown2', departureDate: new Date(10) },
+      { iataCode: 'unknown3', departureDate: new Date(10) },
     ]),
   ).resolves.toEqual([
     // it must return the same amount values (5 inputs)

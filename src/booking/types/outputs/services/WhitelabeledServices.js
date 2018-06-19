@@ -1,15 +1,14 @@
 // @flow
 
-import { GraphQLObjectType, GraphQLNonNull } from 'graphql';
-import { GraphQLDateTime } from 'graphql-iso-date';
+import { GraphQLObjectType } from 'graphql';
+import idx from 'idx';
 
-import CarRentalService, {
-  type CarRentalServiceType,
-} from './CarRentalService';
+import CarRentalService from './CarRentalService';
 import LoungeService from './LoungeService';
 import ParkingService from './ParkingService';
 import ParkingServiceAvailability from './ParkingServiceAvailability';
 import AvailableLoungesDataloader from '../../../dataloaders/AvailableLounges';
+import WhitelabelCarRentalResolver from '../../../resolvers/WhitelabelCarRental';
 import type { BookingsItem } from '../../../Booking';
 
 type AncestorType = {|
@@ -21,25 +20,22 @@ export default new GraphQLObjectType({
   fields: {
     lounge: {
       type: LoungeService,
-      args: {
-        departureTime: {
-          type: GraphQLNonNull(GraphQLDateTime),
-        },
-      },
-      resolve: async ({ booking }: AncestorType, args) => {
+      resolve: async ({ booking }: AncestorType) => {
         // we are interested in every unique IATA of the airport
-        const iataSet = new Set();
+        const iataMap = new Map();
+
         booking.legs.map(({ departure, arrival }) => {
-          iataSet.add(departure.where.code);
-          iataSet.add(arrival.where.code);
+          const departureDate = idx(departure, _ => _.when.utc) || new Date();
+          iataMap.set(departure.where.code, departureDate);
+          iataMap.set(arrival.where.code, departureDate);
         });
 
         // let's try to load all lounges by IATA codes to see where is the
         // lounge actually available
         const loungesByIata = await AvailableLoungesDataloader.loadMany(
-          Array.from(iataSet).map(iataCode => ({
+          Array.from(iataMap).map(([iataCode, departureDate]) => ({
             iataCode,
-            departureTime: args.departureTime,
+            departureDate,
           })),
         );
 
@@ -53,23 +49,15 @@ export default new GraphQLObjectType({
 
     parking: {
       type: ParkingService,
-      args: {
-        fromDate: {
-          type: GraphQLNonNull(GraphQLDateTime),
-        },
-        toDate: {
-          type: GraphQLNonNull(GraphQLDateTime),
-        },
-      },
-      resolve: ({ booking }: AncestorType, args) => {
+      resolve: ({ booking }: AncestorType) => {
         // we are interested only in the IATA of the departure (you are leaving your car there)
         const iataCode = booking.departure.where.code;
 
         if (ParkingServiceAvailability[iataCode] === true) {
           return {
             iataCode: iataCode,
-            fromDate: args.fromDate,
-            toDate: args.toDate,
+            fromDate: idx(booking, _ => _.departure.when.utc) || new Date(),
+            toDate: idx(booking, _ => _.arrival.when.utc) || new Date(),
           };
         }
         return null;
@@ -78,46 +66,7 @@ export default new GraphQLObjectType({
 
     carRental: {
       type: CarRentalService,
-      args: {
-        pickup: {
-          type: GraphQLNonNull(GraphQLDateTime),
-        },
-        dropoff: {
-          type: GraphQLNonNull(GraphQLDateTime),
-        },
-      },
-      resolve: async (
-        { booking }: AncestorType,
-        args,
-      ): Promise<CarRentalServiceType> => {
-        // we are interested in the IATAs at the end of the trips (arrivals only, no transfers)
-
-        const lastLocationCode = array => {
-          return array[array.length - 1].arrival.where.code;
-        };
-
-        const locationCodes = new Set();
-
-        if (booking.type === 'BookingOneWay') {
-          locationCodes.add(lastLocationCode(booking.legs));
-        } else if (booking.type === 'BookingReturn') {
-          const outboundLegs = booking.outbound ? booking.outbound.legs : [];
-          const inboundLegs = booking.inbound ? booking.inbound.legs : [];
-
-          locationCodes.add(lastLocationCode(outboundLegs));
-          locationCodes.add(lastLocationCode(inboundLegs));
-        } else if (booking.type === 'BookingMulticity') {
-          // destination of the last leg of the last trip
-          const trips = booking.trips || [];
-          trips.forEach(trip => locationCodes.add(lastLocationCode(trip.legs)));
-        }
-
-        return {
-          locationCodes: Array.from(locationCodes),
-          pickup: args.pickup,
-          dropoff: args.dropoff,
-        };
-      },
+      resolve: WhitelabelCarRentalResolver,
     },
   },
 });

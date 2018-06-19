@@ -8,7 +8,7 @@ it('is possible to query available whitelisted services', async () => {
       query TripServicesQuery {
         booking(id: 1234567) {
           availableWhitelabeledServices {
-            lounge(departureTime: "2007-12-03T10:15:30Z") {
+            lounge {
               relevantAirports {
                 whitelabelURL
                 location {
@@ -16,10 +16,10 @@ it('is possible to query available whitelisted services', async () => {
                 }
               }
             }
-            parking(fromDate: "2007-12-03T10:15:30Z", toDate: "2007-12-24T10:15:30Z") {
+            parking {
               whitelabelURL
             }
-            carRental(pickup: "2007-12-03T10:15:30Z", dropoff: "2007-12-24T10:15:30Z") {
+            carRental {
               relevantCities {
                 whitelabelURL
                 location {

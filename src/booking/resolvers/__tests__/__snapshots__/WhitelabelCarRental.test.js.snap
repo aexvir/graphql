@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`returns correct response for multicity booking 1`] = `
+Map {
+  "LEG_ARR_CODE_2" => Object {
+    "dropoff": 3000-12-27T00:00:00.000Z,
+    "pickup": 3000-12-20T00:00:00.000Z,
+  },
+}
+`;
+
+exports[`returns correct response for one way booking 1`] = `
+Map {
+  "LEG_ARR_CODE_2" => Object {
+    "dropoff": 3000-12-27T00:00:00.000Z,
+    "pickup": 3000-12-20T00:00:00.000Z,
+  },
+}
+`;
+
+exports[`returns correct response for return booking 1`] = `
+Map {
+  "LEG_ARR_CODE_2" => Object {
+    "dropoff": 2000-12-19T21:00:00.000Z,
+    "pickup": 3000-12-20T00:00:00.000Z,
+  },
+  "LEG_ARR_CODE_1" => Object {
+    "dropoff": 3000-12-27T00:00:00.000Z,
+    "pickup": 3000-12-20T00:00:00.000Z,
+  },
+}
+`;
