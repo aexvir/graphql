@@ -22,11 +22,27 @@ describe('resolver', () => {
         // $FlowExpectedError: full Booking object is not needed for this test
         {
           created: date,
+          arrival: {
+            when: {
+              local: new Date('2018-05-18T14:10:57.000Z'),
+            },
+            where: {
+              cityName: 'Prague',
+            },
+          },
         },
       ),
     ).toContainEqual({
       timestamp: date,
       type: 'BookedFlightTimelineEvent',
+      arrival: {
+        when: {
+          local: new Date('2018-05-18T14:10:57.000Z'),
+        },
+        where: {
+          cityName: 'Prague',
+        },
+      },
     });
   });
   it('generates only BookedFlight and PaymentConfirmed event if status is not confirmed', () => {
@@ -35,11 +51,27 @@ describe('resolver', () => {
       {
         created: date,
         status: 'cancelled',
+        arrival: {
+          when: {
+            local: new Date('2018-05-18T14:10:57.000Z'),
+          },
+          where: {
+            cityName: 'Prague',
+          },
+        },
       },
     );
     expect(res).toContainEqual({
       timestamp: date,
       type: 'BookedFlightTimelineEvent',
+      arrival: {
+        when: {
+          local: new Date('2018-05-18T14:10:57.000Z'),
+        },
+        where: {
+          cityName: 'Prague',
+        },
+      },
     });
     expect(res).toContainEqual({
       timestamp: date,
@@ -57,11 +89,27 @@ describe('resolver', () => {
       {
         created: date,
         status: 'confirmed',
+        arrival: {
+          when: {
+            local: new Date('2018-05-18T14:10:57.000Z'),
+          },
+          where: {
+            cityName: 'Prague',
+          },
+        },
       },
     );
     expect(res).toContainEqual({
       timestamp: date,
       type: 'BookedFlightTimelineEvent',
+      arrival: {
+        when: {
+          local: new Date('2018-05-18T14:10:57.000Z'),
+        },
+        where: {
+          cityName: 'Prague',
+        },
+      },
     });
     expect(res).toContainEqual({
       timestamp: date,
@@ -77,10 +125,26 @@ describe('generateBookedFlightEvent', () => {
       // $FlowExpectedError: full Booking object is not needed for this test
       generateBookedFlightEvent({
         created: date,
+        arrival: {
+          when: {
+            local: new Date('2018-05-18T14:10:57.000Z'),
+          },
+          where: {
+            cityName: 'Prague',
+          },
+        },
       }),
     ).toEqual({
       timestamp: date,
       type: 'BookedFlightTimelineEvent',
+      arrival: {
+        when: {
+          local: new Date('2018-05-18T14:10:57.000Z'),
+        },
+        where: {
+          cityName: 'Prague',
+        },
+      },
     });
   });
 });

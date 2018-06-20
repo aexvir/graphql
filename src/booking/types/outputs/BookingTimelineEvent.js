@@ -11,6 +11,7 @@ import { GraphQLDateTime } from 'graphql-iso-date';
 import RouteStop from '../../../flight/types/outputs/RouteStop';
 import type { DepartureArrival } from '../../../flight/Flight';
 import type {
+  BookedFlightTimelineEvent as BookedFlightType,
   AirportArrivalTimelineEvent as AirportArrivalType,
   DepartureTimelineEvent as DepartureType,
   ArrivalTimelineEvent as ArrivalType,
@@ -32,7 +33,14 @@ export default TimelineEvent;
 
 export const BookedFlightTimelineEvent = new GraphQLObjectType({
   name: 'BookedFlightTimelineEvent',
-  fields: commonFields,
+  fields: {
+    ...commonFields,
+    location: {
+      type: RouteStop,
+      description: 'Location of arrival',
+      resolve: ({ arrival }: BookedFlightType): DepartureArrival => arrival,
+    },
+  },
   isTypeOf: value => value.type === 'BookedFlightTimelineEvent',
   interfaces: [TimelineEvent],
 });

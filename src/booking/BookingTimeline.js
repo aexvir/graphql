@@ -23,6 +23,7 @@ export type BookingTimelineData = {|
 export type BookedFlightTimelineEvent = {|
   +timestamp: Date,
   +type: 'BookedFlightTimelineEvent',
+  +arrival: DepartureArrival,
 |};
 
 export type BookingConfirmedTimelineEvent = {|
