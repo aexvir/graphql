@@ -26,6 +26,10 @@ class ProxiedError extends Error {
       },
     };
   }
+
+  getProxyInfo(): ProxiedErrorValues {
+    return this.extensions.extensions.proxy;
+  }
 }
 
 export { ProxiedError };

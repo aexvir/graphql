@@ -10,3 +10,10 @@ Object {
   },
 }
 `;
+
+exports[`returns proxy info 1`] = `
+Object {
+  "statusCode": "123",
+  "url": "http://a.b",
+}
+`;

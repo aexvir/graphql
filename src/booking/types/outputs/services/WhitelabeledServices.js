@@ -9,6 +9,7 @@ import ParkingService from './ParkingService';
 import ParkingServiceAvailability from './ParkingServiceAvailability';
 import AvailableLoungesDataloader from '../../../dataloaders/AvailableLounges';
 import WhitelabelCarRentalResolver from '../../../resolvers/WhitelabelCarRental';
+import { ProxiedError } from '../../../../common/services/errors/ProxiedError';
 import type { BookingsItem } from '../../../Booking';
 
 type AncestorType = {|
@@ -32,12 +33,27 @@ export default new GraphQLObjectType({
 
         // let's try to load all lounges by IATA codes to see where is the
         // lounge actually available
-        const loungesByIata = await AvailableLoungesDataloader.loadMany(
-          Array.from(iataMap).map(([iataCode, departureDate]) => ({
-            iataCode,
-            departureDate,
-          })),
-        );
+        let loungesByIata;
+
+        try {
+          loungesByIata = await AvailableLoungesDataloader.loadMany(
+            Array.from(iataMap).map(([iataCode, departureDate]) => ({
+              iataCode,
+              departureDate,
+            })),
+          );
+        } catch (error) {
+          if (error instanceof ProxiedError) {
+            const { statusCode } = error.getProxyInfo();
+            // lounges API returns 404 (and therefore exception is thrown)
+            // when there are no lounges available (should be 200)
+            // see: https://lounges-api.skypicker.com/lounges?iata=XJV,ZDN
+            if (statusCode === '404') {
+              return null;
+            }
+          }
+          throw error;
+        }
 
         const relevantLounges = loungesByIata.filter(Boolean);
         if (relevantLounges.length === 0) {

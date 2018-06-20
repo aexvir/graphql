@@ -17,3 +17,7 @@ it('is throwable', () => {
 it('adds correct extensions', () => {
   expect(error.extensions).toMatchSnapshot();
 });
+
+it('returns proxy info', () => {
+  expect(error.getProxyInfo()).toMatchSnapshot();
+});
