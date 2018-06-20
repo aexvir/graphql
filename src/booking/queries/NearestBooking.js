@@ -2,6 +2,7 @@
 
 import idx from 'idx';
 import { DateTime } from 'luxon';
+import { GraphQLString } from 'graphql';
 
 import { groupBookings } from './AllBookingsFilters';
 import BookingInterface from '../types/outputs/BookingInterface';
@@ -15,12 +16,18 @@ export default {
     'That is a booking with the smallest difference between current time ' +
     'and arrival time of one of its Legs. If no future booking is found, ' +
     'then the nearest past booking is returned.',
+  args: {
+    brand: {
+      type: GraphQLString,
+      description: 'Brand at which booking was made'
+    }
+  },
   resolve: async (
     ancestor: mixed,
     args: Object,
     { dataLoader }: GraphqlContextType,
   ): Promise<?BookingsItem> => {
-    const bookings = await dataLoader.bookings.load();
+    const bookings = await dataLoader.bookings.load(args.brand || "kiwicom");
     const { future, past } = groupBookings(bookings);
 
     if (future.length) {

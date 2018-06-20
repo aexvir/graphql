@@ -7,11 +7,15 @@ export async function get(
   absoluteApiUrl: string,
   token: ?string,
   requestHeaders?: Object = {},
+  brand: ?string,
 ): Promise<Object> {
   const urlObject = new URL(absoluteApiUrl);
 
   if (token !== null && token !== undefined) {
     urlObject.searchParams.append('token', token);
+  }
+  if (brand !== null && brand !== undefined) {
+    urlObject.searchParams.append('brand', brand);
   }
   const headers = {
     'X-Client': 'graphql',

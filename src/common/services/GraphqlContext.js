@@ -62,7 +62,7 @@ export type GraphqlContextType = {|
   apiToken: ?string,
   dataLoader: {|
     airline: DataLoader<string, ?Airline>,
-    booking: DataLoader<number | string, Booking>,
+    booking: DataLoader<{id: number | string, brand: string}, Booking>,
     bookings: BookingsLoader,
     currency: DataLoader<string, CurrencyDetail>,
     flight: FlightLoader,

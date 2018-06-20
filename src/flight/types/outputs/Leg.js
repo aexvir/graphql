@@ -87,7 +87,7 @@ export default new GraphQLObjectType({
 
         if (bookingId) {
           // needs to be fetched for booking loaded via "dataLoader.bookings.load"
-          const booking = await dataLoader.booking.load(bookingId);
+          const booking = await dataLoader.booking.load({id: bookingId, brand: args.brand});
 
           if (booking && Array.isArray(booking.legs)) {
             const leg = booking.legs.find(leg => leg.id === id);

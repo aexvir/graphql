@@ -1,7 +1,7 @@
 // @flow
 
 import { connectionArgs, connectionDefinitions } from 'graphql-relay';
-import { GraphQLEnumType } from 'graphql';
+import { GraphQLEnumType, GraphQLString } from 'graphql';
 
 import { connectionFromArray } from '../../common/services/ArrayConnection';
 import GraphQLBooking from '../types/outputs/Booking';
@@ -29,6 +29,10 @@ export default {
   deprecationReason: 'Use "customerBookings" query instead.',
 
   args: {
+    brand: {
+      type: GraphQLString,
+      description: 'Brand at which booking was made'
+    },
     only: {
       type: OnlyEnum,
       description:
@@ -43,7 +47,7 @@ export default {
     args: Object,
     { dataLoader }: GraphqlContextType,
   ) => {
-    let bookings = await dataLoader.bookings.load();
+    let bookings = await dataLoader.bookings.load(args.brand || "kiwicom");
 
     if (args.only !== undefined) {
       // argument "only" is optional

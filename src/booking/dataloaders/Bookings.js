@@ -15,24 +15,24 @@ import { type BookingsItem } from '../Booking';
  */
 export default class DataLoader {
   accessToken: ?string;
-  dataloader: Dataloader<string, BookingsItem[]>;
+  dataloader: Dataloader<{accessToken: string, brand: string}, BookingsItem[]>;
 
   constructor(accessToken: ?string) {
     this.accessToken = accessToken;
     this.dataloader = new Dataloader(this.batchFetch);
   }
 
-  load = async (): Promise<BookingsItem[]> => {
+  load = async (brand: string): Promise<BookingsItem[]> => {
     if (typeof this.accessToken !== 'string') {
       throw new Error('Undefined access token');
     }
 
-    return this.dataloader.load(this.accessToken);
+    return this.dataloader.load({accessToken: this.accessToken, brand});
   };
 
-  loadItem = async (id: number | string): Promise<BookingsItem> => {
+  loadItem = async (id: number | string, brand: string): Promise<BookingsItem> => {
     const bid = parseInt(id);
-    const bookings = await this.load();
+    const bookings = await this.load(brand);
     const booking = bookings.find(b => b.id === bid);
     if (!booking) {
       throw new Error(`Booking not found. id: ${bid}`);
@@ -41,11 +41,11 @@ export default class DataLoader {
   };
 
   batchFetch = async (
-    accessTokens: $ReadOnlyArray<string>,
+    accessTokens: $ReadOnlyArray<{accessToken: string, brand: string}>,
   ): Promise<$ReadOnlyArray<BookingsItem[]>> => {
     return Promise.all(
-      accessTokens.map(accessToken =>
-        get(Config.restApiEndpoint.allBookings, accessToken),
+      accessTokens.map(({accessToken, brand}) =>
+        get(Config.restApiEndpoint.allBookings, accessToken, undefined, brand),
       ),
       // eslint-disable-next-line promise/prefer-await-to-then
     ).then(bookingsByToken => {

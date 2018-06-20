@@ -1,6 +1,6 @@
 // @flow
 
-import { GraphQLID, GraphQLNonNull } from 'graphql';
+import { GraphQLID, GraphQLNonNull, GraphQLString } from 'graphql';
 import { fromGlobalId } from 'graphql-relay';
 
 import GraphQLBooking from '../types/outputs/Booking';
@@ -12,6 +12,10 @@ export default {
   description: 'Find booking by its id or databaseId.',
   deprecationReason: 'Use "node" query instead.',
   args: {
+    brand: {
+      type: GraphQLString,
+      description: 'Brand at which booking was made'
+    },
     id: {
       type: new GraphQLNonNull(GraphQLID),
       description:
@@ -21,7 +25,7 @@ export default {
   },
   resolve: async (
     ancestor: mixed,
-    { id }: Object,
+    { id, brand }: Object,
     { dataLoader }: GraphqlContextType,
   ): Promise<BookingsItem> => {
     let databaseId = id;
@@ -43,6 +47,6 @@ export default {
       databaseId = originalId;
     }
 
-    return dataLoader.bookings.loadItem(databaseId);
+    return dataLoader.bookings.loadItem(databaseId, brand);
   },
 };

@@ -7,6 +7,7 @@ import type { GraphqlContextType } from '../common/services/GraphqlContext';
 
 export function loadType(globalId: string, ctx: GraphqlContextType) {
   const { type, id } = fromGlobalId(globalId);
+  const brand = 'kiwicom';
 
   switch (type) {
     case 'CurrencyDetail':
@@ -14,7 +15,7 @@ export function loadType(globalId: string, ctx: GraphqlContextType) {
     case 'BookingOneWay':
     case 'BookingReturn':
     case 'BookingMulticity':
-      return ctx.dataLoader.booking.load(id);
+      return ctx.dataLoader.booking.load({id, brand});
     default:
       return null;
   }

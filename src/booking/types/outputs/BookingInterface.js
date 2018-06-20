@@ -74,7 +74,7 @@ export const commonFields = {
       params: Object,
       { dataLoader }: GraphqlContextType,
     ): Promise<AllowedBaggage> => {
-      const { allowedBaggage } = await dataLoader.booking.load(id);
+      const { allowedBaggage } = await dataLoader.booking.load({id, brand: params.brand});
       return allowedBaggage;
     },
   },
@@ -87,7 +87,7 @@ export const commonFields = {
       params: Object,
       { dataLoader }: GraphqlContextType,
     ): Promise<BookingAssets> => {
-      const { assets } = await dataLoader.booking.load(id);
+      const { assets } = await dataLoader.booking.load({id, brand: params.brand});
       return assets;
     },
   },
@@ -99,7 +99,7 @@ export const commonFields = {
       args: Object,
       { dataLoader }: GraphqlContextType,
     ) => {
-      const { passengers } = await dataLoader.booking.load(id);
+      const { passengers } = await dataLoader.booking.load({id, brand: args.brand});
       return passengers;
     },
   },
@@ -199,7 +199,7 @@ export const commonFields = {
       args: Object,
       { dataLoader }: GraphqlContextType,
     ) => {
-      const { bookedServices } = await dataLoader.booking.load(id);
+      const { bookedServices } = await dataLoader.booking.load({id, brand: args.brand});
       return bookedServices;
     },
   },
@@ -211,7 +211,7 @@ export const commonFields = {
       args: Object,
       { dataLoader }: GraphqlContextType,
     ) => {
-      const { contactDetails } = await dataLoader.booking.load(id);
+      const { contactDetails } = await dataLoader.booking.load({id, brand: args.brand});
       return contactDetails;
     },
   },

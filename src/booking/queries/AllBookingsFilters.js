@@ -7,7 +7,7 @@ import type { BookingsItem } from '../Booking';
 export function groupBookings(bookings: $ReadOnlyArray<BookingsItem>) {
   return bookings.reduce(
     (acc, curVal) => {
-      if (isPastBooking(curVal) === true) {
+      if (isPastBooking(curVal)) {
         acc.past.push(curVal);
       } else {
         acc.future.push(curVal);

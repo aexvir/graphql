@@ -20,7 +20,7 @@ export default {
   },
   resolve: async (
     ancestor: mixed,
-    { id }: Object,
+    { id, brand }: Object,
     { dataLoader }: GraphqlContextType,
   ): Promise<BookingTimelineData> => {
     const { id: originalId, type } = fromGlobalId(id);
@@ -40,7 +40,7 @@ export default {
       );
     }
 
-    const booking = await dataLoader.booking.load(originalId);
+    const booking = await dataLoader.booking.load({id: originalId, brand});
 
     const events = generateEventsFrom(booking);
 

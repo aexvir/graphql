@@ -51,3 +51,22 @@ it('should return nearest booking', async () => {
     },
   });
 });
+
+
+it('should take brand argument', async () => {
+  expect(
+    await graphql(`
+      {
+        nearestBooking(brand: "loremipsum") {
+          databaseId
+        }
+      }
+    `),
+  ).toEqual({
+    data: {
+      nearestBooking: {
+        databaseId: 2707224,
+      },
+    },
+  });
+});

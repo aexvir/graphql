@@ -20,7 +20,7 @@ export default function createInstance(
   bookingsLoader: BookingsLoader,
 ) {
   return new DataLoader(
-    (ids: $ReadOnlyArray<number | string>) =>
+    (ids: $ReadOnlyArray<{id: number | string, brand: string}>) =>
       batchLoad(accessToken, bookingsLoader)(ids),
     {
       cacheKeyFn: key => parseInt(key, 10),
@@ -31,15 +31,15 @@ export default function createInstance(
 function batchLoad(
   accessToken: ?string,
   bookingsLoader: BookingsLoader,
-): ($ReadOnlyArray<number | string>) => Promise<Array<Object>> {
+): ($ReadOnlyArray<{id: number | string, brand: string}>) => Promise<Array<Object>> {
   if (typeof accessToken !== 'string') {
     return () => Promise.reject(new Error('Undefined access token'));
   }
-  return ids => Promise.all(ids.map(id => fetch(parseInt(id), bookingsLoader)));
+  return ids => Promise.all(ids.map(({id, brand}) => fetch(parseInt(id), bookingsLoader, brand)));
 }
 
-async function fetch(bid, bookingsLoader): Promise<Booking> {
-  const { authToken } = await bookingsLoader.loadItem(bid);
+async function fetch(bid, bookingsLoader, brand): Promise<Booking> {
+  const { authToken } = await bookingsLoader.loadItem(bid, brand);
   const data = await get(Config.restApiEndpoint.singleBooking(bid, authToken));
 
   return sanitizeDetail(data);
