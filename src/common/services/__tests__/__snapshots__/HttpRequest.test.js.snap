@@ -44,10 +44,6 @@ Object {
 
 exports[`GET request in production throws exception during invalid return status code 1`] = `
 Object {
-  "_proxy": Object {
-    "statusCode": "500",
-    "url": "https://path/to/api?status=500",
-  },
   "extensions": Object {
     "proxy": Object {
       "statusCode": "500",
@@ -121,10 +117,6 @@ Object {
 
 exports[`POST request in production throws exception during invalid return status code 1`] = `
 Object {
-  "_proxy": Object {
-    "statusCode": "500",
-    "url": "https://path/to/api?status=500",
-  },
   "extensions": Object {
     "proxy": Object {
       "statusCode": "500",

@@ -10,7 +10,6 @@ type ProxiedErrorValues = {|
  */
 class ProxiedError extends Error {
   extensions: {|
-    +_proxy: ProxiedErrorValues,
     +extensions: {|
       +proxy: ProxiedErrorValues,
     |},
@@ -19,11 +18,6 @@ class ProxiedError extends Error {
   constructor(message: string, originStatusCode: string, originUrl: string) {
     super(message);
     this.extensions = {
-      _proxy: {
-        // note: this is deprecated and will be removed
-        statusCode: originStatusCode,
-        url: originUrl,
-      },
       extensions: {
         proxy: {
           statusCode: String(originStatusCode),
