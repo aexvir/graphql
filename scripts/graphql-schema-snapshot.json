@@ -8688,6 +8688,18 @@
             "deprecationReason": null
           },
           {
+            "name": "originalId",
+            "description": "Original numeric id of the article",
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "title",
             "description": "Title of the article",
             "args": [],

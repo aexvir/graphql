@@ -6,7 +6,7 @@ import { get } from '../../common/services/HttpRequest';
 import type { FAQCategoryType } from '../types/outputs/FAQCategory';
 
 export type FAQArticleItem = $ReadOnly<{|
-  id: string,
+  id: number,
   url: string,
   title: string,
   perex: string,
