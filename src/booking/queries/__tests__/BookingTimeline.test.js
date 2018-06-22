@@ -95,12 +95,11 @@ describe('single booking timeline query', () => {
             location {
               airport {
                 city {
-                  locationId
                   name
-                  slug
                 }
               }
             }
+            duration
           }
           ... on  ArrivalTimelineEvent {
             location {

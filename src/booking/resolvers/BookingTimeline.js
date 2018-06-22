@@ -3,6 +3,8 @@
 import idx from 'idx';
 import { DateTime } from 'luxon';
 
+import getFlightDurationInMinutes from '../../flight/resolvers/FlightDuration';
+
 import type {
   BookingTimelineEvent,
   BookedFlightTimelineEvent as BookedFlightType,
@@ -120,7 +122,7 @@ export function generateDownloadETicketEvent(
 export function generateLeaveForAirportEvent(
   booking: Booking,
 ): ?LeaveForAirportType {
-  const localDepartureTime = idx(booking.departure, _ => _.when.local);
+  const localDepartureTime = idx(booking.departure, _ => _.when.utc);
   if (localDepartureTime) {
     const leaveForAiportTime = DateTime.fromJSDate(localDepartureTime, {
       zone: 'UTC',
@@ -140,7 +142,7 @@ export function generateLeaveForAirportEvent(
 export function generateAirportArrivalEvent(
   booking: Booking,
 ): ?AirportArrivalType {
-  const localDepartureTime = idx(booking.departure, _ => _.when.local);
+  const localDepartureTime = idx(booking.departure, _ => _.when.utc);
   if (localDepartureTime) {
     const AiportArrivalTime = DateTime.fromJSDate(localDepartureTime, {
       zone: 'UTC',
@@ -159,7 +161,7 @@ export function generateAirportArrivalEvent(
 }
 
 export function generateBoardingEvent(leg: Leg): ?BoardingType {
-  const localDepartureTime = idx(leg, _ => _.departure.when.local);
+  const localDepartureTime = idx(leg, _ => _.departure.when.utc);
   if (localDepartureTime) {
     const BoardingTime = DateTime.fromJSDate(localDepartureTime, {
       zone: 'UTC',
@@ -178,19 +180,21 @@ export function generateBoardingEvent(leg: Leg): ?BoardingType {
 }
 
 export function generateDepartureEvent(leg: Leg): ?DepartureType {
-  const departureTime = idx(leg, _ => _.departure.when.local);
+  const departureTime = idx(leg, _ => _.departure.when.utc);
+  const duration = getFlightDurationInMinutes(leg.departure, leg.arrival);
   if (departureTime) {
     return {
       timestamp: departureTime,
       type: 'DepartureTimelineEvent',
-      departure: leg.departure,
+      arrival: leg.arrival,
+      duration: duration,
     };
   }
   return null;
 }
 
 export function generateArrivalEvent(leg: Leg): ?ArrivalType {
-  const arrivalTime = idx(leg, _ => _.arrival.when.local);
+  const arrivalTime = idx(leg, _ => _.arrival.when.utc);
   if (arrivalTime) {
     return {
       timestamp: arrivalTime,
@@ -204,7 +208,7 @@ export function generateArrivalEvent(leg: Leg): ?ArrivalType {
 export function generateTransportFromAirportEvent(
   booking: Booking,
 ): ?TransportFromAirportType {
-  const arrivalTime = idx(booking.arrival, _ => _.when.local);
+  const arrivalTime = idx(booking.arrival, _ => _.when.utc);
   if (arrivalTime) {
     const transportFromAirportTime = DateTime.fromJSDate(arrivalTime, {
       zone: 'UTC',

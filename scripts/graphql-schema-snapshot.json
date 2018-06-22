@@ -12204,11 +12204,23 @@
           },
           {
             "name": "location",
-            "description": "Location of departure",
+            "description": "Location of arrival",
             "args": [],
             "type": {
               "kind": "OBJECT",
               "name": "RouteStop",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "duration",
+            "description": "Flight duration in minutes.",
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
               "ofType": null
             },
             "isDeprecated": false,

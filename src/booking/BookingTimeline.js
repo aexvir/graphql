@@ -75,7 +75,8 @@ export type BoardingTimelineEvent = {|
 export type DepartureTimelineEvent = {|
   +timestamp: Date,
   +type: 'DepartureTimelineEvent',
-  +departure: DepartureArrival,
+  +arrival: DepartureArrival,
+  +duration: ?number,
 |};
 
 export type ArrivalTimelineEvent = {|

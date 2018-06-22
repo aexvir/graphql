@@ -24,7 +24,7 @@ describe('resolver', () => {
           created: date,
           arrival: {
             when: {
-              local: new Date('2018-05-18T14:10:57.000Z'),
+              utc: new Date('2018-05-18T14:10:57.000Z'),
             },
             where: {
               cityName: 'Prague',
@@ -37,7 +37,7 @@ describe('resolver', () => {
       type: 'BookedFlightTimelineEvent',
       arrival: {
         when: {
-          local: new Date('2018-05-18T14:10:57.000Z'),
+          utc: new Date('2018-05-18T14:10:57.000Z'),
         },
         where: {
           cityName: 'Prague',
@@ -53,7 +53,7 @@ describe('resolver', () => {
         status: 'cancelled',
         arrival: {
           when: {
-            local: new Date('2018-05-18T14:10:57.000Z'),
+            utc: new Date('2018-05-18T14:10:57.000Z'),
           },
           where: {
             cityName: 'Prague',
@@ -66,7 +66,7 @@ describe('resolver', () => {
       type: 'BookedFlightTimelineEvent',
       arrival: {
         when: {
-          local: new Date('2018-05-18T14:10:57.000Z'),
+          utc: new Date('2018-05-18T14:10:57.000Z'),
         },
         where: {
           cityName: 'Prague',
@@ -91,7 +91,7 @@ describe('resolver', () => {
         status: 'confirmed',
         arrival: {
           when: {
-            local: new Date('2018-05-18T14:10:57.000Z'),
+            utc: new Date('2018-05-18T14:10:57.000Z'),
           },
           where: {
             cityName: 'Prague',
@@ -104,7 +104,7 @@ describe('resolver', () => {
       type: 'BookedFlightTimelineEvent',
       arrival: {
         when: {
-          local: new Date('2018-05-18T14:10:57.000Z'),
+          utc: new Date('2018-05-18T14:10:57.000Z'),
         },
         where: {
           cityName: 'Prague',
@@ -127,7 +127,7 @@ describe('generateBookedFlightEvent', () => {
         created: date,
         arrival: {
           when: {
-            local: new Date('2018-05-18T14:10:57.000Z'),
+            utc: new Date('2018-05-18T14:10:57.000Z'),
           },
           where: {
             cityName: 'Prague',
@@ -139,7 +139,7 @@ describe('generateBookedFlightEvent', () => {
       type: 'BookedFlightTimelineEvent',
       arrival: {
         when: {
-          local: new Date('2018-05-18T14:10:57.000Z'),
+          utc: new Date('2018-05-18T14:10:57.000Z'),
         },
         where: {
           cityName: 'Prague',
@@ -337,7 +337,7 @@ describe('generateLeaveForAirportEvent', () => {
       generateLeaveForAirportEvent({
         departure: {
           when: {
-            local: date,
+            utc: date,
           },
         },
       }),
@@ -363,7 +363,7 @@ describe('generateAirportArrivalEvent', () => {
       generateAirportArrivalEvent({
         departure: {
           when: {
-            local: date,
+            utc: date,
           },
         },
       }),
@@ -372,7 +372,7 @@ describe('generateAirportArrivalEvent', () => {
       type: 'AirportArrivalTimelineEvent',
       departure: {
         when: {
-          local: date,
+          utc: date,
         },
       },
     });
@@ -390,7 +390,7 @@ describe('generateAirportArrivalEvent', () => {
       generateAirportArrivalEvent({
         departure: {
           when: {
-            local: date,
+            utc: date,
           },
           where: {
             cityName: 'Prague',
@@ -402,7 +402,7 @@ describe('generateAirportArrivalEvent', () => {
       type: 'AirportArrivalTimelineEvent',
       departure: {
         when: {
-          local: date,
+          utc: date,
         },
         where: {
           cityName: 'Prague',
@@ -421,7 +421,7 @@ describe('generateBoardingEvent', () => {
       generateBoardingEvent({
         departure: {
           when: {
-            local: date,
+            utc: date,
           },
         },
       }),
@@ -440,7 +440,7 @@ describe('generateBoardingEvent', () => {
 });
 
 describe('generateDepartureEvent', () => {
-  const date = new Date('2018-05-03T14:10:57.000Z');
+  const date = new Date('2018-06-22T05:00:00.000Z');
   it('returns Departure event if departure.when.local is set', () => {
     const departureDate = date;
     expect(
@@ -448,18 +448,24 @@ describe('generateDepartureEvent', () => {
       generateDepartureEvent({
         departure: {
           when: {
-            local: date,
+            utc: departureDate,
+          },
+        },
+        arrival: {
+          when: {
+            utc: new Date('2018-06-22T08:00:00.000Z'),
           },
         },
       }),
     ).toEqual({
       timestamp: departureDate,
       type: 'DepartureTimelineEvent',
-      departure: {
+      arrival: {
         when: {
-          local: date,
+          utc: new Date('2018-06-22T08:00:00.000Z'),
         },
       },
+      duration: 180,
     });
   });
   it('returns null if departure.when.local is not set', () => {
@@ -475,7 +481,12 @@ describe('generateDepartureEvent', () => {
       generateDepartureEvent({
         departure: {
           when: {
-            local: date,
+            utc: departureDate,
+          },
+        },
+        arrival: {
+          when: {
+            utc: new Date('2018-06-22T08:00:00.000Z'),
           },
           where: {
             cityName: 'Prague',
@@ -485,14 +496,15 @@ describe('generateDepartureEvent', () => {
     ).toEqual({
       timestamp: departureDate,
       type: 'DepartureTimelineEvent',
-      departure: {
+      arrival: {
         when: {
-          local: date,
+          utc: new Date('2018-06-22T08:00:00.000Z'),
         },
         where: {
           cityName: 'Prague',
         },
       },
+      duration: 180,
     });
   });
 });
@@ -506,7 +518,7 @@ describe('generateArrivalEvent', () => {
       generateArrivalEvent({
         arrival: {
           when: {
-            local: date,
+            utc: date,
           },
         },
       }),
@@ -515,7 +527,7 @@ describe('generateArrivalEvent', () => {
       type: 'ArrivalTimelineEvent',
       arrival: {
         when: {
-          local: date,
+          utc: date,
         },
       },
     });
@@ -533,7 +545,7 @@ describe('generateArrivalEvent', () => {
       generateArrivalEvent({
         arrival: {
           when: {
-            local: date,
+            utc: date,
           },
           where: {
             cityName: 'Prague',
@@ -545,7 +557,7 @@ describe('generateArrivalEvent', () => {
       type: 'ArrivalTimelineEvent',
       arrival: {
         when: {
-          local: date,
+          utc: date,
         },
         where: {
           cityName: 'Prague',
@@ -564,7 +576,7 @@ describe('generateTransportFromAirportEvent', () => {
       generateTransportFromAirportEvent({
         arrival: {
           when: {
-            local: date,
+            utc: date,
           },
         },
       }),

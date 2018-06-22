@@ -144,8 +144,12 @@ export const DepartureTimelineEvent = new GraphQLObjectType({
     ...commonFields,
     location: {
       type: RouteStop,
-      description: 'Location of departure',
-      resolve: ({ departure }: DepartureType): DepartureArrival => departure,
+      description: 'Location of arrival',
+      resolve: ({ arrival }: DepartureType): DepartureArrival => arrival,
+    },
+    duration: {
+      type: GraphQLInt,
+      description: 'Flight duration in minutes.',
     },
   },
   isTypeOf: value => value.type === 'DepartureTimelineEvent',
