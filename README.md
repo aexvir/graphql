@@ -4,24 +4,25 @@ Production URL: https://graphql.kiwi.com/
 
 [Join our chat over at Discord](https://discord.gg/Pq2q5a5) to get in touch with the community and Kiwi.com engineers.
 
-# Run GraphQL API server
+# Install & Run GraphQL API server
 
-Using this command you can run GraphQL API server with HMR (Hot Module Replacement).
+Install:
+
+```
+git clone git@github.com:kiwicom/graphql.git
+cd graphql
+yarn install
+```
+
+Run:
 
 ```
 yarn start
 ```
 
-Server is running by default on `http://127.0.0.1:3000/`
+Server runs by default on `http://127.0.0.1:3000/`. In order to call every possible query you'll have to set environment variables in the `.env` file (check `.env-sample`).
 
-# Run GraphQL and Apollo Engine
-
-[Apollo Engine](https://www.apollographql.com/engine/) acts as a proxy between
-client and GraphQL server. It brings features like performance tracing, error
-tracking or caching.
-
-It can be handy to check performance during development. To run Apollo Engine
-on localhost you'll need to fill in the `ENGINE_KEY` environmental variable.
+**Information for Kiwi.com employees:** ask your colleagues how to get these environment variables. Try to ask someone from [this list](https://github.com/kiwicom/graphql/graphs/contributors).
 
 # Run tests
 
@@ -34,7 +35,7 @@ yarn test-ci      # everything above + lints and typechecks (runs on the CI serv
 # Deployment
 
 ```
-CircleCI <--- triggers ---> VPN ---> production
+CircleCI ---- triggers ---> VPN ---> production
    ^                         ^
    |                         |
    |                         |
@@ -65,10 +66,6 @@ _TODO: we should run tests there as well, we should also test the build!_
 
 2. build script will build the app into `.build` directory
 3. this directory and `node_modules` are packed together into the Docker image and executed in production
-
-# GraphiQL
-
-Install & use desktop GraphiQL app for more convenient communication with the server during the development: https://github.com/skevy/graphiql-app
 
 # Directory structure
 
@@ -122,8 +119,8 @@ Some queries relies on input argument `Locale` or `Language`. There input parame
 
 There are currently three different types of bookings:
 
-- "One way" is simply the trip from one place to another, A -> B -> C, e.g. flying from Prague to Barcelona, with possible stopovers
-- "Return" is the trip to somewhere and back A <-> B, e.g. from Prague to Barcelona on July 1, and then back from Barcelona to Prague on July 14
+- "One way" is simply the trip from one place to another, `A -> B -> C`, e.g. flying from Prague to Barcelona, with possible stopovers
+- "Return" is the trip to somewhere and back `A <-> B`, e.g. from Prague to Barcelona on July 1, and then back from Barcelona to Prague on July 14
 - "Multicity" - is set of trips you will do over time from one place to another, booked at once. Basically it's array of "One way" bookings
 
 As each type requires different shape of data to display such booking info optimally. Possible query using fragments could look like this:
