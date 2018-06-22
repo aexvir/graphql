@@ -4,15 +4,14 @@ import { GraphQLID, GraphQLNonNull } from 'graphql';
 import { fromGlobalId } from 'graphql-relay';
 
 import type { GraphqlContextType } from '../../common/services/GraphqlContext';
-import FAQCategory, {
-  type FAQCategoryType,
-} from '../types/outputs/FAQCategory';
+import FAQCategory from '../types/outputs/FAQCategory';
 import LanguageInput from '../../common/types/inputs/LanguageInput';
+import type { FAQCategoryItem } from '../dataloaders/FAQCategories';
 
 const findCategory = (
-  categories: FAQCategoryType[],
+  categories: $ReadOnlyArray<FAQCategoryItem>,
   categoryId: number,
-): FAQCategoryType | null => {
+): FAQCategoryItem | null => {
   const parentCategory = categories.find(c => c.id === categoryId);
 
   if (parentCategory) {

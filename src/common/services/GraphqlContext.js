@@ -34,13 +34,13 @@ import type { City } from '../../hotel/dataloaders/flow/City';
 import type { Args as FAQArgs } from '../../FAQ/dataloaders/searchFAQ';
 import type {
   FAQArticleItem,
+  FAQCategoryItem,
   Args as FAQCategoriesArgs,
 } from '../../FAQ/dataloaders/FAQCategories';
 import type {
   Args as FAQCArticleArgs,
   FAQArticleDetail,
 } from '../../FAQ/dataloaders/FAQArticle';
-import type { FAQCategoryType } from '../../FAQ/types/outputs/FAQCategory';
 import type { SearchParameters as DynamicPackagesSearchParams } from '../../dynamicPackage/dataloaders/DynamicPackages';
 import type { DynamicPackage } from '../../dynamicPackage/dataloaders/DynamicPackageType';
 
@@ -85,7 +85,7 @@ export type GraphqlContextType = {|
       >,
     },
     FAQ: DataLoader<FAQArgs, FAQArticleItem[]>,
-    FAQCategories: DataLoader<FAQCategoriesArgs, FAQCategoryType[]>,
+    FAQCategories: DataLoader<FAQCategoriesArgs, FAQCategoryItem[]>,
     FAQArticle: DataLoader<FAQCArticleArgs, FAQArticleDetail>,
     dynamicPackages: DataLoader<DynamicPackagesSearchParams, DynamicPackage[]>,
   |},

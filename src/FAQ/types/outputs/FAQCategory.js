@@ -6,52 +6,43 @@ import {
   GraphQLList,
   GraphQLInt,
 } from 'graphql';
-import FAQArticle, { type FAQArticleType } from './FAQArticle';
+import FAQArticle from './FAQArticle';
 import { globalIdField } from '../../../common/services/OpaqueIdentifier';
-
-export type FAQCategoryType = {|
-  id: number,
-  originalId: number,
-  title: string,
-  perex: string,
-  subcategories: FAQCategoryType[],
-  ancestors: FAQCategoryType[],
-  FAQs: FAQArticleType[],
-|};
+import type { FAQCategoryItem } from '../../dataloaders/FAQCategories';
 
 const FAQCategory = new GraphQLObjectType({
   name: 'FAQCategory',
   fields: () => ({
-    id: globalIdField('FAQCategory', ({ id }: FAQCategoryType) => String(id)),
+    id: globalIdField('FAQCategory', ({ id }: FAQCategoryItem) => String(id)),
     originalId: {
       type: GraphQLInt,
       description: 'Original numeric id of the FAQ category',
-      resolve: ({ id }): FAQCategoryType => id,
+      resolve: ({ id }: FAQCategoryItem) => id,
     },
     title: {
       type: GraphQLString,
       description: 'Title of the FAQ category',
-      resolve: ({ title }: FAQCategoryType) => title,
+      resolve: ({ title }: FAQCategoryItem) => title,
     },
     perex: {
       type: GraphQLString,
       description: 'Perex of the FAQ category',
-      resolve: ({ perex }: FAQCategoryType) => perex,
+      resolve: ({ perex }: FAQCategoryItem) => perex,
     },
     subcategories: {
       type: new GraphQLList(FAQCategory),
       description: 'List of subcategories',
-      resolve: ({ subcategories }: FAQCategoryType) => subcategories,
+      resolve: ({ subcategories }: FAQCategoryItem) => subcategories,
     },
     ancestors: {
       type: new GraphQLList(FAQCategory),
       description: 'List of ancestor categories in the tree from the root.',
-      resolve: ({ ancestors }: FAQCategoryType) => ancestors,
+      resolve: ({ ancestors }: FAQCategoryItem) => ancestors,
     },
     FAQs: {
       type: new GraphQLList(FAQArticle),
       description: 'List of FAQ articles',
-      resolve: ({ FAQs }: FAQCategoryType) => FAQs,
+      resolve: ({ FAQs }: FAQCategoryItem) => FAQs,
     },
   }),
 });

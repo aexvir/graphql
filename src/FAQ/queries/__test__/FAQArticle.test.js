@@ -16,7 +16,8 @@ describe('FAQArticle', () => {
     query FAQArticle($id: ID!) {
       FAQArticle(id: $id) {
         id
-        originalIdtitle
+        originalId
+        title
         perex
         content
       }

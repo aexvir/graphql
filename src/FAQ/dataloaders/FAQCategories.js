@@ -2,7 +2,6 @@
 
 import Dataloader from 'dataloader';
 import { get } from '../../common/services/HttpRequest';
-import type { FAQCategoryType } from '../types/outputs/FAQCategory';
 
 export type FAQArticleItem = $ReadOnly<{|
   id: number,
@@ -12,6 +11,15 @@ export type FAQArticleItem = $ReadOnly<{|
   upvotes: number,
   downvotes: number,
 |}>;
+
+export type FAQCategoryItem = $ReadOnly<{
+  id: number,
+  title: string,
+  perex: string,
+  subcategories: $ReadOnlyArray<FAQCategoryItem>,
+  FAQs: $ReadOnlyArray<FAQArticleItem>,
+  ancestors: $ReadOnlyArray<FAQCategoryItem>,
+}>;
 
 export type FAQSectionType =
   | 'beforeBooking'
@@ -34,7 +42,7 @@ const listFAQ = async (
   section: FAQSectionType | 'all',
   language: string,
   rootCategoryId: string,
-): Promise<FAQCategoryType[]> => {
+): Promise<FAQCategoryItem[]> => {
   let categories = await get(
     `https://api.skypicker.com/knowledgebase/api/v1/categories/${rootCategoryId}`,
     null,
