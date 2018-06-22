@@ -3,9 +3,9 @@
 import { toGlobalId } from 'graphql-relay';
 import { graphql, RestApiMock } from '../../../common/services/TestingTools';
 import config from '../../../../config/application';
-import articleMockData from '../../datasets/FAQArticle-39.json';
+import articleMockData from '../../datasets/FAQArticle-44.json';
 
-const goodId = '39';
+const goodId = '44';
 const globalId = toGlobalId('FAQArticle', goodId);
 
 beforeEach(() => {

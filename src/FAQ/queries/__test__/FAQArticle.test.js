@@ -1,27 +1,26 @@
 // @flow
 
 import { graphql, RestApiMock } from '../../../common/services/TestingTools';
-import FAQArticle from '../../datasets/FAQArticle-39.json';
+import FAQArticle from '../../datasets/FAQArticle-44.json';
 
 describe('FAQArticle', () => {
   beforeEach(() => {
     RestApiMock.onGet(
-      'https://api.skypicker.com/knowledgebase/api/v1/articles/39',
+      'https://api.skypicker.com/knowledgebase/api/v1/articles/44',
     ).replyWithData(FAQArticle);
   });
 
   it('should return article detail', async () => {
-    const id = 'RkFRQXJ0aWNsZTozOQ==';
+    const id = 'RkFRQXJ0aWNsZTo0NA==';
     const query = `
-      query FAQArticle($id: ID!) {
-        FAQArticle(id: $id, language: en) {
-          id
-          originalId
-          title
-          perex
-          content
-        }
+    query FAQArticle($id: ID!) {
+      FAQArticle(id: $id) {
+        id
+        originalIdtitle
+        perex
+        content
       }
+    }
     `;
     expect(await graphql(query, { id })).toMatchSnapshot();
   });
@@ -30,7 +29,7 @@ describe('FAQArticle', () => {
     const id = '43453';
     const query = `
       query FAQArticle($id: ID!) {
-        FAQArticle(id: $id, language: en) {
+        FAQArticle(id: $id) {
           id
           title
           perex

@@ -6,52 +6,64 @@ Object {
     "FAQCategory": Object {
       "FAQs": Array [
         Object {
-          "id": "RkFRQXJ0aWNsZTo5Mw==",
-          "title": "What's the difference between low-cost and legacy airline carriers?",
+          "id": "RkFRQXJ0aWNsZTo0MQ==",
+          "title": "Cabin baggage",
         },
         Object {
-          "id": "RkFRQXJ0aWNsZToxMTE=",
-          "title": "How do I use the mobile app?",
+          "id": "RkFRQXJ0aWNsZTo0Mw==",
+          "title": "Checked baggage",
         },
         Object {
-          "id": "RkFRQXJ0aWNsZTo5NA==",
-          "title": "How do I find the best flights for my budget?",
+          "id": "RkFRQXJ0aWNsZTo0Nw==",
+          "title": "Do I have to recheck my baggage?",
         },
         Object {
-          "id": "RkFRQXJ0aWNsZTo5NQ==",
-          "title": "Supported languages",
+          "id": "RkFRQXJ0aWNsZTo1MA==",
+          "title": "Flights with cabin baggage only",
+        },
+        Object {
+          "id": "RkFRQXJ0aWNsZTo0Mg==",
+          "title": "Personal item",
+        },
+        Object {
+          "id": "RkFRQXJ0aWNsZToxNDI=",
+          "title": "Baggage",
+        },
+        Object {
+          "id": "RkFRQXJ0aWNsZToxNDc=",
+          "title": "Manage My Booking",
         },
       ],
       "ancestors": Array [
         Object {
-          "id": "RkFRQ2F0ZWdvcnk6NDY=",
+          "id": "RkFRQ2F0ZWdvcnk6Nzc=",
           "subcategories": Array [
             Object {
-              "id": "RkFRQ2F0ZWdvcnk6NDM=",
-              "title": "Searching for flights",
-            },
-            Object {
-              "id": "RkFRQ2F0ZWdvcnk6MzA=",
-              "title": "E-ticket",
-            },
-            Object {
-              "id": "RkFRQ2F0ZWdvcnk6Mjc=",
-              "title": "Booking a Flight",
-            },
-            Object {
-              "id": "RkFRQ2F0ZWdvcnk6MzM=",
+              "id": "RkFRQ2F0ZWdvcnk6ODg=",
               "title": "Baggage",
             },
             Object {
-              "id": "RkFRQ2F0ZWdvcnk6Mjg=",
-              "title": "Payment Issues",
+              "id": "RkFRQ2F0ZWdvcnk6ODc=",
+              "title": "Travelling",
+            },
+            Object {
+              "id": "RkFRQ2F0ZWdvcnk6ODM=",
+              "title": "Additional services",
+            },
+            Object {
+              "id": "RkFRQ2F0ZWdvcnk6ODQ=",
+              "title": "Documents & planning",
+            },
+            Object {
+              "id": "RkFRQ2F0ZWdvcnk6ODY=",
+              "title": "Changes & cancellations",
             },
           ],
-          "title": "Booking",
+          "title": "After booking",
         },
       ],
-      "id": "RkFRQ2F0ZWdvcnk6NDM=",
-      "title": "Searching for flights",
+      "id": "RkFRQ2F0ZWdvcnk6ODg=",
+      "title": "Baggage",
     },
   },
 }
@@ -72,46 +84,27 @@ exports[`FAQCategory should return single FAQ category 1`] = `
 Object {
   "data": Object {
     "FAQCategory": Object {
-      "FAQs": Array [
-        Object {
-          "id": "RkFRQXJ0aWNsZToxMzI=",
-          "title": "How do I Refer a Friend?",
-        },
-        Object {
-          "id": "RkFRQXJ0aWNsZToxMzk=",
-          "title": "Why was I redirected to another website?",
-        },
-        Object {
-          "id": "RkFRQXJ0aWNsZTozOQ==",
-          "title": "How do I know which terminals I will be using?",
-        },
-      ],
-      "id": "RkFRQ2F0ZWdvcnk6NDc=",
+      "FAQs": Array [],
+      "id": "RkFRQ2F0ZWdvcnk6NzY=",
       "originalId": 47,
       "subcategories": Array [
         Object {
-          "id": "RkFRQ2F0ZWdvcnk6Mzc=",
+          "id": "RkFRQ2F0ZWdvcnk6ODk=",
         },
         Object {
-          "id": "RkFRQ2F0ZWdvcnk6NDA=",
+          "id": "RkFRQ2F0ZWdvcnk6OTA=",
         },
         Object {
-          "id": "RkFRQ2F0ZWdvcnk6MzU=",
+          "id": "RkFRQ2F0ZWdvcnk6OTE=",
         },
         Object {
-          "id": "RkFRQ2F0ZWdvcnk6MzY=",
+          "id": "RkFRQ2F0ZWdvcnk6OTI=",
         },
         Object {
-          "id": "RkFRQ2F0ZWdvcnk6MjY=",
-        },
-        Object {
-          "id": "RkFRQ2F0ZWdvcnk6MzE=",
-        },
-        Object {
-          "id": "RkFRQ2F0ZWdvcnk6NDI=",
+          "id": "RkFRQ2F0ZWdvcnk6OTM=",
         },
       ],
-      "title": "Before the flight",
+      "title": "Before booking",
     },
   },
 }

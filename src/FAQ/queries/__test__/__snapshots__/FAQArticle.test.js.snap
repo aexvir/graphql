@@ -4,11 +4,11 @@ exports[`FAQArticle should return article detail 1`] = `
 Object {
   "data": Object {
     "FAQArticle": Object {
-      "content": "<div><strong>You may also search for your flight number with:</strong></div><ul><li><a href=\\"http://www.flightradar24.com\\">Flightradar24.com</a></li><li>Google</li></ul><div><em>Your flight number may be found on your e-ticket.</em></div>",
-      "id": "RkFRQXJ0aWNsZTozOQ==",
+      "content": "<div>Every airline allows slightly different <a href=\\"https://www.kiwi.com/helpcenter/article/43\\">checked baggage</a> and <a href=\\"https://www.kiwi.com/helpcenter/article/41\\">cabin baggage</a> dimensions.<br><br><strong>After booking</strong><br>Take a look at your e-ticket and <a href=\\"http://kiwi.com/content/account\\">Manage My Booking</a> page for your baggage dimensions allowance.&nbsp;</div><div><strong><figure class=\\"attachment attachment-preview\\" data-trix-attachment=\\"{&quot;contentType&quot;:&quot;image&quot;,&quot;height&quot;:630,&quot;url&quot;:&quot;https://lh6.googleusercontent.com/kzmUUVxfXfiiX9Txi3nRE67b42LdGewNMy3jVQCJrtYisp6WSzIX7pUeQtMc1wCX6dO3By6wAHQxAsba_zCyJ5bgxeNwhzkoByKGe5oXNVvEelgSrGPEMKm9Nh76NKyydXzlrlrn&quot;,&quot;width&quot;:1260}\\" data-trix-content-type=\\"image\\"><img src=\\"https://lh6.googleusercontent.com/kzmUUVxfXfiiX9Txi3nRE67b42LdGewNMy3jVQCJrtYisp6WSzIX7pUeQtMc1wCX6dO3By6wAHQxAsba_zCyJ5bgxeNwhzkoByKGe5oXNVvEelgSrGPEMKm9Nh76NKyydXzlrlrn\\" width=\\"1260\\" height=\\"630\\"><figcaption class=\\"caption\\"></figcaption></figure></strong></div><div><br><br><strong>Before booking<br></strong>Baggage details are shown on our booking page together with the prices for upgrading.<br><br><br></div><div><strong><figure class=\\"attachment attachment-preview\\" data-trix-attachment=\\"{&quot;contentType&quot;:&quot;image&quot;,&quot;height&quot;:490,&quot;url&quot;:&quot;https://lh6.googleusercontent.com/qirawWWs-8fweun8EAZYyY3JbuRVe5_HaP8KLFT97De0VXbrlyG6BFgXpXnmU_uBsEovegpXKZt-rEhq2SFd7x_KtQRTr0Z5TLQRpklRgE5k39k1fm7hk3ag8mhoJJdtMXOOGbHN&quot;,&quot;width&quot;:764}\\" data-trix-content-type=\\"image\\"><img src=\\"https://lh6.googleusercontent.com/qirawWWs-8fweun8EAZYyY3JbuRVe5_HaP8KLFT97De0VXbrlyG6BFgXpXnmU_uBsEovegpXKZt-rEhq2SFd7x_KtQRTr0Z5TLQRpklRgE5k39k1fm7hk3ag8mhoJJdtMXOOGbHN\\" width=\\"764\\" height=\\"490\\"><figcaption class=\\"caption\\"></figcaption></figure></strong></div>",
+      "id": "RkFRQXJ0aWNsZTo0NA==",
       "originalId": 39,
-      "perex": "Your departure and arrival terminals should be stated on your boarding pass.",
-      "title": "How do I know which terminals I will be using?",
+      "perex": "On the booking page, e-ticket, and Manage My Booking.",
+      "title": "How can I find the maximum dimensions of the baggage that I am allowed?",
     },
   },
 }

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`allFAQCategories should return list of categories with subcategories and related FAQs 1`] = `
+exports[`allFAQCategories should return list of categories related to only one section of FAQ 1`] = `
 Object {
   "data": Object {
     "allFAQCategories": Object {
@@ -9,81 +9,143 @@ Object {
           "node": Object {
             "FAQs": Array [
               Object {
-                "content": "<div>To offer you the best price on your chosen route, we found that a round-trip ticket is actually cheaper than a one-way flight. However, the practice of “throwaway ticketing” — only using the first part of a round-trip ticket — is prohibited by a majority of airlines in their terms and conditions. Please review the terms of each airline for more information.<br><br></div><div>Airlines may impose certain sanctions including invoicing an additional amount up to the standard fare of the one-way alternative, deletion of mileage programs, etc. But, the probability of this is minimal, because such a breach can only be identified after the flights have departed.&nbsp;<br><br></div><div>By proceeding with this booking, you confirm that you are aware of all conditions and potential issues related with using just one leg of a round-trip itinerary.&nbsp;<br><br></div><div>If you do not want to purchase an itinerary with throwaway segments, please return to our search page and choose a standard direct itinerary.</div>",
-                "id": "RkFRQXJ0aWNsZToxMzY=",
-                "title": "Can I use just one part of a roundtrip ticket?",
+                "content": "<div>Cabin baggage is also known as carry-on or hand luggage. You take it through security into the plane and keep it close to you, either under the seat or in the overhead compartment.<br><br><strong>Quantity and dimensions</strong></div><ul><li>Most airlines allow one cabin bag and one <a href=\\"https://www.kiwi.com/helpcenter/article/42\\">personal item</a>. But this varies from airline to airline.<strong>&nbsp;</strong></li><li>For example on Norwegian Air, you can take the following with a maximum combined weight of 10kg.<ul><li>One personal item e.g. handbag or laptop bag of 25x33x20 cm.&nbsp;</li><li>One cabin bag of 55x40x23 cm.</li></ul></li><li>Check your e-ticket or <a href=\\"http://kiwi.com/content/account\\">Manage My Booking</a> for details about the <strong>quantity and dimensions</strong> of the items you’re allowed to bring.<ul><li>This info is also shown on the booking page before you pay.</li></ul></li></ul><div><strong>Cabin baggage tips</strong></div><ul><li>If it’s possible to add more cabin baggage to your booking, we’ll allow you to do so with <a href=\\"http://kiwi.com/content/account\\">Manage My Booking</a>.</li><li>It's best to transport your <a href=\\"https://www.kiwi.com/helpcenter/article/53\\">electronic items</a> in your cabin baggage.</li><li>Be careful not to pack <a href=\\"https://www.kiwi.com/helpcenter/article/51\\">prohibited items</a> in your cabin baggage, like <a href=\\"https://www.kiwi.com/helpcenter/article/52\\">liquids/gels</a> and anything <a href=\\"https://www.kiwi.com/helpcenter/article/54\\">sharp</a>.</li><li>It's safer to keep your valuables in your cabin baggage rather than in your checked baggage.</li></ul>",
+                "id": "RkFRQXJ0aWNsZTo0MQ==",
+                "title": "Cabin baggage",
               },
               Object {
-                "content": "<div><strong>So how do I start?</strong></div><div>- Visit <a href=\\"https://www.kiwi.com/pages/invite\\">Refer a Friend</a>.&nbsp;<br>- Enter the email addresses of any friends who'd love to use our service.</div><div><br></div><div><strong>What do I receive?</strong></div><div>You'll receive €20 in <a href=\\"https://www.kiwi.com/helpcenter/article/17\\">Kiwi.com Credit</a> for every person you invite: after they book a trip worth more than €200. To encourage them to make their first booking, each of your friends will also receive €20.</div><div><br></div><div><strong>How do I know if my friends are using the service?</strong></div><div>After you enter your friends’ email details, each one will appear in a list with one of five statuses shown:</div><ol><li>Invited — the invitation has been sent.</li><li>Active — they've created an account</li><li>Complete — they've now made a booking. If it's over €200, your Kiwi.com Credit account will receive €20 as if by magic.</li><li>Invitation expired — it’s been over 14 days and your friend hasn’t accepted the invitation</li><li>Voucher expired — it’s been over 12 months and your friend hasn’t used their €20 voucher.</li></ol><div><br><strong>Is there a limit to how many people I can invite?</strong></div><div>No, none at all. There is, however, a €5,000 limit to the amount of credit you can receive. You are also only permitted to refer personal contacts that you believe would appreciate our service. If referral links are published or distributed where we don’t believe that all or most of the recipients are personal friends, we reserve the right to cancel the credit.</div><div><br><strong>Is there a time limit for signing up?</strong></div><div>After you refer your friends, they have 14 days to sign up and claim their €20.</div><div><br><strong>Is there a time limit for credit?</strong></div><div>A whole year! Twelve entire months! If you get credit from more than one person, each one is valid for one year from the date you received it.</div><div><br><strong>Anything else I should know?</strong></div><div>If you don’t use the full credit amount, you can’t claim the difference. Also, credit can’t be applied retroactively. Kiwi.com reserves the right to withdraw credit or voucher codes if we suspect any suspicious activity. Other than that, invite your friends and travel for less.<br><br><a href=\\"https://www.kiwi.com/content/legal\\">Full Terms and Conditions</a></div>",
-                "id": "RkFRQXJ0aWNsZToxMzI=",
-                "title": "How do I Refer a Friend?",
+                "content": "<div>Checked baggage is <strong>also known as hold or cargo luggage</strong>. It refers to anything that a passenger wants to transport in the cargo hold of the aircraft. Most people transport larger items as checked baggage, like suitcases, <a href=\\"https://www.kiwi.com/helpcenter/article/48\\">oversized items</a>, <a href=\\"https://www.kiwi.com/helpcenter/article/5\\">sports equipment, and musical instruments</a>.<br><br>As the name suggests, you have to check this type of baggage in and you will not have access to it during the flight. If you have connecting flights, you usually need to collect and <a href=\\"https://www.kiwi.com/helpcenter/article/47\\">recheck your baggage</a> between flights.<br><br><strong>Your checked baggage weight and dimension allowance can be found on:</strong></div><ul><li>The booking page</li><li>Your e-ticket</li><li><a href=\\"http://kiwi.com/content/account\\">Manage My Booking</a></li></ul><div>Check this information carefully before flying because the airlines may charge you a fee if you <a href=\\"https://www.kiwi.com/helpcenter/article/44\\">exceed these dimensions.</a></div>",
+                "id": "RkFRQXJ0aWNsZTo0Mw==",
+                "title": "Checked baggage",
               },
             ],
-            "id": "RkFRQ2F0ZWdvcnk6NDY=",
-            "subcategories": Array [
-              Object {
-                "id": "RkFRQ2F0ZWdvcnk6NDM=",
-              },
-              Object {
-                "id": "RkFRQ2F0ZWdvcnk6MzA=",
-              },
-              Object {
-                "id": "RkFRQ2F0ZWdvcnk6Mjc=",
-              },
-              Object {
-                "id": "RkFRQ2F0ZWdvcnk6MzM=",
-              },
-              Object {
-                "id": "RkFRQ2F0ZWdvcnk6Mjg=",
-              },
-            ],
-            "title": "Booking",
+            "id": "RkFRQ2F0ZWdvcnk6ODk=",
+            "subcategories": Array [],
+            "title": "Baggage",
           },
         },
         Object {
           "node": Object {
-            "FAQs": Array [
-              Object {
-                "content": "<div><strong>So how do I start?</strong></div><div>- Visit <a href=\\"https://www.kiwi.com/pages/invite\\">Refer a Friend</a>.&nbsp;<br>- Enter the email addresses of any friends who'd love to use our service.</div><div><br></div><div><strong>What do I receive?</strong></div><div>You'll receive €20 in <a href=\\"https://www.kiwi.com/helpcenter/article/17\\">Kiwi.com Credit</a> for every person you invite: after they book a trip worth more than €200. To encourage them to make their first booking, each of your friends will also receive €20.</div><div><br></div><div><strong>How do I know if my friends are using the service?</strong></div><div>After you enter your friends’ email details, each one will appear in a list with one of five statuses shown:</div><ol><li>Invited — the invitation has been sent.</li><li>Active — they've created an account</li><li>Complete — they've now made a booking. If it's over €200, your Kiwi.com Credit account will receive €20 as if by magic.</li><li>Invitation expired — it’s been over 14 days and your friend hasn’t accepted the invitation</li><li>Voucher expired — it’s been over 12 months and your friend hasn’t used their €20 voucher.</li></ol><div><br><strong>Is there a limit to how many people I can invite?</strong></div><div>No, none at all. There is, however, a €5,000 limit to the amount of credit you can receive. You are also only permitted to refer personal contacts that you believe would appreciate our service. If referral links are published or distributed where we don’t believe that all or most of the recipients are personal friends, we reserve the right to cancel the credit.</div><div><br><strong>Is there a time limit for signing up?</strong></div><div>After you refer your friends, they have 14 days to sign up and claim their €20.</div><div><br><strong>Is there a time limit for credit?</strong></div><div>A whole year! Twelve entire months! If you get credit from more than one person, each one is valid for one year from the date you received it.</div><div><br><strong>Anything else I should know?</strong></div><div>If you don’t use the full credit amount, you can’t claim the difference. Also, credit can’t be applied retroactively. Kiwi.com reserves the right to withdraw credit or voucher codes if we suspect any suspicious activity. Other than that, invite your friends and travel for less.<br><br><a href=\\"https://www.kiwi.com/content/legal\\">Full Terms and Conditions</a></div>",
-                "id": "RkFRQXJ0aWNsZToxMzI=",
-                "title": "How do I Refer a Friend?",
-              },
-              Object {
-                "content": "<div>When customers search for flights on Kiwi.com they can also see third party results for some flights.<br><br>We want our customers to confidently search with the assurance that they will always find the best route - price combination for their booking, whether they book with Kiwi.com or one of our partners.</div>",
-                "id": "RkFRQXJ0aWNsZToxMzk=",
-                "title": "Why was I redirected to another website?",
-              },
-              Object {
-                "content": "<div><strong>You may also search for your flight number with:</strong></div><ul><li><a href=\\"http://www.flightradar24.com\\">Flightradar24.com</a></li><li>Google</li></ul><div><em>Your flight number may be found on your e-ticket.</em></div>",
-                "id": "RkFRQXJ0aWNsZTozOQ==",
-                "title": "How do I know which terminals I will be using?",
-              },
-            ],
-            "id": "RkFRQ2F0ZWdvcnk6NDc=",
+            "FAQs": Array [],
+            "id": "RkFRQ2F0ZWdvcnk6OTA=",
+            "subcategories": Array [],
+            "title": "Searching for flights",
+          },
+        },
+        Object {
+          "node": Object {
+            "FAQs": Array [],
+            "id": "RkFRQ2F0ZWdvcnk6OTE=",
+            "subcategories": Array [],
+            "title": "Booking a flight",
+          },
+        },
+        Object {
+          "node": Object {
+            "FAQs": Array [],
+            "id": "RkFRQ2F0ZWdvcnk6OTI=",
+            "subcategories": Array [],
+            "title": "Planning, packing & travelling",
+          },
+        },
+        Object {
+          "node": Object {
+            "FAQs": Array [],
+            "id": "RkFRQ2F0ZWdvcnk6OTM=",
+            "subcategories": Array [],
+            "title": "About Kiwi.com",
+          },
+        },
+      ],
+    },
+  },
+}
+`;
+
+exports[`allFAQCategories should return list of categories with subcategories and related FAQs 1`] = `
+Object {
+  "data": Object {
+    "allFAQCategories": Object {
+      "edges": Array [
+        Object {
+          "node": Object {
+            "FAQs": Array [],
+            "id": "RkFRQ2F0ZWdvcnk6NzY=",
             "subcategories": Array [
               Object {
-                "id": "RkFRQ2F0ZWdvcnk6Mzc=",
+                "id": "RkFRQ2F0ZWdvcnk6ODk=",
               },
               Object {
-                "id": "RkFRQ2F0ZWdvcnk6NDA=",
+                "id": "RkFRQ2F0ZWdvcnk6OTA=",
               },
               Object {
-                "id": "RkFRQ2F0ZWdvcnk6MzU=",
+                "id": "RkFRQ2F0ZWdvcnk6OTE=",
               },
               Object {
-                "id": "RkFRQ2F0ZWdvcnk6MzY=",
+                "id": "RkFRQ2F0ZWdvcnk6OTI=",
               },
               Object {
-                "id": "RkFRQ2F0ZWdvcnk6MjY=",
-              },
-              Object {
-                "id": "RkFRQ2F0ZWdvcnk6MzE=",
-              },
-              Object {
-                "id": "RkFRQ2F0ZWdvcnk6NDI=",
+                "id": "RkFRQ2F0ZWdvcnk6OTM=",
               },
             ],
-            "title": "Before the flight",
+            "title": "Before booking",
+          },
+        },
+        Object {
+          "node": Object {
+            "FAQs": Array [],
+            "id": "RkFRQ2F0ZWdvcnk6Nzc=",
+            "subcategories": Array [
+              Object {
+                "id": "RkFRQ2F0ZWdvcnk6ODg=",
+              },
+              Object {
+                "id": "RkFRQ2F0ZWdvcnk6ODc=",
+              },
+              Object {
+                "id": "RkFRQ2F0ZWdvcnk6ODM=",
+              },
+              Object {
+                "id": "RkFRQ2F0ZWdvcnk6ODQ=",
+              },
+              Object {
+                "id": "RkFRQ2F0ZWdvcnk6ODY=",
+              },
+            ],
+            "title": "After booking",
+          },
+        },
+        Object {
+          "node": Object {
+            "FAQs": Array [],
+            "id": "RkFRQ2F0ZWdvcnk6Nzg=",
+            "subcategories": Array [
+              Object {
+                "id": "RkFRQ2F0ZWdvcnk6OTQ=",
+              },
+              Object {
+                "id": "RkFRQ2F0ZWdvcnk6OTY=",
+              },
+              Object {
+                "id": "RkFRQ2F0ZWdvcnk6OTg=",
+              },
+              Object {
+                "id": "RkFRQ2F0ZWdvcnk6OTk=",
+              },
+            ],
+            "title": "Urgent airport assistance",
+          },
+        },
+        Object {
+          "node": Object {
+            "FAQs": Array [],
+            "id": "RkFRQ2F0ZWdvcnk6MTAw",
+            "subcategories": Array [
+              Object {
+                "id": "RkFRQ2F0ZWdvcnk6MTAy",
+              },
+            ],
+            "title": "Post-trip support",
           },
         },
       ],

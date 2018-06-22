@@ -12,7 +12,7 @@ beforeEach(() => {
 describe('search query', () => {
   it('should return valid results field', async () => {
     const resultsQuery = `{
-      allFAQs(search: "price", language: en){
+      allFAQs(search: "price"){
         edges{
           node{
             id

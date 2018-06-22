@@ -11,9 +11,9 @@ describe('FAQCategory', () => {
   });
 
   it('should return single FAQ category', async () => {
-    const id = 'RkFRQ2F0ZWdvcnk6NDc='; // "Before the flight"
+    const id = 'RkFRQ2F0ZWdvcnk6NzY='; // "Before booking"
     const resultsQuery = `query FAQSubcategories($id: ID!) { 
-      FAQCategory(language: en, id: $id) {
+      FAQCategory(id: $id) {
         id
         originalId
         title
@@ -30,9 +30,9 @@ describe('FAQCategory', () => {
   });
 
   it('should return ancestors for FAQ category', async () => {
-    const id = 'RkFRQ2F0ZWdvcnk6NDM='; // "Searching for flights"
+    const id = 'RkFRQ2F0ZWdvcnk6ODg='; // "Baggage"
     const resultsQuery = `query FAQSubcategories($id: ID!) { 
-      FAQCategory(language: en, id: $id) {
+      FAQCategory(id: $id) {
         id
         title
         ancestors {
@@ -55,7 +55,7 @@ describe('FAQCategory', () => {
   it('should return error for non-existing category', async () => {
     const id = 'RkFRQ2F0ZWdvcnk6NjY2'; // non-existing category #666
     const resultsQuery = `query FAQSubcategories($id: ID!) { 
-      FAQCategory(language: en, id: $id) {
+      FAQCategory(id: $id) {
         id
       }        
     }`;

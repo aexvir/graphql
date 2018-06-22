@@ -1,0 +1,126 @@
+{
+  "id": 43,
+  "title": "Checked baggage",
+  "perex": "Checked baggage refers to the items that are transported in the cargo hold of the aircraft.",
+  "content": "<div>Checked baggage is <strong>also known as hold or cargo luggage</strong>. It refers to anything that a passenger wants to transport in the cargo hold of the aircraft. Most people transport larger items as checked baggage, like suitcases, <a href=\"https://www.kiwi.com/helpcenter/article/48\">oversized items</a>, <a href=\"https://www.kiwi.com/helpcenter/article/5\">sports equipment, and musical instruments</a>.<br><br>As the name suggests, you have to check this type of baggage in and you will not have access to it during the flight. If you have connecting flights, you usually need to collect and <a href=\"https://www.kiwi.com/helpcenter/article/47\">recheck your baggage</a> between flights.<br><br><strong>Your checked baggage weight and dimension allowance can be found on:</strong></div><ul><li>The booking page</li><li>Your e-ticket</li><li><a href=\"http://kiwi.com/content/account\">Manage My Booking</a></li></ul><div>Check this information carefully before flying because the airlines may charge you a fee if you <a href=\"https://www.kiwi.com/helpcenter/article/44\">exceed these dimensions.</a></div>",
+  "categories": [
+    {
+      "tree_id": 1,
+      "tree_name": "menu",
+      "items": [
+        {
+          "id": 46,
+          "title": "Booking",
+          "perex": "",
+          "style": "orange",
+          "icon": "card"
+        },
+        {
+          "id": 33,
+          "title": "Baggage",
+          "perex": "",
+          "style": "orange",
+          "icon": "baggage"
+        }
+      ]
+    },
+    {
+      "tree_id": 2,
+      "tree_name": "related",
+      "items": [
+        {
+          "id": 3,
+          "title": "booking",
+          "perex": "",
+          "style": "",
+          "icon": ""
+        },
+        {
+          "id": 6,
+          "title": "booking",
+          "perex": "",
+          "style": "orange",
+          "icon": "card"
+        }
+      ]
+    },
+    {
+      "tree_id": 3,
+      "tree_name": "smartfaqs",
+      "items": [
+        {
+          "id": 76,
+          "title": "Before booking",
+          "perex": "Still unsure about booking — let us help.",
+          "style": "",
+          "icon": ""
+        },
+        {
+          "id": 89,
+          "title": "Baggage",
+          "perex": "Come correct with your baggage, personal items, proper weights & allowances.",
+          "style": "",
+          "icon": ""
+        }
+      ]
+    },
+    {
+      "tree_id": 3,
+      "tree_name": "smartfaqs",
+      "items": [
+        {
+          "id": 77,
+          "title": "After booking",
+          "perex": "Start packing, prepare for your journey. Learn more.",
+          "style": "",
+          "icon": ""
+        },
+        {
+          "id": 88,
+          "title": "Baggage",
+          "perex": "Come correct with your baggage, personal items, proper weights, & allowances.",
+          "style": "",
+          "icon": ""
+        }
+      ]
+    },
+    {
+      "tree_id": 3,
+      "tree_name": "smartfaqs",
+      "items": [
+        {
+          "id": 78,
+          "title": "Urgent airport assistance",
+          "perex": "We've got you covered. Urgent info & contacts.",
+          "style": "",
+          "icon": ""
+        },
+        {
+          "id": 98,
+          "title": "Baggage",
+          "perex": "Come correct with your baggage, personal items, proper weights, & allowances.",
+          "style": "",
+          "icon": ""
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "id": 41,
+      "title": "Cabin baggage"
+    },
+    {
+      "id": 44,
+      "title": "How can I find the maximum dimensions of the baggage that I am allowed?"
+    },
+    {
+      "id": 45,
+      "title": "What if I exceed my baggage allowance?"
+    }
+  ],
+  "fallback": false,
+  "upvotes": 51,
+  "downvotes": 49,
+  "user_vote": null
+}

@@ -1,0 +1,122 @@
+{
+  "id": 41,
+  "title": "Cabin baggage",
+  "perex": "Learn about your hand luggage allowance.",
+  "content": "<div>Cabin baggage is also known as carry-on or hand luggage. You take it through security into the plane and keep it close to you, either under the seat or in the overhead compartment.<br><br><strong>Quantity and dimensions</strong></div><ul><li>Most airlines allow one cabin bag and one <a href=\"https://www.kiwi.com/helpcenter/article/42\">personal item</a>. But this varies from airline to airline.<strong>&nbsp;</strong></li><li>For example on Norwegian Air, you can take the following with a maximum combined weight of 10kg.<ul><li>One personal item e.g. handbag or laptop bag of 25x33x20 cm.&nbsp;</li><li>One cabin bag of 55x40x23 cm.</li></ul></li><li>Check your e-ticket or <a href=\"http://kiwi.com/content/account\">Manage My Booking</a> for details about the <strong>quantity and dimensions</strong> of the items you’re allowed to bring.<ul><li>This info is also shown on the booking page before you pay.</li></ul></li></ul><div><strong>Cabin baggage tips</strong></div><ul><li>If it’s possible to add more cabin baggage to your booking, we’ll allow you to do so with <a href=\"http://kiwi.com/content/account\">Manage My Booking</a>.</li><li>It's best to transport your <a href=\"https://www.kiwi.com/helpcenter/article/53\">electronic items</a> in your cabin baggage.</li><li>Be careful not to pack <a href=\"https://www.kiwi.com/helpcenter/article/51\">prohibited items</a> in your cabin baggage, like <a href=\"https://www.kiwi.com/helpcenter/article/52\">liquids/gels</a> and anything <a href=\"https://www.kiwi.com/helpcenter/article/54\">sharp</a>.</li><li>It's safer to keep your valuables in your cabin baggage rather than in your checked baggage.</li></ul>",
+  "categories": [
+    {
+      "tree_id": 1,
+      "tree_name": "menu",
+      "items": [
+        {
+          "id": 46,
+          "title": "Booking",
+          "perex": "",
+          "style": "orange",
+          "icon": "card"
+        },
+        {
+          "id": 33,
+          "title": "Baggage",
+          "perex": "",
+          "style": "orange",
+          "icon": "baggage"
+        }
+      ]
+    },
+    {
+      "tree_id": 2,
+      "tree_name": "related",
+      "items": [
+        {
+          "id": 3,
+          "title": "booking",
+          "perex": "",
+          "style": "",
+          "icon": ""
+        },
+        {
+          "id": 6,
+          "title": "booking",
+          "perex": "",
+          "style": "orange",
+          "icon": "card"
+        }
+      ]
+    },
+    {
+      "tree_id": 3,
+      "tree_name": "smartfaqs",
+      "items": [
+        {
+          "id": 76,
+          "title": "Before booking",
+          "perex": "Still unsure about booking — let us help.",
+          "style": "",
+          "icon": ""
+        },
+        {
+          "id": 89,
+          "title": "Baggage",
+          "perex": "Come correct with your baggage, personal items, proper weights & allowances.",
+          "style": "",
+          "icon": ""
+        }
+      ]
+    },
+    {
+      "tree_id": 3,
+      "tree_name": "smartfaqs",
+      "items": [
+        {
+          "id": 77,
+          "title": "After booking",
+          "perex": "Start packing, prepare for your journey. Learn more.",
+          "style": "",
+          "icon": ""
+        },
+        {
+          "id": 88,
+          "title": "Baggage",
+          "perex": "Come correct with your baggage, personal items, proper weights, & allowances.",
+          "style": "",
+          "icon": ""
+        }
+      ]
+    },
+    {
+      "tree_id": 3,
+      "tree_name": "smartfaqs",
+      "items": [
+        {
+          "id": 78,
+          "title": "Urgent airport assistance",
+          "perex": "We've got you covered. Urgent info & contacts.",
+          "style": "",
+          "icon": ""
+        },
+        {
+          "id": 98,
+          "title": "Baggage",
+          "perex": "Come correct with your baggage, personal items, proper weights, & allowances.",
+          "style": "",
+          "icon": ""
+        }
+      ]
+    }
+  ],
+  "related": [
+    {
+      "id": 43,
+      "title": "Checked baggage"
+    },
+    {
+      "id": 42,
+      "title": "Personal item"
+    }
+  ],
+  "fallback": false,
+  "upvotes": 68,
+  "downvotes": 32,
+  "user_vote": null
+}

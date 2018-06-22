@@ -1,1113 +1,472 @@
 [
   {
-    "id": 46,
-    "title": "Booking",
-    "perex": "",
-    "style": "orange",
-    "icon": "card",
+    "id": 76,
+    "title": "Before booking",
+    "perex": "Still unsure about booking — let us help.",
+    "style": "",
+    "icon": "",
     "childrens": [
       {
-        "id": 43,
-        "title": "Searching for flights",
-        "perex": "",
-        "style": "orange",
-        "icon": "ticket",
-        "childrens": [],
-        "articles": [
-          {
-            "id": 93,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/93",
-            "title":
-              "What's the difference between low-cost and legacy airline carriers?",
-            "perex":
-              "Low-cost airlines offer cheaper fares but with less included.",
-            "upvotes": 71,
-            "downvotes": 29
-          },
-          {
-            "id": 111,
-            "url":
-              "https://api.skypicker.com/knowledgebase/api/v1/articles/111",
-            "title": "How do I use the mobile app?",
-            "perex":
-              "You may alter the currency in the top right-hand corner, or in preferences. In the top left, you can choose whether you need one way, return or Multi-City flights.",
-            "upvotes": 41,
-            "downvotes": 59
-          },
-          {
-            "id": 94,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/94",
-            "title": "How do I find the best flights for my budget?",
-            "perex":
-              "Our search features are the most powerful in the travel industry, allowing travellers to get the most out of their budgets.",
-            "upvotes": 65,
-            "downvotes": 35
-          },
-          {
-            "id": 95,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/95",
-            "title": "Supported languages",
-            "perex":
-              "We support more than 13 major languages on the phone and via email.",
-            "upvotes": 52,
-            "downvotes": 48
-          }
-        ]
-      },
-      {
-        "id": 30,
-        "title": "E-ticket",
-        "perex": "",
-        "style": "orange",
-        "icon": "ticket",
-        "childrens": [],
-        "articles": [
-          {
-            "id": 30,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/30",
-            "title": "What is an e-ticket and where can I find it?",
-            "perex":
-              "The e-ticket is your flight confirmation from Kiwi.com which you should print out and bring with you on your trip. After your reservation is complete, we will send you an email confirmation with an attached e-ticket.",
-            "upvotes": 48,
-            "downvotes": 52
-          },
-          {
-            "id": 32,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/32",
-            "title": "Delayed e-ticket",
-            "perex":
-              "If you think your e-ticket might be delayed, hang tight. We've begun processing your booking.",
-            "upvotes": 36,
-            "downvotes": 64
-          },
-          {
-            "id": 60,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/60",
-            "title":
-              "What is the difference between an e-ticket and a boarding pass?",
-            "perex":
-              "An e-ticket is a confirmation of your flight(s) while a boarding pass shows that you have been checked in for a flight  and is required for boarding the aircraft.",
-            "upvotes": 73,
-            "downvotes": 27
-          }
-        ]
-      },
-      {
-        "id": 27,
-        "title": "Booking a Flight",
-        "perex": "",
-        "style": "orange",
-        "icon": "ticket",
-        "childrens": [],
-        "articles": [
-          {
-            "id": 136,
-            "url":
-              "https://api.skypicker.com/knowledgebase/api/v1/articles/136",
-            "title": "Can I use just one part of a roundtrip ticket?",
-            "perex":
-              "Throwaway ticketing refers to the practice of deliberately using only the first leg of a cheaper round-trip itinerary to save money.",
-            "upvotes": 64,
-            "downvotes": 36
-          },
-          {
-            "id": 110,
-            "url":
-              "https://api.skypicker.com/knowledgebase/api/v1/articles/110",
-            "title": "Unable to book a flight over the phone",
-            "perex":
-              "Unfortunately, it's not possible to book a flight over the phone.",
-            "upvotes": 29,
-            "downvotes": 71
-          },
-          {
-            "id": 121,
-            "url":
-              "https://api.skypicker.com/knowledgebase/api/v1/articles/121",
-            "title": "How do I add my billing details?",
-            "perex": "You can edit your invoice from the booking page.",
-            "upvotes": 20,
-            "downvotes": 80
-          },
-          {
-            "id": 8,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/8",
-            "title": "How many passengers are allowed per booking?",
-            "perex": "For most airlines, 9 passengers are allowed.",
-            "upvotes": 50,
-            "downvotes": 50
-          },
-          {
-            "id": 128,
-            "url":
-              "https://api.skypicker.com/knowledgebase/api/v1/articles/128",
-            "title": "What benefits do I get with the ViaMilan card?",
-            "perex": "Fast Track, Wi-Fi, vouchers and much more.",
-            "upvotes": 80,
-            "downvotes": 20
-          },
-          {
-            "id": 6,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/6",
-            "title": "How do I know if my tickets have been confirmed?",
-            "perex":
-              "If you've received an email with your e-ticket than your flight has, in most cases, been confirmed.",
-            "upvotes": 34,
-            "downvotes": 66
-          },
-          {
-            "id": 127,
-            "url":
-              "https://api.skypicker.com/knowledgebase/api/v1/articles/127",
-            "title": "Trains and buses",
-            "perex":
-              "Train and bus journeys provide huge cost savings for our travellers.",
-            "upvotes": 85,
-            "downvotes": 15
-          },
-          {
-            "id": 135,
-            "url":
-              "https://api.skypicker.com/knowledgebase/api/v1/articles/135",
-            "title": "Travel hack: buy additional tickets to save money",
-            "perex":
-              "This is a savvy way of saving money on air travel. All flights belong to you, just use the ones you need.",
-            "upvotes": 77,
-            "downvotes": 23
-          },
-          {
-            "id": 10,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/10",
-            "title": "Provide your full name at booking",
-            "perex": "Your passport/ID will indicate your full name.",
-            "upvotes": 39,
-            "downvotes": 61
-          },
-          {
-            "id": 13,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/13",
-            "title": "Should I provide additional contact details?",
-            "perex":
-              "Sure, it can only help you or the passengers you're flying with.",
-            "upvotes": 30,
-            "downvotes": 70
-          },
-          {
-            "id": 84,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/84",
-            "title": "How can Price Alerts save me time and money?",
-            "perex":
-              "Price Alerts are by far the best travel tool for saving time and money on your trip.",
-            "upvotes": 60,
-            "downvotes": 40
-          },
-          {
-            "id": 7,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/7",
-            "title":
-              "Where can I find details about my booking and my flights?",
-            "perex": "Please check your email or your Manage my booking page.",
-            "upvotes": 16,
-            "downvotes": 84
-          },
-          {
-            "id": 123,
-            "url":
-              "https://api.skypicker.com/knowledgebase/api/v1/articles/123",
-            "title": "Can I fly between Cuba and the United States?",
-            "perex":
-              "Yes, but it has to be for more than just \"tourist activities\".",
-            "upvotes": 58,
-            "downvotes": 42
-          },
-          {
-            "id": 14,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/14",
-            "title":
-              "What if I did not receive an email confirmation of my booking?",
-            "perex":
-              "Check your spam folder and then contact us if you don't find anything.",
-            "upvotes": 29,
-            "downvotes": 71
-          },
-          {
-            "id": 12,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/12",
-            "title": "Why should I provide a phone number?",
-            "perex":
-              "Please provide us with a phone number so we can contact you, if necessary, throughout your travels.",
-            "upvotes": 41,
-            "downvotes": 59
-          },
-          {
-            "id": 16,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/16",
-            "title": "Child fares",
-            "perex": "Each airline has their own policy for children.",
-            "upvotes": 36,
-            "downvotes": 64
-          },
-          {
-            "id": 11,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/11",
-            "title": "Provide an email address",
-            "perex":
-              "Please provide us with a valid email address – one you use often, which we can reliably reach you at and send your booking information to.",
-            "upvotes": 38,
-            "downvotes": 62
-          },
-          {
-            "id": 122,
-            "url":
-              "https://api.skypicker.com/knowledgebase/api/v1/articles/122",
-            "title": "Traveling with multiple airlines on one journey",
-            "perex":
-              "This FAQ covers everything you need to consider before making a booking with multiple airlines.",
-            "upvotes": 72,
-            "downvotes": 28
-          },
-          {
-            "id": 15,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/15",
-            "title": "Book a ticket for an infant",
-            "perex":
-              "Add an infant to your flight on our search or booking pages.",
-            "upvotes": 56,
-            "downvotes": 44
-          },
-          {
-            "id": 130,
-            "url":
-              "https://api.skypicker.com/knowledgebase/api/v1/articles/130",
-            "title":
-              "Which countries are Israelis prohibited from travelling to/through?",
-            "perex":
-              "Israeli citizens are prohibited from entering the following countries:",
-            "upvotes": 0,
-            "downvotes": 100
-          }
-        ]
-      },
-      {
-        "id": 33,
+        "id": 89,
         "title": "Baggage",
-        "perex": "",
-        "style": "orange",
-        "icon": "baggage",
+        "perex": "Come correct with your baggage, personal items, proper weights & allowances.",
+        "style": "",
+        "icon": "",
         "childrens": [],
         "articles": [
           {
-            "id": 45,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/45",
-            "title": "What if I exceed my baggage allowance?",
-            "perex":
-              "Most airlines will weigh and measure your baggage items so it is best not to take the risk of exceeding your allowance.",
-            "upvotes": 41,
-            "downvotes": 59
-          },
-          {
-            "id": 44,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/44",
-            "title":
-              "How can I find the maximum dimensions of the baggage that I am allowed?",
-            "perex": "On the booking page, e-ticket, and Manage My Booking.",
-            "upvotes": 28,
-            "downvotes": 72
-          },
-          {
-            "id": 129,
-            "url":
-              "https://api.skypicker.com/knowledgebase/api/v1/articles/129",
-            "title": "Priority Boarding",
-            "perex":
-              "A budget airline service offered with cabin baggage on some itineraries with a short layover.",
-            "upvotes": 72,
-            "downvotes": 28
-          },
-          {
-            "id": 50,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/50",
-            "title": "Flights with cabin baggage only",
-            "perex":
-              "Some itineraries do not allow checked baggage because of short connection times between flights.",
-            "upvotes": 71,
-            "downvotes": 29
-          },
-          {
-            "id": 47,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/47",
-            "title": "Do I have to recheck my baggage?",
-            "perex":
-              "If you have a connecting flight then you need to recheck your baggage at each airport, even if your connecting flight is with the same airline.",
-            "upvotes": 62,
-            "downvotes": 38
-          },
-          {
-            "id": 49,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/49",
-            "title": "Can I lock my baggage and will it be searched?",
-            "perex":
-              "Your checked baggage will go through security screening, and it may be opened and searched.",
-            "upvotes": 50,
-            "downvotes": 50
-          },
-          {
-            "id": 54,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/54",
-            "title": "Can I transport sharp items?",
-            "perex":
-              "Sharp items are not permitted in the cabin of the aircraft, so please pack these in your checked baggage.",
-            "upvotes": 80,
-            "downvotes": 20
-          },
-          {
-            "id": 133,
-            "url":
-              "https://api.skypicker.com/knowledgebase/api/v1/articles/133",
-            "title":
-              "Why can't I add checked baggage to certain flights after the original booking?",
-            "perex":
-              "We allow customers to add baggage on most flights after the original booking but in some cases, it's not possible.",
-            "upvotes": 17,
-            "downvotes": 83
-          },
-          {
-            "id": 131,
-            "url":
-              "https://api.skypicker.com/knowledgebase/api/v1/articles/131",
-            "title": "Self-transfer",
-            "perex":
-              "Budget airlines keep prices low by saving on the costs of baggage transfer. This FAQ is about the general process of transferring your own baggage during transit.",
-            "upvotes": 42,
-            "downvotes": 58
-          },
-          {
-            "id": 51,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/51",
-            "title": "Prohibited items",
-            "perex":
-              "There are a few things you shouldn't pack or carry with you on a plane.",
-            "upvotes": 85,
-            "downvotes": 15
+            "id": 41,
+            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/41",
+            "title": "Cabin baggage",
+            "perex": "Learn about your hand luggage allowance.",
+            "upvotes": 68,
+            "downvotes": 32
           },
           {
             "id": 43,
             "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/43",
-            "title": "What is checked baggage?",
-            "perex":
-              "Checked baggage refers to the items that are transported in the cargo hold of the aircraft.",
-            "upvotes": 52,
-            "downvotes": 48
-          },
-          {
-            "id": 41,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/41",
-            "title": "What is cabin baggage and how much can I bring?",
-            "perex":
-              "Cabin baggage is also known as carry-on or hand luggage. You take it through security into the plane and keep it close to you, either under the seat or in the overhead compartment.",
-            "upvotes": 69,
-            "downvotes": 31
-          },
-          {
-            "id": 53,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/53",
-            "title": "Can I transport electronic devices?",
-            "perex":
-              "You can keep some electronic devices with you on the plane. Others carry restrictions.",
-            "upvotes": 79,
-            "downvotes": 21
-          },
-          {
-            "id": 42,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/42",
-            "title": "What is a personal item?",
-            "perex": "Handbag, camera bag, small laptop case, etc.",
+            "title": "Checked baggage",
+            "perex": "Checked baggage refers to the items that are transported in the cargo hold of the aircraft.",
             "upvotes": 51,
             "downvotes": 49
           }
         ]
       },
       {
-        "id": 28,
-        "title": "Payment Issues",
-        "perex": "",
-        "style": "orange",
-        "icon": "card",
+        "id": 90,
+        "title": "Searching for flights",
+        "perex": "Set up Price Alerts, use multiple airlines, & our powerful mobile app.",
+        "style": "",
+        "icon": "",
         "childrens": [],
-        "articles": [
-          {
-            "id": 20,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/20",
-            "title": "What if my payment card is not working?",
-            "perex":
-              "If your payment has been declined for security reasons, please contact us before attempting to use any other card.",
-            "upvotes": 26,
-            "downvotes": 74
-          },
-          {
-            "id": 19,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/19",
-            "title": "How do I pay for my flights?",
-            "perex":
-              "Payment must be made online. We accept all major payment cards and some online payment services.",
-            "upvotes": 46,
-            "downvotes": 54
-          },
-          {
-            "id": 24,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/24",
-            "title": "What is my promo code for?",
-            "perex":
-              "Promo codes can be used to book flights at discounted rates and may be provided to you as part of a marketing campaign or seasonal special offer.",
-            "upvotes": 64,
-            "downvotes": 36
-          },
-          {
-            "id": 87,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/87",
-            "title": "What is a security code?",
-            "perex":
-              "It is the 3 or 4 digit number on your payment card that helps to ensure the security of your payment.",
-            "upvotes": 69,
-            "downvotes": 31
-          },
-          {
-            "id": 18,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/18",
-            "title": "Which currency can I use?",
-            "perex": "Any of the 50 currencies we offer.",
-            "upvotes": 42,
-            "downvotes": 58
-          },
-          {
-            "id": 21,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/21",
-            "title": "Where is my invoice or receipt?",
-            "perex":
-              "The invoice is sent to your e-mail after your payment has been accepted — usually within 30 minutes of your booking.",
-            "upvotes": 16,
-            "downvotes": 84
-          },
-          {
-            "id": 121,
-            "url":
-              "https://api.skypicker.com/knowledgebase/api/v1/articles/121",
-            "title": "How do I add my billing details?",
-            "perex": "You can edit your invoice from the booking page.",
-            "upvotes": 20,
-            "downvotes": 80
-          },
-          {
-            "id": 110,
-            "url":
-              "https://api.skypicker.com/knowledgebase/api/v1/articles/110",
-            "title": "Unable to book a flight over the phone",
-            "perex":
-              "Unfortunately, it's not possible to book a flight over the phone.",
-            "upvotes": 29,
-            "downvotes": 71
-          },
-          {
-            "id": 23,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/23",
-            "title": "How does the payment verification process work?",
-            "perex":
-              "If your payment is declined, we'll ask you for more information to help us prove that it’s a secure transaction.",
-            "upvotes": 65,
-            "downvotes": 35
-          },
-          {
-            "id": 17,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/17",
-            "title": "How does the Kiwi.com Credit system work?",
-            "perex":
-              "Kiwi.com Credit can be used to pay for flights as a signed in user.",
-            "upvotes": 34,
-            "downvotes": 66
-          },
-          {
-            "id": 113,
-            "url":
-              "https://api.skypicker.com/knowledgebase/api/v1/articles/113",
-            "title": "Why do I need to pay in USD with my Amex card?",
-            "perex": "Amex charges a fee for forex payments.",
-            "upvotes": 48,
-            "downvotes": 52
-          }
-        ]
-      }
-    ],
-    "articles": [
-      {
-        "id": 136,
-        "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/136",
-        "title": "Can I use just one part of a roundtrip ticket?",
-        "perex":
-          "Throwaway ticketing refers to the practice of deliberately using only the first leg of a cheaper round-trip itinerary to save money.",
-        "upvotes": 64,
-        "downvotes": 36
+        "articles": []
       },
       {
-        "id": 132,
-        "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/132",
-        "title": "How do I Refer a Friend?",
-        "perex":
-          "Just enter the email addresses of any friends who'd love to use our service.",
-        "upvotes": 5,
-        "downvotes": 95
+        "id": 91,
+        "title": "Booking a flight",
+        "perex": "Book with ease. Learn more about baggage, payments, infant fares, insurance, & visas.",
+        "style": "",
+        "icon": "",
+        "childrens": [],
+        "articles": []
+      },
+      {
+        "id": 92,
+        "title": "Planning, packing & travelling",
+        "perex": "Everything you need to know about visas, check-in, boarding passes & e-tickets.",
+        "style": "",
+        "icon": "",
+        "childrens": [],
+        "articles": []
+      },
+      {
+        "id": 93,
+        "title": "About Kiwi.com",
+        "perex": "Meet the crew, learn about our products, & find out what the future holds for Kiwi.com.",
+        "style": "",
+        "icon": "",
+        "childrens": [],
+        "articles": []
       }
-    ]
+    ],
+    "articles": []
   },
   {
-    "id": 47,
-    "title": "Before the flight",
-    "perex": "",
-    "style": "blue",
-    "icon": "star",
+    "id": 77,
+    "title": "After booking",
+    "perex": "Start packing, prepare for your journey. Learn more.",
+    "style": "",
+    "icon": "",
     "childrens": [
       {
-        "id": 37,
-        "title": "Boarding Pass",
-        "perex": "",
-        "style": "blue",
-        "icon": "jet",
+        "id": 88,
+        "title": "Baggage",
+        "perex": "Come correct with your baggage, personal items, proper weights, & allowances.",
+        "style": "",
+        "icon": "",
         "childrens": [],
         "articles": [
           {
-            "id": 59,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/59",
-            "title": "What is a boarding pass?",
-            "perex":
-              "It's the document you must show to be able to board the aircraft. You will receive your boarding pass after check-in.",
-            "upvotes": 54,
-            "downvotes": 46
+            "id": 41,
+            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/41",
+            "title": "Cabin baggage",
+            "perex": "Learn about your hand luggage allowance.",
+            "upvotes": 68,
+            "downvotes": 32
           },
           {
-            "id": 62,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/62",
-            "title": "I haven't received my boarding pass",
-            "perex":
-              "If it's urgent, please call Customer Support immediately.",
-            "upvotes": 28,
-            "downvotes": 72
+            "id": 43,
+            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/43",
+            "title": "Checked baggage",
+            "perex": "Checked baggage refers to the items that are transported in the cargo hold of the aircraft.",
+            "upvotes": 51,
+            "downvotes": 49
           },
           {
-            "id": 60,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/60",
-            "title":
-              "What is the difference between an e-ticket and a boarding pass?",
-            "perex":
-              "An e-ticket is a confirmation of your flight(s) while a boarding pass shows that you have been checked in for a flight  and is required for boarding the aircraft.",
-            "upvotes": 73,
-            "downvotes": 27
+            "id": 47,
+            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/47",
+            "title": "Do I have to recheck my baggage?",
+            "perex": "If you have a connecting flight then you need to recheck your baggage at each airport, even if your connecting flight is with the same airline.",
+            "upvotes": 62,
+            "downvotes": 38
           },
           {
-            "id": 61,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/61",
-            "title": "Do I need to print my boarding pass?",
-            "perex": "You should always print your boarding pass.",
+            "id": 50,
+            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/50",
+            "title": "Flights with cabin baggage only",
+            "perex": "Some itineraries do not allow checked baggage because of short connection times between flights.",
+            "upvotes": 71,
+            "downvotes": 29
+          },
+          {
+            "id": 42,
+            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/42",
+            "title": "Personal item",
+            "perex": "This means your handbag, camera bag, small laptop case, etc.",
             "upvotes": 55,
             "downvotes": 45
           },
           {
-            "id": 64,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/64",
-            "title": "Mobile boarding passes",
-            "perex":
-              "We recommend that you print your boarding pass to avoid any potential issues, delays or fines at the airport.",
-            "upvotes": 35,
-            "downvotes": 65
+            "id": 142,
+            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/142",
+            "title": "Baggage",
+            "perex": "Figure out your baggage allowance and how to increase it.",
+            "upvotes": 0,
+            "downvotes": 0
           },
           {
-            "id": 63,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/63",
-            "title": "I lost my boarding pass",
-            "perex": "Please reprint your boarding pass.",
-            "upvotes": 32,
-            "downvotes": 68
+            "id": 147,
+            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/147",
+            "title": "Manage My Booking",
+            "perex": "Optimise your journey. Pick a window seat. Download your boarding passes. Hire a car.",
+            "upvotes": 0,
+            "downvotes": 0
           }
         ]
       },
       {
-        "id": 40,
-        "title": "Passports & Visas",
-        "perex": "",
-        "style": "blue",
-        "icon": "hand",
+        "id": 87,
+        "title": "Travelling",
+        "perex": "You're on your way. Check important documents, visa info, & airport advice.",
+        "style": "",
+        "icon": "",
         "childrens": [],
         "articles": [
           {
-            "id": 77,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/77",
-            "title":
-              "Correcting details — passenger name, passport, date of birth & nationality",
-            "perex":
-              "The details on your e-ticket should match your passport or travel ID exactly.",
-            "upvotes": 58,
-            "downvotes": 42
+            "id": 146,
+            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/146",
+            "title": "Kiwi.com Guarantee",
+            "perex": "Our guarantee protects you from the most common travel problems.",
+            "upvotes": 0,
+            "downvotes": 0
           },
           {
-            "id": 68,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/68",
-            "title": "Do I need a visa for my flights?",
-            "perex":
-              "It's your responsibility to find out. You should carefully check which countries you're transiting through before booking. A visa is required even for transit purposes and rechecking your baggage.",
-            "upvotes": 32,
-            "downvotes": 68
+            "id": 147,
+            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/147",
+            "title": "Manage My Booking",
+            "perex": "Optimise your journey. Pick a window seat. Download your boarding passes. Hire a car.",
+            "upvotes": 0,
+            "downvotes": 0
           },
           {
-            "id": 71,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/71",
-            "title": "Can I fly with an ID card or driver’s license?",
-            "perex":
-              "It may be possible, depending on your itinerary and nationality.",
-            "upvotes": 48,
-            "downvotes": 52
+            "id": 149,
+            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/149",
+            "title": "Visas & transfers",
+            "perex": "Visa requirements can be tricky when flying through multiple countries with multiple airlines.",
+            "upvotes": 0,
+            "downvotes": 0
           },
           {
-            "id": 69,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/69",
-            "title":
-              "Do I need to provide my passport details to book a flight?",
-            "perex": "It depends on the airline.",
-            "upvotes": 44,
-            "downvotes": 56
+            "id": 151,
+            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/151",
+            "title": "Check-in and boarding",
+            "perex": "When online check-in is available, we'll do it for you.",
+            "upvotes": 0,
+            "downvotes": 0
           },
           {
-            "id": 10,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/10",
-            "title": "Provide your full name at booking",
-            "perex": "Your passport/ID will indicate your full name.",
-            "upvotes": 39,
-            "downvotes": 61
+            "id": 156,
+            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/156",
+            "title": "Airport advice",
+            "perex": "What you should do when faced with various issues at the airport.",
+            "upvotes": 0,
+            "downvotes": 0
           },
           {
-            "id": 70,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/70",
-            "title": "Add your passport or travel ID information",
-            "perex":
-              "You can add your passport and travel ID details on the booking page or in Manage My Booking.",
-            "upvotes": 22,
-            "downvotes": 78
-          },
-          {
-            "id": 131,
-            "url":
-              "https://api.skypicker.com/knowledgebase/api/v1/articles/131",
-            "title": "Self-transfer",
-            "perex":
-              "Budget airlines keep prices low by saving on the costs of baggage transfer. This FAQ is about the general process of transferring your own baggage during transit.",
-            "upvotes": 42,
-            "downvotes": 58
-          },
-          {
-            "id": 96,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/96",
-            "title": "What is an airport transit visa?",
-            "perex":
-              "An airport transit visa may be required when you have connecting flights in your itinerary.",
-            "upvotes": 59,
-            "downvotes": 41
-          },
-          {
-            "id": 72,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/72",
-            "title":
-              "I'm unable to fill in my passport number on Manage My Booking",
-            "perex":
-              "Please contact our Customer Support Team with your passport number and expiration date.",
-            "upvotes": 35,
-            "downvotes": 65
-          },
-          {
-            "id": 97,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/97",
-            "title":
-              "Do I need an Electronic Travel Authorisation (eTA) for Canada?",
-            "perex":
-              "Visa-exempt foreign nationals that are visiting or transiting through Canada now need an Electronic Travel Authorisation (eTA).",
-            "upvotes": 60,
-            "downvotes": 40
-          },
-          {
-            "id": 33,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/33",
-            "title": "I didn't update my passport/ID information on time",
-            "perex":
-              "Please contact our Customer Support Team with your passport number and expiration date.",
-            "upvotes": 46,
-            "downvotes": 54
-          },
-          {
-            "id": 122,
-            "url":
-              "https://api.skypicker.com/knowledgebase/api/v1/articles/122",
-            "title": "Traveling with multiple airlines on one journey",
-            "perex":
-              "This FAQ covers everything you need to consider before making a booking with multiple airlines.",
-            "upvotes": 72,
-            "downvotes": 28
+            "id": 157,
+            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/157",
+            "title": "Kiwi.com's mobile app",
+            "perex": "Not just a booking tool, it’s how we travel. Find out how to get the most out of the app.",
+            "upvotes": 0,
+            "downvotes": 0
           }
         ]
       },
       {
-        "id": 35,
-        "title": "Cancellations & Refunds",
-        "perex": "",
-        "style": "blue",
-        "icon": "x",
+        "id": 83,
+        "title": "Additional services",
+        "perex": "Manage My Booking provides options like seat selection, insurance, hotels, & taxis.",
+        "style": "",
+        "icon": "",
         "childrens": [],
         "articles": [
           {
-            "id": 82,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/82",
-            "title": "Can I cancel my insurance and get a refund?",
-            "perex":
-              "Yes, you can use Manage My Booking to cancel your insurance.",
-            "upvotes": 47,
-            "downvotes": 53
-          },
-          {
-            "id": 116,
-            "url":
-              "https://api.skypicker.com/knowledgebase/api/v1/articles/116",
-            "title":
-              "What if political unrest leads to my flight being delayed, cancelled, or rerouted?",
-            "perex":
-              "As soon as we find out that your flight(s) is/are affected by any political situation, we will notify you by email.",
-            "upvotes": 35,
-            "downvotes": 65
-          },
-          {
-            "id": 78,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/78",
-            "title": "What if I want to cancel my booking and get a refund?",
-            "perex":
-              "If your booking is still in progress, it may still be possible to cancel, otherwise, you can apply for a partial refund.",
-            "upvotes": 47,
-            "downvotes": 53
-          },
-          {
-            "id": 118,
-            "url":
-              "https://api.skypicker.com/knowledgebase/api/v1/articles/118",
-            "title":
-              "What if a strike causes my flight to become delayed, rescheduled, or cancelled?",
-            "perex":
-              "As soon as we find out that your flight(s) is/are affected by industrial action, we will notify you by email.",
-            "upvotes": 27,
-            "downvotes": 73
-          },
-          {
-            "id": 80,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/80",
-            "title": "What details must I provide for a bank transfer refund?",
-            "perex":
-              "You should provide us with your name, account number, IBAN, SWIFT code as well as your bank's name and address.",
-            "upvotes": 47,
-            "downvotes": 53
-          },
-          {
-            "id": 89,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/89",
-            "title": "Where do I send my receipts for a refund?",
-            "perex":
-              "You should upload them using our Refund application form. Just sign in to Manage my Booking and click the button at the bottom left of the page.",
-            "upvotes": 32,
-            "downvotes": 68
-          },
-          {
-            "id": 56,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/56",
-            "title":
-              "Is my flight eligible for the U.S. 24h grace period rule?",
-            "perex":
-              "The 24h Grace Period rule applies exclusively with regards to U.S. inbound, outbound or domestic flights;",
-            "upvotes": 66,
-            "downvotes": 34
-          },
-          {
-            "id": 117,
-            "url":
-              "https://api.skypicker.com/knowledgebase/api/v1/articles/117",
-            "title":
-              "How can I find out if there are any airport closures that may affect my flight(s)?",
-            "perex":
-              "As soon as we find out that your flight(s) is/are affected by an airport closure or route closure, we will notify you by email.",
-            "upvotes": 38,
-            "downvotes": 62
-          },
-          {
-            "id": 79,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/79",
-            "title": "How will I receive my refund?",
-            "perex":
-              "Automatic refunds will arrive by the same method as the original payment.",
-            "upvotes": 48,
-            "downvotes": 52
-          },
-          {
-            "id": 115,
-            "url":
-              "https://api.skypicker.com/knowledgebase/api/v1/articles/115",
-            "title":
-              "What if bad weather leads to my flight being delayed, rescheduled, or cancelled?",
-            "perex":
-              "As soon as we find out that your flight(s) is/are affected by weather, we will contact you by email.",
-            "upvotes": 20,
-            "downvotes": 80
-          }
-        ]
-      },
-      {
-        "id": 36,
-        "title": "Check-in",
-        "perex": "",
-        "style": "blue",
-        "icon": "check",
-        "childrens": [],
-        "articles": [
-          {
-            "id": 57,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/57",
-            "title": "Airport check-in",
-            "perex":
-              "Sometimes you may need to check in at the airport with a printed copy of your e-ticket.",
-            "upvotes": 50,
-            "downvotes": 50
-          },
-          {
-            "id": 90,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/90",
-            "title": "Automatic online check-in",
-            "perex": "To save you time, money and stress.",
-            "upvotes": 49,
-            "downvotes": 51
-          },
-          {
-            "id": 108,
-            "url":
-              "https://api.skypicker.com/knowledgebase/api/v1/articles/108",
-            "title": "What is online check-in?",
-            "perex":
-              "Online check-in is mostly used by budget airlines so that the passengers select their seats, download and print their own boarding passes.",
-            "upvotes": 47,
-            "downvotes": 53
-          },
-          {
-            "id": 58,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/58",
-            "title": "Is online check-in available for my flight?",
-            "perex":
-              "Please carefully read your e-ticket for instructions about the check-in process for each of your flights and the dates when your boarding passes will be available.",
-            "upvotes": 40,
-            "downvotes": 60
-          }
-        ]
-      },
-      {
-        "id": 26,
-        "title": "Additional Services",
-        "perex": "",
-        "style": "blue",
-        "icon": "star",
-        "childrens": [],
-        "articles": [
-          {
-            "id": 81,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/81",
-            "title": "Buying insurance after you book",
-            "perex":
-              "You can purchase travel insurance through Manage My Booking after your reservation has been confirmed.",
-            "upvotes": 44,
-            "downvotes": 56
-          },
-          {
-            "id": 83,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/83",
-            "title": "How do I upgrade or downgrade my insurance?",
-            "perex":
-              "It is possible to upgrade, downgrade, or cancel your travel insurance with Manage My Booking.",
-            "upvotes": 35,
-            "downvotes": 65
-          },
-          {
-            "id": 2,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/2",
-            "title":
-              "How do I request special assistance or wheelchair assistance?",
-            "perex": "Use Manage My Booking to request this service.",
-            "upvotes": 88,
-            "downvotes": 12
-          },
-          {
-            "id": 5,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/5",
-            "title": "How do I add music or sports equipment to my booking?",
-            "perex":
-              "Enter Manage My Booking and click “Additional Services”, then select “Sports Equipment” or \"Musical Equipment\" and fill in as much detail as you can, including weight and dimensions.",
-            "upvotes": 60,
-            "downvotes": 40
-          },
-          {
-            "id": 86,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/86",
-            "title":
-              "Should I send multiple emails to support for the same issue?",
-            "perex": "No, this can cause a delay.",
-            "upvotes": 22,
-            "downvotes": 78
-          },
-          {
-            "id": 4,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/4",
-            "title": "Can I fly with my pet?",
-            "perex":
-              "It's usually possible to fly with your furry friend if you do your preparation and research beforehand.",
-            "upvotes": 77,
-            "downvotes": 23
+            "id": 1,
+            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/1",
+            "title": "Seating",
+            "perex": "Are you a window or an aisle person? Use our seat maps to pick the perfect spot in the cabin.",
+            "upvotes": 55,
+            "downvotes": 45
           },
           {
             "id": 9,
             "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/9",
             "title": "Travel insurance",
-            "perex":
-              "We recommend that you buy insurance if you want financial protection from unexpected events that could potentially affect your trip.",
+            "perex": "Travel with peace of mind with insurance from AXA",
             "upvotes": 57,
             "downvotes": 43
           },
           {
-            "id": 3,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/3",
-            "title": "How do I pre-book my meals?",
-            "perex": "Call our Customer Support Team.",
-            "upvotes": 47,
-            "downvotes": 53
+            "id": 129,
+            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/129",
+            "title": "Priority Boarding",
+            "perex": "A budget airline service offered with cabin baggage on some itineraries with a short layover.",
+            "upvotes": 55,
+            "downvotes": 45
           },
           {
-            "id": 1,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/1",
-            "title": "How do I select a seat?",
-            "perex":
-              "Sign in to Manage My Booking, click Seat selection and make your choice.",
-            "upvotes": 57,
-            "downvotes": 43
+            "id": 141,
+            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/141",
+            "title": "Pet passengers",
+            "perex": "Follow the process below to add your furry friend with Manage My Booking.",
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          {
+            "id": 143,
+            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/143",
+            "title": "Meals",
+            "perex": "Call us and book your meal upfront. We recommend the vegetarian chicken from Air Asia.",
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          {
+            "id": 144,
+            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/144",
+            "title": "Music & sports equipment",
+            "perex": "Get those expensive golf clubs and your favorite guitar on board.",
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          {
+            "id": 145,
+            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/145",
+            "title": "Special assistance",
+            "perex": "The elderly and passengers with disabilities may arrange for assistance at the airport.",
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          {
+            "id": 146,
+            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/146",
+            "title": "Kiwi.com Guarantee",
+            "perex": "Our guarantee protects you from the most common travel problems.",
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          {
+            "id": 147,
+            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/147",
+            "title": "Manage My Booking",
+            "perex": "Optimise your journey. Pick a window seat. Download your boarding passes. Hire a car.",
+            "upvotes": 0,
+            "downvotes": 0
           }
         ]
       },
       {
-        "id": 31,
-        "title": "Manage My Booking",
-        "perex": "",
-        "style": "blue",
-        "icon": "tool",
+        "id": 84,
+        "title": "Documents & planning",
+        "perex": "Everything you need to know about visas, check-in, your boarding passes, & e-tickets.",
+        "style": "",
+        "icon": "",
         "childrens": [],
         "articles": [
           {
-            "id": 35,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/35",
-            "title":
-              "Where do I find the 3-letter IATA code for my departure airport?",
-            "perex":
-              "You can find this on your e-ticket next to the full name of the airport, for example, \"Kuala Lumpur KUL\".",
-            "upvotes": 46,
-            "downvotes": 54
+            "id": 114,
+            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/114",
+            "title": "PNR numbers",
+            "perex": "PNR numbers are used by the airlines use to access your booking info.",
+            "upvotes": 61,
+            "downvotes": 39
           },
           {
-            "id": 37,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/37",
-            "title": "How do I change my flight?",
-            "perex":
-              "Please login to Manage My Booking and click the button \"Change flights\" next to your itinerary.",
-            "upvotes": 42,
-            "downvotes": 58
-          },
-          {
-            "id": 36,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/36",
-            "title": "How do I make changes to my booking?",
-            "perex":
-              "Airlines normally charge a fee to make changes and additions to your booking — we allow you to request these with Manage My Booking.",
+            "id": 131,
+            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/131",
+            "title": "Self-transfer",
+            "perex": "Budget airlines usually require you to transfer your own baggage during transit.",
             "upvotes": 35,
             "downvotes": 65
           },
           {
-            "id": 34,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/34",
-            "title": "How do I login to Manage My Booking?",
-            "perex":
-              "With your email address, booking number, departure date and airport.",
-            "upvotes": 27,
-            "downvotes": 73
+            "id": 146,
+            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/146",
+            "title": "Kiwi.com Guarantee",
+            "perex": "Our guarantee protects you from the most common travel problems.",
+            "upvotes": 0,
+            "downvotes": 0
           },
           {
-            "id": 38,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/38",
-            "title": "Can I change a passenger’s name completely?",
-            "perex":
-              "Depending on the airline it may be possible to transfer your ticket to another passenger for a fee.",
-            "upvotes": 42,
-            "downvotes": 58
+            "id": 147,
+            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/147",
+            "title": "Manage My Booking",
+            "perex": "Optimise your journey. Pick a window seat. Download your boarding passes. Hire a car.",
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          {
+            "id": 148,
+            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/148",
+            "title": "Invoice",
+            "perex": "Download your invoice at any time from Manage My Booking.",
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          {
+            "id": 149,
+            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/149",
+            "title": "Visas & transfers",
+            "perex": "Visa requirements can be tricky when flying through multiple countries with multiple airlines.",
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          {
+            "id": 150,
+            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/150",
+            "title": "E-ticket",
+            "perex": "Everything you need to know about your trip. Download it from Manage My Booking.",
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          {
+            "id": 151,
+            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/151",
+            "title": "Check-in and boarding",
+            "perex": "When online check-in is available, we'll do it for you.",
+            "upvotes": 0,
+            "downvotes": 0
+          },
+          {
+            "id": 152,
+            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/152",
+            "title": "Flight information",
+            "perex": "Learn how to check your flight status and other useful flight info .",
+            "upvotes": 0,
+            "downvotes": 0
           }
         ]
       },
       {
-        "id": 42,
-        "title": "My Booking Details Are Incorrect",
-        "perex": "",
-        "style": "blue",
-        "icon": "eraser",
+        "id": 86,
+        "title": "Changes & cancellations",
+        "perex": "Buyer's remorse? We know plans change. You can still cancel. Learn more.",
+        "style": "",
+        "icon": "",
+        "childrens": [],
+        "articles": []
+      }
+    ],
+    "articles": []
+  },
+  {
+    "id": 78,
+    "title": "Urgent airport assistance",
+    "perex": "We've got you covered. Urgent info & contacts.",
+    "style": "",
+    "icon": "",
+    "childrens": [
+      {
+        "id": 94,
+        "title": "Urgent contact",
+        "perex": "We're here for you — get in touch.",
+        "style": "",
+        "icon": "",
         "childrens": [],
         "articles": [
           {
-            "id": 77,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/77",
-            "title":
-              "Correcting details — passenger name, passport, date of birth & nationality",
-            "perex":
-              "The details on your e-ticket should match your passport or travel ID exactly.",
-            "upvotes": 58,
-            "downvotes": 42
-          },
-          {
-            "id": 74,
-            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/74",
-            "title": "What if my flight dates are incorrect?",
-            "perex":
-              "Try to cancel this through Manage my booking if it is still possible.",
-            "upvotes": 47,
-            "downvotes": 53
+            "id": 73,
+            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/73",
+            "title": "☎ Contact us directly",
+            "perex": "Available 24/7",
+            "upvotes": 21,
+            "downvotes": 79
           }
         ]
+      },
+      {
+        "id": 96,
+        "title": "Urgent information",
+        "perex": "The important stuff you need to know when travelling.",
+        "style": "",
+        "icon": "",
+        "childrens": [],
+        "articles": []
+      },
+      {
+        "id": 98,
+        "title": "Baggage",
+        "perex": "Come correct with your baggage, personal items, proper weights, & allowances.",
+        "style": "",
+        "icon": "",
+        "childrens": [],
+        "articles": [
+          {
+            "id": 41,
+            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/41",
+            "title": "Cabin baggage",
+            "perex": "Learn about your hand luggage allowance.",
+            "upvotes": 68,
+            "downvotes": 32
+          },
+          {
+            "id": 43,
+            "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/43",
+            "title": "Checked baggage",
+            "perex": "Checked baggage refers to the items that are transported in the cargo hold of the aircraft.",
+            "upvotes": 51,
+            "downvotes": 49
+          }
+        ]
+      },
+      {
+        "id": 99,
+        "title": "Travelling",
+        "perex": "You're on your way. Check important documents, visa info, & airport advice.",
+        "style": "",
+        "icon": "",
+        "childrens": [],
+        "articles": []
       }
     ],
-    "articles": [
+    "articles": []
+  },
+  {
+    "id": 100,
+    "title": "Post-trip support",
+    "perex": "Need help with your refund? Find answers in our after-trip FAQs.",
+    "style": "",
+    "icon": "",
+    "childrens": [
       {
-        "id": 132,
-        "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/132",
-        "title": "How do I Refer a Friend?",
-        "perex":
-          "Just enter the email addresses of any friends who'd love to use our service.",
-        "upvotes": 5,
-        "downvotes": 95
-      },
-      {
-        "id": 139,
-        "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/139",
-        "title": "Why was I redirected to another website?",
-        "perex": "Kiwi.com is also a meta-search engine.",
-        "upvotes": 100,
-        "downvotes": 0
-      },
-      {
-        "id": 39,
-        "url": "https://api.skypicker.com/knowledgebase/api/v1/articles/39",
-        "title": "How do I know which terminals I will be using?",
-        "perex":
-          "Your departure and arrival terminals should be stated on your boarding pass.",
-        "upvotes": 37,
-        "downvotes": 63
+        "id": 102,
+        "title": "After-trip support",
+        "perex": "Refunds, Refer a Friend and other stuff you should know after completing your trip.",
+        "style": "",
+        "icon": "",
+        "childrens": [],
+        "articles": []
       }
-    ]
+    ],
+    "articles": []
   }
 ]

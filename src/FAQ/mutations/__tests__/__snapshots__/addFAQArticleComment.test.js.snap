@@ -4,7 +4,7 @@ exports[`FAQArticleComment mutation should comment successfully with "other" typ
 Object {
   "data": Object {
     "addFAQArticleComment": Object {
-      "id": "RkFRQXJ0aWNsZTozOQ==",
+      "id": "RkFRQXJ0aWNsZTo0NA==",
     },
   },
 }
