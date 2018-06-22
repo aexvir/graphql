@@ -4,8 +4,8 @@ import { GraphQLInt, GraphQLString, GraphQLObjectType } from 'graphql';
 
 import { globalIdField } from '../../../common/services/OpaqueIdentifier';
 import type { GraphqlContextType } from '../../../common/services/GraphqlContext';
-import type { FAQArticleDetail } from '../../dataloaders/getFAQArticle';
-import type { FAQArticleItem } from '../../dataloaders/getFAQCategory';
+import type { FAQArticleDetail } from '../../dataloaders/FAQArticle';
+import type { FAQArticleItem } from '../../dataloaders/FAQCategories';
 import type { ArticleFromSearch } from '../../dataloaders/searchFAQ';
 
 type FAQArticleResponse = FAQArticleItem | FAQArticleDetail | ArticleFromSearch;

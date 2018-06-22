@@ -43,6 +43,7 @@ export default {
     language: {
       type: LanguageInput,
       description:
+        'DEPRECATED - use "Accept-Language" HTTP header to specify locale.' +
         'Language in which the titles and perexes of FAQ categories are returned.',
     },
   },
@@ -52,7 +53,7 @@ export default {
     { dataLoader }: GraphqlContextType,
   ) => {
     const categoryId = Number(fromGlobalId(id).id);
-    const categories = await dataLoader.FAQCategories.load({});
+    const categories = await dataLoader.FAQCategories.load({ section: 'all' });
 
     const category = findCategory(categories, categoryId);
 

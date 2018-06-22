@@ -24,6 +24,7 @@ export default {
     language: {
       type: LanguageInput,
       description:
+        'DEPRECATED - use "Accept-Language" HTTP header to specify locale.' +
         'Language in which the search is made and the answer is returned',
     },
     ...connectionArgs,

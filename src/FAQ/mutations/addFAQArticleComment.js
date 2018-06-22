@@ -8,7 +8,7 @@ import config from '../../../config/application';
 import { ProxiedError } from '../../common/services/errors/ProxiedError';
 import FAQArticle from '../types/outputs/FAQArticle';
 import FAQCommentType from '../types/inputs/FAQCommentType';
-import type { FAQArticleDetail as FAQArticleType } from '../dataloaders/getFAQArticle';
+import type { FAQArticleDetail as FAQArticleType } from '../dataloaders/FAQArticle';
 import type { GraphqlContextType } from '../../common/services/GraphqlContext';
 
 const successfulResponse = { message: 'yummy indeed' };

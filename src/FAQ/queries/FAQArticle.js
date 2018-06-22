@@ -17,7 +17,9 @@ export default {
     },
     language: {
       type: LanguageInput,
-      description: 'Language in which the text of the article is returned.',
+      description:
+        'DEPRECATED - use "Accept-Language" HTTP header to specify locale.' +
+        'Language in which the text of the article is returned.',
     },
   },
   resolve: async (

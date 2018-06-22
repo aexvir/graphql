@@ -1,6 +1,8 @@
 // @flow
 
 import Dataloader from 'dataloader/index';
+import stringify from 'json-stable-stringify';
+
 import { get } from '../../common/services/HttpRequest';
 import Config from '../../../config/application';
 
@@ -25,7 +27,7 @@ export type Args = {|
   originalId: string,
 |};
 
-const getFAQArticle = async (
+const FAQArticle = async (
   originalId: string,
   language: string,
 ): Promise<FAQArticleDetail> => {
@@ -49,12 +51,14 @@ const batchLoad = async (
   language: string,
 ): Promise<Array<FAQArticleDetail>> => {
   const promises = inputs.map(({ originalId }: Args) =>
-    getFAQArticle(originalId, language),
+    FAQArticle(originalId, language),
   );
 
   return Promise.all(promises);
 };
 
 export default function createFAQLoader(language: string) {
-  return new Dataloader(queries => batchLoad(queries, language));
+  return new Dataloader(queries => batchLoad(queries, language), {
+    cacheKeyFn: key => stringify(key),
+  });
 }

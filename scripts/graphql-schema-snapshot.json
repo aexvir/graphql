@@ -246,10 +246,20 @@
             "args": [
               {
                 "name": "language",
-                "description": "Language in which the titles and perexes of FAQ categories are returned.",
+                "description": "DEPRECATED - use \"Accept-Language\" HTTP header to specify locale.Language in which the titles and perexes of FAQ categories are returned.",
                 "type": {
                   "kind": "ENUM",
                   "name": "Language",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "section",
+                "description": "Fetch only subsection of FAQ based on the current situation of customer.",
+                "type": {
+                  "kind": "ENUM",
+                  "name": "FAQSection",
                   "ofType": null
                 },
                 "defaultValue": null
@@ -319,7 +329,7 @@
               },
               {
                 "name": "language",
-                "description": "Language in which the search is made and the answer is returned",
+                "description": "DEPRECATED - use \"Accept-Language\" HTTP header to specify locale.Language in which the search is made and the answer is returned",
                 "type": {
                   "kind": "ENUM",
                   "name": "Language",
@@ -882,7 +892,7 @@
               },
               {
                 "name": "language",
-                "description": "Language in which the text of the article is returned.",
+                "description": "DEPRECATED - use \"Accept-Language\" HTTP header to specify locale.Language in which the text of the article is returned.",
                 "type": {
                   "kind": "ENUM",
                   "name": "Language",
@@ -919,7 +929,7 @@
               },
               {
                 "name": "language",
-                "description": "Language in which the titles and perexes of FAQ categories are returned.",
+                "description": "DEPRECATED - use \"Accept-Language\" HTTP header to specify locale.Language in which the titles and perexes of FAQ categories are returned.",
                 "type": {
                   "kind": "ENUM",
                   "name": "Language",
@@ -8483,6 +8493,41 @@
         "inputFields": null,
         "interfaces": [],
         "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "ENUM",
+        "name": "FAQSection",
+        "description": null,
+        "fields": null,
+        "inputFields": null,
+        "interfaces": null,
+        "enumValues": [
+          {
+            "name": "BEFORE_BOOKING",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "UPCOMING_BOOKING",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "URGENT_BOOKING",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "PAST_BOOKING",
+            "description": null,
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
         "possibleTypes": null
       },
       {

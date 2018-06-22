@@ -8,8 +8,8 @@ import createCurrencyLoader from '../../currency/dataloaders/Currency';
 import createAirlineLoader from '../../flight/dataloaders/Airline';
 import createRatesLoader from '../dataloaders/Rates';
 import createFAQLoader from '../../FAQ/dataloaders/searchFAQ';
-import createFAQCategoryLoader from '../../FAQ/dataloaders/getFAQCategory';
-import createFAQArticleLoader from '../../FAQ/dataloaders/getFAQArticle';
+import createFAQCategoryLoader from '../../FAQ/dataloaders/FAQCategories';
+import createFAQArticleLoader from '../../FAQ/dataloaders/FAQArticle';
 import BookingsLoader from '../../booking/dataloaders/Bookings';
 import LocationsLoader from '../../location/dataloaders/Locations';
 import LocationLoader from '../../location/dataloaders/Location';
@@ -33,13 +33,13 @@ import type { HotelType } from '../../hotel/dataloaders/flow/HotelType';
 import type { City } from '../../hotel/dataloaders/flow/City';
 import type { Args as FAQArgs } from '../../FAQ/dataloaders/searchFAQ';
 import type {
-  Args as FAQCategoryArgs,
   FAQArticleItem,
-} from '../../FAQ/dataloaders/getFAQCategory';
+  Args as FAQCategoriesArgs,
+} from '../../FAQ/dataloaders/FAQCategories';
 import type {
   Args as FAQCArticleArgs,
   FAQArticleDetail,
-} from '../../FAQ/dataloaders/getFAQArticle';
+} from '../../FAQ/dataloaders/FAQArticle';
 import type { FAQCategoryType } from '../../FAQ/types/outputs/FAQCategory';
 import type { SearchParameters as DynamicPackagesSearchParams } from '../../dynamicPackage/dataloaders/DynamicPackages';
 import type { DynamicPackage } from '../../dynamicPackage/dataloaders/DynamicPackageType';
@@ -85,13 +85,19 @@ export type GraphqlContextType = {|
       >,
     },
     FAQ: DataLoader<FAQArgs, FAQArticleItem[]>,
-    FAQCategories: DataLoader<FAQCategoryArgs, FAQCategoryType[]>,
+    FAQCategories: DataLoader<FAQCategoriesArgs, FAQCategoryType[]>,
     FAQArticle: DataLoader<FAQCArticleArgs, FAQArticleDetail>,
     dynamicPackages: DataLoader<DynamicPackagesSearchParams, DynamicPackage[]>,
   |},
   options: OptionsStorage,
   _traceCollector?: Object,
 |};
+
+/**
+ * Although API contains several FAQ trees, this is currently the only relevant tree.
+ * Others may include testing data or the ones not intended for displaying
+ */
+const FAQ_CATEGORY_ID = '3';
 
 export function createContext(
   token: ?string,
@@ -137,8 +143,8 @@ export function createContext(
         roomBedding: HotelRoomBeddingLoader,
         priceStats: PriceStatsLoader,
       },
-      FAQ: createFAQLoader(locale.language),
-      FAQCategories: createFAQCategoryLoader(locale.language),
+      FAQ: createFAQLoader(locale.language, FAQ_CATEGORY_ID),
+      FAQCategories: createFAQCategoryLoader(locale.language, FAQ_CATEGORY_ID),
       FAQArticle: createFAQArticleLoader(locale.language),
       dynamicPackages: DynamicPackagesLoader,
     },

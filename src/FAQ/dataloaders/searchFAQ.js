@@ -1,8 +1,10 @@
 // @flow
 
 import Dataloader from 'dataloader';
+import stringify from 'json-stable-stringify';
+
 import { get } from '../../common/services/HttpRequest';
-import Config from '../../../config/application';
+import { queryWithParameters } from '../../../config/application';
 
 export type Args = {|
   search: string,
@@ -43,22 +45,45 @@ const sanitizeArticle = (language: string) => {
   };
 };
 
-async function fetchFAQ(search: string, language: string) {
-  const articles = await get(Config.restApiEndpoint.allFAQ(search), null, {
-    'Accept-Language': language,
-  });
+async function fetchFAQ(
+  search: string,
+  language: string,
+  rootCategoryId: string,
+) {
+  const articles = await get(
+    queryWithParameters(
+      'https://api.skypicker.com/knowledgebase/api/v1/search',
+      { q: search, autocomplete: true, tree_ids: rootCategoryId },
+    ),
+    null,
+    {
+      'Accept-Language': language,
+    },
+  );
 
   return articles.map(sanitizeArticle(language));
 }
 
-async function batchLoad(searches: $ReadOnlyArray<Args>, language: string) {
+async function batchLoad(
+  searches: $ReadOnlyArray<Args>,
+  language: string,
+  rootCategoryId: string,
+) {
   const promises = searches.map(({ search }: Args) =>
-    fetchFAQ(search, language),
+    fetchFAQ(search, language, rootCategoryId),
   );
 
   return Promise.all(promises);
 }
 
-export default function createFAQLoader(language: string) {
-  return new Dataloader(queries => batchLoad(queries, language));
+export default function createFAQLoader(
+  language: string,
+  rootCategoryId: string,
+) {
+  return new Dataloader(
+    queries => batchLoad(queries, language, rootCategoryId),
+    {
+      cacheKeyFn: key => stringify(key),
+    },
+  );
 }
