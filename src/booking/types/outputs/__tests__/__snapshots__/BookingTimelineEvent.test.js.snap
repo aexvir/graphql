@@ -142,14 +142,28 @@ Object {
 }
 `;
 
-exports[`DownloadReceiptTimelineEvent type should have valid fields 1`] = `
+exports[`DownloadInvoiceTimelineEvent type should have valid fields 1`] = `
 Object {
-  "receiptUrl": Object {
+  "invoiceUrl": Object {
     "args": Array [],
-    "description": "URL of the receipt/invoice",
+    "description": "URL of the invoice",
     "isDeprecated": false,
-    "name": "receiptUrl",
+    "name": "invoiceUrl",
     "type": "String",
+  },
+  "legs": Object {
+    "args": Array [],
+    "description": "Legs of the booking",
+    "isDeprecated": false,
+    "name": "legs",
+    "type": "[Leg]",
+  },
+  "numberPassengers": Object {
+    "args": Array [],
+    "description": "Number of passengers",
+    "isDeprecated": false,
+    "name": "numberPassengers",
+    "type": "Int",
   },
   "timestamp": Object {
     "args": Array [],

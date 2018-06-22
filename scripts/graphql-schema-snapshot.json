@@ -10708,7 +10708,7 @@
           },
           {
             "kind": "OBJECT",
-            "name": "DownloadReceiptTimelineEvent",
+            "name": "DownloadInvoiceTimelineEvent",
             "ofType": null
           },
           {
@@ -11937,7 +11937,7 @@
       },
       {
         "kind": "OBJECT",
-        "name": "DownloadReceiptTimelineEvent",
+        "name": "DownloadInvoiceTimelineEvent",
         "description": null,
         "fields": [
           {
@@ -11953,13 +11953,41 @@
             "deprecationReason": null
           },
           {
-            "name": "receiptUrl",
-            "description": "URL of the receipt/invoice",
+            "name": "invoiceUrl",
+            "description": "URL of the invoice",
             "args": [],
             "type": {
               "kind": "SCALAR",
               "name": "String",
               "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "numberPassengers",
+            "description": "Number of passengers",
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "legs",
+            "description": "Legs of the booking",
+            "args": [],
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "Leg",
+                "ofType": null
+              }
             },
             "isDeprecated": false,
             "deprecationReason": null

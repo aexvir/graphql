@@ -4,7 +4,7 @@ import resolver, {
   generateBookedFlightEvent,
   generateBookingConfirmedEvent,
   generatePaymentConfirmedEvent,
-  generateDownloadReceiptEvent,
+  generateDownloadInvoiceEvent,
   generateDownloadETicketEvent,
   generateLeaveForAirportEvent,
   generateAirportArrivalEvent,
@@ -218,31 +218,83 @@ describe('generatePaymentConfirmedEvent', () => {
   });
 });
 
-describe('generateDownloadReceiptEvent', () => {
+describe('generateDownloadInvoiceEvent', () => {
   const date = new Date('2018-05-03T14:10:57.000Z');
-  it('returns DownloadReceipt event', () => {
+  it('returns DownloadInvoice event', () => {
     expect(
       // $FlowExpectedError: full Booking object is not needed for this test
-      generateDownloadReceiptEvent({
+      generateDownloadInvoiceEvent({
         created: date,
+        passengers: [1],
+        legs: [
+          {
+            departure: {
+              where: {
+                cityName: 'Prague',
+              },
+            },
+            arrival: {
+              where: { cityName: 'Brno' },
+            },
+          },
+        ],
       }),
     ).toEqual({
       timestamp: date,
-      type: 'DownloadReceiptTimelineEvent',
-      receiptUrl: null,
+      type: 'DownloadInvoiceTimelineEvent',
+      invoiceUrl: null,
+      numberPassengers: 1,
+      legs: [
+        {
+          departure: {
+            where: {
+              cityName: 'Prague',
+            },
+          },
+          arrival: {
+            where: { cityName: 'Brno' },
+          },
+        },
+      ],
     });
     expect(
       // $FlowExpectedError: full Booking object is not needed for this test
-      generateDownloadReceiptEvent({
+      generateDownloadInvoiceEvent({
         created: date,
         assets: {
           invoiceUrl: 'http://somecoolurl',
         },
+        passengers: [1],
+        legs: [
+          {
+            departure: {
+              where: {
+                cityName: 'Prague',
+              },
+            },
+            arrival: {
+              where: { cityName: 'Brno' },
+            },
+          },
+        ],
       }),
     ).toEqual({
       timestamp: date,
-      type: 'DownloadReceiptTimelineEvent',
-      receiptUrl: 'http://somecoolurl',
+      type: 'DownloadInvoiceTimelineEvent',
+      invoiceUrl: 'http://somecoolurl',
+      numberPassengers: 1,
+      legs: [
+        {
+          departure: {
+            where: {
+              cityName: 'Prague',
+            },
+          },
+          arrival: {
+            where: { cityName: 'Brno' },
+          },
+        },
+      ],
     });
   });
 });

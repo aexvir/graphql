@@ -2,6 +2,8 @@
 
 import {
   GraphQLString,
+  GraphQLInt,
+  GraphQLList,
   GraphQLObjectType,
   GraphQLInterfaceType,
 } from 'graphql';
@@ -9,6 +11,7 @@ import {
 import { GraphQLDateTime } from 'graphql-iso-date';
 
 import RouteStop from '../../../flight/types/outputs/RouteStop';
+import Leg from '../../../flight/types/outputs/Leg';
 import type { DepartureArrival } from '../../../flight/Flight';
 import type {
   BookedFlightTimelineEvent as BookedFlightType,
@@ -59,16 +62,24 @@ export const PaymentConfirmedTimelineEvent = new GraphQLObjectType({
   interfaces: [TimelineEvent],
 });
 
-export const DownloadReceiptTimelineEvent = new GraphQLObjectType({
-  name: 'DownloadReceiptTimelineEvent',
+export const DownloadInvoiceTimelineEvent = new GraphQLObjectType({
+  name: 'DownloadInvoiceTimelineEvent',
   fields: {
     ...commonFields,
-    receiptUrl: {
+    invoiceUrl: {
       type: GraphQLString,
-      description: 'URL of the receipt/invoice',
+      description: 'URL of the invoice',
+    },
+    numberPassengers: {
+      type: GraphQLInt,
+      description: 'Number of passengers',
+    },
+    legs: {
+      type: new GraphQLList(Leg),
+      description: 'Legs of the booking',
     },
   },
-  isTypeOf: value => value.type === 'DownloadReceiptTimelineEvent',
+  isTypeOf: value => value.type === 'DownloadInvoiceTimelineEvent',
   interfaces: [TimelineEvent],
 });
 

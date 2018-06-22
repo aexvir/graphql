@@ -8,7 +8,7 @@ import type {
   BookedFlightTimelineEvent as BookedFlightType,
   BookingConfirmedTimelineEvent as BookingConfirmedType,
   PaymentConfirmedTimelineEvent as PaymentConfirmedType,
-  DownloadReceiptTimelineEvent as DownloadReceiptType,
+  DownloadInvoiceTimelineEvent as DownloadInvoiceType,
   DownloadETicketTimelineEvent as DownloadETicketType,
   LeaveForAirportTimelineEvent as LeaveForAirportType,
   AirportArrivalTimelineEvent as AirportArrivalType,
@@ -28,7 +28,7 @@ export default function generateEventsFrom(
   const bookedFlightEvent = generateBookedFlightEvent(booking);
   const bookingConfirmedEvent = generateBookingConfirmedEvent(booking);
   const paymentConfirmedEvent = generatePaymentConfirmedEvent(booking);
-  const downloadReceiptEvent = generateDownloadReceiptEvent(booking);
+  const downloadInvoiceEvent = generateDownloadInvoiceEvent(booking);
   const downloadETicketEvent = generateDownloadETicketEvent(booking);
   const leaveForAirportEvent = generateLeaveForAirportEvent(booking);
   const airportArrivalEvent = generateAirportArrivalEvent(booking);
@@ -36,7 +36,7 @@ export default function generateEventsFrom(
   if (bookedFlightEvent) events.push(bookedFlightEvent);
   if (bookingConfirmedEvent) events.push(bookingConfirmedEvent);
   if (paymentConfirmedEvent) events.push(paymentConfirmedEvent);
-  if (downloadReceiptEvent) events.push(downloadReceiptEvent);
+  if (downloadInvoiceEvent) events.push(downloadInvoiceEvent);
   if (downloadETicketEvent) events.push(downloadETicketEvent);
   if (leaveForAirportEvent) events.push(leaveForAirportEvent);
   if (airportArrivalEvent) events.push(airportArrivalEvent);
@@ -92,14 +92,17 @@ export function generatePaymentConfirmedEvent(
   return null;
 }
 
-export function generateDownloadReceiptEvent(
+export function generateDownloadInvoiceEvent(
   booking: Booking,
-): ?DownloadReceiptType {
-  const invoiceUrl = idx(booking.assets, _ => _.invoiceUrl) || null;
+): ?DownloadInvoiceType {
+  const invoiceUrl = idx(booking, _ => _.assets.invoiceUrl) || null;
+  const numberPassengers = idx(booking, _ => _.passengers.length) || 0;
   return {
     timestamp: booking.created,
-    type: 'DownloadReceiptTimelineEvent',
-    receiptUrl: invoiceUrl,
+    type: 'DownloadInvoiceTimelineEvent',
+    invoiceUrl: invoiceUrl,
+    numberPassengers: numberPassengers,
+    legs: booking.legs,
   };
 }
 

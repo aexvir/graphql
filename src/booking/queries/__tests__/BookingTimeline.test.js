@@ -54,8 +54,25 @@ describe('single booking timeline query', () => {
         events {
           __typename
             timestamp
-          ... on DownloadReceiptTimelineEvent{
-            receiptUrl
+          ... on DownloadInvoiceTimelineEvent{
+            invoiceUrl
+            numberPassengers
+            legs {
+              departure {
+                airport {
+                  city {
+                    name
+                  }
+                }
+              }
+              arrival{
+                airport {
+                  city {
+                    name
+                  }
+                }
+              }
+            }
           }
           ... on  DownloadETicketTimelineEvent {
             ticketUrl

@@ -29,8 +29,27 @@ Object {
           "timestamp": "2017-03-30T07:28:55.000Z",
         },
         Object {
-          "__typename": "DownloadReceiptTimelineEvent",
-          "receiptUrl": null,
+          "__typename": "DownloadInvoiceTimelineEvent",
+          "invoiceUrl": null,
+          "legs": Array [
+            Object {
+              "arrival": Object {
+                "airport": Object {
+                  "city": Object {
+                    "name": "Mocked City Name",
+                  },
+                },
+              },
+              "departure": Object {
+                "airport": Object {
+                  "city": Object {
+                    "name": "Mocked City Name",
+                  },
+                },
+              },
+            },
+          ],
+          "numberPassengers": 2,
           "timestamp": "2017-03-30T07:28:55.000Z",
         },
         Object {

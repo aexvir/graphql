@@ -1,12 +1,12 @@
 // @flow
 
-import type { DepartureArrival } from '../flight/Flight';
+import type { DepartureArrival, Leg as LegType } from '../flight/Flight';
 
 export type BookingTimelineEvent =
   | BookedFlightTimelineEvent
   | BookingConfirmedTimelineEvent
   | PaymentConfirmedTimelineEvent
-  | DownloadReceiptTimelineEvent
+  | DownloadInvoiceTimelineEvent
   | DownloadETicketTimelineEvent
   | DownloadBoardingPassTimelineEvent
   | LeaveForAirportTimelineEvent
@@ -36,10 +36,12 @@ export type PaymentConfirmedTimelineEvent = {|
   +type: 'PaymentConfirmedTimelineEvent',
 |};
 
-export type DownloadReceiptTimelineEvent = {|
+export type DownloadInvoiceTimelineEvent = {|
   +timestamp: Date,
-  +type: 'DownloadReceiptTimelineEvent',
-  +receiptUrl: ?string,
+  +type: 'DownloadInvoiceTimelineEvent',
+  +invoiceUrl: ?string,
+  +numberPassengers: number,
+  +legs: LegType[],
 |};
 
 export type DownloadETicketTimelineEvent = {|
