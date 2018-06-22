@@ -1,0 +1,26 @@
+{
+  "name": "eslint-plugin-kiwi-graphql",
+  "version": "0.0.2",
+  "description": "Rules for Kiwi.com GraphQL",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin",
+    "graphql"
+  ],
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha tests --recursive"
+  },
+  "dependencies": {
+    "eslint": "~3.9.1",
+    "requireindex": "~1.1.0"
+  },
+  "devDependencies": {
+    "mocha": "^3.1.2"
+  },
+  "engines": {
+    "node": ">=4.8.3"
+  },
+  "license": "ISC"
+}

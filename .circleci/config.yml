@@ -28,6 +28,7 @@ jobs:
 
       # Run tests!
       - run: yarn run test-ci
+      - run: ( cd packages/eslint-plugin-kiwi-graphql ; yarn run test -- --ci --color )
 
       # TODO: Build and verify the build
 

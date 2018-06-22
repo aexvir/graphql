@@ -1,4 +1,8 @@
 {
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "dependencies": {
     "algoliasearch": "^3.24.9",
     "apollo-engine": "^1.1.1",
@@ -36,7 +40,7 @@
     "eslint-plugin-flowtype": "^2.46.3",
     "eslint-plugin-import": "^2.6.1",
     "eslint-plugin-jest": "^20.0.3",
-    "eslint-plugin-kiwi-graphql": "^0.0.1",
+    "eslint-plugin-kiwi-graphql": "^0.0.2",
     "eslint-plugin-prettier": "^2.1.2",
     "eslint-plugin-promise": "^3.5.0",
     "fast-async": "^6.2.2",
