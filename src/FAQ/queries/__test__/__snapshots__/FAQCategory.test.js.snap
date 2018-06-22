@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`allFAQCategories should return ancestors for FAQ category 1`] = `
+exports[`FAQCategory should return ancestors for FAQ category 1`] = `
 Object {
   "data": Object {
     "FAQCategory": Object {
@@ -57,7 +57,7 @@ Object {
 }
 `;
 
-exports[`allFAQCategories should return error for non-existing category 1`] = `
+exports[`FAQCategory should return error for non-existing category 1`] = `
 Object {
   "data": Object {
     "FAQCategory": null,
@@ -68,7 +68,7 @@ Object {
 }
 `;
 
-exports[`allFAQCategories should return single FAQ category 1`] = `
+exports[`FAQCategory should return single FAQ category 1`] = `
 Object {
   "data": Object {
     "FAQCategory": Object {
@@ -87,6 +87,7 @@ Object {
         },
       ],
       "id": "RkFRQ2F0ZWdvcnk6NDc=",
+      "originalId": 47,
       "subcategories": Array [
         Object {
           "id": "RkFRQ2F0ZWdvcnk6Mzc=",

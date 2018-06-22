@@ -1,11 +1,17 @@
 // @flow
 
-import { GraphQLObjectType, GraphQLString, GraphQLList } from 'graphql';
+import {
+  GraphQLObjectType,
+  GraphQLString,
+  GraphQLList,
+  GraphQLInt,
+} from 'graphql';
 import FAQArticle, { type FAQArticleType } from './FAQArticle';
 import { globalIdField } from '../../../common/services/OpaqueIdentifier';
 
 export type FAQCategoryType = {|
   id: number,
+  originalId: number,
   title: string,
   perex: string,
   subcategories: FAQCategoryType[],
@@ -17,6 +23,11 @@ const FAQCategory = new GraphQLObjectType({
   name: 'FAQCategory',
   fields: () => ({
     id: globalIdField('FAQCategory', ({ id }: FAQCategoryType) => String(id)),
+    originalId: {
+      type: GraphQLInt,
+      description: 'Original numeric id of the FAQ category',
+      resolve: ({ id }): FAQCategoryType => id,
+    },
     title: {
       type: GraphQLString,
       description: 'Title of the FAQ category',

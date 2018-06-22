@@ -3,7 +3,7 @@
 import { graphql, RestApiMock } from '../../../common/services/TestingTools';
 import categories from '../../datasets/categories.json';
 
-describe('allFAQCategories', () => {
+describe('FAQCategory', () => {
   beforeEach(() => {
     RestApiMock.onGet(
       'https://api.skypicker.com/knowledgebase/api/v1/categories/3',
@@ -15,6 +15,7 @@ describe('allFAQCategories', () => {
     const resultsQuery = `query FAQSubcategories($id: ID!) { 
       FAQCategory(language: en, id: $id) {
         id
+        originalId
         title
         subcategories {
           id
@@ -22,8 +23,8 @@ describe('allFAQCategories', () => {
         FAQs {
           id
           title
-        }  
-      }      
+        }
+      }
     }`;
     expect(await graphql(resultsQuery, { id })).toMatchSnapshot();
   });

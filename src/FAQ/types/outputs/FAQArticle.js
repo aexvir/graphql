@@ -12,6 +12,7 @@ type FAQArticleResponse = FAQArticleItem | FAQArticleDetail | ArticleFromSearch;
 
 export type FAQArticleType = {|
   id: number,
+  originalId: number,
   title: string,
   perex: string,
   content: string,
@@ -25,6 +26,11 @@ export default new GraphQLObjectType({
     id: globalIdField('FAQArticle', (response: FAQArticleResponse) =>
       String(response.id),
     ),
+    originalId: {
+      type: GraphQLInt,
+      description: 'Original numeric id of the article',
+      resolve: ({ id }: FAQArticleResponse): number => id,
+    },
     title: {
       type: GraphQLString,
       description: 'Title of the article',

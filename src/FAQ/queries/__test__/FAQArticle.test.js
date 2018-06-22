@@ -13,29 +13,31 @@ describe('FAQArticle', () => {
   it('should return article detail', async () => {
     const id = 'RkFRQXJ0aWNsZTozOQ==';
     const query = `
-    query FAQArticle($id: ID!) {
-      FAQArticle(id: $id, language: en) {
-        id
-        title,
-        perex
-        content
+      query FAQArticle($id: ID!) {
+        FAQArticle(id: $id, language: en) {
+          id
+          originalId
+          title
+          perex
+          content
+        }
       }
-    }
     `;
     expect(await graphql(query, { id })).toMatchSnapshot();
   });
+
   it('should return wrong response', async () => {
     const id = '43453';
     const query = `
-        query FAQArticle($id: ID!) {
-          FAQArticle(id: $id, language: en) {
-            id
-            title,
-            perex
-            content
-          }
+      query FAQArticle($id: ID!) {
+        FAQArticle(id: $id, language: en) {
+          id
+          title
+          perex
+          content
         }
-        `;
+      }
+    `;
     expect(await graphql(query, { id })).toMatchSnapshot();
   });
 });

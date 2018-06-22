@@ -8589,6 +8589,18 @@
             "deprecationReason": null
           },
           {
+            "name": "originalId",
+            "description": "Original numeric id of the FAQ category",
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "title",
             "description": "Title of the FAQ category",
             "args": [],
@@ -8683,6 +8695,18 @@
                 "name": "ID",
                 "ofType": null
               }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "originalId",
+            "description": "Original numeric id of the article",
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
+              "ofType": null
             },
             "isDeprecated": false,
             "deprecationReason": null
