@@ -5,7 +5,6 @@ import { connectionArgs, connectionDefinitions } from 'graphql-relay';
 
 import type { GraphqlContextType } from '../../common/services/GraphqlContext';
 import FAQCategory from './../types/outputs/FAQCategory';
-import LanguageInput from '../../common/types/inputs/LanguageInput';
 import { connectionFromArray } from '../../common/services/ArrayConnection';
 
 const { connectionType: FaqCategoriesConnection } = connectionDefinitions({
@@ -26,12 +25,6 @@ export default {
   type: FaqCategoriesConnection,
   description: 'Retrieve list of FAQ categories.',
   args: {
-    language: {
-      type: LanguageInput,
-      description:
-        'DEPRECATED - use "Accept-Language" HTTP header to specify locale.' +
-        'Language in which the titles and perexes of FAQ categories are returned.',
-    },
     section: {
       type: FAQSection,
       description:
@@ -41,7 +34,7 @@ export default {
   },
   resolve: async (
     ancestor: mixed,
-    { language, section, ...args }: Object,
+    { section, ...args }: Object,
     { dataLoader }: GraphqlContextType,
   ) => {
     const results = await dataLoader.FAQCategories.load({

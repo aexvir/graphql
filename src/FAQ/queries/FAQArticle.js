@@ -4,7 +4,6 @@ import { GraphQLID, GraphQLNonNull } from 'graphql';
 import { fromGlobalId } from 'graphql-relay';
 
 import FAQArticle from '../types/outputs/FAQArticle';
-import LanguageInput from '../../common/types/inputs/LanguageInput';
 import type { GraphqlContextType } from '../../common/services/GraphqlContext';
 
 export default {
@@ -14,12 +13,6 @@ export default {
     id: {
       type: new GraphQLNonNull(GraphQLID),
       description: 'ID of FAQ article to retrieve.',
-    },
-    language: {
-      type: LanguageInput,
-      description:
-        'DEPRECATED - use "Accept-Language" HTTP header to specify locale.' +
-        'Language in which the text of the article is returned.',
     },
   },
   resolve: async (

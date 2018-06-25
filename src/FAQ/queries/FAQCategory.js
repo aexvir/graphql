@@ -3,9 +3,8 @@
 import { GraphQLID, GraphQLNonNull } from 'graphql';
 import { fromGlobalId } from 'graphql-relay';
 
-import type { GraphqlContextType } from '../../common/services/GraphqlContext';
 import FAQCategory from '../types/outputs/FAQCategory';
-import LanguageInput from '../../common/types/inputs/LanguageInput';
+import type { GraphqlContextType } from '../../common/services/GraphqlContext';
 import type { FAQCategoryItem } from '../dataloaders/FAQCategories';
 
 const findCategory = (
@@ -38,12 +37,6 @@ export default {
     id: {
       type: new GraphQLNonNull(GraphQLID),
       description: 'ID of FAQ category to retrieve.',
-    },
-    language: {
-      type: LanguageInput,
-      description:
-        'DEPRECATED - use "Accept-Language" HTTP header to specify locale.' +
-        'Language in which the titles and perexes of FAQ categories are returned.',
     },
   },
   resolve: async (
