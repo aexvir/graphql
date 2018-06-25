@@ -4,7 +4,6 @@ import Dataloader from 'dataloader/index';
 import stringify from 'json-stable-stringify';
 
 import { get } from '../../common/services/HttpRequest';
-import Config from '../../../config/application';
 
 type NotFound = {|
   detail: string,
@@ -31,7 +30,7 @@ const FAQArticle = async (
   originalId: string,
   language: string,
 ): Promise<FAQArticleDetail> => {
-  const url = Config.restApiEndpoint.FAQArticle(originalId);
+  const url = `https://api.skypicker.com/knowledgebase/api/v1/articles/${originalId}`;
   const article: APIResponse = await get(url, null, {
     'Accept-Language': language,
   });

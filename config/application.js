@@ -27,11 +27,6 @@ export default {
         queryParameters,
       ),
     rates: 'https://api.skypicker.com/rates',
-    FAQArticle: (faqArticleId: string) => {
-      return `https://api.skypicker.com/knowledgebase/api/v1/articles/${faqArticleId}`;
-    },
-    FAQArticleComment: (faqArticleId: string) =>
-      `https://api.skypicker.com/knowledgebase/api/v1/articles/${faqArticleId}/comment`,
   },
   auth: {
     basicToken: String(process.env.AUTH_BASIC_TOKEN),

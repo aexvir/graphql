@@ -4,7 +4,6 @@ import { GraphQLNonNull, GraphQLID, GraphQLString } from 'graphql';
 import { fromGlobalId } from 'graphql-relay';
 
 import { post } from '../../common/services/HttpRequest';
-import config from '../../../config/application';
 import { ProxiedError } from '../../common/services/errors/ProxiedError';
 import FAQArticle from '../types/outputs/FAQArticle';
 import FAQCommentType from '../types/inputs/FAQCommentType';
@@ -90,7 +89,7 @@ export default {
       language = 'en';
     }
 
-    const commentUrl = config.restApiEndpoint.FAQArticleComment(originalId);
+    const commentUrl = `https://api.skypicker.com/knowledgebase/api/v1/articles/${originalId}/comment`;
     const response = await post(commentUrl, payload, {
       'Accept-Language': language,
     });
@@ -98,7 +97,7 @@ export default {
       throw new ProxiedError(
         response.message ? response.message : 'Article commenting failed',
         response.error_code ? response.error_code : '-1',
-        config.restApiEndpoint.FAQArticleComment(originalId),
+        commentUrl,
       );
     }
 
