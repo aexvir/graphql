@@ -63,5 +63,6 @@ export type Hotel = {
   Rating: number,
   Description: string,
   Options: HotelOption[],
-  DeepLink: string,
+  AvailabilityDeepLink: string,
+  HotelDeepLink: string,
 };

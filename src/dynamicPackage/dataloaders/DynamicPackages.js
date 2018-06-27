@@ -86,7 +86,7 @@ function createPackage(
   const id = hotelData.Code.toString(10);
   const flight = createFlight(flightData);
   const hotel = createHotel(hotelData);
-  const whitelabelUrl = hotelData.DeepLink;
+  const whitelabelUrl = hotelData.AvailabilityDeepLink;
   return { id, flight, hotel, whitelabelUrl };
 }
 
