@@ -250,8 +250,12 @@
     "en_confirmation_link": "https://skypicker-mailing.s3.amazonaws.com/2707/1490859157_2707251_confirmation_e826fc3275a65a5db8808279d8fc7f8f.html",
     "invoice": null,
     "boardingPass": {
-      "315289498": null,
-      "all": null
+      "315289498": "https://very.real/pass.pdf",
+      "all": "https://very.real/all.pdf"
+    },
+    "boarding_passes": {
+      "315289498": "https://very.real/pass.pdf",
+      "all": "https://very.real/all.pdf"
     },
     "insurance": null,
     "transfer_ticket": null

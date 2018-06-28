@@ -108,8 +108,9 @@ export function sanitizeDetail(apiData: Object): Booking {
       ],
     },
     assets: {
-      ticketUrl: apiData.assets.eticket,
-      invoiceUrl: apiData.assets.invoice,
+      ticketUrl: idx(apiData, _ => _.assets.eticket),
+      invoiceUrl: idx(apiData, _ => _.assets.invoice),
+      boardingPasses: idx(apiData, _ => _.assets.boarding_passes) || {},
     },
     bookedServices: sanitizeAdditionalBookings(
       apiData.additional_bookings.details,

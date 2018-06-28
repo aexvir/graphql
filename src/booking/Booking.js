@@ -80,6 +80,7 @@ export type Booking = BookingsItem & {
 };
 
 export type BookingAssets = {
-  ticketUrl: string,
-  invoiceUrl: string,
+  ticketUrl: ?string,
+  invoiceUrl: ?string,
+  boardingPasses: { [string]: string },
 };

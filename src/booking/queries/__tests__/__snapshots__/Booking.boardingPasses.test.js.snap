@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should return boarding passes 1`] = `
+Object {
+  "data": Object {
+    "booking": Object {
+      "assets": Object {
+        "boardingPasses": Array [
+          Object {
+            "boardingPassUrl": "https://very.real/pass.pdf",
+            "flightNumber": "315289498",
+          },
+          Object {
+            "boardingPassUrl": "https://very.real/all.pdf",
+            "flightNumber": "all",
+          },
+        ],
+      },
+    },
+  },
+}
+`;
