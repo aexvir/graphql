@@ -26,6 +26,7 @@ export default new GraphQLObjectType({
       description: 'Boarding passes for flights in this booking',
       resolve: ({
         boardingPasses,
+        legs,
       }: BookingAssets): Array<{
         boardingPassUrl: mixed,
         flightNumber: string,
@@ -33,6 +34,7 @@ export default new GraphQLObjectType({
         Object.entries(boardingPasses).map(([key, value]) => ({
           boardingPassUrl: value,
           flightNumber: key,
+          legs: legs,
         })),
     },
   },

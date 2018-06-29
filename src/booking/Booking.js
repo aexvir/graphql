@@ -83,4 +83,5 @@ export type BookingAssets = {
   ticketUrl: ?string,
   invoiceUrl: ?string,
   boardingPasses: { [string]: string },
+  legs: Array<Leg>,
 };

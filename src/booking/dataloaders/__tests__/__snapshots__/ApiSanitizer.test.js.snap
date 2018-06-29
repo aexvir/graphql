@@ -48,6 +48,72 @@ Object {
       "all": null,
     },
     "invoiceUrl": "https://booking.skypicker.com/api/v0.1/get_file/2968389?file_id=337020126&simple_token=b9cb406d-f797-434c-bc21-a0612b92f201",
+    "legs": Array [
+      Object {
+        "airlineCode": "LO",
+        "arrival": Object {
+          "when": Object {
+            "local": 2017-09-11T09:55:00.000Z,
+            "utc": 2017-09-11T07:55:00.000Z,
+          },
+          "where": Object {
+            "cityId": "warsaw_pl",
+            "cityName": "Warsaw",
+            "code": "WAW",
+          },
+        },
+        "bookingId": 2968389,
+        "departure": Object {
+          "when": Object {
+            "local": 2017-09-11T09:05:00.000Z,
+            "utc": 2017-09-11T07:05:00.000Z,
+          },
+          "where": Object {
+            "cityId": "rzeszow_pl",
+            "cityName": "Rzeszow",
+            "code": "RZE",
+          },
+        },
+        "flightNo": 3806,
+        "guarantee": false,
+        "id": "SP1123103_1678073",
+        "isReturn": false,
+        "recheckRequired": false,
+        "vehicleType": "aircraft",
+      },
+      Object {
+        "airlineCode": "LO",
+        "arrival": Object {
+          "when": Object {
+            "local": 2017-09-11T11:40:00.000Z,
+            "utc": 2017-09-11T09:40:00.000Z,
+          },
+          "where": Object {
+            "cityId": "gdansk_pl",
+            "cityName": "Gdansk",
+            "code": "GDN",
+          },
+        },
+        "bookingId": 2968389,
+        "departure": Object {
+          "when": Object {
+            "local": 2017-09-11T10:45:00.000Z,
+            "utc": 2017-09-11T08:45:00.000Z,
+          },
+          "where": Object {
+            "cityId": "warsaw_pl",
+            "cityName": "Warsaw",
+            "code": "WAW",
+          },
+        },
+        "flightNo": 3835,
+        "guarantee": false,
+        "id": "SP1123103_1678074",
+        "isReturn": false,
+        "recheckRequired": false,
+        "vehicleType": "aircraft",
+      },
+    ],
     "ticketUrl": "https://skypicker-mailing.s3.amazonaws.com/2968/1493837026_E-ticket_passenger_8394a1c13f8dcdce559085cfbbb6cc00.pdf?v=1493837026",
   },
   "authToken": "b9cb406d-f797-434c-bc21-a0612b92f201",
