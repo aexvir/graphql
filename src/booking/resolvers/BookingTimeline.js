@@ -21,6 +21,7 @@ import type {
 } from '../BookingTimeline';
 import type { Booking } from '../Booking';
 import type { Leg } from '../../flight/Flight';
+import type { TripData } from '../types/outputs/Trip';
 
 export default function generateEventsFrom(
   booking: Booking,
@@ -32,34 +33,67 @@ export default function generateEventsFrom(
   const paymentConfirmedEvent = generatePaymentConfirmedEvent(booking);
   const downloadInvoiceEvent = generateDownloadInvoiceEvent(booking);
   const downloadETicketEvent = generateDownloadETicketEvent(booking);
-  const leaveForAirportEvent = generateLeaveForAirportEvent(booking);
-  const airportArrivalEvent = generateAirportArrivalEvent(booking);
 
   if (bookedFlightEvent) events.push(bookedFlightEvent);
   if (bookingConfirmedEvent) events.push(bookingConfirmedEvent);
   if (paymentConfirmedEvent) events.push(paymentConfirmedEvent);
   if (downloadInvoiceEvent) events.push(downloadInvoiceEvent);
   if (downloadETicketEvent) events.push(downloadETicketEvent);
-  if (leaveForAirportEvent) events.push(leaveForAirportEvent);
-  if (airportArrivalEvent) events.push(airportArrivalEvent);
 
-  if (booking.legs) {
-    booking.legs.forEach(leg => {
-      const boardingEvent = generateBoardingEvent(leg);
-      if (boardingEvent) events.push(boardingEvent);
-
-      const departureEvent = generateDepartureEvent(leg);
-      if (departureEvent) events.push(departureEvent);
-
-      const arrivalEvent = generateArrivalEvent(leg);
-      if (arrivalEvent) events.push(arrivalEvent);
-    });
+  let tripEvents = [];
+  switch (booking.type) {
+    case 'BookingOneWay': {
+      const { departure, arrival, legs } = booking;
+      tripEvents = generateTripEvents({ departure, arrival, legs });
+      break;
+    }
+    case 'BookingReturn': {
+      const { outbound, inbound } = booking;
+      tripEvents = [
+        ...generateTripEvents(outbound),
+        ...generateTripEvents(inbound),
+      ];
+      break;
+    }
+    case 'BookingMulticity': {
+      const { trips } = booking;
+      trips &&
+        trips.forEach(trip => tripEvents.push(...generateTripEvents(trip)));
+      break;
+    }
   }
-
-  const transportFromAirportEvent = generateTransportFromAirportEvent(booking);
-  if (transportFromAirportEvent) events.push(transportFromAirportEvent);
+  events.push(...tripEvents);
 
   return events;
+}
+
+function generateTripEvents(trip: ?TripData): Array<any> {
+  const tripEvents = [];
+  if (!trip) {
+    return [];
+  }
+  const leaveForAirportEvent = generateLeaveForAirportEvent(trip);
+  if (leaveForAirportEvent) tripEvents.push(leaveForAirportEvent);
+
+  const airportArrivalEvent = generateAirportArrivalEvent(trip);
+  if (airportArrivalEvent) tripEvents.push(airportArrivalEvent);
+
+  if (trip.legs) {
+    trip.legs.forEach(leg => {
+      const boardingEvent = generateBoardingEvent(leg);
+      if (boardingEvent) tripEvents.push(boardingEvent);
+
+      const departureEvent = generateDepartureEvent(leg);
+      if (departureEvent) tripEvents.push(departureEvent);
+
+      const arrivalEvent = generateArrivalEvent(leg);
+      if (arrivalEvent) tripEvents.push(arrivalEvent);
+    });
+  }
+  const transportFromAirportEvent = generateTransportFromAirportEvent(trip);
+  if (transportFromAirportEvent) tripEvents.push(transportFromAirportEvent);
+
+  return tripEvents;
 }
 
 export function generateBookedFlightEvent(booking: Booking): BookedFlightType {
@@ -120,9 +154,9 @@ export function generateDownloadETicketEvent(
 }
 
 export function generateLeaveForAirportEvent(
-  booking: Booking,
+  booking: Booking | TripData,
 ): ?LeaveForAirportType {
-  const localDepartureTime = idx(booking.departure, _ => _.when.utc);
+  const localDepartureTime = idx(booking.departure, _ => _.when.local);
   if (localDepartureTime) {
     const leaveForAiportTime = DateTime.fromJSDate(localDepartureTime, {
       zone: 'UTC',
@@ -140,9 +174,9 @@ export function generateLeaveForAirportEvent(
 }
 
 export function generateAirportArrivalEvent(
-  booking: Booking,
+  booking: Booking | TripData,
 ): ?AirportArrivalType {
-  const localDepartureTime = idx(booking.departure, _ => _.when.utc);
+  const localDepartureTime = idx(booking.departure, _ => _.when.local);
   if (localDepartureTime) {
     const AiportArrivalTime = DateTime.fromJSDate(localDepartureTime, {
       zone: 'UTC',
@@ -161,7 +195,7 @@ export function generateAirportArrivalEvent(
 }
 
 export function generateBoardingEvent(leg: Leg): ?BoardingType {
-  const localDepartureTime = idx(leg, _ => _.departure.when.utc);
+  const localDepartureTime = idx(leg, _ => _.departure.when.local);
   if (localDepartureTime) {
     const BoardingTime = DateTime.fromJSDate(localDepartureTime, {
       zone: 'UTC',
@@ -180,7 +214,7 @@ export function generateBoardingEvent(leg: Leg): ?BoardingType {
 }
 
 export function generateDepartureEvent(leg: Leg): ?DepartureType {
-  const departureTime = idx(leg, _ => _.departure.when.utc);
+  const departureTime = idx(leg, _ => _.departure.when.local);
   const duration = getFlightDurationInMinutes(leg.departure, leg.arrival);
   if (departureTime) {
     return {
@@ -194,7 +228,7 @@ export function generateDepartureEvent(leg: Leg): ?DepartureType {
 }
 
 export function generateArrivalEvent(leg: Leg): ?ArrivalType {
-  const arrivalTime = idx(leg, _ => _.arrival.when.utc);
+  const arrivalTime = idx(leg, _ => _.arrival.when.local);
   if (arrivalTime) {
     return {
       timestamp: arrivalTime,
@@ -206,9 +240,9 @@ export function generateArrivalEvent(leg: Leg): ?ArrivalType {
 }
 
 export function generateTransportFromAirportEvent(
-  booking: Booking,
+  booking: Booking | TripData,
 ): ?TransportFromAirportType {
-  const arrivalTime = idx(booking.arrival, _ => _.when.utc);
+  const arrivalTime = idx(booking.arrival, _ => _.when.local);
   if (arrivalTime) {
     const transportFromAirportTime = DateTime.fromJSDate(arrivalTime, {
       zone: 'UTC',

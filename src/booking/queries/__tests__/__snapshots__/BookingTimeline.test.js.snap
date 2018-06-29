@@ -59,7 +59,7 @@ Object {
         },
         Object {
           "__typename": "LeaveForAirportTimelineEvent",
-          "timestamp": "2017-09-09T16:10:00.000Z",
+          "timestamp": "2017-09-09T17:10:00.000Z",
         },
         Object {
           "__typename": "AirportArrivalTimelineEvent",
@@ -72,12 +72,12 @@ Object {
               },
             },
           },
-          "timestamp": "2017-09-09T18:10:00.000Z",
+          "timestamp": "2017-09-09T19:10:00.000Z",
         },
         Object {
           "__typename": "BoardingTimelineEvent",
           "gate": "gate number",
-          "timestamp": "2017-09-09T19:40:00.000Z",
+          "timestamp": "2017-09-09T20:40:00.000Z",
         },
         Object {
           "__typename": "DepartureTimelineEvent",
@@ -89,7 +89,7 @@ Object {
               },
             },
           },
-          "timestamp": "2017-09-09T20:10:00.000Z",
+          "timestamp": "2017-09-09T21:10:00.000Z",
         },
         Object {
           "__typename": "ArrivalTimelineEvent",
@@ -102,11 +102,11 @@ Object {
               },
             },
           },
-          "timestamp": "2017-09-09T21:30:00.000Z",
+          "timestamp": "2017-09-09T23:30:00.000Z",
         },
         Object {
           "__typename": "TransportFromAirportTimelineEvent",
-          "timestamp": "2017-09-09T21:45:00.000Z",
+          "timestamp": "2017-09-09T23:45:00.000Z",
         },
       ],
     },
