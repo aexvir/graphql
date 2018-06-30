@@ -1,24 +1,14 @@
 // @flow
 
-import { GraphQLEnumType } from 'graphql';
 import { connectionArgs, connectionDefinitions } from 'graphql-relay';
 
 import type { GraphqlContextType } from '../../common/services/GraphqlContext';
 import FAQCategory from './../types/outputs/FAQCategory';
+import FAQSection from '../types/enums/FAQSection';
 import { connectionFromArray } from '../../common/services/ArrayConnection';
 
 const { connectionType: FaqCategoriesConnection } = connectionDefinitions({
   nodeType: FAQCategory,
-});
-
-const FAQSection = new GraphQLEnumType({
-  name: 'FAQSection',
-  values: {
-    BEFORE_BOOKING: { value: 'beforeBooking' },
-    UPCOMING_BOOKING: { value: 'upcomingBooking' },
-    URGENT_BOOKING: { value: 'urgentBooking' },
-    PAST_BOOKING: { value: 'pastBooking' },
-  },
 });
 
 export default {
