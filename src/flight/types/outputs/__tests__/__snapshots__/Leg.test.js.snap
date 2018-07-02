@@ -16,6 +16,14 @@ Object {
     "resolve": [Function],
     "type": "RouteStop",
   },
+  "boardingPass": Object {
+    "args": Array [],
+    "description": "Boarding pass for this leg",
+    "isDeprecated": false,
+    "name": "boardingPass",
+    "resolve": [Function],
+    "type": "BoardingPass",
+  },
   "departure": Object {
     "args": Array [],
     "isDeprecated": false,
@@ -76,5 +84,12 @@ Object {
     "resolve": [Function],
     "type": "VehicleType",
   },
+}
+`;
+
+exports[`boardingPass resolver returns correct value 1`] = `
+Object {
+  "boardingPassUrl": "https://very.real/boarding_pass.pdf",
+  "flightNumber": "32432424",
 }
 `;

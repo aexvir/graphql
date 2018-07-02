@@ -1,5 +1,6 @@
 // @flow
 
+import idx from 'idx';
 import {
   GraphQLObjectType,
   GraphQLBoolean,
@@ -15,6 +16,7 @@ import FlightDurationInMinutes from '../../resolvers/FlightDuration';
 import { GraphQLCoveredBy, CoveredBy } from '../enums/CoveredBy';
 import type { GraphqlContextType } from '../../../common/services/GraphqlContext';
 import type { DepartureArrival, Leg, VehicleType } from '../../Flight';
+import BoardingPass from '../../../booking/types/outputs/BoardingPass';
 
 const VehicleTypes = new GraphQLEnumType({
   name: 'VehicleType',
@@ -105,6 +107,26 @@ export default new GraphQLObjectType({
       description: 'Information about who covers the transfer',
       resolve: ({ guarantee }: Leg) =>
         guarantee ? CoveredBy.KIWICOM : CoveredBy.CARRIER,
+    },
+
+    boardingPass: {
+      type: BoardingPass,
+      description: 'Boarding pass for this leg',
+      resolve: async (
+        { id, bookingId }: { id: string, bookingId: string },
+        _,
+        { dataLoader }: GraphqlContextType,
+      ) => {
+        if (!bookingId) {
+          return null;
+        }
+        const booking = await dataLoader.booking.load(bookingId);
+
+        return {
+          flightNumber: id,
+          boardingPassUrl: idx(booking, _ => _.assets.boardingPasses[id]),
+        };
+      },
     },
   },
 });
