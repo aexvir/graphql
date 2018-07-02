@@ -34,7 +34,7 @@ export default new GraphQLObjectType({
         Object.entries(boardingPasses).map(([key, value]) => ({
           boardingPassUrl: value,
           flightNumber: key,
-          legs: legs,
+          legs,
         })),
     },
   },
