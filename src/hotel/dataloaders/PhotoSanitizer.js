@@ -12,13 +12,16 @@ export default (photos: Object): HotelPhotoType[] => {
 };
 
 function sanitizePhotos(photoData: Object): HotelPhotoType {
-  const { url_original, ...photo } = photoData;
-  const id = path.basename(url_original, path.extname(url_original));
+  const { ...photo } = photoData;
+  const id = path.basename(
+    photoData.url_original,
+    path.extname(photoData.url_original),
+  );
 
   return {
     id,
     lowResolution: photo.url_max300,
-    highResolution: url_original,
+    highResolution: photoData.url_original,
     thumbnail: photo.url_square60,
   };
 }

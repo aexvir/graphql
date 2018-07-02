@@ -22,6 +22,7 @@
   ],
   "rules": {
     "curly": [2, "all"],
+    "camelcase": 2,
     "no-use-before-define": 0, # I like the logic going from highlevel to lowlevel.
     "no-shadow": 0, # Shadowing is a nice language feature. Naming is hard.
     "import/prefer-default-export": 0, # Keep imports of helper functions consistent.
