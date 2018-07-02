@@ -5,7 +5,8 @@ import Leg from '../../../flight/types/outputs/Leg';
 
 export default new GraphQLObjectType({
   name: 'BoardingPass',
-  fields: {
+  fields: () => ({
+    // using a thunk here to avoid cryptic errors caused by circular dependency
     flightNumber: {
       type: GraphQLString,
       resolve: ({ flightNumber }) => flightNumber,
@@ -19,5 +20,5 @@ export default new GraphQLObjectType({
       resolve: ({ legs, flightNumber }) =>
         legs.filter(leg => leg.id === flightNumber)[0] || null,
     },
-  },
+  }),
 });

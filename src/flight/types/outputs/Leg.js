@@ -31,7 +31,8 @@ export default new GraphQLObjectType({
   name: 'Leg',
   description:
     'Leg is the operation of an aircraft from one scheduled departure station to its next scheduled arrival station.',
-  fields: {
+  fields: () => ({
+    // using a thunk here to avoid cryptic errors caused by circular dependency
     id: globalIdField(),
 
     airline: {
@@ -128,5 +129,5 @@ export default new GraphQLObjectType({
         };
       },
     },
-  },
+  }),
 });
