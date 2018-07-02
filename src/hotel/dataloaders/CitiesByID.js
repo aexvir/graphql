@@ -37,9 +37,9 @@ function createUrl(cityIds: $ReadOnlyArray<number>) {
 }
 
 function sanitizeCity(cityData): City {
-  const { city_id, name, location } = cityData;
+  const { name, location } = cityData;
   return {
-    id: city_id,
+    id: cityData.city_id,
     name,
     location: {
       latitude: location.latitude,

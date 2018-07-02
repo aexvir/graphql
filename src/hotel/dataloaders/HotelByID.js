@@ -60,9 +60,9 @@ function createUrl(hotelIds: $ReadOnlyArray<number>, language: ?string) {
 }
 
 function sanitizeHotel(hotelData, language: ?string): HotelExtendedType {
-  const { hotel_data: hotel, hotel_id, room_data: rooms } = hotelData;
+  const { hotel_data: hotel, room_data: rooms } = hotelData;
   return {
-    id: hotel_id,
+    id: hotelData.hotel_id,
     name: hotel.name,
     rating: Math.round(hotel.class),
     review: {
@@ -87,7 +87,7 @@ function sanitizeHotel(hotelData, language: ?string): HotelExtendedType {
       longitude: hotel.location.longitude,
       latitude: hotel.location.latitude,
     },
-    rooms: sanitizeHotelRooms(rooms, hotel_id),
+    rooms: sanitizeHotelRooms(rooms, hotelData.hotel_id),
     args: {
       language,
     },
