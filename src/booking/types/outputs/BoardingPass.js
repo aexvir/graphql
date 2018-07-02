@@ -17,7 +17,7 @@ export default new GraphQLObjectType({
     leg: {
       type: Leg,
       resolve: ({ legs, flightNumber }) =>
-        legs.filter(leg => leg.id === flightNumber)[0],
+        legs.filter(leg => leg.id === flightNumber)[0] || null,
     },
   },
 });
