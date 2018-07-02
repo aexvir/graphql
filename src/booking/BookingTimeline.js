@@ -53,6 +53,7 @@ export type DownloadETicketTimelineEvent = {|
 export type DownloadBoardingPassTimelineEvent = {|
   +timestamp: Date,
   +type: 'DownloadBoardingPassTimelineEvent',
+  +leg: LegType,
 |};
 
 export type LeaveForAirportTimelineEvent = {|

@@ -120,6 +120,13 @@ Object {
 
 exports[`DownloadBoardingPassTimelineEvent type should have valid fields 1`] = `
 Object {
+  "leg": Object {
+    "args": Array [],
+    "description": "Leg corresponding to the boarding pass",
+    "isDeprecated": false,
+    "name": "leg",
+    "type": "Leg",
+  },
   "timestamp": Object {
     "args": Array [],
     "description": "Time of appearance in the timeline.",

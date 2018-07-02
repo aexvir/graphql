@@ -12129,6 +12129,18 @@
             },
             "isDeprecated": false,
             "deprecationReason": null
+          },
+          {
+            "name": "leg",
+            "description": "Leg corresponding to the boarding pass",
+            "args": [],
+            "type": {
+              "kind": "OBJECT",
+              "name": "Leg",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
           }
         ],
         "inputFields": null,

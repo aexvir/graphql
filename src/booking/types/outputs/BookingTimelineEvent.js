@@ -98,7 +98,13 @@ export const DownloadETicketTimelineEvent = new GraphQLObjectType({
 
 export const DownloadBoardingPassTimelineEvent = new GraphQLObjectType({
   name: 'DownloadBoardingPassTimelineEvent',
-  fields: commonFields,
+  fields: {
+    ...commonFields,
+    leg: {
+      type: Leg,
+      description: 'Leg corresponding to the boarding pass',
+    },
+  },
   isTypeOf: value => value.type === 'DownloadBoardingPassTimelineEvent',
   interfaces: [TimelineEvent],
 });

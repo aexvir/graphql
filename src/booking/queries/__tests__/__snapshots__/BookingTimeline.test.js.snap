@@ -80,6 +80,10 @@ Object {
           "timestamp": "2017-09-09T20:40:00.000Z",
         },
         Object {
+          "__typename": "DownloadBoardingPassTimelineEvent",
+          "timestamp": "2017-09-09T21:10:00.000Z",
+        },
+        Object {
           "__typename": "DepartureTimelineEvent",
           "duration": 80,
           "location": Object {

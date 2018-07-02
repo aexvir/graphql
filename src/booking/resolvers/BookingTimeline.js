@@ -12,6 +12,7 @@ import type {
   PaymentConfirmedTimelineEvent as PaymentConfirmedType,
   DownloadInvoiceTimelineEvent as DownloadInvoiceType,
   DownloadETicketTimelineEvent as DownloadETicketType,
+  DownloadBoardingPassTimelineEvent as DownloadBoardingPassType,
   LeaveForAirportTimelineEvent as LeaveForAirportType,
   AirportArrivalTimelineEvent as AirportArrivalType,
   BoardingTimelineEvent as BoardingType,
@@ -99,6 +100,11 @@ function generateTripEvents(trip: ?TripData): Array<any> {
         tripEvents.push(boardingEvent);
       }
 
+      const downloadBoardingPassEvent = generateDownloadBoardingPassEvent(leg);
+      if (downloadBoardingPassEvent) {
+        tripEvents.push(downloadBoardingPassEvent);
+      }
+
       const departureEvent = generateDepartureEvent(leg);
       if (departureEvent) {
         tripEvents.push(departureEvent);
@@ -173,6 +179,20 @@ export function generateDownloadETicketEvent(
     type: 'DownloadETicketTimelineEvent',
     ticketUrl: ticketUrl,
   };
+}
+
+export function generateDownloadBoardingPassEvent(
+  leg: Leg,
+): ?DownloadBoardingPassType {
+  const localDepartureTime = idx(leg, _ => _.departure.when.local);
+  if (localDepartureTime) {
+    return {
+      timestamp: localDepartureTime,
+      type: 'DownloadBoardingPassTimelineEvent',
+      leg,
+    };
+  }
+  return null;
 }
 
 export function generateLeaveForAirportEvent(
