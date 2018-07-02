@@ -95,7 +95,9 @@ function sanitizeHotel(hotelData, language: ?string): HotelExtendedType {
 }
 
 function sanitizeHotelFacilities(facilities): HotelFacilityType[] {
-  if (!Array.isArray(facilities)) return [];
+  if (!Array.isArray(facilities)) {
+    return [];
+  }
   return facilities.map(facility => ({
     id: facility.hotel_facility_type_id,
     name: facility.name,

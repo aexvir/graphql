@@ -53,7 +53,9 @@ export default new GraphQLObjectType({
       }).connectionType,
       args: connectionArgs,
       resolve: async ({ photos }: HotelRoomType, args: Object) => {
-        if (!photos) return [];
+        if (!photos) {
+          return [];
+        }
         return connectionFromArray(photos, args);
       },
     },

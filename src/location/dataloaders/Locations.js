@@ -97,7 +97,9 @@ export default class LocationsDataloader {
 }
 
 export function sanitizeOptions(options: ?Options): Object {
-  if (!options) return {};
+  if (!options) {
+    return {};
+  }
   return {
     locale:
       typeof options.locale === 'string'

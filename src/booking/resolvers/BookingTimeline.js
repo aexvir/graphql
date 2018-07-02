@@ -34,11 +34,21 @@ export default function generateEventsFrom(
   const downloadInvoiceEvent = generateDownloadInvoiceEvent(booking);
   const downloadETicketEvent = generateDownloadETicketEvent(booking);
 
-  if (bookedFlightEvent) events.push(bookedFlightEvent);
-  if (bookingConfirmedEvent) events.push(bookingConfirmedEvent);
-  if (paymentConfirmedEvent) events.push(paymentConfirmedEvent);
-  if (downloadInvoiceEvent) events.push(downloadInvoiceEvent);
-  if (downloadETicketEvent) events.push(downloadETicketEvent);
+  if (bookedFlightEvent) {
+    events.push(bookedFlightEvent);
+  }
+  if (bookingConfirmedEvent) {
+    events.push(bookingConfirmedEvent);
+  }
+  if (paymentConfirmedEvent) {
+    events.push(paymentConfirmedEvent);
+  }
+  if (downloadInvoiceEvent) {
+    events.push(downloadInvoiceEvent);
+  }
+  if (downloadETicketEvent) {
+    events.push(downloadETicketEvent);
+  }
 
   let tripEvents = [];
   switch (booking.type) {
@@ -73,25 +83,37 @@ function generateTripEvents(trip: ?TripData): Array<any> {
     return [];
   }
   const leaveForAirportEvent = generateLeaveForAirportEvent(trip);
-  if (leaveForAirportEvent) tripEvents.push(leaveForAirportEvent);
+  if (leaveForAirportEvent) {
+    tripEvents.push(leaveForAirportEvent);
+  }
 
   const airportArrivalEvent = generateAirportArrivalEvent(trip);
-  if (airportArrivalEvent) tripEvents.push(airportArrivalEvent);
+  if (airportArrivalEvent) {
+    tripEvents.push(airportArrivalEvent);
+  }
 
   if (trip.legs) {
     trip.legs.forEach(leg => {
       const boardingEvent = generateBoardingEvent(leg);
-      if (boardingEvent) tripEvents.push(boardingEvent);
+      if (boardingEvent) {
+        tripEvents.push(boardingEvent);
+      }
 
       const departureEvent = generateDepartureEvent(leg);
-      if (departureEvent) tripEvents.push(departureEvent);
+      if (departureEvent) {
+        tripEvents.push(departureEvent);
+      }
 
       const arrivalEvent = generateArrivalEvent(leg);
-      if (arrivalEvent) tripEvents.push(arrivalEvent);
+      if (arrivalEvent) {
+        tripEvents.push(arrivalEvent);
+      }
     });
   }
   const transportFromAirportEvent = generateTransportFromAirportEvent(trip);
-  if (transportFromAirportEvent) tripEvents.push(transportFromAirportEvent);
+  if (transportFromAirportEvent) {
+    tripEvents.push(transportFromAirportEvent);
+  }
 
   return tripEvents;
 }

@@ -55,7 +55,9 @@ function createGraphqlServer(schema, context) {
     context: context,
     extensions: () => {
       const traceCollector = context._traceCollector;
-      if (!traceCollector) return {};
+      if (!traceCollector) {
+        return {};
+      }
       traceCollector.requestDidEnd();
       return {
         tracing: formatTraceData(traceCollector),
