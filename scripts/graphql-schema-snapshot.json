@@ -896,6 +896,16 @@
                   }
                 },
                 "defaultValue": null
+              },
+              {
+                "name": "section",
+                "description": "Fetch only subsection of FAQ based on the current situation of customer.",
+                "type": {
+                  "kind": "ENUM",
+                  "name": "FAQSection",
+                  "ofType": null
+                },
+                "defaultValue": null
               }
             ],
             "type": {

@@ -4,6 +4,7 @@ import { GraphQLID, GraphQLNonNull } from 'graphql';
 import { fromGlobalId } from 'graphql-relay';
 
 import FAQCategory from '../types/outputs/FAQCategory';
+import FAQSection from '../types/enums/FAQSection';
 import type { GraphqlContextType } from '../../common/services/GraphqlContext';
 import type { FAQCategoryItem } from '../dataloaders/FAQCategories';
 
@@ -38,14 +39,22 @@ export default {
       type: new GraphQLNonNull(GraphQLID),
       description: 'ID of FAQ category to retrieve.',
     },
+    section: {
+      type: FAQSection,
+      description:
+        'Fetch only subsection of FAQ based on the current situation of customer.',
+    },
   },
   resolve: async (
     ancestor: mixed,
-    { id }: Object,
+    { id, section }: Object,
     { dataLoader }: GraphqlContextType,
   ) => {
     const categoryId = Number(fromGlobalId(id).id);
-    const categories = await dataLoader.FAQCategories.load({ section: 'all' });
+    const categories = await dataLoader.FAQCategories.load({
+      // dataloader needs to be called with value => null can't be used as default
+      section: section || 'all',
+    });
 
     const category = findCategory(categories, categoryId);
 
