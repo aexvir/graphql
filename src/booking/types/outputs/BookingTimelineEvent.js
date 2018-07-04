@@ -198,3 +198,10 @@ export const TransportFromAirportTimelineEvent = new GraphQLObjectType({
   isTypeOf: value => value.type === 'TransportFromAirportTimelineEvent',
   interfaces: [TimelineEvent],
 });
+
+export const NoMoreEditsTimelineEvent = new GraphQLObjectType({
+  name: 'NoMoreEditsTimelineEvent',
+  fields: commonFields,
+  isTypeOf: value => value.type === 'NoMoreEditsTimelineEvent',
+  interfaces: [TimelineEvent],
+});

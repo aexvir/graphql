@@ -28,6 +28,7 @@ export type BookingsItem = {
   inbound?: TripData,
   outbound?: TripData,
   passengers: Passenger[],
+  allowedToChangeFlights: ?number,
 };
 
 export type TravelDocument = {|

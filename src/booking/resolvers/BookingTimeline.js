@@ -19,6 +19,7 @@ import type {
   DepartureTimelineEvent as DepartureType,
   ArrivalTimelineEvent as ArrivalType,
   TransportFromAirportTimelineEvent as TransportFromAirportType,
+  NoMoreEditsTimelineEvent as NoMoreEditsType,
 } from '../BookingTimeline';
 import type { Booking } from '../Booking';
 import type { Leg } from '../../flight/Flight';
@@ -34,6 +35,7 @@ export default function generateEventsFrom(
   const paymentConfirmedEvent = generatePaymentConfirmedEvent(booking);
   const downloadInvoiceEvent = generateDownloadInvoiceEvent(booking);
   const downloadETicketEvent = generateDownloadETicketEvent(booking);
+  const noMoreEditsEvent = generateNoMoreEditsEvent(booking);
 
   if (bookedFlightEvent) {
     events.push(bookedFlightEvent);
@@ -49,6 +51,9 @@ export default function generateEventsFrom(
   }
   if (downloadETicketEvent) {
     events.push(downloadETicketEvent);
+  }
+  if (noMoreEditsEvent) {
+    events.push(noMoreEditsEvent);
   }
 
   let tripEvents = [];
@@ -298,6 +303,23 @@ export function generateTransportFromAirportEvent(
     return {
       timestamp: transportFromAirportTime,
       type: 'TransportFromAirportTimelineEvent',
+    };
+  }
+  return null;
+}
+
+export function generateNoMoreEditsEvent(booking: Booking): ?NoMoreEditsType {
+  const departureTime = idx(booking.departure, _ => _.when.local);
+  const allowdToChangeFlights = idx(booking, _ => _.allowedToChangeFlights);
+  if (departureTime && allowdToChangeFlights) {
+    const noMoreEditsTime = DateTime.fromJSDate(departureTime, {
+      zone: 'UTC',
+    })
+      .minus({ hours: allowdToChangeFlights })
+      .toJSDate();
+    return {
+      timestamp: noMoreEditsTime,
+      type: 'NoMoreEditsTimelineEvent',
     };
   }
   return null;

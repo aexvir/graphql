@@ -12,6 +12,7 @@ import resolver, {
   generateDepartureEvent,
   generateArrivalEvent,
   generateTransportFromAirportEvent,
+  generateNoMoreEditsEvent,
 } from '../BookingTimeline';
 
 describe('resolver', () => {
@@ -599,6 +600,51 @@ describe('generateTransportFromAirportEvent', () => {
     expect(
       // $FlowExpectedError: full Booking object is not needed for this test
       generateTransportFromAirportEvent({}),
+    ).toBe(null);
+  });
+});
+
+describe('generateNoMoreEditsEvent', () => {
+  const date = new Date('2018-05-03T14:10:57.000Z');
+  it('should return NoMoreEditsEvent if apiData.config.allowedToChange.flights is a number', () => {
+    expect(
+      // $FlowExpectedError: full Booking object is not needed for this test
+      generateNoMoreEditsEvent({
+        departure: {
+          when: {
+            local: date,
+          },
+        },
+        allowedToChangeFlights: 48,
+      }),
+    ).toEqual({
+      timestamp: new Date('2018-05-01T14:10:57.000Z'),
+      type: 'NoMoreEditsTimelineEvent',
+    });
+  });
+  it('should return NoMoreEditsEvent if apiData.config.allowedToChange.flights is null', () => {
+    expect(
+      // $FlowExpectedError: full Booking object is not needed for this test
+      generateNoMoreEditsEvent({
+        departure: {
+          when: {
+            local: date,
+          },
+        },
+        allowedToChangeFlights: null,
+      }),
+    ).toBe(null);
+  });
+  it('should return NoMoreEditsEvent if apiData.config.allowedToChange.flights is not given', () => {
+    expect(
+      // $FlowExpectedError: full Booking object is not needed for this test
+      generateNoMoreEditsEvent({
+        departure: {
+          when: {
+            local: date,
+          },
+        },
+      }),
     ).toBe(null);
   });
 });
