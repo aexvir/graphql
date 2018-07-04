@@ -86,10 +86,3 @@ Object {
   },
 }
 `;
-
-exports[`boardingPass resolver returns correct value 1`] = `
-Object {
-  "boardingPassUrl": "https://very.real/boarding_pass.pdf",
-  "flightNumber": "32432424",
-}
-`;

@@ -45,6 +45,7 @@ export type Leg = {|
   bookingId?: number,
   guarantee: boolean,
   boardingPass?: BoardingPass,
+  boardingPassAvailableAt?: ?string,
 |};
 
 export type Airline = {|

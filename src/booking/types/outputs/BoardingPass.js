@@ -1,6 +1,7 @@
 // @flow
 
 import { GraphQLObjectType, GraphQLString } from 'graphql';
+import { GraphQLDate } from 'graphql-iso-date';
 import Leg from '../../../flight/types/outputs/Leg';
 
 export default new GraphQLObjectType({
@@ -17,8 +18,14 @@ export default new GraphQLObjectType({
     },
     leg: {
       type: Leg,
-      resolve: ({ legs, flightNumber }) =>
-        legs.filter(leg => leg.id === flightNumber)[0] || null,
+      description: 'The leg for the boarding pass',
+      resolve: ({ leg }) => leg,
+    },
+    availableAt: {
+      type: GraphQLDate,
+      description:
+        'The date when the boarding pass will be available for download',
+      reslove: ({ availableAt }) => availableAt,
     },
   }),
 });

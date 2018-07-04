@@ -122,11 +122,13 @@ export default new GraphQLObjectType({
           return null;
         }
         const booking = await dataLoader.booking.load(bookingId);
+        const boardingPasses = idx(booking, _ => _.assets.boardingPasses) || [];
+        const boardingPass =
+          boardingPasses.find(
+            boardingPass => boardingPass.flightNumber === id,
+          ) || null;
 
-        return {
-          flightNumber: id,
-          boardingPassUrl: idx(booking, _ => _.assets.boardingPasses[id]),
-        };
+        return boardingPass;
       },
     },
   }),

@@ -26,9 +26,20 @@ describe('boardingPass resolver', () => {
   it('returns correct value', async () => {
     const fakeBoardingPassData = {
       assets: {
-        boardingPasses: {
-          '32432424': 'https://very.real/boarding_pass.pdf',
-        },
+        boardingPasses: [
+          {
+            boardingPassUrl: 'https://very.real/boarding_pass.pdf',
+            flightNumber: '32432424',
+            availableAt: null,
+            leg: null,
+          },
+          {
+            boardingPassUrl: 'https://very.fake/boarding_pass.pdf',
+            flightNumber: '12344321',
+            availableAt: null,
+            leg: null,
+          },
+        ],
       },
     };
     const fakeContext = {
@@ -47,6 +58,36 @@ describe('boardingPass resolver', () => {
       undefined,
       fakeContext,
     );
-    expect(returnValue).toMatchSnapshot();
+    expect(returnValue).toEqual({
+      boardingPassUrl: 'https://very.real/boarding_pass.pdf',
+      flightNumber: '32432424',
+      availableAt: null,
+      leg: null,
+    });
+  });
+
+  it('handles undefined boardingPasses value', async () => {
+    const fakeBoardingPassData = {
+      assets: {},
+    };
+    const fakeContext = {
+      dataLoader: {
+        booking: {
+          load: jest.fn(async () => {
+            fakeBoardingPassData;
+          }),
+        },
+      },
+    };
+    const returnValue = await evaluateResolver(
+      fields.boardingPass,
+      {
+        id: '32432424',
+        bookingId: 'X324-324A24',
+      },
+      undefined,
+      fakeContext,
+    );
+    expect(returnValue).toEqual(null);
   });
 });

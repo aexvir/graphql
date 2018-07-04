@@ -3,7 +3,12 @@
 import idx from 'idx';
 
 import { sanitizeRoute } from '../../flight/dataloaders/RouteSanitizer';
-import type { BookingsItem, Booking, BookingType } from '../Booking';
+import type {
+  BookingsItem,
+  Booking,
+  BookingType,
+  BoardingPass,
+} from '../Booking';
 import type { Leg } from '../../flight/Flight';
 import type { TripData } from '../types/outputs/Trip';
 import type { InboundOutboundData } from '../types/outputs/BookingReturn';
@@ -16,12 +21,14 @@ import type { InboundOutboundData } from '../types/outputs/BookingReturn';
  */
 export function sanitizeListItem(apiData: Object): BookingsItem {
   const bid = parseInt(apiData.bid);
+
   const legs = apiData.flights.map((flight): Leg => ({
     id: flight.id,
     bookingId: bid,
     recheckRequired: flight.bags_recheck_required,
     isReturn: flight.return === 1,
     flightNo: flight.flight_no,
+    boardingPassAvailableAt: idx(flight, _ => _.ticket_available_at),
     departure: sanitizeRoute({
       utc: idx(flight.departure, _ => _.when.utc),
       local: idx(flight.departure, _ => _.when.local),
@@ -115,7 +122,10 @@ export function sanitizeDetail(apiData: Object): Booking {
     assets: {
       ticketUrl: idx(apiData, _ => _.assets.eticket),
       invoiceUrl: idx(apiData, _ => _.assets.invoice),
-      boardingPasses: idx(apiData, _ => _.assets.boarding_passes) || {},
+      boardingPasses: sanitizeBoardingPasses(
+        idx(apiData, _ => _.assets.boarding_passes),
+        common.legs,
+      ),
       legs: common.legs,
     },
     bookedServices: sanitizeAdditionalBookings(
@@ -123,6 +133,25 @@ export function sanitizeDetail(apiData: Object): Booking {
     ),
     contactDetails: sanitizeContactDetails(apiData.contact),
   };
+}
+
+function sanitizeBoardingPasses(
+  boardingPasses: ?{ [string]: Object },
+  legs: Leg[],
+): BoardingPass[] {
+  if (!boardingPasses) {
+    return [];
+  }
+
+  return Object.entries(boardingPasses).map(([key, value]) => {
+    const leg = legs.find(leg => leg.id === key);
+    return {
+      boardingPassUrl: value,
+      flightNumber: key,
+      availableAt: idx(leg, _ => _.boardingPassAvailableAt),
+      leg,
+    };
+  });
 }
 
 function sanitizeContactDetails(contactDetails: Object) {

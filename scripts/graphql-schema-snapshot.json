@@ -5549,11 +5549,23 @@
           },
           {
             "name": "leg",
-            "description": null,
+            "description": "The leg for the boarding pass",
             "args": [],
             "type": {
               "kind": "OBJECT",
               "name": "Leg",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "availableAt",
+            "description": "The date when the boarding pass will be available for download",
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Date",
               "ofType": null
             },
             "isDeprecated": false,

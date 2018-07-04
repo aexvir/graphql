@@ -2,7 +2,10 @@
 
 import { GraphQLString, GraphQLObjectType, GraphQLList } from 'graphql';
 
-import type { BookingAssets } from '../../Booking';
+import type {
+  BookingAssets,
+  BoardingPass as BoardingPassType,
+} from '../../Booking';
 import BoardingPass from './BoardingPass';
 
 export default new GraphQLObjectType({
@@ -24,18 +27,8 @@ export default new GraphQLObjectType({
     boardingPasses: {
       type: new GraphQLList(BoardingPass),
       description: 'Boarding passes for flights in this booking',
-      resolve: ({
+      resolve: ({ boardingPasses }: BookingAssets): BoardingPassType[] =>
         boardingPasses,
-        legs,
-      }: BookingAssets): Array<{
-        boardingPassUrl: mixed,
-        flightNumber: string,
-      }> =>
-        Object.entries(boardingPasses).map(([key, value]) => ({
-          boardingPassUrl: value,
-          flightNumber: key,
-          legs,
-        })),
     },
   },
 });

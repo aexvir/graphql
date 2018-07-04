@@ -42,11 +42,90 @@ Object {
     },
   },
   "assets": Object {
-    "boardingPasses": Object {
-      "SP3237959_4825962": null,
-      "SP3237959_4825963": "https://very.printable/pdf",
-      "all": null,
-    },
+    "boardingPasses": Array [
+      Object {
+        "availableAt": null,
+        "boardingPassUrl": null,
+        "flightNumber": "SP1123103_1678074",
+        "leg": Object {
+          "airlineCode": "LO",
+          "arrival": Object {
+            "when": Object {
+              "local": 2017-09-11T11:40:00.000Z,
+              "utc": 2017-09-11T09:40:00.000Z,
+            },
+            "where": Object {
+              "cityId": "gdansk_pl",
+              "cityName": "Gdansk",
+              "code": "GDN",
+            },
+          },
+          "boardingPassAvailableAt": null,
+          "bookingId": 2968389,
+          "departure": Object {
+            "when": Object {
+              "local": 2017-09-11T10:45:00.000Z,
+              "utc": 2017-09-11T08:45:00.000Z,
+            },
+            "where": Object {
+              "cityId": "warsaw_pl",
+              "cityName": "Warsaw",
+              "code": "WAW",
+            },
+          },
+          "flightNo": 3835,
+          "guarantee": false,
+          "id": "SP1123103_1678074",
+          "isReturn": false,
+          "recheckRequired": false,
+          "vehicleType": "aircraft",
+        },
+      },
+      Object {
+        "availableAt": undefined,
+        "boardingPassUrl": null,
+        "flightNumber": "all",
+        "leg": undefined,
+      },
+      Object {
+        "availableAt": null,
+        "boardingPassUrl": null,
+        "flightNumber": "SP1123103_1678073",
+        "leg": Object {
+          "airlineCode": "LO",
+          "arrival": Object {
+            "when": Object {
+              "local": 2017-09-11T09:55:00.000Z,
+              "utc": 2017-09-11T07:55:00.000Z,
+            },
+            "where": Object {
+              "cityId": "warsaw_pl",
+              "cityName": "Warsaw",
+              "code": "WAW",
+            },
+          },
+          "boardingPassAvailableAt": null,
+          "bookingId": 2968389,
+          "departure": Object {
+            "when": Object {
+              "local": 2017-09-11T09:05:00.000Z,
+              "utc": 2017-09-11T07:05:00.000Z,
+            },
+            "where": Object {
+              "cityId": "rzeszow_pl",
+              "cityName": "Rzeszow",
+              "code": "RZE",
+            },
+          },
+          "flightNo": 3806,
+          "guarantee": false,
+          "id": "SP1123103_1678073",
+          "isReturn": false,
+          "recheckRequired": false,
+          "vehicleType": "aircraft",
+        },
+      },
+    ],
     "invoiceUrl": "https://booking.skypicker.com/api/v0.1/get_file/2968389?file_id=337020126&simple_token=b9cb406d-f797-434c-bc21-a0612b92f201",
     "legs": Array [
       Object {
@@ -62,6 +141,7 @@ Object {
             "code": "WAW",
           },
         },
+        "boardingPassAvailableAt": null,
         "bookingId": 2968389,
         "departure": Object {
           "when": Object {
@@ -94,6 +174,7 @@ Object {
             "code": "GDN",
           },
         },
+        "boardingPassAvailableAt": null,
         "bookingId": 2968389,
         "departure": Object {
           "when": Object {
@@ -154,6 +235,7 @@ Object {
           "code": "WAW",
         },
       },
+      "boardingPassAvailableAt": null,
       "bookingId": 2968389,
       "departure": Object {
         "when": Object {
@@ -186,6 +268,7 @@ Object {
           "code": "GDN",
         },
       },
+      "boardingPassAvailableAt": null,
       "bookingId": 2968389,
       "departure": Object {
         "when": Object {
@@ -300,6 +383,7 @@ Object {
           "code": "WAW",
         },
       },
+      "boardingPassAvailableAt": undefined,
       "bookingId": 2968389,
       "departure": Object {
         "when": Object {
@@ -332,6 +416,7 @@ Object {
           "code": "GDN",
         },
       },
+      "boardingPassAvailableAt": undefined,
       "bookingId": 2968389,
       "departure": Object {
         "when": Object {
@@ -442,6 +527,7 @@ Object {
             "code": "MXP",
           },
         },
+        "boardingPassAvailableAt": undefined,
         "bookingId": 3222550,
         "departure": Object {
           "when": Object {
@@ -474,6 +560,7 @@ Object {
             "code": "PRG",
           },
         },
+        "boardingPassAvailableAt": undefined,
         "bookingId": 3222550,
         "departure": Object {
           "when": Object {
@@ -509,6 +596,7 @@ Object {
           "code": "FCO",
         },
       },
+      "boardingPassAvailableAt": undefined,
       "bookingId": 3222550,
       "departure": Object {
         "when": Object {
@@ -541,6 +629,7 @@ Object {
           "code": "NRT",
         },
       },
+      "boardingPassAvailableAt": undefined,
       "bookingId": 3222550,
       "departure": Object {
         "when": Object {
@@ -573,6 +662,7 @@ Object {
           "code": "MXP",
         },
       },
+      "boardingPassAvailableAt": undefined,
       "bookingId": 3222550,
       "departure": Object {
         "when": Object {
@@ -605,6 +695,7 @@ Object {
           "code": "PRG",
         },
       },
+      "boardingPassAvailableAt": undefined,
       "bookingId": 3222550,
       "departure": Object {
         "when": Object {
@@ -662,6 +753,7 @@ Object {
             "code": "FCO",
           },
         },
+        "boardingPassAvailableAt": undefined,
         "bookingId": 3222550,
         "departure": Object {
           "when": Object {
@@ -694,6 +786,7 @@ Object {
             "code": "NRT",
           },
         },
+        "boardingPassAvailableAt": undefined,
         "bookingId": 3222550,
         "departure": Object {
           "when": Object {

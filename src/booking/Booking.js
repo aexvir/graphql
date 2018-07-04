@@ -79,9 +79,16 @@ export type Booking = BookingsItem & {
   contactDetails: ContactDetails,
 };
 
+export type BoardingPass = {|
+  +boardingPassUrl: mixed,
+  +flightNumber: string,
+  +availableAt: ?string,
+  +leg: ?Leg,
+|};
+
 export type BookingAssets = {
   ticketUrl: ?string,
   invoiceUrl: ?string,
-  boardingPasses: { [string]: string },
+  boardingPasses: BoardingPass[],
   legs: Leg[],
 };
