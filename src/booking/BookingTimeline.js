@@ -78,6 +78,8 @@ export type DepartureTimelineEvent = {|
   +type: 'DepartureTimelineEvent',
   +arrival: DepartureArrival,
   +duration: ?number,
+  +airlineCode: string,
+  +flightNumber: number,
 |};
 
 export type ArrivalTimelineEvent = {|

@@ -258,12 +258,16 @@ export function generateBoardingEvent(leg: Leg): ?BoardingType {
 export function generateDepartureEvent(leg: Leg): ?DepartureType {
   const departureTime = idx(leg, _ => _.departure.when.local);
   const duration = getFlightDurationInMinutes(leg.departure, leg.arrival);
+  const airlineCode = leg.airlineCode;
+  const flightNumber = leg.flightNo;
   if (departureTime) {
     return {
       timestamp: departureTime,
       type: 'DepartureTimelineEvent',
       arrival: leg.arrival,
       duration: duration,
+      airlineCode: airlineCode,
+      flightNumber: flightNumber,
     };
   }
   return null;

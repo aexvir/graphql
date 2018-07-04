@@ -5,10 +5,14 @@ import config from '../../../../config/application';
 import BookingTimeline from '../BookingTimeline';
 import AllBookingsDataset from '../../datasets/AllBookings.json';
 import Booking2707251 from '../../datasets/booking-2707251.json';
+import AirlinesDataset from '../../../flight/datasets/airlines.json';
 
 beforeEach(() => {
   RestApiMock.onGet(config.restApiEndpoint.allBookings).replyWithData(
     AllBookingsDataset,
+  );
+  RestApiMock.onGet(config.restApiEndpoint.airlines).replyWithData(
+    AirlinesDataset,
   );
   RestApiMock.onGet(
     'https://booking-api.skypicker.com/api/v0.1/users/self/bookings/2707251?simple_token=b206db64-718f-4608-babb-0b8abe6e1b9d',
@@ -100,6 +104,11 @@ describe('single booking timeline query', () => {
               }
             }
             duration
+            airline {
+              code
+              name
+            }
+            flightNumber
           }
           ... on  ArrivalTimelineEvent {
             location {

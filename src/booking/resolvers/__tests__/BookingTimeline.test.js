@@ -458,6 +458,8 @@ describe('generateDepartureEvent', () => {
             utc: new Date('2018-06-22T08:00:00.000Z'),
           },
         },
+        airlineCode: 'FR',
+        flightNo: 1111,
       }),
     ).toEqual({
       timestamp: departureDate,
@@ -469,6 +471,8 @@ describe('generateDepartureEvent', () => {
         },
       },
       duration: 180,
+      airlineCode: 'FR',
+      flightNumber: 1111,
     });
   });
   it('returns null if departure.when.local is not set', () => {
