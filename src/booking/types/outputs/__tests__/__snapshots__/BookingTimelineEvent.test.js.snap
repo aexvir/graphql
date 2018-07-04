@@ -93,11 +93,26 @@ Object {
 
 exports[`DepartureTimelineEvent type should have valid fields 1`] = `
 Object {
+  "airline": Object {
+    "args": Array [],
+    "description": "Airline for the flight",
+    "isDeprecated": false,
+    "name": "airline",
+    "resolve": [Function],
+    "type": "Airline",
+  },
   "duration": Object {
     "args": Array [],
     "description": "Flight duration in minutes.",
     "isDeprecated": false,
     "name": "duration",
+    "type": "Int",
+  },
+  "flightNumber": Object {
+    "args": Array [],
+    "description": "Flight number",
+    "isDeprecated": false,
+    "name": "flightNumber",
     "type": "Int",
   },
   "location": Object {

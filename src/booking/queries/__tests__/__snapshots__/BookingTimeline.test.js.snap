@@ -85,7 +85,12 @@ Object {
         },
         Object {
           "__typename": "DepartureTimelineEvent",
+          "airline": Object {
+            "code": "VY",
+            "name": "Vueling",
+          },
           "duration": 80,
+          "flightNumber": 8773,
           "location": Object {
             "airport": Object {
               "city": Object {

@@ -12339,6 +12339,30 @@
             },
             "isDeprecated": false,
             "deprecationReason": null
+          },
+          {
+            "name": "airline",
+            "description": "Airline for the flight",
+            "args": [],
+            "type": {
+              "kind": "OBJECT",
+              "name": "Airline",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "flightNumber",
+            "description": "Flight number",
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
           }
         ],
         "inputFields": null,

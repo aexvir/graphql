@@ -12,13 +12,16 @@ import { GraphQLDateTime } from 'graphql-iso-date';
 
 import RouteStop from '../../../flight/types/outputs/RouteStop';
 import Leg from '../../../flight/types/outputs/Leg';
-import type { DepartureArrival } from '../../../flight/Flight';
+import type { DepartureArrival, Airline } from '../../../flight/Flight';
+import GraphQLAirline from '../../../flight/types/outputs/Airline';
 import type {
   BookedFlightTimelineEvent as BookedFlightType,
   AirportArrivalTimelineEvent as AirportArrivalType,
   DepartureTimelineEvent as DepartureType,
   ArrivalTimelineEvent as ArrivalType,
 } from '../../BookingTimeline';
+
+import type { GraphqlContextType } from '../../../common/services/GraphqlContext';
 
 const commonFields = {
   timestamp: {
@@ -156,6 +159,19 @@ export const DepartureTimelineEvent = new GraphQLObjectType({
     duration: {
       type: GraphQLInt,
       description: 'Flight duration in minutes.',
+    },
+    airline: {
+      type: GraphQLAirline,
+      description: 'Airline for the flight',
+      resolve: async (
+        { airlineCode }: DepartureType,
+        args: Object,
+        { dataLoader }: GraphqlContextType,
+      ): Promise<?Airline> => dataLoader.airline.load(airlineCode),
+    },
+    flightNumber: {
+      type: GraphQLInt,
+      description: 'Flight number',
     },
   },
   isTypeOf: value => value.type === 'DepartureTimelineEvent',
