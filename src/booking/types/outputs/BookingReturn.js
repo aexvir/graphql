@@ -9,6 +9,7 @@ import BookingInterface, {
 import Trip, { type TripData } from './Trip';
 import { nodeInterface } from '../../../node/node';
 import { register } from '../../../node/typeStore';
+import type { GraphqlContextType } from '../../../common/services/GraphqlContext';
 
 export type InboundOutboundData = {
   inbound?: TripData,
@@ -26,12 +27,26 @@ const BookingReturn = new GraphQLObjectType({
     outbound: {
       type: Trip,
       description: 'Trip from origin to destination.',
-      resolve: ({ outbound }: BookingReturnData): ?TripData => outbound,
+      resolve: async (
+        { id }: BookingReturnData,
+        args: Object,
+        { dataLoader }: GraphqlContextType,
+      ): Promise<?TripData> => {
+        const { outbound } = await dataLoader.booking.load(id);
+        return outbound;
+      },
     },
     inbound: {
       type: Trip,
       description: 'Return trip back from destination to origin.',
-      resolve: ({ inbound }: BookingReturnData): ?TripData => inbound,
+      resolve: async (
+        { id }: BookingReturnData,
+        args: Object,
+        { dataLoader }: GraphqlContextType,
+      ): Promise<?TripData> => {
+        const { inbound } = await dataLoader.booking.load(id);
+        return inbound;
+      },
     },
   },
 });

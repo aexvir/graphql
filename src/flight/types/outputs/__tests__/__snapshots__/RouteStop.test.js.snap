@@ -24,6 +24,14 @@ Object {
     "resolve": [Function],
     "type": "DateTime",
   },
+  "terminal": Object {
+    "args": Array [],
+    "description": "Terminal of the route stop",
+    "isDeprecated": false,
+    "name": "terminal",
+    "resolve": [Function],
+    "type": "String",
+  },
   "time": Object {
     "args": Array [],
     "isDeprecated": false,

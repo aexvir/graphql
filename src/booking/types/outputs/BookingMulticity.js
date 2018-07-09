@@ -12,6 +12,7 @@ import { nodeInterface } from '../../../node/node';
 import type { TripData } from './Trip';
 import type { DepartureArrival } from '../../../flight/Flight';
 import { register } from '../../../node/typeStore';
+import type { GraphqlContextType } from '../../../common/services/GraphqlContext';
 
 type BookingMulticityData = BookingInterfaceData & {
   trips: TripData[],
@@ -25,18 +26,38 @@ const BookingMulticity = new GraphQLObjectType({
     start: {
       type: RouteStop,
       description: 'Initial origin.',
-      resolve: ({ departure }: BookingMulticityData): DepartureArrival =>
-        departure,
+      resolve: async (
+        { id }: BookingMulticityData,
+        args: Object,
+        { dataLoader }: GraphqlContextType,
+      ): Promise<DepartureArrival> => {
+        const { departure } = await dataLoader.booking.load(id);
+        return departure;
+      },
     },
     end: {
       type: RouteStop,
       description: 'Final destination.',
-      resolve: ({ arrival }: BookingMulticityData): DepartureArrival => arrival,
+      resolve: async (
+        { id }: BookingMulticityData,
+        args: Object,
+        { dataLoader }: GraphqlContextType,
+      ): Promise<DepartureArrival> => {
+        const { arrival } = await dataLoader.booking.load(id);
+        return arrival;
+      },
     },
     trips: {
       type: new GraphQLList(Trip),
       description: 'List of trips in each multicity segment.',
-      resolve: ({ trips }: BookingMulticityData): ?(TripData[]) => trips,
+      resolve: async (
+        { id }: BookingMulticityData,
+        args: Object,
+        { dataLoader }: GraphqlContextType,
+      ): Promise<?(TripData[])> => {
+        const { trips } = await dataLoader.booking.load(id);
+        return trips;
+      },
     },
   },
 });

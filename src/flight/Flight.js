@@ -12,6 +12,7 @@ export type DepartureArrival = {|
     code: string,
     cityName: string,
     cityId: string,
+    terminal: ?string,
   |},
 |};
 

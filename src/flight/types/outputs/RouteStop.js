@@ -42,5 +42,11 @@ export default new GraphQLObjectType({
       description: 'City id of the route stop',
       resolve: ({ where }: DepartureArrival): string => where.cityId,
     },
+
+    terminal: {
+      type: GraphQLString,
+      description: 'Terminal of the route stop',
+      resolve: ({ where }: DepartureArrival): ?string => where.terminal,
+    },
   },
 });

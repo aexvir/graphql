@@ -72,7 +72,7 @@ export type AirportArrivalTimelineEvent = {|
 export type BoardingTimelineEvent = {|
   +timestamp: Date,
   +type: 'BoardingTimelineEvent',
-  +gate: ?string,
+  +terminal: ?string,
 |};
 
 export type DepartureTimelineEvent = {|

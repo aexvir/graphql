@@ -8,6 +8,9 @@ beforeEach(() => {
   RestApiMock.onGet(config.restApiEndpoint.allBookings).replyWithData([
     booking,
   ]);
+  RestApiMock.onGet(
+    'https://booking-api.skypicker.com/api/v0.1/users/self/bookings/4903131?simple_token=random-token',
+  ).replyWithData(booking);
 });
 
 describe('single booking query with multicity', () => {

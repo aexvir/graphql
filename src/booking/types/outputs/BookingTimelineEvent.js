@@ -138,9 +138,9 @@ export const BoardingTimelineEvent = new GraphQLObjectType({
   name: 'BoardingTimelineEvent',
   fields: {
     ...commonFields,
-    gate: {
+    terminal: {
       type: GraphQLString,
-      description: 'Gate at which boarding is done',
+      description: 'Terminal at which boarding is done',
     },
   },
   isTypeOf: value => value.type === 'BoardingTimelineEvent',

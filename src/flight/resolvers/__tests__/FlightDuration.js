@@ -16,6 +16,7 @@ beforeEach(() => {
       code: 'string',
       cityName: 'string',
       cityId: 'string',
+      terminal: 'string',
     },
   };
 
@@ -30,6 +31,7 @@ beforeEach(() => {
       code: 'string',
       cityName: 'string',
       cityId: 'string',
+      terminal: 'string',
     },
   };
 
@@ -42,6 +44,7 @@ beforeEach(() => {
       code: 'string',
       cityName: 'string',
       cityId: 'string',
+      terminal: 'string',
     },
   };
 });

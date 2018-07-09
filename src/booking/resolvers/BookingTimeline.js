@@ -249,6 +249,7 @@ export function generateAirportArrivalEvent(
 
 export function generateBoardingEvent(leg: Leg): ?BoardingType {
   const localDepartureTime = idx(leg, _ => _.departure.when.local);
+  const terminal = idx(leg, _ => _.departure.where.terminal);
   if (localDepartureTime) {
     const BoardingTime = DateTime.fromJSDate(localDepartureTime, {
       zone: 'UTC',
@@ -260,7 +261,7 @@ export function generateBoardingEvent(leg: Leg): ?BoardingType {
     return {
       timestamp: BoardingTime,
       type: 'BoardingTimelineEvent',
-      gate: 'gate number', // @TODO Gate Number does not seem available for now...
+      terminal: terminal,
     };
   }
   return null;

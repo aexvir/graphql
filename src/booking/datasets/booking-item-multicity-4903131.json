@@ -1,4 +1,7 @@
 {
+  "additional_bookings": {
+    "details": []
+  },
   "arrival": {
     "when": 0,
     "where": {
@@ -282,9 +285,7 @@
   "original_flight_price": 637.83,
   "original_price": 22446,
   "paid_over": "zooz",
-  "passenger_ids": [
-    7439711
-  ],
+  "passenger_ids": [7439711],
   "passengers": [
     {
       "bags": 1,
@@ -324,22 +325,10 @@
   ],
   "podio_status": null,
   "price": 875.62,
-  "prices": [
-    "37.5",
-    "179.0",
-    "274.0",
-    "11.0",
-    "76.01"
-  ],
-  "route": [
-    "SXF",
-    "VKO"
-  ],
+  "prices": ["37.5", "179.0", "274.0", "11.0", "76.01"],
+  "route": ["SXF", "VKO"],
   "sandbox": 1,
-  "segments": [
-    "2",
-    "3"
-  ],
+  "segments": ["2", "3"],
   "status": "closed",
   "transfer_ids": []
 }

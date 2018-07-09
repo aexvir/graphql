@@ -11,6 +11,118 @@ Object {
 }
 `;
 
+exports[`single booking timeline query should work with opaque Booking id (terminal included) 1`] = `
+Object {
+  "data": Object {
+    "bookingTimeline": Object {
+      "events": Array [
+        Object {
+          "__typename": "BookedFlightTimelineEvent",
+          "timestamp": "2017-03-30T07:24:24.000Z",
+        },
+        Object {
+          "__typename": "BookingConfirmedTimelineEvent",
+          "timestamp": "2017-03-30T07:24:24.000Z",
+        },
+        Object {
+          "__typename": "PaymentConfirmedTimelineEvent",
+          "timestamp": "2017-03-30T07:24:24.000Z",
+        },
+        Object {
+          "__typename": "DownloadInvoiceTimelineEvent",
+          "invoiceUrl": "https://booking.skypicker.com/api/v0.1/get_file/2707224?file_id=317024120&simple_token=c3f29dd0-18a7-4062-9162-b58f4022fc70",
+          "legs": Array [
+            Object {
+              "arrival": Object {
+                "airport": Object {
+                  "city": Object {
+                    "name": "Mocked City Name",
+                  },
+                },
+              },
+              "departure": Object {
+                "airport": Object {
+                  "city": Object {
+                    "name": "Mocked City Name",
+                  },
+                },
+              },
+            },
+          ],
+          "numberPassengers": 1,
+          "timestamp": "2017-03-30T07:24:24.000Z",
+        },
+        Object {
+          "__typename": "DownloadETicketTimelineEvent",
+          "ticketUrl": "https://skypicker-mailing.s3.amazonaws.com/2707/1490858789_E-ticket_passenger_02a172055788d052b0cc7870905b9701.pdf?v=1490858789",
+          "timestamp": "2017-03-30T07:24:24.000Z",
+        },
+        Object {
+          "__typename": "LeaveForAirportTimelineEvent",
+          "timestamp": "2017-08-18T18:05:00.000Z",
+        },
+        Object {
+          "__typename": "AirportArrivalTimelineEvent",
+          "location": Object {
+            "airport": Object {
+              "city": Object {
+                "locationId": null,
+                "name": "Mocked City Name",
+                "slug": null,
+              },
+            },
+          },
+          "timestamp": "2017-08-18T20:05:00.000Z",
+        },
+        Object {
+          "__typename": "BoardingTimelineEvent",
+          "terminal": "1",
+          "timestamp": "2017-08-18T21:35:00.000Z",
+        },
+        Object {
+          "__typename": "DownloadBoardingPassTimelineEvent",
+          "timestamp": "2017-08-18T22:05:00.000Z",
+        },
+        Object {
+          "__typename": "DepartureTimelineEvent",
+          "airline": Object {
+            "code": "OK",
+            "name": "Czech Airlines",
+          },
+          "duration": 215,
+          "flightNumber": 910,
+          "location": Object {
+            "airport": Object {
+              "city": Object {
+                "name": "Mocked City Name",
+              },
+            },
+          },
+          "timestamp": "2017-08-18T22:05:00.000Z",
+        },
+        Object {
+          "__typename": "ArrivalTimelineEvent",
+          "location": Object {
+            "airport": Object {
+              "city": Object {
+                "locationId": null,
+                "name": "Mocked City Name",
+                "slug": null,
+              },
+            },
+          },
+          "timestamp": "2017-08-19T03:40:00.000Z",
+        },
+        Object {
+          "__typename": "TransportFromAirportTimelineEvent",
+          "timestamp": "2017-08-19T03:55:00.000Z",
+        },
+      ],
+    },
+  },
+}
+`;
+
 exports[`single booking timeline query should work with opaque Booking id 1`] = `
 Object {
   "data": Object {
@@ -84,7 +196,7 @@ Object {
         },
         Object {
           "__typename": "BoardingTimelineEvent",
-          "gate": "gate number",
+          "terminal": null,
           "timestamp": "2017-09-09T20:40:00.000Z",
         },
         Object {

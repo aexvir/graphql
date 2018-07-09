@@ -35,6 +35,7 @@ export function sanitizeListItem(apiData: Object): BookingsItem {
       code: idx(flight.departure, _ => _.where.code),
       cityName: idx(flight.departure, _ => _.where.name),
       cityId: idx(flight.departure, _ => _.where.city_id),
+      terminal: idx(flight.departure, _ => _.where.terminal),
     }),
     arrival: sanitizeRoute({
       utc: idx(flight.arrival, _ => _.when.utc),
@@ -42,6 +43,7 @@ export function sanitizeListItem(apiData: Object): BookingsItem {
       code: idx(flight.arrival, _ => _.where.code),
       cityName: idx(flight.arrival, _ => _.where.name),
       cityId: idx(flight.arrival, _ => _.where.city_id),
+      terminal: idx(flight.arrival, _ => _.where.terminal),
     }),
     airlineCode: flight.airline.iata,
     vehicleType: idx(flight, _ => _.vehicle.type),

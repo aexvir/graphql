@@ -42,11 +42,11 @@ Object {
 
 exports[`BoardingTimelineEvent type should have valid fields 1`] = `
 Object {
-  "gate": Object {
+  "terminal": Object {
     "args": Array [],
-    "description": "Gate at which boarding is done",
+    "description": "Terminal at which boarding is done",
     "isDeprecated": false,
-    "name": "gate",
+    "name": "terminal",
     "type": "String",
   },
   "timestamp": Object {

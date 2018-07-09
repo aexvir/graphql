@@ -1,4 +1,7 @@
 {
+  "additional_bookings": {
+    "details": []
+  },
   "arrival": {
     "when": 0,
     "where": {
@@ -265,10 +268,7 @@
   "original_flight_price": null,
   "original_price": 38867,
   "paid_over": "zooz",
-  "passenger_ids": [
-    4882155,
-    4882156
-  ],
+  "passenger_ids": [4882155, 4882156],
   "passengers": [
     {
       "bags": 0,
@@ -337,16 +337,8 @@
   ],
   "podio_status": 32,
   "price": 1468.01,
-  "prices": [
-    "163.1",
-    "163.1",
-    "163.1",
-    "163.1"
-  ],
-  "route": [
-    "PRG",
-    "NRT"
-  ],
+  "prices": ["163.1", "163.1", "163.1", "163.1"],
+  "route": ["PRG", "NRT"],
   "sandbox": 0,
   "segments": null,
   "status": "confirmed",

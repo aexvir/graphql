@@ -425,12 +425,15 @@ describe('generateBoardingEvent', () => {
           when: {
             local: date,
           },
+          where: {
+            terminal: '1',
+          },
         },
       }),
     ).toEqual({
       timestamp: boardingDate,
       type: 'BoardingTimelineEvent',
-      gate: 'gate number',
+      terminal: '1',
     });
   });
   it('returns null if departure.when.local is not set', () => {
