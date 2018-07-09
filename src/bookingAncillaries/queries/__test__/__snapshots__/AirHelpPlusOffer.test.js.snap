@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`airHelpPlusOffer query should work 1`] = `
+Object {
+  "data": Object {
+    "airHelpPlusOffer": Object {
+      "isPossible": true,
+      "pricePerPerson": Object {
+        "amount": 4.9,
+        "currency": "EUR",
+      },
+    },
+  },
+}
+`;
