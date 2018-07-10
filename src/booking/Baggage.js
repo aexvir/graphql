@@ -19,4 +19,5 @@ export type Baggage = {|
   width: ?number,
   weight: ?number,
   note: ?string,
+  quantity?: number,
 |};

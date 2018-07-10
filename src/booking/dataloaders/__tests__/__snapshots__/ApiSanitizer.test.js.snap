@@ -25,6 +25,7 @@ Object {
         "height": 81,
         "length": 119,
         "note": null,
+        "quantity": 0,
         "weight": 23,
         "width": 119,
       },

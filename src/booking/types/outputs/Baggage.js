@@ -31,5 +31,10 @@ export default new GraphQLObjectType({
       type: GraphQLString,
       resolve: ({ note }: Baggage) => note,
     },
+
+    quantityBooked: {
+      type: GraphQLInt,
+      resolve: ({ quantity }: Baggage) => quantity,
+    },
   },
 });

@@ -116,6 +116,7 @@ export function sanitizeDetail(apiData: Object): Booking {
           width: apiData.bag_params.hold_width,
           weight: apiData.bag_params.hold_weight,
           note: apiData.bag_params.note === '' ? null : apiData.bag_params.note,
+          quantity: apiData.bags,
         },
       ],
     },

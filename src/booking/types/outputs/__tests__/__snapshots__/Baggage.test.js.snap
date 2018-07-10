@@ -23,6 +23,13 @@ Object {
     "resolve": [Function],
     "type": "String",
   },
+  "quantityBooked": Object {
+    "args": Array [],
+    "isDeprecated": false,
+    "name": "quantityBooked",
+    "resolve": [Function],
+    "type": "Int",
+  },
   "weight": Object {
     "args": Array [],
     "isDeprecated": false,
