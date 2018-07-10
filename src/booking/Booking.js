@@ -28,7 +28,6 @@ export type BookingsItem = {
   inbound?: TripData,
   outbound?: TripData,
   passengers: Passenger[],
-  allowedToChangeFlights: ?number,
 };
 
 export type TravelDocument = {|
@@ -78,6 +77,7 @@ export type Booking = BookingsItem & {
   assets: BookingAssets,
   bookedServices: BookedService[],
   contactDetails: ContactDetails,
+  allowedToChangeFlights: ?number,
 };
 
 export type BoardingPass = {|

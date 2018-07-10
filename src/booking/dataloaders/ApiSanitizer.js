@@ -57,10 +57,6 @@ export function sanitizeListItem(apiData: Object): BookingsItem {
   } else if (type === 'BookingMulticity') {
     additionalFields.trips = createTrips(apiData.segments, legs);
   }
-  const allowedToChangeFlights = idx(
-    apiData,
-    _ => _.config.allowedToChange.flights,
-  );
 
   return {
     id: bid,
@@ -77,13 +73,17 @@ export function sanitizeListItem(apiData: Object): BookingsItem {
     type,
     passengerCount: apiData.passengers.length,
     passengers: sanitizePassengers(apiData.passengers, apiData.travel_info),
-    allowedToChangeFlights,
     ...additionalFields,
   };
 }
 
 export function sanitizeDetail(apiData: Object): Booking {
   const common = sanitizeListItem(apiData);
+
+  const allowedToChangeFlights = idx(
+    apiData,
+    _ => _.config.allowed_to_change.flights,
+  );
 
   return {
     ...common,
@@ -137,6 +137,7 @@ export function sanitizeDetail(apiData: Object): Booking {
       apiData.additional_bookings.details,
     ),
     contactDetails: sanitizeContactDetails(apiData.contact),
+    allowedToChangeFlights,
   };
 }
 

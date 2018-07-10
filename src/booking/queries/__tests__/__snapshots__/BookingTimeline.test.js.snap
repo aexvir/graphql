@@ -58,6 +58,10 @@ Object {
           "timestamp": "2017-03-30T07:28:55.000Z",
         },
         Object {
+          "__typename": "NoMoreEditsTimelineEvent",
+          "timestamp": "2017-09-07T21:10:00.000Z",
+        },
+        Object {
           "__typename": "LeaveForAirportTimelineEvent",
           "timestamp": "2017-09-09T17:10:00.000Z",
         },

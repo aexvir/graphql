@@ -30,7 +30,7 @@ Object {
       },
     ],
   },
-  "allowedToChangeFlights": undefined,
+  "allowedToChangeFlights": 48,
   "arrival": Object {
     "when": Object {
       "local": 2017-09-11T11:40:00.000Z,
@@ -345,7 +345,6 @@ The max. stay is granted within 180 days.
 
 exports[`Sanitize list item should work 1`] = `
 Object {
-  "allowedToChangeFlights": undefined,
   "arrival": Object {
     "when": Object {
       "local": 2017-09-11T11:40:00.000Z,
@@ -467,7 +466,6 @@ Object {
 
 exports[`Sanitize list item should work with return flight 1`] = `
 Object {
-  "allowedToChangeFlights": undefined,
   "arrival": Object {
     "when": Object {
       "local": 2017-07-09T21:20:00.000Z,
