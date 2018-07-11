@@ -91,7 +91,14 @@
       "guarantee_disclaimer": "",
       "id": "SP1244683_1864798",
       "reservation_number": "Q1VI1L",
-      "return": 0
+      "return": 0,
+      "vehicle": {
+        "manufacturer": "Airbus",
+        "meal": null,
+        "model": "A 320",
+        "seats": null,
+        "type": "aircraft"
+      }
     },
     {
       "airline": {
@@ -135,7 +142,14 @@
       "guarantee_disclaimer": "",
       "id": "SP1244683_1864799",
       "reservation_number": "Q1VI1L",
-      "return": 0
+      "return": 0,
+      "vehicle": {
+        "manufacturer": "Airbus",
+        "meal": null,
+        "model": "A 320",
+        "seats": null,
+        "type": "aircraft"
+      }
     },
     {
       "airline": {
@@ -179,7 +193,14 @@
       "guarantee_disclaimer": "",
       "id": "SP1244683_1864800",
       "reservation_number": "Q1VI1L",
-      "return": 1
+      "return": 1,
+      "vehicle": {
+        "manufacturer": "Airbus",
+        "meal": null,
+        "model": "A 320",
+        "seats": null,
+        "type": "aircraft"
+      }
     },
     {
       "airline": {
@@ -223,7 +244,14 @@
       "guarantee_disclaimer": "",
       "id": "SP1244683_1864801",
       "reservation_number": "Q1VI1L",
-      "return": 1
+      "return": 1,
+      "vehicle": {
+        "manufacturer": "Airbus",
+        "meal": null,
+        "model": "A 320",
+        "seats": null,
+        "type": "aircraft"
+      }
     }
   ],
   "grace_period_fee": null,

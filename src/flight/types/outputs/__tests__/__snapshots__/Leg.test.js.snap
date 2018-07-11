@@ -79,6 +79,7 @@ Object {
   },
   "pnr": Object {
     "args": Array [],
+    "description": "Reservation number related to the leg.",
     "isDeprecated": false,
     "name": "pnr",
     "resolve": [Function],
