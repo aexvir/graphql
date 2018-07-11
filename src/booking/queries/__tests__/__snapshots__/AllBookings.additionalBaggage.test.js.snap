@@ -60,6 +60,14 @@ Object {
             "databaseId": 2707251,
           },
         },
+        Object {
+          "node": Object {
+            "allowedBaggage": Object {
+              "additionalBaggage": Array [],
+            },
+            "databaseId": 7474870,
+          },
+        },
       ],
     },
   },

@@ -124,6 +124,7 @@ export function sanitizeDetail(apiData: Object): Booking {
         },
       ],
     },
+    numberCheckedBaggage: apiData.bags,
     assets: {
       ticketUrl: idx(apiData, _ => _.assets.eticket),
       invoiceUrl: idx(apiData, _ => _.assets.invoice),

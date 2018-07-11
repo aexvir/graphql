@@ -13,6 +13,8 @@ import resolver, {
   generateArrivalEvent,
   generateTransportFromAirportEvent,
   generateNoMoreEditsEvent,
+  generateBagDropEvent,
+  generateBagPickupEvent,
 } from '../BookingTimeline';
 
 describe('resolver', () => {
@@ -115,6 +117,355 @@ describe('resolver', () => {
     expect(res).toContainEqual({
       timestamp: date,
       type: 'BookingConfirmedTimelineEvent',
+    });
+  });
+
+  it('does not generate BagDrop and BagPickup events if numberCheckedBaggage is 0', () => {
+    const res = resolver(
+      // $FlowExpectedError: full Booking object is not needed for this test
+      {
+        departure: {
+          when: {
+            local: new Date('2018-05-18T14:10:57.000Z'),
+          },
+        },
+        arrival: {
+          when: {
+            local: new Date('2018-05-18T18:10:57.000Z'),
+          },
+        },
+        numberCheckedBaggage: 0,
+      },
+    );
+    expect(res).not.toContainEqual({
+      timestamp: new Date('2018-05-18T13:35:57.000Z'),
+      type: 'BagDropTimelineEvent',
+    });
+    expect(res).not.toContainEqual({
+      timestamp: new Date('2018-05-18T18:00:57.000Z'),
+      type: 'BagPickupTimelineEvent',
+    });
+  });
+
+  it('generates BagDrop and BagPickup events if numberCheckedBaggage is greater than 0', () => {
+    const bookingOneWay = resolver(
+      // $FlowExpectedError: full Booking object is not needed for this test
+      {
+        type: 'BookingOneWay',
+        departure: {
+          when: {
+            local: new Date('2018-05-18T14:10:57.000Z'),
+          },
+        },
+        arrival: {
+          when: {
+            local: new Date('2018-05-18T18:10:57.000Z'),
+          },
+        },
+        legs: [
+          {
+            departure: {
+              when: {
+                local: new Date('2018-05-18T14:10:57.000Z'),
+              },
+            },
+            arrival: {
+              when: {
+                local: new Date('2018-05-18T18:10:57.000Z'),
+              },
+            },
+          },
+        ],
+        numberCheckedBaggage: 1,
+      },
+    );
+    expect(bookingOneWay).toContainEqual({
+      timestamp: new Date('2018-05-18T13:35:57.000Z'),
+      type: 'BagDropTimelineEvent',
+    });
+    expect(bookingOneWay).toContainEqual({
+      timestamp: new Date('2018-05-18T18:20:57.000Z'),
+      type: 'BagPickupTimelineEvent',
+    });
+
+    const bookingReturn = resolver(
+      // $FlowExpectedError: full Booking object is not needed for this test
+      {
+        type: 'BookingReturn',
+        outbound: {
+          departure: {
+            when: {
+              local: new Date('2018-05-18T14:10:57.000Z'),
+            },
+          },
+          arrival: {
+            when: {
+              local: new Date('2018-05-18T18:10:57.000Z'),
+            },
+          },
+          legs: [
+            {
+              departure: {
+                when: {
+                  local: new Date('2018-05-18T14:10:57.000Z'),
+                },
+              },
+              arrival: {
+                when: {
+                  local: new Date('2018-05-18T18:10:57.000Z'),
+                },
+              },
+            },
+          ],
+        },
+        inbound: {
+          departure: {
+            when: {
+              local: new Date('2018-05-20T14:10:57.000Z'),
+            },
+          },
+          arrival: {
+            when: {
+              local: new Date('2018-05-20T18:10:57.000Z'),
+            },
+          },
+          legs: [
+            {
+              departure: {
+                when: {
+                  local: new Date('2018-05-20T14:10:57.000Z'),
+                },
+              },
+              arrival: {
+                when: {
+                  local: new Date('2018-05-20T18:10:57.000Z'),
+                },
+              },
+            },
+          ],
+        },
+        numberCheckedBaggage: 1,
+      },
+    );
+    expect(bookingReturn).toContainEqual({
+      timestamp: new Date('2018-05-18T13:35:57.000Z'),
+      type: 'BagDropTimelineEvent',
+    });
+    expect(bookingReturn).toContainEqual({
+      timestamp: new Date('2018-05-18T18:20:57.000Z'),
+      type: 'BagPickupTimelineEvent',
+    });
+    expect(bookingReturn).toContainEqual({
+      timestamp: new Date('2018-05-20T13:35:57.000Z'),
+      type: 'BagDropTimelineEvent',
+    });
+    expect(bookingReturn).toContainEqual({
+      timestamp: new Date('2018-05-20T18:20:57.000Z'),
+      type: 'BagPickupTimelineEvent',
+    });
+
+    const bookingMulticity = resolver(
+      // $FlowExpectedError: full Booking object is not needed for this test
+      {
+        type: 'BookingMulticity',
+        trips: [
+          {
+            departure: {
+              when: {
+                local: new Date('2018-05-18T14:10:57.000Z'),
+              },
+            },
+            arrival: {
+              when: {
+                local: new Date('2018-05-18T18:10:57.000Z'),
+              },
+            },
+            legs: [
+              {
+                departure: {
+                  when: {
+                    local: new Date('2018-05-18T14:10:57.000Z'),
+                  },
+                },
+                arrival: {
+                  when: {
+                    local: new Date('2018-05-18T18:10:57.000Z'),
+                  },
+                },
+              },
+            ],
+          },
+          {
+            departure: {
+              when: {
+                local: new Date('2018-05-20T14:10:57.000Z'),
+              },
+            },
+            arrival: {
+              when: {
+                local: new Date('2018-05-20T18:10:57.000Z'),
+              },
+            },
+            legs: [
+              {
+                departure: {
+                  when: {
+                    local: new Date('2018-05-20T14:10:57.000Z'),
+                  },
+                },
+                arrival: {
+                  when: {
+                    local: new Date('2018-05-20T18:10:57.000Z'),
+                  },
+                },
+              },
+            ],
+          },
+        ],
+        numberCheckedBaggage: 1,
+      },
+    );
+    expect(bookingMulticity).toContainEqual({
+      timestamp: new Date('2018-05-18T13:35:57.000Z'),
+      type: 'BagDropTimelineEvent',
+    });
+    expect(bookingMulticity).toContainEqual({
+      timestamp: new Date('2018-05-18T18:20:57.000Z'),
+      type: 'BagPickupTimelineEvent',
+    });
+    expect(bookingMulticity).toContainEqual({
+      timestamp: new Date('2018-05-20T13:35:57.000Z'),
+      type: 'BagDropTimelineEvent',
+    });
+    expect(bookingMulticity).toContainEqual({
+      timestamp: new Date('2018-05-20T18:20:57.000Z'),
+      type: 'BagPickupTimelineEvent',
+    });
+  });
+
+  it('generates the right 2 BagDrop and 2 BagPickup events in case there is a recheckRequired between two legs', () => {
+    const bookingOneWay = resolver(
+      // $FlowExpectedError: full Booking object is not needed for this test
+      {
+        type: 'BookingOneWay',
+        departure: {
+          when: {
+            local: new Date('2018-05-18T14:10:57.000Z'),
+          },
+        },
+        arrival: {
+          when: {
+            local: new Date('2018-05-18T18:10:57.000Z'),
+          },
+        },
+        legs: [
+          {
+            departure: {
+              when: {
+                local: new Date('2018-05-18T14:10:57.000Z'),
+              },
+            },
+            arrival: {
+              when: {
+                local: new Date('2018-05-18T16:10:57.000Z'),
+              },
+            },
+          },
+          {
+            departure: {
+              when: {
+                local: new Date('2018-05-18T17:10:57.000Z'),
+              },
+            },
+            arrival: {
+              when: {
+                local: new Date('2018-05-18T18:10:57.000Z'),
+              },
+            },
+            recheckRequired: true,
+          },
+        ],
+        numberCheckedBaggage: 1,
+      },
+    );
+    expect(bookingOneWay).toContainEqual({
+      timestamp: new Date('2018-05-18T13:35:57.000Z'),
+      type: 'BagDropTimelineEvent',
+    });
+    expect(bookingOneWay).toContainEqual({
+      timestamp: new Date('2018-05-18T16:20:57.000Z'),
+      type: 'BagPickupTimelineEvent',
+    });
+    expect(bookingOneWay).toContainEqual({
+      timestamp: new Date('2018-05-18T16:35:57.000Z'),
+      type: 'BagDropTimelineEvent',
+    });
+    expect(bookingOneWay).toContainEqual({
+      timestamp: new Date('2018-05-18T18:20:57.000Z'),
+      type: 'BagPickupTimelineEvent',
+    });
+  });
+
+  it('generates only 1 BagDrop and 1 BagPickup events in case there is not recheckRequired between two legs', () => {
+    const bookingOneWay = resolver(
+      // $FlowExpectedError: full Booking object is not needed for this test
+      {
+        type: 'BookingOneWay',
+        departure: {
+          when: {
+            local: new Date('2018-05-18T14:10:57.000Z'),
+          },
+        },
+        arrival: {
+          when: {
+            local: new Date('2018-05-18T18:10:57.000Z'),
+          },
+        },
+        legs: [
+          {
+            departure: {
+              when: {
+                local: new Date('2018-05-18T14:10:57.000Z'),
+              },
+            },
+            arrival: {
+              when: {
+                local: new Date('2018-05-18T16:10:57.000Z'),
+              },
+            },
+          },
+          {
+            departure: {
+              when: {
+                local: new Date('2018-05-18T17:10:57.000Z'),
+              },
+            },
+            arrival: {
+              when: {
+                local: new Date('2018-05-18T18:10:57.000Z'),
+              },
+            },
+            recheckRequired: false,
+          },
+        ],
+        numberCheckedBaggage: 1,
+      },
+    );
+    expect(bookingOneWay).toContainEqual({
+      timestamp: new Date('2018-05-18T13:35:57.000Z'),
+      type: 'BagDropTimelineEvent',
+    });
+    expect(bookingOneWay).not.toContainEqual({
+      timestamp: new Date('2018-05-18T16:20:57.000Z'),
+      type: 'BagPickupTimelineEvent',
+    });
+    expect(bookingOneWay).not.toContainEqual({
+      timestamp: new Date('2018-05-18T16:35:57.000Z'),
+      type: 'BagDropTimelineEvent',
+    });
+    expect(bookingOneWay).toContainEqual({
+      timestamp: new Date('2018-05-18T18:20:57.000Z'),
+      type: 'BagPickupTimelineEvent',
     });
   });
 });
@@ -646,5 +997,43 @@ describe('generateNoMoreEditsEvent', () => {
         },
       }),
     ).toBe(null);
+  });
+});
+
+describe('generateBagDropEvent', () => {
+  const date = new Date('2018-05-03T14:10:57.000Z');
+  it('should return BagDropEvent with timestamp 35 minutes before departure time', () => {
+    expect(
+      // $FlowExpectedError: full Booking object is not needed for this test
+      generateBagDropEvent({
+        departure: {
+          when: {
+            local: date,
+          },
+        },
+      }),
+    ).toEqual({
+      timestamp: new Date('2018-05-03T13:35:57.000Z'),
+      type: 'BagDropTimelineEvent',
+    });
+  });
+});
+
+describe('generateBagPickupEvent', () => {
+  const date = new Date('2018-05-03T14:10:57.000Z');
+  it('should return BagPickupEvent with timestamp 10 minutes after arrival time', () => {
+    expect(
+      // $FlowExpectedError: full Booking object is not needed for this test
+      generateBagPickupEvent({
+        arrival: {
+          when: {
+            local: date,
+          },
+        },
+      }),
+    ).toEqual({
+      timestamp: new Date('2018-05-03T14:20:57.000Z'),
+      type: 'BagPickupTimelineEvent',
+    });
   });
 });

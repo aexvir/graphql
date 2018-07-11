@@ -10,7 +10,18 @@ beforeEach(() => {
     AllBookingsDataset,
   );
 
-  ['CDG', 'LGW', 'PRG', 'STN', 'KBP', 'DXB', 'KUF'].forEach(iata => {
+  [
+    'CDG',
+    'LGW',
+    'PRG',
+    'STN',
+    'KBP',
+    'DXB',
+    'KUF',
+    'VIE',
+    'PEK',
+    'HKG',
+  ].forEach(iata => {
     RestApiMock.onGet(
       config.restApiEndpoint.allLocations({
         type: 'id',

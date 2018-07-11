@@ -6,6 +6,7 @@ import AllBookingsDataset from '../../datasets/AllBookings.json';
 import Booking2707224Dataset from '../../datasets/booking-2707224.json';
 import Booking2707229Dataset from '../../datasets/booking-2707229.json';
 import Booking2707251Dataset from '../../datasets/booking-2707251.json';
+import Booking7474870Dataset from '../../datasets/booking-7474870.json';
 
 const { allBookings } = config.restApiEndpoint;
 
@@ -20,6 +21,9 @@ beforeEach(() => {
   RestApiMock.onGet(
     `${allBookings}/2707224\\?simple_token=[0-9a-f-]{36}`,
   ).replyWithData(Booking2707224Dataset);
+  RestApiMock.onGet(
+    `${allBookings}/7474870\\?simple_token=[0-9a-f-]{36}`,
+  ).replyWithData(Booking7474870Dataset);
 });
 
 describe('id query', () => {

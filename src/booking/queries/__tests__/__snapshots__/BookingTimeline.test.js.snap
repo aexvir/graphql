@@ -11,6 +11,332 @@ Object {
 }
 `;
 
+exports[`single booking timeline query should work with another opaque Booking id (has bags) 1`] = `
+Object {
+  "data": Object {
+    "bookingTimeline": Object {
+      "events": Array [
+        Object {
+          "__typename": "BookedFlightTimelineEvent",
+          "timestamp": "2018-07-02T15:04:06.000Z",
+        },
+        Object {
+          "__typename": "BookingConfirmedTimelineEvent",
+          "timestamp": "2018-07-02T15:04:06.000Z",
+        },
+        Object {
+          "__typename": "PaymentConfirmedTimelineEvent",
+          "timestamp": "2018-07-02T15:04:06.000Z",
+        },
+        Object {
+          "__typename": "DownloadInvoiceTimelineEvent",
+          "invoiceUrl": "https://booking.skypicker.com/api/v0.1/get_file/7474870?file_id=603375001&simple_token=44c137b3-dca2-48ca-b091-aabfa4b53488",
+          "legs": Array [
+            Object {
+              "arrival": Object {
+                "airport": Object {
+                  "city": Object {
+                    "name": "Mocked City Name",
+                  },
+                },
+              },
+              "departure": Object {
+                "airport": Object {
+                  "city": Object {
+                    "name": "Mocked City Name",
+                  },
+                },
+              },
+            },
+            Object {
+              "arrival": Object {
+                "airport": Object {
+                  "city": Object {
+                    "name": "Mocked City Name",
+                  },
+                },
+              },
+              "departure": Object {
+                "airport": Object {
+                  "city": Object {
+                    "name": "Mocked City Name",
+                  },
+                },
+              },
+            },
+            Object {
+              "arrival": Object {
+                "airport": Object {
+                  "city": Object {
+                    "name": "Mocked City Name",
+                  },
+                },
+              },
+              "departure": Object {
+                "airport": Object {
+                  "city": Object {
+                    "name": "Mocked City Name",
+                  },
+                },
+              },
+            },
+            Object {
+              "arrival": Object {
+                "airport": Object {
+                  "city": Object {
+                    "name": "Mocked City Name",
+                  },
+                },
+              },
+              "departure": Object {
+                "airport": Object {
+                  "city": Object {
+                    "name": "Mocked City Name",
+                  },
+                },
+              },
+            },
+          ],
+          "numberPassengers": 1,
+          "timestamp": "2018-07-02T15:04:06.000Z",
+        },
+        Object {
+          "__typename": "DownloadETicketTimelineEvent",
+          "ticketUrl": "https://mailing-files-dropzone.s3.eu-west-1.amazonaws.com/7474/1530544118_E-ticket_passenger_e8c265f9a621731d2dc62357d9f55307.pdf?v=1530544121",
+          "timestamp": "2018-07-02T15:04:06.000Z",
+        },
+        Object {
+          "__typename": "NoMoreEditsTimelineEvent",
+          "timestamp": "2018-08-28T13:30:00.000Z",
+        },
+        Object {
+          "__typename": "LeaveForAirportTimelineEvent",
+          "timestamp": "2018-08-30T09:30:00.000Z",
+        },
+        Object {
+          "__typename": "AirportArrivalTimelineEvent",
+          "location": Object {
+            "airport": Object {
+              "city": Object {
+                "locationId": null,
+                "name": "Mocked City Name",
+                "slug": null,
+              },
+            },
+          },
+          "timestamp": "2018-08-30T11:30:00.000Z",
+        },
+        Object {
+          "__typename": "BagDropTimelineEvent",
+          "timestamp": "2018-08-30T12:55:00.000Z",
+        },
+        Object {
+          "__typename": "BoardingTimelineEvent",
+          "gate": "gate number",
+          "timestamp": "2018-08-30T13:00:00.000Z",
+        },
+        Object {
+          "__typename": "DownloadBoardingPassTimelineEvent",
+          "timestamp": "2018-08-30T13:30:00.000Z",
+        },
+        Object {
+          "__typename": "DepartureTimelineEvent",
+          "airline": Object {
+            "code": "CA",
+            "name": "Air China",
+          },
+          "duration": 560,
+          "flightNumber": 842,
+          "location": Object {
+            "airport": Object {
+              "city": Object {
+                "name": "Mocked City Name",
+              },
+            },
+          },
+          "timestamp": "2018-08-30T13:30:00.000Z",
+        },
+        Object {
+          "__typename": "ArrivalTimelineEvent",
+          "location": Object {
+            "airport": Object {
+              "city": Object {
+                "locationId": null,
+                "name": "Mocked City Name",
+                "slug": null,
+              },
+            },
+          },
+          "timestamp": "2018-08-31T04:50:00.000Z",
+        },
+        Object {
+          "__typename": "BagPickupTimelineEvent",
+          "timestamp": "2018-08-31T05:00:00.000Z",
+        },
+        Object {
+          "__typename": "BagDropTimelineEvent",
+          "timestamp": "2018-08-31T06:50:00.000Z",
+        },
+        Object {
+          "__typename": "BoardingTimelineEvent",
+          "gate": "gate number",
+          "timestamp": "2018-08-31T06:55:00.000Z",
+        },
+        Object {
+          "__typename": "DownloadBoardingPassTimelineEvent",
+          "timestamp": "2018-08-31T07:25:00.000Z",
+        },
+        Object {
+          "__typename": "DepartureTimelineEvent",
+          "airline": Object {
+            "code": "CA",
+            "name": "Air China",
+          },
+          "duration": 220,
+          "flightNumber": 6533,
+          "location": Object {
+            "airport": Object {
+              "city": Object {
+                "name": "Mocked City Name",
+              },
+            },
+          },
+          "timestamp": "2018-08-31T07:25:00.000Z",
+        },
+        Object {
+          "__typename": "ArrivalTimelineEvent",
+          "location": Object {
+            "airport": Object {
+              "city": Object {
+                "locationId": null,
+                "name": "Mocked City Name",
+                "slug": null,
+              },
+            },
+          },
+          "timestamp": "2018-08-31T11:05:00.000Z",
+        },
+        Object {
+          "__typename": "BagPickupTimelineEvent",
+          "timestamp": "2018-08-31T11:15:00.000Z",
+        },
+        Object {
+          "__typename": "TransportFromAirportTimelineEvent",
+          "timestamp": "2018-08-31T11:20:00.000Z",
+        },
+        Object {
+          "__typename": "LeaveForAirportTimelineEvent",
+          "timestamp": "2018-09-14T15:00:00.000Z",
+        },
+        Object {
+          "__typename": "AirportArrivalTimelineEvent",
+          "location": Object {
+            "airport": Object {
+              "city": Object {
+                "locationId": null,
+                "name": "Mocked City Name",
+                "slug": null,
+              },
+            },
+          },
+          "timestamp": "2018-09-14T17:00:00.000Z",
+        },
+        Object {
+          "__typename": "BagDropTimelineEvent",
+          "timestamp": "2018-09-14T18:25:00.000Z",
+        },
+        Object {
+          "__typename": "BoardingTimelineEvent",
+          "gate": "gate number",
+          "timestamp": "2018-09-14T18:30:00.000Z",
+        },
+        Object {
+          "__typename": "DownloadBoardingPassTimelineEvent",
+          "timestamp": "2018-09-14T19:00:00.000Z",
+        },
+        Object {
+          "__typename": "DepartureTimelineEvent",
+          "airline": Object {
+            "code": "CA",
+            "name": "Air China",
+          },
+          "duration": 210,
+          "flightNumber": 6516,
+          "location": Object {
+            "airport": Object {
+              "city": Object {
+                "name": "Mocked City Name",
+              },
+            },
+          },
+          "timestamp": "2018-09-14T19:00:00.000Z",
+        },
+        Object {
+          "__typename": "ArrivalTimelineEvent",
+          "location": Object {
+            "airport": Object {
+              "city": Object {
+                "locationId": null,
+                "name": "Mocked City Name",
+                "slug": null,
+              },
+            },
+          },
+          "timestamp": "2018-09-14T22:30:00.000Z",
+        },
+        Object {
+          "__typename": "BoardingTimelineEvent",
+          "gate": "gate number",
+          "timestamp": "2018-09-15T02:20:00.000Z",
+        },
+        Object {
+          "__typename": "DownloadBoardingPassTimelineEvent",
+          "timestamp": "2018-09-15T02:50:00.000Z",
+        },
+        Object {
+          "__typename": "DepartureTimelineEvent",
+          "airline": Object {
+            "code": "CA",
+            "name": "Air China",
+          },
+          "duration": 600,
+          "flightNumber": 841,
+          "location": Object {
+            "airport": Object {
+              "city": Object {
+                "name": "Mocked City Name",
+              },
+            },
+          },
+          "timestamp": "2018-09-15T02:50:00.000Z",
+        },
+        Object {
+          "__typename": "ArrivalTimelineEvent",
+          "location": Object {
+            "airport": Object {
+              "city": Object {
+                "locationId": null,
+                "name": "Mocked City Name",
+                "slug": null,
+              },
+            },
+          },
+          "timestamp": "2018-09-15T06:50:00.000Z",
+        },
+        Object {
+          "__typename": "BagPickupTimelineEvent",
+          "timestamp": "2018-09-15T07:00:00.000Z",
+        },
+        Object {
+          "__typename": "TransportFromAirportTimelineEvent",
+          "timestamp": "2018-09-15T07:05:00.000Z",
+        },
+      ],
+    },
+  },
+}
+`;
+
 exports[`single booking timeline query should work with opaque Booking id 1`] = `
 Object {
   "data": Object {

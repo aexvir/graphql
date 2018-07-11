@@ -20,6 +20,11 @@ Object {
             "isPastBooking": true,
           },
         },
+        Object {
+          "node": Object {
+            "isPastBooking": false,
+          },
+        },
       ],
     },
   },

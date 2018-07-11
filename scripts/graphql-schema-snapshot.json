@@ -10884,6 +10884,16 @@
             "kind": "OBJECT",
             "name": "NoMoreEditsTimelineEvent",
             "ofType": null
+          },
+          {
+            "kind": "OBJECT",
+            "name": "BagDropTimelineEvent",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
+            "name": "BagPickupTimelineEvent",
+            "ofType": null
           }
         ]
       },
@@ -12516,6 +12526,64 @@
       {
         "kind": "OBJECT",
         "name": "NoMoreEditsTimelineEvent",
+        "description": null,
+        "fields": [
+          {
+            "name": "timestamp",
+            "description": "Time of appearance in the timeline.",
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "DateTime",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [
+          {
+            "kind": "INTERFACE",
+            "name": "TimelineEvent",
+            "ofType": null
+          }
+        ],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "BagDropTimelineEvent",
+        "description": null,
+        "fields": [
+          {
+            "name": "timestamp",
+            "description": "Time of appearance in the timeline.",
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "DateTime",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [
+          {
+            "kind": "INTERFACE",
+            "name": "TimelineEvent",
+            "ofType": null
+          }
+        ],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "BagPickupTimelineEvent",
         "description": null,
         "fields": [
           {

@@ -205,3 +205,17 @@ export const NoMoreEditsTimelineEvent = new GraphQLObjectType({
   isTypeOf: value => value.type === 'NoMoreEditsTimelineEvent',
   interfaces: [TimelineEvent],
 });
+
+export const BagDropTimelineEvent = new GraphQLObjectType({
+  name: 'BagDropTimelineEvent',
+  fields: commonFields,
+  isTypeOf: value => value.type === 'BagDropTimelineEvent',
+  interfaces: [TimelineEvent],
+});
+
+export const BagPickupTimelineEvent = new GraphQLObjectType({
+  name: 'BagPickupTimelineEvent',
+  fields: commonFields,
+  isTypeOf: value => value.type === 'BagPickupTimelineEvent',
+  interfaces: [TimelineEvent],
+});

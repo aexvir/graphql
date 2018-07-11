@@ -290,6 +290,7 @@ Object {
       "vehicleType": "aircraft",
     },
   ],
+  "numberCheckedBaggage": 0,
   "passengerCount": 1,
   "passengers": Array [
     Object {

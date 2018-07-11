@@ -20,6 +20,8 @@ import type {
   ArrivalTimelineEvent as ArrivalType,
   TransportFromAirportTimelineEvent as TransportFromAirportType,
   NoMoreEditsTimelineEvent as NoMoreEditsType,
+  BagDropTimelineEvent as BagDropType,
+  BagPickupTimelineEvent as BagPickupType,
 } from '../BookingTimeline';
 import type { Booking } from '../Booking';
 import type { Leg } from '../../flight/Flight';
@@ -28,6 +30,8 @@ import type { TripData } from '../types/outputs/Trip';
 export default function generateEventsFrom(
   booking: Booking,
 ): $ReadOnlyArray<BookingTimelineEvent> {
+  const numberCheckedBaggage = booking.numberCheckedBaggage || 0;
+
   const events = [];
 
   const bookedFlightEvent = generateBookedFlightEvent(booking);
@@ -60,21 +64,26 @@ export default function generateEventsFrom(
   switch (booking.type) {
     case 'BookingOneWay': {
       const { departure, arrival, legs } = booking;
-      tripEvents = generateTripEvents({ departure, arrival, legs });
+      tripEvents = generateTripEvents(
+        { departure, arrival, legs },
+        numberCheckedBaggage,
+      );
       break;
     }
     case 'BookingReturn': {
       const { outbound, inbound } = booking;
       tripEvents = [
-        ...generateTripEvents(outbound),
-        ...generateTripEvents(inbound),
+        ...generateTripEvents(outbound, numberCheckedBaggage),
+        ...generateTripEvents(inbound, numberCheckedBaggage),
       ];
       break;
     }
     case 'BookingMulticity': {
       const { trips } = booking;
       trips &&
-        trips.forEach(trip => tripEvents.push(...generateTripEvents(trip)));
+        trips.forEach(trip =>
+          tripEvents.push(...generateTripEvents(trip, numberCheckedBaggage)),
+        );
       break;
     }
   }
@@ -83,7 +92,10 @@ export default function generateEventsFrom(
   return events;
 }
 
-function generateTripEvents(trip: ?TripData): Array<any> {
+function generateTripEvents(
+  trip: ?TripData,
+  numberCheckedBaggage: number,
+): Array<any> {
   const tripEvents = [];
   if (!trip) {
     return [];
@@ -98,8 +110,23 @@ function generateTripEvents(trip: ?TripData): Array<any> {
     tripEvents.push(airportArrivalEvent);
   }
 
-  if (trip.legs) {
-    trip.legs.forEach(leg => {
+  if (numberCheckedBaggage > 0) {
+    const bagDropEvent = generateBagDropEvent(trip);
+    if (bagDropEvent) {
+      tripEvents.push(bagDropEvent);
+    }
+  }
+
+  const { legs } = trip;
+  if (legs) {
+    legs.forEach((leg, index) => {
+      if (index !== 0 && numberCheckedBaggage > 0 && leg.recheckRequired) {
+        const bagDropEvent = generateBagDropEvent(leg);
+        if (bagDropEvent) {
+          tripEvents.push(bagDropEvent);
+        }
+      }
+
       const boardingEvent = generateBoardingEvent(leg);
       if (boardingEvent) {
         tripEvents.push(boardingEvent);
@@ -119,8 +146,27 @@ function generateTripEvents(trip: ?TripData): Array<any> {
       if (arrivalEvent) {
         tripEvents.push(arrivalEvent);
       }
+
+      if (
+        index !== legs.length - 1 &&
+        numberCheckedBaggage > 0 &&
+        legs[index + 1].recheckRequired
+      ) {
+        const bagPickupEvent = generateBagPickupEvent(leg);
+        if (bagPickupEvent) {
+          tripEvents.push(bagPickupEvent);
+        }
+      }
     });
   }
+
+  if (numberCheckedBaggage > 0) {
+    const bagPickupEvent = generateBagPickupEvent(trip);
+    if (bagPickupEvent) {
+      tripEvents.push(bagPickupEvent);
+    }
+  }
+
   const transportFromAirportEvent = generateTransportFromAirportEvent(trip);
   if (transportFromAirportEvent) {
     tripEvents.push(transportFromAirportEvent);
@@ -310,16 +356,50 @@ export function generateTransportFromAirportEvent(
 
 export function generateNoMoreEditsEvent(booking: Booking): ?NoMoreEditsType {
   const departureTime = idx(booking.departure, _ => _.when.local);
-  const allowdToChangeFlights = idx(booking, _ => _.allowedToChangeFlights);
-  if (departureTime && allowdToChangeFlights) {
+  const allowedToChangeFlights = idx(booking, _ => _.allowedToChangeFlights);
+  if (departureTime && allowedToChangeFlights) {
     const noMoreEditsTime = DateTime.fromJSDate(departureTime, {
       zone: 'UTC',
     })
-      .minus({ hours: allowdToChangeFlights })
+      .minus({ hours: allowedToChangeFlights })
       .toJSDate();
     return {
       timestamp: noMoreEditsTime,
       type: 'NoMoreEditsTimelineEvent',
+    };
+  }
+  return null;
+}
+
+export function generateBagDropEvent(legOrTrip: Leg | TripData): ?BagDropType {
+  const departureTime = idx(legOrTrip, _ => _.departure.when.local);
+  if (departureTime) {
+    const bagDropTime = DateTime.fromJSDate(departureTime, {
+      zone: 'UTC',
+    })
+      .minus({ minutes: 35 })
+      .toJSDate();
+    return {
+      timestamp: bagDropTime,
+      type: 'BagDropTimelineEvent',
+    };
+  }
+  return null;
+}
+
+export function generateBagPickupEvent(
+  legOrTrip: Leg | TripData,
+): ?BagPickupType {
+  const arrivalTime = idx(legOrTrip, _ => _.arrival.when.local);
+  if (arrivalTime) {
+    const bagPickupTime = DateTime.fromJSDate(arrivalTime, {
+      zone: 'UTC',
+    })
+      .plus({ minutes: 10 })
+      .toJSDate();
+    return {
+      timestamp: bagPickupTime,
+      type: 'BagPickupTimelineEvent',
     };
   }
   return null;

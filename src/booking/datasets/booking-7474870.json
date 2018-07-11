@@ -1,0 +1,480 @@
+{
+  "additional_bags_prices": {},
+  "additional_bookings": {
+    "details": [],
+    "paid": {
+      "bags": 0,
+      "total": 0
+    }
+  },
+  "additional_contacts": [],
+  "arrival": {
+    "when": 0,
+    "where": {
+      "code": "HKG",
+      "name": "Hong Kong"
+    }
+  },
+  "assets": {
+    "additional": [],
+    "additional_bookings": {
+      "invoices": []
+    },
+    "boardingPass": {
+      "SP5484703_5689890":
+        "https://mailing-files-dropzone.s3.eu-west-1.amazonaws.com/7474/Vienna-Beijing_SP5484703_5689890_e8c265f9a621731d2dc62357d9f55307.pdf?v=1530544121",
+      "SP5484703_7394139":
+        "https://mailing-files-dropzone.s3.eu-west-1.amazonaws.com/7474/Beijing-HongKong_SP5484703_7394139_e8c265f9a621731d2dc62357d9f55307.pdf?v=1530544121",
+      "SP5484703_7394140":
+        "https://mailing-files-dropzone.s3.eu-west-1.amazonaws.com/7474/HongKong-Beijing_SP5484703_7394140_e8c265f9a621731d2dc62357d9f55307.pdf?v=1530544121",
+      "SP5484703_7394141":
+        "https://mailing-files-dropzone.s3.eu-west-1.amazonaws.com/7474/Beijing-Vienna_SP5484703_7394141_e8c265f9a621731d2dc62357d9f55307.pdf?v=1530544121",
+      "all":
+        "https://mailing-files-dropzone.s3.eu-west-1.amazonaws.com/7474/7474870_e8c265f9a621731d2dc62357d9f55307.pdf?v=1530544121"
+    },
+    "boarding_passes": {
+      "SP5484703_5689890":
+        "https://mailing-files-dropzone.s3.eu-west-1.amazonaws.com/7474/Vienna-Beijing_SP5484703_5689890_e8c265f9a621731d2dc62357d9f55307.pdf?v=1530544121",
+      "SP5484703_7394139":
+        "https://mailing-files-dropzone.s3.eu-west-1.amazonaws.com/7474/Beijing-HongKong_SP5484703_7394139_e8c265f9a621731d2dc62357d9f55307.pdf?v=1530544121",
+      "SP5484703_7394140":
+        "https://mailing-files-dropzone.s3.eu-west-1.amazonaws.com/7474/HongKong-Beijing_SP5484703_7394140_e8c265f9a621731d2dc62357d9f55307.pdf?v=1530544121",
+      "SP5484703_7394141":
+        "https://mailing-files-dropzone.s3.eu-west-1.amazonaws.com/7474/Beijing-Vienna_SP5484703_7394141_e8c265f9a621731d2dc62357d9f55307.pdf?v=1530544121",
+      "all":
+        "https://mailing-files-dropzone.s3.eu-west-1.amazonaws.com/7474/7474870_e8c265f9a621731d2dc62357d9f55307.pdf?v=1530544121"
+    },
+    "en_confirmation_link":
+      "https://mailing-files-dropzone.s3.eu-west-1.amazonaws.com/7474/1530543973_7474870_confirmation_e8c265f9a621731d2dc62357d9f55307.html",
+    "eticket":
+      "https://mailing-files-dropzone.s3.eu-west-1.amazonaws.com/7474/1530544118_E-ticket_passenger_e8c265f9a621731d2dc62357d9f55307.pdf?v=1530544121",
+    "insurance": null,
+    "invoice":
+      "https://booking.skypicker.com/api/v0.1/get_file/7474870?file_id=603375001&simple_token=44c137b3-dca2-48ca-b091-aabfa4b53488",
+    "transfer_ticket": null
+  },
+  "auth_token": "44c137b3-dca2-48ca-b091-aabfa4b53488",
+  "bag_params": {
+    "hand2_height": null,
+    "hand2_length": null,
+    "hand2_note": "",
+    "hand2_weight": null,
+    "hand2_width": null,
+    "hand_height": 36,
+    "hand_length": 55,
+    "hand_note": "",
+    "hand_weight": 5,
+    "hand_width": 20,
+    "hold_height": 50,
+    "hold_length": 70,
+    "hold_weight": 20,
+    "hold_width": 38,
+    "note": ""
+  },
+  "bags": 1,
+  "bags_restrictions": {
+    "hands": {},
+    "holds": {
+      "1": {
+        "height": 38,
+        "length": 70,
+        "weight": 20,
+        "width": 50
+      }
+    }
+  },
+  "bid": 7474870,
+  "blocked": false,
+  "blockers": [],
+  "booked_at": "skypicker",
+  "booking_token":
+    "TjFsU9KOyjpEDqm5dNSrO1ZjuRMVMgZrERrSppD325T6P8+P9w468E+3gYirNKm0xjFEaQ8brFkJXYHcFnHHQNJSZF+Rgoq2C/VVWsVmxJJ27rzauUgOb0Q5YoXBmHxb1eorSmtC/3ZYTIgwa7bHpo40ojEB3DKdSZBYLjqcFqPd59pKHoVRWo06G+gtx2dro7bMuSrlLzKur38jFZ0zQSf8enX8mk9k9l/GDfcIPowLuhEkn4NyAKwSQlNFrs4Ct3mNtaZJKFLm2wSrjm0+OI8QNH8pJZsdoIJsg+g5uqmP/FHWuJGyYUg1y1EQmTM/bhmCU9W0+xv/aY7tGIsNgT/3AP5m46hhPrrbaF6QtSKe2JuIi/mEDmphWsCkhn+ENHCQZWZsST5V7s/0MZYtVXpGxS/ULunyuWOopSsg7ZH8FTmeRGv/VP6Qf2BK5VLcjRq42Z6rUgXnrXKBt4Y1qCExxqrG8kts7/fesQmQW0rcu6uqXW+EtN5lE2C6e7/xnrULkA7dz3Uoh7/3qq1FV/dWle+0szex52YS3FLy5374vk/jITtH9UgSCGeUB0SKoWLfyeeuh3K2RBFDIEJ0OCUNNzstjHlsfVH0hynPJJxcbUxjr0I4XkERz1JkPwp0K7zVLMtHuMiVAmDZ28Pg04VajEyUaccxLoApRiemlEB+zucXHHsFMbCKnXXFLZiM83VSp5LayrWKD81m10hqlak6g4GkFUGZbOt9tRCpw6k5DrQg60om3qggZOUYSk0IYP8pxAi0RhP/SO85CkAj1EcXSsZMJyWcWFoXIZc+qxc18m+u1VrHVk4H9qTj/7P1",
+  "brand": "kiwicom",
+  "cancel_requested": null,
+  "card_payment": 831.04,
+  "checkin_deadline": 1536688800,
+  "config": {
+    "allowed_to_change": {
+      "bags": 36,
+      "documents": 72,
+      "extras": null,
+      "flights": 48,
+      "insurance_add": 24,
+      "insurance_change": 48,
+      "other": 4,
+      "passengers": 48,
+      "seating": 48
+    },
+    "allowed_to_change_segments": false
+  },
+  "contact": {
+    "email": "reactnative@kiwi.com",
+    "phone": "+44 000",
+    "pid": 11384947
+  },
+  "created": 1530543846,
+  "credits_payment": 0,
+  "currency": "EUR",
+  "departure": {
+    "when": 0,
+    "where": {
+      "code": "VIE",
+      "name": "Vienna"
+    }
+  },
+  "disabled_bags_in_mmb": false,
+  "document_options": {
+    "airport_checkin_price": 0,
+    "checkin_date": 1535376600,
+    "document_need": 2
+  },
+  "flight_ids": [
+    "SP5484703_7394139",
+    "SP5484703_7394140",
+    "SP5484703_7394141",
+    "SP5484703_5689890"
+  ],
+  "flights": [
+    {
+      "airline": {
+        "checkin": 0,
+        "doing_online_checkin": null,
+        "iata": "CA",
+        "name": "Air China",
+        "payment_card_copy_eticket_requirement": null
+      },
+      "arrival": {
+        "when": {
+          "local": 1535691000,
+          "utc": 1535662200
+        },
+        "where": {
+          "city_id": "beijing_cn",
+          "code": "PEK",
+          "country": "CN",
+          "gate": null,
+          "name": "Beijing",
+          "station": "Beijing Capital International",
+          "terminal": "3"
+        }
+      },
+      "bags_recheck_disclaimer": "",
+      "bags_recheck_required": false,
+      "departure": {
+        "when": {
+          "local": 1535635800,
+          "utc": 1535628600
+        },
+        "where": {
+          "city_id": "vienna_at",
+          "code": "VIE",
+          "country": "AT",
+          "gate": null,
+          "name": "Vienna",
+          "station": "Vienna International"
+        }
+      },
+      "flight_no": 842,
+      "guarantee": false,
+      "guarantee_disclaimer": "",
+      "id": "SP5484703_5689890",
+      "is_cabin_bags_with_priority_boarding": false,
+      "operating_airline": {
+        "iata": "CA",
+        "name": "Air China"
+      },
+      "reservation_number": "testpnr",
+      "return": 0,
+      "ticket_available_at": null,
+      "vehicle": {
+        "manufacturer": "Airbus",
+        "meal": [],
+        "model": "A330",
+        "seats": 0,
+        "type": "aircraft"
+      }
+    },
+    {
+      "airline": {
+        "checkin": 0,
+        "doing_online_checkin": null,
+        "iata": "CA",
+        "name": "Air China",
+        "payment_card_copy_eticket_requirement": null
+      },
+      "arrival": {
+        "when": {
+          "local": 1535713500,
+          "utc": 1535684700
+        },
+        "where": {
+          "city_id": "hong-kong_cn",
+          "code": "HKG",
+          "country": "CN",
+          "gate": null,
+          "name": "Hong Kong",
+          "station": "Hong Kong International",
+          "terminal": "1"
+        }
+      },
+      "bags_recheck_disclaimer": "",
+      "bags_recheck_required": true,
+      "departure": {
+        "when": {
+          "local": 1535700300,
+          "utc": 1535671500
+        },
+        "where": {
+          "city_id": "beijing_cn",
+          "code": "PEK",
+          "country": "CN",
+          "gate": null,
+          "name": "Beijing",
+          "station": "Beijing Capital International",
+          "terminal": "3"
+        }
+      },
+      "flight_no": 6533,
+      "guarantee": false,
+      "guarantee_disclaimer": "",
+      "id": "SP5484703_7394139",
+      "is_cabin_bags_with_priority_boarding": false,
+      "operating_airline": {
+        "iata": "KA",
+        "name": "Cathay Dragon"
+      },
+      "reservation_number": "testpnr",
+      "return": 0,
+      "ticket_available_at": null,
+      "vehicle": {
+        "manufacturer": "Airbus",
+        "meal": [],
+        "model": "A330-300",
+        "seats": 0,
+        "type": "aircraft"
+      }
+    },
+    {
+      "airline": {
+        "checkin": 0,
+        "doing_online_checkin": null,
+        "iata": "CA",
+        "name": "Air China",
+        "payment_card_copy_eticket_requirement": null
+      },
+      "arrival": {
+        "when": {
+          "local": 1536964200,
+          "utc": 1536935400
+        },
+        "where": {
+          "city_id": "beijing_cn",
+          "code": "PEK",
+          "country": "CN",
+          "gate": null,
+          "name": "Beijing",
+          "station": "Beijing Capital International",
+          "terminal": "3"
+        }
+      },
+      "bags_recheck_disclaimer": "",
+      "bags_recheck_required": false,
+      "departure": {
+        "when": {
+          "local": 1536951600,
+          "utc": 1536922800
+        },
+        "where": {
+          "city_id": "hong-kong_cn",
+          "code": "HKG",
+          "country": "CN",
+          "gate": null,
+          "name": "Hong Kong",
+          "station": "Hong Kong International",
+          "terminal": "1"
+        }
+      },
+      "flight_no": 6516,
+      "guarantee": false,
+      "guarantee_disclaimer": "",
+      "id": "SP5484703_7394140",
+      "is_cabin_bags_with_priority_boarding": false,
+      "operating_airline": {
+        "iata": "KA",
+        "name": "Cathay Dragon"
+      },
+      "reservation_number": "testpnr",
+      "return": 1,
+      "ticket_available_at": null,
+      "vehicle": {
+        "manufacturer": "Airbus",
+        "meal": [],
+        "model": "A330-300",
+        "seats": 0,
+        "type": "aircraft"
+      }
+    },
+    {
+      "airline": {
+        "checkin": 0,
+        "doing_online_checkin": null,
+        "iata": "CA",
+        "name": "Air China",
+        "payment_card_copy_eticket_requirement": null
+      },
+      "arrival": {
+        "when": {
+          "local": 1536994200,
+          "utc": 1536987000
+        },
+        "where": {
+          "city_id": "vienna_at",
+          "code": "VIE",
+          "country": "AT",
+          "gate": null,
+          "name": "Vienna",
+          "station": "Vienna International"
+        }
+      },
+      "bags_recheck_disclaimer": "",
+      "bags_recheck_required": false,
+      "departure": {
+        "when": {
+          "local": 1536979800,
+          "utc": 1536951000
+        },
+        "where": {
+          "city_id": "beijing_cn",
+          "code": "PEK",
+          "country": "CN",
+          "gate": null,
+          "name": "Beijing",
+          "station": "Beijing Capital International",
+          "terminal": "3"
+        }
+      },
+      "flight_no": 841,
+      "guarantee": false,
+      "guarantee_disclaimer": "",
+      "id": "SP5484703_7394141",
+      "is_cabin_bags_with_priority_boarding": false,
+      "operating_airline": {
+        "iata": "CA",
+        "name": "Air China"
+      },
+      "reservation_number": "testpnr",
+      "return": 1,
+      "ticket_available_at": null,
+      "vehicle": {
+        "manufacturer": "Airbus",
+        "meal": [],
+        "model": "A330-200",
+        "seats": 0,
+        "type": "aircraft"
+      }
+    }
+  ],
+  "flights_history": {},
+  "grace_period_fee": null,
+  "grade": {
+    "id": "D",
+    "time": 240
+  },
+  "infants_conditions": {
+    "hand_weight": 0,
+    "trolley": false
+  },
+  "insurance_price": {
+    "skygold": 77.57,
+    "skysilver": 47.82,
+    "travel_basic": 47.82,
+    "travel_plus": 77.57
+  },
+  "is_tat_informed": false,
+  "max_bags": 1,
+  "netverify_requested": true,
+  "original_currency": "CZK",
+  "original_flight_price": null,
+  "original_price": 21640,
+  "paid_over": "zooz",
+  "passenger_changes": [],
+  "passenger_ids": [11384947],
+  "passengers": [
+    {
+      "bags": 1,
+      "birthday": "1985-01-01",
+      "category": "adult",
+      "contact_passenger": true,
+      "firstname": "TEST",
+      "hand_bags": {},
+      "id": 11384947,
+      "insurance_price": null,
+      "insurance_type": "none",
+      "lastname": "TEST",
+      "nationality": "gb",
+      "pkpass": null,
+      "priority_boarding": {
+        "SP5484703_5689890": {
+          "is_ordered": false
+        },
+        "SP5484703_7394139": {
+          "is_ordered": false
+        },
+        "SP5484703_7394140": {
+          "is_ordered": false
+        },
+        "SP5484703_7394141": {
+          "is_ordered": false
+        }
+      },
+      "title": "mr",
+      "travel_document": {
+        "cardno": "12345678XY",
+        "expiration": 1608768000
+      }
+    }
+  ],
+  "pending_additional_services": [],
+  "pending_flight_changes": [],
+  "pending_refunds": [],
+  "pending_requests": [],
+  "podio_status": null,
+  "price": 831.04,
+  "prices": ["130.7", "130.7", "130.7", "130.7"],
+  "refund_methods": ["credits", "zooz", "bank_account"],
+  "refund_options": [],
+  "refundable_options": {
+    "refundable_until": 1535455800,
+    "requested": null
+  },
+  "reservations_details": {},
+  "route": ["VIE", "HKG"],
+  "sandbox": 1,
+  "segments": null,
+  "status": "confirmed",
+  "ticketing_allowed": null,
+  "transfer_ids": [],
+  "transfers": [],
+  "travel_info": {
+    "11384947": {
+      "0": {
+        "health": [],
+        "passport": [],
+        "visa": [
+          {
+            "country": "AT",
+            "info": "",
+            "status": "ok",
+            "timestamp": 1522328747
+          },
+          {
+            "country": "CN",
+            "info": "",
+            "status": "critical",
+            "timestamp": 1531296651
+          }
+        ]
+      }
+    }
+  }
+}

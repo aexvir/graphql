@@ -32,6 +32,15 @@ Object {
             "databaseId": 2707251,
           },
         },
+        Object {
+          "node": Object {
+            "assets": Object {
+              "invoiceUrl": "https://booking.skypicker.com/api/v0.1/get_file/7474870?file_id=603375001&simple_token=44c137b3-dca2-48ca-b091-aabfa4b53488",
+              "ticketUrl": "https://mailing-files-dropzone.s3.eu-west-1.amazonaws.com/7474/1530544118_E-ticket_passenger_e8c265f9a621731d2dc62357d9f55307.pdf?v=1530544121",
+            },
+            "databaseId": 7474870,
+          },
+        },
       ],
     },
   },

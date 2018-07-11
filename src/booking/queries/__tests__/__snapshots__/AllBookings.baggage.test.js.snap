@@ -80,6 +80,31 @@ Object {
             "databaseId": 2707251,
           },
         },
+        Object {
+          "node": Object {
+            "allowedBaggage": Object {
+              "cabin": Array [
+                Object {
+                  "height": 36,
+                  "length": 55,
+                  "note": null,
+                  "weight": 5,
+                  "width": 20,
+                },
+              ],
+              "checked": Array [
+                Object {
+                  "height": 50,
+                  "length": 70,
+                  "note": null,
+                  "weight": 20,
+                  "width": 38,
+                },
+              ],
+            },
+            "databaseId": 7474870,
+          },
+        },
       ],
     },
   },
