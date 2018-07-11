@@ -25,6 +25,11 @@ const app = express();
 app.use(cors({ methods: ['GET', 'POST'] }));
 app.use(compression());
 
+app.get('/ping', (request: $Request, response: $Response) => {
+  // pingdom.com endpoint
+  response.send({ pong: true });
+});
+
 app.all('/', (request: $Request, response: $Response) => {
   if (process.env.NODE_ENV === 'production' && request.method === 'GET') {
     return response.status(405).json({
