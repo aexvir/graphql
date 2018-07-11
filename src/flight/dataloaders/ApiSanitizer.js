@@ -47,6 +47,8 @@ export function sanitizeApiResponse(
       airlineCode: leg.airline,
       vehicleType: leg.vehicle_type,
       guarantee: leg.guarantee,
+      vehicle: flight.vehicle,
+      operatingAirline: flight.operating_airline,
     })),
     price: {
       amount: flight.price,

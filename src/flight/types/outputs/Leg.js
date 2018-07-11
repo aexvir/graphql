@@ -11,6 +11,8 @@ import { globalIdField } from '../../../common/services/OpaqueIdentifier';
 
 import GraphQLRouteStop from './RouteStop';
 import GraphQLAirline from './Airline';
+import GraphQLOperatingAirline from './OperatingAirline';
+import GraphQLVehicle from './Vehicle';
 import FlightDurationInMinutes from '../../resolvers/FlightDuration';
 
 import { GraphQLCoveredBy, CoveredBy } from '../enums/CoveredBy';
@@ -42,6 +44,16 @@ export default new GraphQLObjectType({
         args: Object,
         { dataLoader }: GraphqlContextType,
       ) => dataLoader.airline.load(airlineCode),
+    },
+
+    operatingAirline: {
+      type: GraphQLOperatingAirline,
+      resolve: ({ operatingAirline }: Leg) => operatingAirline,
+    },
+
+    vehicle: {
+      type: GraphQLVehicle,
+      resolve: ({ vehicle }: Leg) => vehicle,
     },
 
     arrival: {

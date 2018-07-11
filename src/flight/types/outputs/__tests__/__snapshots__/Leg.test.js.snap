@@ -70,6 +70,13 @@ Object {
     "resolve": [Function],
     "type": "Boolean",
   },
+  "operatingAirline": Object {
+    "args": Array [],
+    "isDeprecated": false,
+    "name": "operatingAirline",
+    "resolve": [Function],
+    "type": "OperatingAirline",
+  },
   "recheckRequired": Object {
     "args": Array [],
     "isDeprecated": false,
@@ -83,6 +90,13 @@ Object {
     "name": "type",
     "resolve": [Function],
     "type": "VehicleType",
+  },
+  "vehicle": Object {
+    "args": Array [],
+    "isDeprecated": false,
+    "name": "vehicle",
+    "resolve": [Function],
+    "type": "Vehicle",
   },
 }
 `;

@@ -46,6 +46,8 @@ export function sanitizeListItem(apiData: Object): BookingsItem {
     airlineCode: flight.airline.iata,
     vehicleType: idx(flight, _ => _.vehicle.type),
     guarantee: flight.guarantee,
+    vehicle: flight.vehicle,
+    operatingAirline: flight.operating_airline,
   }));
   const lastLeg = legs[legs.length - 1];
   const firstLeg = legs[0];

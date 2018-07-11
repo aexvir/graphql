@@ -46,6 +46,8 @@ export type Leg = {|
   guarantee: boolean,
   boardingPass?: BoardingPass,
   boardingPassAvailableAt?: ?string,
+  vehicle: Vehicle,
+  operatingAirline: OperatingAirline,
 |};
 
 export type Airline = {|
@@ -53,4 +55,14 @@ export type Airline = {|
   logoUrl: string,
   code: string,
   isLowCost: boolean,
+|};
+
+export type OperatingAirline = {|
+  iata: string,
+  name: string,
+|};
+
+export type Vehicle = {|
+  manufacturer: string,
+  model: string,
 |};
