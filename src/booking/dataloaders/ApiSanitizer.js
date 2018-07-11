@@ -48,6 +48,7 @@ export function sanitizeListItem(apiData: Object): BookingsItem {
     guarantee: flight.guarantee,
     vehicle: flight.vehicle,
     operatingAirline: flight.operating_airline,
+    pnr: flight.reservation_number,
   }));
   const lastLeg = legs[legs.length - 1];
   const firstLeg = legs[0];

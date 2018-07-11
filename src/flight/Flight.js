@@ -48,6 +48,7 @@ export type Leg = {|
   boardingPassAvailableAt?: ?string,
   vehicle: Vehicle,
   operatingAirline: OperatingAirline,
+  pnr: string,
 |};
 
 export type Airline = {|

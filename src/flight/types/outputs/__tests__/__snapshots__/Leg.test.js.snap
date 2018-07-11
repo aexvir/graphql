@@ -77,6 +77,13 @@ Object {
     "resolve": [Function],
     "type": "OperatingAirline",
   },
+  "pnr": Object {
+    "args": Array [],
+    "isDeprecated": false,
+    "name": "pnr",
+    "resolve": [Function],
+    "type": "String",
+  },
   "recheckRequired": Object {
     "args": Array [],
     "isDeprecated": false,

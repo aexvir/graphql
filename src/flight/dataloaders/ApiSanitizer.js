@@ -49,6 +49,7 @@ export function sanitizeApiResponse(
       guarantee: leg.guarantee,
       vehicle: flight.vehicle,
       operatingAirline: flight.operating_airline,
+      pnr: flight.reservation_number,
     })),
     price: {
       amount: flight.price,

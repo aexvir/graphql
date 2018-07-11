@@ -6,6 +6,7 @@ import {
   GraphQLBoolean,
   GraphQLInt,
   GraphQLEnumType,
+  GraphQLString,
 } from 'graphql';
 import { globalIdField } from '../../../common/services/OpaqueIdentifier';
 
@@ -76,6 +77,11 @@ export default new GraphQLObjectType({
     flightNumber: {
       type: GraphQLInt,
       resolve: ({ flightNo }: Leg): number => flightNo,
+    },
+
+    pnr: {
+      type: GraphQLString,
+      resolve: ({ pnr }: Leg): string => pnr,
     },
 
     recheckRequired: {
