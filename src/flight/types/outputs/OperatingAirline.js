@@ -9,6 +9,7 @@ export default new GraphQLObjectType({
   fields: {
     iata: {
       type: GraphQLString,
+      description: 'IATA code of the operating airline.',
       resolve: ({ iata }: OperatingAirline): string => iata,
     },
     name: {

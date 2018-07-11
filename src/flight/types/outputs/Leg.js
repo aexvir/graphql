@@ -81,6 +81,7 @@ export default new GraphQLObjectType({
 
     pnr: {
       type: GraphQLString,
+      description: 'Reservation number related to the leg.',
       resolve: ({ pnr }: Leg): string => pnr,
     },
 
