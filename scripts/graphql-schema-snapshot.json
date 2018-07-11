@@ -5394,7 +5394,7 @@
           },
           {
             "name": "pnr",
-            "description": null,
+            "description": "Reservation number related to the leg.",
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -5536,7 +5536,7 @@
         "fields": [
           {
             "name": "iata",
-            "description": null,
+            "description": "IATA code of the operating airline.",
             "args": [],
             "type": {
               "kind": "SCALAR",
