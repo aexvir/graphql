@@ -42,11 +42,10 @@ export default new GraphQLObjectType({
     price: {
       description: 'Total price',
       type: GraphQLPrice,
-      resolve: ({ hotel, flight }: DynamicPackageType) => {
-        const price = hotel.price + flight.price.amount;
+      resolve: ({ hotel }: DynamicPackageType) => {
         return {
-          amount: price,
-          currency: flight.price.currency,
+          amount: hotel.price,
+          currency: hotel.currencyCode,
         };
       },
     },

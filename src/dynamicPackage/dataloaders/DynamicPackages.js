@@ -9,7 +9,6 @@ import type {
   Flight as FlightApiResponse,
   Hotel as HotelApiResponse,
 } from '../types/flow/ApiResponse';
-import type { Price } from '../../common/types/Price';
 import type { PhotoType } from '../../hotel/dataloaders/flow/PhotoType';
 
 export type SearchParameters = {|
@@ -99,6 +98,7 @@ function createHotel(
   review: { score: number },
   photos: PhotoType[],
   price: number,
+  currencyCode: string,
   summary: string,
 |} {
   return {
@@ -109,6 +109,7 @@ function createHotel(
     rating: data.Category,
     name: data.Name,
     price: data.Options[0].Boards[0].Price.Value,
+    currencyCode: data.Options[0].Boards[0].Price.Currency,
     photos: [
       {
         id: `mainPhoto${data.Code}`,
@@ -121,9 +122,7 @@ function createHotel(
   };
 }
 
-function createFlight(
-  data: FlightApiResponse,
-): {| price: Price, airlines: string[] |} {
+function createFlight(data: FlightApiResponse): {| airlines: string[] |} {
   const airlines = data.Options.reduce((all, option) => {
     option.Segments.forEach(s => all.push(s.MarketingCarrier));
     return all;
@@ -131,9 +130,5 @@ function createFlight(
 
   return {
     airlines,
-    price: {
-      amount: data.Supplement.Value,
-      currency: data.Supplement.Currency,
-    },
   };
 }
