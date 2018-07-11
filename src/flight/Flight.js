@@ -58,12 +58,12 @@ export type Airline = {|
   isLowCost: boolean,
 |};
 
-export type OperatingAirline = {|
+export type OperatingAirline = $ReadOnly<{|
   iata: string,
   name: string,
-|};
+|}>;
 
-export type Vehicle = {|
+export type Vehicle = $ReadOnly<{|
   manufacturer: string,
   model: string,
-|};
+|}>;
