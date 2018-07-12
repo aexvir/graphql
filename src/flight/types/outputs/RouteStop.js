@@ -46,7 +46,31 @@ export default new GraphQLObjectType({
     terminal: {
       type: GraphQLString,
       description: 'Terminal of the route stop',
-      resolve: ({ where }: DepartureArrival): ?string => where.terminal,
+      resolve: async (
+        parent: DepartureArrival,
+        args: Object,
+        { dataLoader }: GraphqlContextType,
+      ): Promise<?string> => {
+        const { bid } = parent;
+
+        if (!bid) {
+          return null;
+        }
+        const booking = await dataLoader.booking.load(bid);
+
+        const possibleFlights = booking.legs
+          .map(leg => [leg.departure, leg.arrival])
+          .reduce((arr, elem) => [...arr, ...elem]);
+
+        const findMyFlight = possibleFlights.find(
+          flight =>
+            flight.when &&
+            parent.when &&
+            new Date(flight.when.local) - new Date(parent.when.local) === 0,
+        );
+
+        return findMyFlight ? findMyFlight.where.terminal : null;
+      },
     },
   },
 });

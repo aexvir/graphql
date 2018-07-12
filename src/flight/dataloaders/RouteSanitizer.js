@@ -9,6 +9,7 @@ type RouteData = {|
   cityName: ?string,
   cityId: ?string,
   terminal?: ?string,
+  bid?: ?number,
 |};
 
 export function sanitizeRoute(data: RouteData): DepartureArrival {
@@ -28,5 +29,6 @@ export function sanitizeRoute(data: RouteData): DepartureArrival {
       cityId: data.cityId || '',
       terminal: data.terminal,
     },
+    bid: data.bid || null,
   };
 }

@@ -66,7 +66,12 @@ export default function generateEventsFrom(
   switch (booking.type) {
     case 'BookingOneWay': {
       const { departure, arrival, legs } = booking;
-      tripEvents = generateTripEvents({ departure, arrival, legs });
+      tripEvents = generateTripEvents({
+        departure,
+        arrival,
+        legs,
+        bid: booking.id,
+      });
       break;
     }
     case 'BookingReturn': {

@@ -32,6 +32,7 @@ Object {
   },
   "allowedToChangeFlights": 48,
   "arrival": Object {
+    "bid": 2968389,
     "when": Object {
       "local": 2017-09-11T11:40:00.000Z,
       "utc": 2017-09-11T09:40:00.000Z,
@@ -52,6 +53,7 @@ Object {
         "leg": Object {
           "airlineCode": "LO",
           "arrival": Object {
+            "bid": 2968389,
             "when": Object {
               "local": 2017-09-11T11:40:00.000Z,
               "utc": 2017-09-11T09:40:00.000Z,
@@ -66,6 +68,7 @@ Object {
           "boardingPassAvailableAt": null,
           "bookingId": 2968389,
           "departure": Object {
+            "bid": 2968389,
             "when": Object {
               "local": 2017-09-11T10:45:00.000Z,
               "utc": 2017-09-11T08:45:00.000Z,
@@ -110,6 +113,7 @@ Object {
         "leg": Object {
           "airlineCode": "LO",
           "arrival": Object {
+            "bid": 2968389,
             "when": Object {
               "local": 2017-09-11T09:55:00.000Z,
               "utc": 2017-09-11T07:55:00.000Z,
@@ -124,6 +128,7 @@ Object {
           "boardingPassAvailableAt": null,
           "bookingId": 2968389,
           "departure": Object {
+            "bid": 2968389,
             "when": Object {
               "local": 2017-09-11T09:05:00.000Z,
               "utc": 2017-09-11T07:05:00.000Z,
@@ -161,6 +166,7 @@ Object {
       Object {
         "airlineCode": "LO",
         "arrival": Object {
+          "bid": 2968389,
           "when": Object {
             "local": 2017-09-11T09:55:00.000Z,
             "utc": 2017-09-11T07:55:00.000Z,
@@ -175,6 +181,7 @@ Object {
         "boardingPassAvailableAt": null,
         "bookingId": 2968389,
         "departure": Object {
+          "bid": 2968389,
           "when": Object {
             "local": 2017-09-11T09:05:00.000Z,
             "utc": 2017-09-11T07:05:00.000Z,
@@ -208,6 +215,7 @@ Object {
       Object {
         "airlineCode": "LO",
         "arrival": Object {
+          "bid": 2968389,
           "when": Object {
             "local": 2017-09-11T11:40:00.000Z,
             "utc": 2017-09-11T09:40:00.000Z,
@@ -222,6 +230,7 @@ Object {
         "boardingPassAvailableAt": null,
         "bookingId": 2968389,
         "departure": Object {
+          "bid": 2968389,
           "when": Object {
             "local": 2017-09-11T10:45:00.000Z,
             "utc": 2017-09-11T08:45:00.000Z,
@@ -268,6 +277,7 @@ Object {
   },
   "created": 2017-05-03T18:41:59.000Z,
   "departure": Object {
+    "bid": 2968389,
     "when": Object {
       "local": 2017-09-11T09:05:00.000Z,
       "utc": 2017-09-11T07:05:00.000Z,
@@ -284,6 +294,7 @@ Object {
     Object {
       "airlineCode": "LO",
       "arrival": Object {
+        "bid": 2968389,
         "when": Object {
           "local": 2017-09-11T09:55:00.000Z,
           "utc": 2017-09-11T07:55:00.000Z,
@@ -298,6 +309,7 @@ Object {
       "boardingPassAvailableAt": null,
       "bookingId": 2968389,
       "departure": Object {
+        "bid": 2968389,
         "when": Object {
           "local": 2017-09-11T09:05:00.000Z,
           "utc": 2017-09-11T07:05:00.000Z,
@@ -331,6 +343,7 @@ Object {
     Object {
       "airlineCode": "LO",
       "arrival": Object {
+        "bid": 2968389,
         "when": Object {
           "local": 2017-09-11T11:40:00.000Z,
           "utc": 2017-09-11T09:40:00.000Z,
@@ -345,6 +358,7 @@ Object {
       "boardingPassAvailableAt": null,
       "bookingId": 2968389,
       "departure": Object {
+        "bid": 2968389,
         "when": Object {
           "local": 2017-09-11T10:45:00.000Z,
           "utc": 2017-09-11T08:45:00.000Z,
@@ -432,6 +446,7 @@ The max. stay is granted within 180 days.
 exports[`Sanitize list item should work 1`] = `
 Object {
   "arrival": Object {
+    "bid": 2968389,
     "when": Object {
       "local": 2017-09-11T11:40:00.000Z,
       "utc": 2017-09-11T09:40:00.000Z,
@@ -446,6 +461,7 @@ Object {
   "authToken": "b9cb406d-f797-434c-bc21-a0612b92f201",
   "created": 2017-05-03T18:41:59.000Z,
   "departure": Object {
+    "bid": 2968389,
     "when": Object {
       "local": 2017-09-11T09:05:00.000Z,
       "utc": 2017-09-11T07:05:00.000Z,
@@ -462,6 +478,7 @@ Object {
     Object {
       "airlineCode": "LO",
       "arrival": Object {
+        "bid": 2968389,
         "when": Object {
           "local": 2017-09-11T09:55:00.000Z,
           "utc": 2017-09-11T07:55:00.000Z,
@@ -476,6 +493,7 @@ Object {
       "boardingPassAvailableAt": undefined,
       "bookingId": 2968389,
       "departure": Object {
+        "bid": 2968389,
         "when": Object {
           "local": 2017-09-11T09:05:00.000Z,
           "utc": 2017-09-11T07:05:00.000Z,
@@ -500,6 +518,7 @@ Object {
     Object {
       "airlineCode": "LO",
       "arrival": Object {
+        "bid": 2968389,
         "when": Object {
           "local": 2017-09-11T11:40:00.000Z,
           "utc": 2017-09-11T09:40:00.000Z,
@@ -514,6 +533,7 @@ Object {
       "boardingPassAvailableAt": undefined,
       "bookingId": 2968389,
       "departure": Object {
+        "bid": 2968389,
         "when": Object {
           "local": 2017-09-11T10:45:00.000Z,
           "utc": 2017-09-11T08:45:00.000Z,
@@ -565,6 +585,7 @@ Object {
 exports[`Sanitize list item should work with return flight 1`] = `
 Object {
   "arrival": Object {
+    "bid": 3222550,
     "when": Object {
       "local": 2017-07-09T21:20:00.000Z,
       "utc": 2017-07-09T19:20:00.000Z,
@@ -579,6 +600,7 @@ Object {
   "authToken": "random_auth_token",
   "created": 2017-06-03T08:33:37.000Z,
   "departure": Object {
+    "bid": 3222550,
     "when": Object {
       "local": 2017-06-28T12:05:00.000Z,
       "utc": 2017-06-28T10:05:00.000Z,
@@ -593,6 +615,7 @@ Object {
   "id": 3222550,
   "inbound": Object {
     "arrival": Object {
+      "bid": 3222550,
       "when": Object {
         "local": 2017-07-09T21:20:00.000Z,
         "utc": 2017-07-09T19:20:00.000Z,
@@ -604,7 +627,9 @@ Object {
         "terminal": undefined,
       },
     },
+    "bid": 3222550,
     "departure": Object {
+      "bid": 3222550,
       "when": Object {
         "local": 2017-07-09T12:45:00.000Z,
         "utc": 2017-07-09T03:45:00.000Z,
@@ -620,6 +645,7 @@ Object {
       Object {
         "airlineCode": "AZ",
         "arrival": Object {
+          "bid": 3222550,
           "when": Object {
             "local": 2017-07-09T18:30:00.000Z,
             "utc": 2017-07-09T16:30:00.000Z,
@@ -634,6 +660,7 @@ Object {
         "boardingPassAvailableAt": undefined,
         "bookingId": 3222550,
         "departure": Object {
+          "bid": 3222550,
           "when": Object {
             "local": 2017-07-09T12:45:00.000Z,
             "utc": 2017-07-09T03:45:00.000Z,
@@ -664,6 +691,7 @@ Object {
       Object {
         "airlineCode": "AZ",
         "arrival": Object {
+          "bid": 3222550,
           "when": Object {
             "local": 2017-07-09T21:20:00.000Z,
             "utc": 2017-07-09T19:20:00.000Z,
@@ -678,6 +706,7 @@ Object {
         "boardingPassAvailableAt": undefined,
         "bookingId": 3222550,
         "departure": Object {
+          "bid": 3222550,
           "when": Object {
             "local": 2017-07-09T19:50:00.000Z,
             "utc": 2017-07-09T17:50:00.000Z,
@@ -711,6 +740,7 @@ Object {
     Object {
       "airlineCode": "AZ",
       "arrival": Object {
+        "bid": 3222550,
         "when": Object {
           "local": 2017-06-28T14:00:00.000Z,
           "utc": 2017-06-28T12:00:00.000Z,
@@ -725,6 +755,7 @@ Object {
       "boardingPassAvailableAt": undefined,
       "bookingId": 3222550,
       "departure": Object {
+        "bid": 3222550,
         "when": Object {
           "local": 2017-06-28T12:05:00.000Z,
           "utc": 2017-06-28T10:05:00.000Z,
@@ -755,6 +786,7 @@ Object {
     Object {
       "airlineCode": "AZ",
       "arrival": Object {
+        "bid": 3222550,
         "when": Object {
           "local": 2017-06-29T10:30:00.000Z,
           "utc": 2017-06-29T01:30:00.000Z,
@@ -769,6 +801,7 @@ Object {
       "boardingPassAvailableAt": undefined,
       "bookingId": 3222550,
       "departure": Object {
+        "bid": 3222550,
         "when": Object {
           "local": 2017-06-28T15:15:00.000Z,
           "utc": 2017-06-28T13:15:00.000Z,
@@ -799,6 +832,7 @@ Object {
     Object {
       "airlineCode": "AZ",
       "arrival": Object {
+        "bid": 3222550,
         "when": Object {
           "local": 2017-07-09T18:30:00.000Z,
           "utc": 2017-07-09T16:30:00.000Z,
@@ -813,6 +847,7 @@ Object {
       "boardingPassAvailableAt": undefined,
       "bookingId": 3222550,
       "departure": Object {
+        "bid": 3222550,
         "when": Object {
           "local": 2017-07-09T12:45:00.000Z,
           "utc": 2017-07-09T03:45:00.000Z,
@@ -843,6 +878,7 @@ Object {
     Object {
       "airlineCode": "AZ",
       "arrival": Object {
+        "bid": 3222550,
         "when": Object {
           "local": 2017-07-09T21:20:00.000Z,
           "utc": 2017-07-09T19:20:00.000Z,
@@ -857,6 +893,7 @@ Object {
       "boardingPassAvailableAt": undefined,
       "bookingId": 3222550,
       "departure": Object {
+        "bid": 3222550,
         "when": Object {
           "local": 2017-07-09T19:50:00.000Z,
           "utc": 2017-07-09T17:50:00.000Z,
@@ -887,6 +924,7 @@ Object {
   ],
   "outbound": Object {
     "arrival": Object {
+      "bid": 3222550,
       "when": Object {
         "local": 2017-06-29T10:30:00.000Z,
         "utc": 2017-06-29T01:30:00.000Z,
@@ -898,7 +936,9 @@ Object {
         "terminal": undefined,
       },
     },
+    "bid": 3222550,
     "departure": Object {
+      "bid": 3222550,
       "when": Object {
         "local": 2017-06-28T12:05:00.000Z,
         "utc": 2017-06-28T10:05:00.000Z,
@@ -914,6 +954,7 @@ Object {
       Object {
         "airlineCode": "AZ",
         "arrival": Object {
+          "bid": 3222550,
           "when": Object {
             "local": 2017-06-28T14:00:00.000Z,
             "utc": 2017-06-28T12:00:00.000Z,
@@ -928,6 +969,7 @@ Object {
         "boardingPassAvailableAt": undefined,
         "bookingId": 3222550,
         "departure": Object {
+          "bid": 3222550,
           "when": Object {
             "local": 2017-06-28T12:05:00.000Z,
             "utc": 2017-06-28T10:05:00.000Z,
@@ -958,6 +1000,7 @@ Object {
       Object {
         "airlineCode": "AZ",
         "arrival": Object {
+          "bid": 3222550,
           "when": Object {
             "local": 2017-06-29T10:30:00.000Z,
             "utc": 2017-06-29T01:30:00.000Z,
@@ -972,6 +1015,7 @@ Object {
         "boardingPassAvailableAt": undefined,
         "bookingId": 3222550,
         "departure": Object {
+          "bid": 3222550,
           "when": Object {
             "local": 2017-06-28T15:15:00.000Z,
             "utc": 2017-06-28T13:15:00.000Z,

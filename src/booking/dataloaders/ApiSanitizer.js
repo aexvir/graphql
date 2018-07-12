@@ -36,6 +36,7 @@ export function sanitizeListItem(apiData: Object): BookingsItem {
       cityName: idx(flight.departure, _ => _.where.name),
       cityId: idx(flight.departure, _ => _.where.city_id),
       terminal: idx(flight.departure, _ => _.where.terminal),
+      bid,
     }),
     arrival: sanitizeRoute({
       utc: idx(flight.arrival, _ => _.when.utc),
@@ -44,6 +45,7 @@ export function sanitizeListItem(apiData: Object): BookingsItem {
       cityName: idx(flight.arrival, _ => _.where.name),
       cityId: idx(flight.arrival, _ => _.where.city_id),
       terminal: idx(flight.arrival, _ => _.where.terminal),
+      bid,
     }),
     airlineCode: flight.airline.iata,
     vehicleType: idx(flight, _ => _.vehicle.type),
@@ -58,9 +60,9 @@ export function sanitizeListItem(apiData: Object): BookingsItem {
   let additionalFields = {};
 
   if (type === 'BookingReturn') {
-    additionalFields = splitLegs(legs);
+    additionalFields = splitLegs(legs, bid);
   } else if (type === 'BookingMulticity') {
-    additionalFields.trips = createTrips(apiData.segments, legs);
+    additionalFields.trips = createTrips(apiData.segments, legs, bid);
   }
 
   return {
@@ -211,7 +213,7 @@ function sanitizeAdditionalBookings(additionalBookings: Array<Object>) {
   }));
 }
 
-function createTrips(segments: string[], legs: Leg[]): TripData[] {
+function createTrips(segments: string[], legs: Leg[], bid: number): TripData[] {
   const trips = [];
 
   const lastIndex = segments.reduce((lastIndex: number, segment: string) => {
@@ -227,10 +229,11 @@ function createTrips(segments: string[], legs: Leg[]): TripData[] {
     departure: trip[0].departure,
     arrival: trip[trip.length - 1].arrival,
     legs: trip,
+    bid,
   }));
 }
 
-function splitLegs(legs: Leg[]): InboundOutboundData {
+function splitLegs(legs: Leg[], bid: number): InboundOutboundData {
   const inboundLegs = [];
   const outboundLegs = [];
 
@@ -252,11 +255,13 @@ function splitLegs(legs: Leg[]): InboundOutboundData {
       departure: inboundLegs[0].departure,
       arrival: inboundLegs[inboundLegs.length - 1].arrival,
       legs: inboundLegs,
+      bid,
     },
     outbound: {
       departure: outboundLegs[0].departure,
       arrival: outboundLegs[outboundLegs.length - 1].arrival,
       legs: outboundLegs,
+      bid,
     },
   };
 }

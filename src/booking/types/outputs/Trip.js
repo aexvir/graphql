@@ -10,6 +10,7 @@ export type TripData = {
   departure: DepartureArrival,
   arrival: DepartureArrival,
   legs: LegType[],
+  bid: number,
 };
 
 export default new GraphQLObjectType({

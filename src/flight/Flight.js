@@ -14,6 +14,7 @@ export type DepartureArrival = {|
     cityId: string,
     terminal: ?string,
   |},
+  bid?: ?number,
 |};
 
 export type Flight = {|

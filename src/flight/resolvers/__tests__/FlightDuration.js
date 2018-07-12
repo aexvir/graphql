@@ -18,6 +18,7 @@ beforeEach(() => {
       cityId: 'string',
       terminal: 'string',
     },
+    bid: 0,
   };
 
   nullArrival = nullDeparture;
@@ -33,6 +34,7 @@ beforeEach(() => {
       cityId: 'string',
       terminal: 'string',
     },
+    bid: 0,
   };
 
   arrival = {
@@ -46,6 +48,7 @@ beforeEach(() => {
       cityId: 'string',
       terminal: 'string',
     },
+    bid: 0,
   };
 });
 

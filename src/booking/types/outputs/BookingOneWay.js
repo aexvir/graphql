@@ -9,7 +9,6 @@ import BookingInterface, {
 import Trip, { type TripData } from './Trip';
 import { nodeInterface } from '../../../node/node';
 import { register } from '../../../node/typeStore';
-import type { GraphqlContextType } from '../../../common/services/GraphqlContext';
 
 export type BookingOneWayData = BookingInterfaceData & {};
 
@@ -22,17 +21,17 @@ const BookingOneWay = new GraphQLObjectType({
     ...commonFields,
     trip: {
       type: Trip,
-      resolve: async (
-        { id }: BookingOneWayData,
-        args: Object,
-        { dataLoader }: GraphqlContextType,
-      ): Promise<TripData> => {
-        const { departure, arrival, legs } = await dataLoader.booking.load(id);
-
+      resolve: ({
+        departure,
+        arrival,
+        legs,
+        id,
+      }: BookingOneWayData): TripData => {
         return {
           departure,
           arrival,
           legs,
+          bid: id,
         };
       },
     },
