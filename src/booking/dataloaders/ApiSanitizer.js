@@ -221,7 +221,7 @@ function createTrips(segments: string[], legs: Leg[]): TripData[] {
   }, 0);
   trips.push(legs.slice(lastIndex));
 
-  return trips.map(trip => ({
+  return trips.filter(trip => trip.length > 0).map(trip => ({
     departure: trip[0].departure,
     arrival: trip[trip.length - 1].arrival,
     legs: trip,

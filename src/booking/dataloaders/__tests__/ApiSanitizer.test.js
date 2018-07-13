@@ -5,6 +5,7 @@ import bookingDetail from './__datasets__/booking.detail.json';
 import bookingsItem from './__datasets__/bookings.item.json';
 import bookingItemWithReturn from '../../datasets/booking-item-return-3222550.json';
 import bookingItemMulticity from '../../datasets/booking-item-multicity-4903131.json';
+import bookingWithEmptySegment from '../../datasets/booking-3473639.json';
 import booking2707251 from '../../datasets/booking-2707251.json';
 
 describe('Sanitize detail', () => {
@@ -34,8 +35,9 @@ describe('Sanitize list item', () => {
   });
 
   it('should create trips from legs for multicity', () => {
+    // 2 indices in "segments" field => 3 trips should be created
+    const expectedNoOfTrips = 3;
     const sanitizedItem = sanitizeListItem(bookingItemMulticity);
-    const expectedNoOfTrips = bookingItemMulticity.segments.length + 1;
 
     expect(sanitizedItem).toHaveProperty('trips');
     expect(sanitizedItem.trips).toHaveLength(expectedNoOfTrips);
@@ -49,5 +51,14 @@ describe('Sanitize list item', () => {
         }),
       ),
     );
+  });
+
+  it('should ignore bad segment index no. while creating trips for multicity', () => {
+    // 7 indices in "segments" field, but one would create empty trip => 7 trips
+    const expectedNoOfTrips = 7;
+    const sanitizedItem = sanitizeListItem(bookingWithEmptySegment);
+
+    expect(sanitizedItem).toHaveProperty('trips');
+    expect(sanitizedItem.trips).toHaveLength(expectedNoOfTrips);
   });
 });
