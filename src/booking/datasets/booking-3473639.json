@@ -1,0 +1,750 @@
+{
+  "arrival": {
+    "when": 0,
+    "where": {
+      "code": "LGW",
+      "name": "London"
+    }
+  },
+  "auth_token": "111aa6fd-2222-1111-0000-bbbbccccdddd",
+  "bag_params": {},
+  "bags": 0,
+  "bags_restrictions": {
+    "hands": {},
+    "holds": {}
+  },
+  "bid": 3473639,
+  "booked_at": "skypicker",
+  "booking_token": "random_token",
+  "brand": "kiwicom",
+  "cancel_requested": null,
+  "card_payment": 1442.0,
+  "contact": {
+    "email": "example@kiwi.com",
+    "phone": "+001 000",
+    "pid": 5269612
+  },
+  "created": 1499081351,
+  "credits_payment": 0.0,
+  "currency": "EUR",
+  "departure": {
+    "when": 0,
+    "where": {
+      "code": "PRG",
+      "name": "Prague"
+    }
+  },
+  "disabled_bags_in_mmb": false,
+  "flight_ids": [
+    "314150577",
+    "SP1368275_2051626",
+    "314923942",
+    "SP1371909_2057060",
+    "323980457",
+    "328212255",
+    "SP1371908_2057058",
+    "319511358",
+    "315127946",
+    "314427410",
+    "314409862",
+    "SP1371906_2057056",
+    "318155292"
+  ],
+  "flights": [
+    {
+      "airline": {
+        "checkin": 2,
+        "doing_online_checkin": 1,
+        "iata": "W6",
+        "name": "Wizzair",
+        "payment_card_copy_eticket_requirement": false
+      },
+      "arrival": {
+        "when": {
+          "local": 1500656400,
+          "utc": 1500649200
+        },
+        "where": {
+          "city_id": "venice_it",
+          "code": "TSF",
+          "country": "IT",
+          "name": "Treviso",
+          "station": "Treviso"
+        }
+      },
+      "bags_recheck_disclaimer": "",
+      "bags_recheck_required": false,
+      "departure": {
+        "when": {
+          "local": 1500651900,
+          "utc": 1500644700
+        },
+        "where": {
+          "city_id": "prague_cz",
+          "code": "PRG",
+          "country": "CZ",
+          "name": "Prague",
+          "station": "V\u00e1clav Havel Airport Prague"
+        }
+      },
+      "extras": "W6",
+      "flight_no": 2697,
+      "guarantee": false,
+      "guarantee_disclaimer": "",
+      "id": "315127946",
+      "is_cabin_bags_with_priority_boarding": false,
+      "reservation_number": null,
+      "return": 0
+    },
+    {
+      "airline": {
+        "checkin": 30,
+        "doing_online_checkin": 1,
+        "iata": "U2",
+        "name": "easyJet",
+        "payment_card_copy_eticket_requirement": false
+      },
+      "arrival": {
+        "when": {
+          "local": 1502265900,
+          "utc": 1502262300
+        },
+        "where": {
+          "city_id": "london_gb",
+          "code": "LGW",
+          "country": "GB",
+          "name": "London",
+          "station": "Gatwick"
+        }
+      },
+      "bags_recheck_disclaimer": "",
+      "bags_recheck_required": false,
+      "departure": {
+        "when": {
+          "local": 1502261400,
+          "utc": 1502254200
+        },
+        "where": {
+          "city_id": "venice_it",
+          "code": "VCE",
+          "country": "IT",
+          "name": "Venice",
+          "station": "Venice Marco Polo"
+        }
+      },
+      "extras": "U2",
+      "flight_no": 8062,
+      "guarantee": true,
+      "guarantee_disclaimer": "",
+      "id": "314150577",
+      "is_cabin_bags_with_priority_boarding": false,
+      "reservation_number": null,
+      "return": 0
+    },
+    {
+      "airline": {
+        "checkin": 7,
+        "doing_online_checkin": 1,
+        "iata": "VY",
+        "name": "Vueling",
+        "payment_card_copy_eticket_requirement": false
+      },
+      "arrival": {
+        "when": {
+          "local": 1502834100,
+          "utc": 1502826900
+        },
+        "where": {
+          "city_id": "amsterdam_nl",
+          "code": "AMS",
+          "country": "NL",
+          "name": "Amsterdam",
+          "station": "Amsterdam Airport Schiphol"
+        }
+      },
+      "bags_recheck_disclaimer": "",
+      "bags_recheck_required": false,
+      "departure": {
+        "when": {
+          "local": 1502826300,
+          "utc": 1502822700
+        },
+        "where": {
+          "city_id": "london_gb",
+          "code": "LTN",
+          "country": "GB",
+          "name": "London",
+          "station": "Luton"
+        }
+      },
+      "extras": "VY",
+      "flight_no": 8407,
+      "guarantee": true,
+      "guarantee_disclaimer": "",
+      "id": "328212255",
+      "is_cabin_bags_with_priority_boarding": false,
+      "reservation_number": null,
+      "return": 0
+    },
+    {
+      "airline": {
+        "checkin": 1,
+        "doing_online_checkin": 1,
+        "iata": "KL",
+        "name": "KLM Royal Dutch Airlines",
+        "payment_card_copy_eticket_requirement": false
+      },
+      "arrival": {
+        "when": {
+          "local": 1503362700,
+          "utc": 1503351900
+        },
+        "where": {
+          "city_id": "istanbul_tr",
+          "code": "IST",
+          "country": "TR",
+          "name": "Istanbul",
+          "station": "Istanbul Atat\u00fcrk"
+        }
+      },
+      "bags_recheck_disclaimer": "",
+      "bags_recheck_required": false,
+      "departure": {
+        "when": {
+          "local": 1503347400,
+          "utc": 1503340200
+        },
+        "where": {
+          "city_id": "amsterdam_nl",
+          "code": "AMS",
+          "country": "NL",
+          "name": "Amsterdam",
+          "station": "Amsterdam Airport Schiphol"
+        }
+      },
+      "extras": "KL",
+      "flight_no": 1617,
+      "guarantee": true,
+      "guarantee_disclaimer": "",
+      "id": "SP1371909_2057060",
+      "is_cabin_bags_with_priority_boarding": false,
+      "reservation_number": null,
+      "return": 0
+    },
+    {
+      "airline": {
+        "checkin": 3,
+        "doing_online_checkin": 1,
+        "iata": "PC",
+        "name": "Pegasus",
+        "payment_card_copy_eticket_requirement": false
+      },
+      "arrival": {
+        "when": {
+          "local": 1503566400,
+          "utc": 1503555600
+        },
+        "where": {
+          "city_id": "kastamonu_tr",
+          "code": "KFS",
+          "country": "TR",
+          "name": "Kastamonu",
+          "station": "Kastamonu"
+        }
+      },
+      "bags_recheck_disclaimer": "",
+      "bags_recheck_required": false,
+      "departure": {
+        "when": {
+          "local": 1503561300,
+          "utc": 1503550500
+        },
+        "where": {
+          "city_id": "istanbul_tr",
+          "code": "SAW",
+          "country": "TR",
+          "name": "Istanbul",
+          "station": "Sabiha G\u00f6k\u00e7en International"
+        }
+      },
+      "extras": "PC",
+      "flight_no": 2880,
+      "guarantee": true,
+      "guarantee_disclaimer": "",
+      "id": "323980457",
+      "is_cabin_bags_with_priority_boarding": false,
+      "reservation_number": null,
+      "return": 0
+    },
+    {
+      "airline": {
+        "checkin": 0,
+        "doing_online_checkin": null,
+        "iata": "TK",
+        "name": "Turkish Airlines",
+        "payment_card_copy_eticket_requirement": true
+      },
+      "arrival": {
+        "when": {
+          "local": 1504184700,
+          "utc": 1504173900
+        },
+        "where": {
+          "city_id": "istanbul_tr",
+          "code": "IST",
+          "country": "TR",
+          "name": "Istanbul",
+          "station": "Istanbul Atat\u00fcrk"
+        }
+      },
+      "bags_recheck_disclaimer": "",
+      "bags_recheck_required": false,
+      "departure": {
+        "when": {
+          "local": 1504179900,
+          "utc": 1504169100
+        },
+        "where": {
+          "city_id": "kastamonu_tr",
+          "code": "KFS",
+          "country": "TR",
+          "name": "Kastamonu",
+          "station": "Kastamonu"
+        }
+      },
+      "extras": "TK",
+      "flight_no": 2737,
+      "guarantee": true,
+      "guarantee_disclaimer": "",
+      "id": "SP1371906_2057056",
+      "is_cabin_bags_with_priority_boarding": false,
+      "reservation_number": null,
+      "return": 0
+    },
+    {
+      "airline": {
+        "checkin": 0,
+        "doing_online_checkin": null,
+        "iata": "LO",
+        "name": "LOT Polish Airlines",
+        "payment_card_copy_eticket_requirement": false
+      },
+      "arrival": {
+        "when": {
+          "local": 1504206300,
+          "utc": 1504199100
+        },
+        "where": {
+          "city_id": "warsaw_pl",
+          "code": "WAW",
+          "country": "PL",
+          "name": "Warsaw",
+          "station": "Warsaw Chopin"
+        }
+      },
+      "bags_recheck_disclaimer": "",
+      "bags_recheck_required": true,
+      "departure": {
+        "when": {
+          "local": 1504200600,
+          "utc": 1504189800
+        },
+        "where": {
+          "city_id": "istanbul_tr",
+          "code": "IST",
+          "country": "TR",
+          "name": "Istanbul",
+          "station": "Istanbul Atat\u00fcrk"
+        }
+      },
+      "extras": "LO",
+      "flight_no": 136,
+      "guarantee": true,
+      "guarantee_disclaimer": "",
+      "id": "SP1371908_2057058",
+      "is_cabin_bags_with_priority_boarding": false,
+      "reservation_number": null,
+      "return": 0
+    },
+    {
+      "airline": {
+        "checkin": 2,
+        "doing_online_checkin": 1,
+        "iata": "PS",
+        "name": "Ukraine International Airlines",
+        "payment_card_copy_eticket_requirement": false
+      },
+      "arrival": {
+        "when": {
+          "local": 1504223400,
+          "utc": 1504212600
+        },
+        "where": {
+          "city_id": "vinnytsia_ua",
+          "code": "VIN",
+          "country": "UA",
+          "name": "Vinnitsa",
+          "station": "Havryshivka Vinnytsia International"
+        }
+      },
+      "bags_recheck_disclaimer": "",
+      "bags_recheck_required": true,
+      "departure": {
+        "when": {
+          "local": 1504215000,
+          "utc": 1504207800
+        },
+        "where": {
+          "city_id": "warsaw_pl",
+          "code": "WAW",
+          "country": "PL",
+          "name": "Warsaw",
+          "station": "Warsaw Chopin"
+        }
+      },
+      "extras": "PS",
+      "flight_no": 584,
+      "guarantee": true,
+      "guarantee_disclaimer": "",
+      "id": "318155292",
+      "is_cabin_bags_with_priority_boarding": false,
+      "reservation_number": null,
+      "return": 0
+    },
+    {
+      "airline": {
+        "checkin": 2,
+        "doing_online_checkin": 1,
+        "iata": "PS",
+        "name": "Ukraine International Airlines",
+        "payment_card_copy_eticket_requirement": false
+      },
+      "arrival": {
+        "when": {
+          "local": 1504834200,
+          "utc": 1504827000
+        },
+        "where": {
+          "city_id": "warsaw_pl",
+          "code": "WAW",
+          "country": "PL",
+          "name": "Warsaw",
+          "station": "Warsaw Chopin"
+        }
+      },
+      "bags_recheck_disclaimer": "",
+      "bags_recheck_required": true,
+      "departure": {
+        "when": {
+          "local": 1504832400,
+          "utc": 1504821600
+        },
+        "where": {
+          "city_id": "vinnytsia_ua",
+          "code": "VIN",
+          "country": "UA",
+          "name": "Vinnitsa",
+          "station": "Havryshivka Vinnytsia International"
+        }
+      },
+      "extras": "PS",
+      "flight_no": 583,
+      "guarantee": true,
+      "guarantee_disclaimer": "",
+      "id": "319511358",
+      "is_cabin_bags_with_priority_boarding": false,
+      "reservation_number": null,
+      "return": 0
+    },
+    {
+      "airline": {
+        "checkin": 0,
+        "doing_online_checkin": null,
+        "iata": "LO",
+        "name": "LOT Polish Airlines",
+        "payment_card_copy_eticket_requirement": false
+      },
+      "arrival": {
+        "when": {
+          "local": 1504859100,
+          "utc": 1504851900
+        },
+        "where": {
+          "city_id": "gdansk_pl",
+          "code": "GDN",
+          "country": "PL",
+          "name": "Gdansk",
+          "station": "Gda\u0144sk Lech Wa\u0142\u0119sa"
+        }
+      },
+      "bags_recheck_disclaimer": "",
+      "bags_recheck_required": false,
+      "departure": {
+        "when": {
+          "local": 1504855800,
+          "utc": 1504848600
+        },
+        "where": {
+          "city_id": "warsaw_pl",
+          "code": "WAW",
+          "country": "PL",
+          "name": "Warsaw",
+          "station": "Warsaw Chopin"
+        }
+      },
+      "extras": "LO",
+      "flight_no": 3831,
+      "guarantee": true,
+      "guarantee_disclaimer": "",
+      "id": "SP1368275_2051626",
+      "is_cabin_bags_with_priority_boarding": false,
+      "reservation_number": null,
+      "return": 0
+    },
+    {
+      "airline": {
+        "checkin": 1,
+        "doing_online_checkin": 1,
+        "iata": "DY",
+        "name": "Norwegian",
+        "payment_card_copy_eticket_requirement": false
+      },
+      "arrival": {
+        "when": {
+          "local": 1504879500,
+          "utc": 1504872300
+        },
+        "where": {
+          "city_id": "oslo_no",
+          "code": "OSL",
+          "country": "NO",
+          "name": "Oslo",
+          "station": "Oslo Airport, Gardermoen"
+        }
+      },
+      "bags_recheck_disclaimer": "",
+      "bags_recheck_required": true,
+      "departure": {
+        "when": {
+          "local": 1504874100,
+          "utc": 1504866900
+        },
+        "where": {
+          "city_id": "gdansk_pl",
+          "code": "GDN",
+          "country": "PL",
+          "name": "Gdansk",
+          "station": "Gda\u0144sk Lech Wa\u0142\u0119sa"
+        }
+      },
+      "extras": "DY",
+      "flight_no": 1053,
+      "guarantee": true,
+      "guarantee_disclaimer": "",
+      "id": "314409862",
+      "is_cabin_bags_with_priority_boarding": false,
+      "reservation_number": null,
+      "return": 0
+    },
+    {
+      "airline": {
+        "checkin": 1,
+        "doing_online_checkin": 1,
+        "iata": "DY",
+        "name": "Norwegian",
+        "payment_card_copy_eticket_requirement": false
+      },
+      "arrival": {
+        "when": {
+          "local": 1504906200,
+          "utc": 1504920600
+        },
+        "where": {
+          "city_id": "new-york-city_ny_us",
+          "code": "JFK",
+          "country": "US",
+          "name": "New York",
+          "station": "John F. Kennedy International"
+        }
+      },
+      "bags_recheck_disclaimer": "",
+      "bags_recheck_required": true,
+      "departure": {
+        "when": {
+          "local": 1504899000,
+          "utc": 1504891800
+        },
+        "where": {
+          "city_id": "oslo_no",
+          "code": "OSL",
+          "country": "NO",
+          "name": "Oslo",
+          "station": "Oslo Airport, Gardermoen"
+        }
+      },
+      "extras": "DY",
+      "flight_no": 7001,
+      "guarantee": true,
+      "guarantee_disclaimer": "",
+      "id": "314427410",
+      "is_cabin_bags_with_priority_boarding": false,
+      "reservation_number": null,
+      "return": 0
+    },
+    {
+      "airline": {
+        "checkin": 1,
+        "doing_online_checkin": 1,
+        "iata": "DY",
+        "name": "Norwegian",
+        "payment_card_copy_eticket_requirement": false
+      },
+      "arrival": {
+        "when": {
+          "local": 1505171700,
+          "utc": 1505168100
+        },
+        "where": {
+          "city_id": "london_gb",
+          "code": "LGW",
+          "country": "GB",
+          "name": "London",
+          "station": "Gatwick"
+        }
+      },
+      "bags_recheck_disclaimer": "",
+      "bags_recheck_required": true,
+      "departure": {
+        "when": {
+          "local": 1505128500,
+          "utc": 1505142900
+        },
+        "where": {
+          "city_id": "new-york-city_ny_us",
+          "code": "JFK",
+          "country": "US",
+          "name": "New York",
+          "station": "John F. Kennedy International"
+        }
+      },
+      "extras": "DY",
+      "flight_no": 7014,
+      "guarantee": true,
+      "guarantee_disclaimer": "",
+      "id": "314923942",
+      "is_cabin_bags_with_priority_boarding": false,
+      "reservation_number": null,
+      "return": 0
+    }
+  ],
+  "grace_period_fee": null,
+  "grade": {
+    "id": "D",
+    "time": 240
+  },
+  "is_tat_informed": null,
+  "max_bags": null,
+  "netverify_requested": true,
+  "original_currency": "CZK",
+  "original_flight_price": null,
+  "original_price": 37808.0,
+  "paid_over": "zooz",
+  "passenger_ids": [
+    5269612
+  ],
+  "passengers": [
+    {
+      "bags": 0,
+      "birthday": "1985-01-01",
+      "category": "adult",
+      "contact_passenger": true,
+      "firstname": "TEST",
+      "hand_bags": {},
+      "id": 1234567,
+      "insurance_price": null,
+      "insurance_type": "none",
+      "lastname": "TEST",
+      "nationality": "co",
+      "priority_boarding": {
+        "314150577": {
+          "is_ordered": false
+        },
+        "314409862": {
+          "is_ordered": false
+        },
+        "314427410": {
+          "is_ordered": false
+        },
+        "314923942": {
+          "is_ordered": false
+        },
+        "315127946": {
+          "is_ordered": false
+        },
+        "318155292": {
+          "is_ordered": false
+        },
+        "319511358": {
+          "is_ordered": false
+        },
+        "323980457": {
+          "is_ordered": false
+        },
+        "328212255": {
+          "is_ordered": false
+        },
+        "SP1368275_2051626": {
+          "is_ordered": false
+        },
+        "SP1371906_2057056": {
+          "is_ordered": false
+        },
+        "SP1371908_2057058": {
+          "is_ordered": false
+        },
+        "SP1371909_2057060": {
+          "is_ordered": false
+        }
+      },
+      "title": "mr",
+      "travel_document": {
+        "cardno": "12345678XY",
+        "expiration": 1608768000
+      }
+    }
+  ],
+  "podio_status": 12,
+  "price": 1442.0,
+  "prices": [
+    "28.0",
+    "43.0",
+    "35.0",
+    "70.7",
+    "27.0",
+    "217.92",
+    "129.37",
+    "45.0",
+    "129.37",
+    "53.0",
+    "24.36",
+    "41.0",
+    "167.0",
+    "192.0"
+  ],
+  "route": [
+    "PRG",
+    "LGW"
+  ],
+  "sandbox": 1,
+  "segments": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "9",
+    "13"
+  ],
+  "status": "closed",
+  "transfer_ids": []
+}
