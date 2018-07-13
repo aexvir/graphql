@@ -17,6 +17,7 @@ import TimelineEvent, {
   ArrivalTimelineEvent,
   TransportFromAirportTimelineEvent,
   NoMoreEditsTimelineEvent,
+  EnterDetailsTimelineEvent,
 } from './booking/types/outputs/BookingTimelineEvent';
 
 export default new GraphQLSchema({
@@ -36,6 +37,7 @@ export default new GraphQLSchema({
     ArrivalTimelineEvent,
     TransportFromAirportTimelineEvent,
     NoMoreEditsTimelineEvent,
+    EnterDetailsTimelineEvent,
     TimelineEvent,
   ],
 });

@@ -7,6 +7,8 @@ import AllBookingsDataset from '../../datasets/AllBookings.json';
 import Booking2707251 from '../../datasets/booking-2707251.json';
 import AirlinesDataset from '../../../flight/datasets/airlines.json';
 
+const dateNow = Date.now;
+
 beforeEach(() => {
   RestApiMock.onGet(config.restApiEndpoint.allBookings).replyWithData(
     AllBookingsDataset,
@@ -36,6 +38,12 @@ beforeEach(() => {
       ],
     });
   });
+
+  global.Date.now = jest.fn(() => 1482363367071);
+});
+
+afterEach(() => {
+  global.Date.now = dateNow;
 });
 
 describe('single booking timeline query', () => {

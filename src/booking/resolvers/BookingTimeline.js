@@ -20,6 +20,7 @@ import type {
   ArrivalTimelineEvent as ArrivalType,
   TransportFromAirportTimelineEvent as TransportFromAirportType,
   NoMoreEditsTimelineEvent as NoMoreEditsType,
+  EnterDetailsTimelineEvent as EnterDetailsType,
 } from '../BookingTimeline';
 import type { Booking } from '../Booking';
 import type { Leg } from '../../flight/Flight';
@@ -36,6 +37,7 @@ export default function generateEventsFrom(
   const downloadInvoiceEvent = generateDownloadInvoiceEvent(booking);
   const downloadETicketEvent = generateDownloadETicketEvent(booking);
   const noMoreEditsEvent = generateNoMoreEditsEvent(booking);
+  const enterDetailsEvent = generateEnterDetailsEvent(booking);
 
   if (bookedFlightEvent) {
     events.push(bookedFlightEvent);
@@ -52,6 +54,10 @@ export default function generateEventsFrom(
   if (downloadETicketEvent) {
     events.push(downloadETicketEvent);
   }
+  if (enterDetailsEvent) {
+    events.push(enterDetailsEvent);
+  }
+
   if (noMoreEditsEvent) {
     events.push(noMoreEditsEvent);
   }
@@ -320,6 +326,20 @@ export function generateNoMoreEditsEvent(booking: Booking): ?NoMoreEditsType {
     return {
       timestamp: noMoreEditsTime,
       type: 'NoMoreEditsTimelineEvent',
+    };
+  }
+  return null;
+}
+
+export function generateEnterDetailsEvent(booking: Booking): ?EnterDetailsType {
+  const passengers = idx(booking, _ => _.passengers) || [];
+  const isSomePassengerMissingId = passengers.some(
+    passenger => idx(passenger, _ => _.travelDocument.idNumber) == null,
+  );
+  if (isSomePassengerMissingId) {
+    return {
+      timestamp: new Date(Date.now()),
+      type: 'EnterDetailsTimelineEvent',
     };
   }
   return null;

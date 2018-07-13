@@ -15,7 +15,8 @@ export type BookingTimelineEvent =
   | DepartureTimelineEvent
   | ArrivalTimelineEvent
   | TransportFromAirportTimelineEvent
-  | NoMoreEditsTimelineEvent;
+  | NoMoreEditsTimelineEvent
+  | EnterDetailsTimelineEvent;
 
 export type BookingTimelineData = {|
   events: $ReadOnlyArray<BookingTimelineEvent>,
@@ -97,4 +98,9 @@ export type TransportFromAirportTimelineEvent = {|
 export type NoMoreEditsTimelineEvent = {|
   +timestamp: Date,
   +type: 'NoMoreEditsTimelineEvent',
+|};
+
+export type EnterDetailsTimelineEvent = {|
+  +timestamp: Date,
+  +type: 'EnterDetailsTimelineEvent',
 |};

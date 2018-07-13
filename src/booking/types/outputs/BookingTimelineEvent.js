@@ -205,3 +205,10 @@ export const NoMoreEditsTimelineEvent = new GraphQLObjectType({
   isTypeOf: value => value.type === 'NoMoreEditsTimelineEvent',
   interfaces: [TimelineEvent],
 });
+
+export const EnterDetailsTimelineEvent = new GraphQLObjectType({
+  name: 'EnterDetailsTimelineEvent',
+  fields: commonFields,
+  isTypeOf: value => value.type === 'EnterDetailsTimelineEvent',
+  interfaces: [TimelineEvent],
+});

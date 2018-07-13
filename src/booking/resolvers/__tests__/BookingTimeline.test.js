@@ -13,6 +13,7 @@ import resolver, {
   generateArrivalEvent,
   generateTransportFromAirportEvent,
   generateNoMoreEditsEvent,
+  generateEnterDetailsEvent,
 } from '../BookingTimeline';
 
 describe('resolver', () => {
@@ -646,5 +647,60 @@ describe('generateNoMoreEditsEvent', () => {
         },
       }),
     ).toBe(null);
+  });
+});
+
+describe('generateEnterDetailsEvent', () => {
+  const dateNow = Date.now;
+
+  beforeEach(() => {
+    global.Date.now = jest.fn(() => 1482363367071);
+  });
+
+  afterEach(() => {
+    global.Date.now = dateNow;
+  });
+
+  it('should return null if all passengers have filled in their document id', () => {
+    expect(
+      // $FlowExpectedError: full Booking object is not needed for this test
+      generateEnterDetailsEvent({
+        passengers: [
+          {
+            travelDocument: {
+              idNumber: '1234',
+            },
+          },
+          {
+            travelDocument: {
+              idNumber: '12345',
+            },
+          },
+        ],
+      }),
+    ).toBe(null);
+  });
+
+  it('should return EnterDetails event if at least one of the passengers does not have their document id filled in', () => {
+    expect(
+      // $FlowExpectedError: full Booking object is not needed for this test
+      generateEnterDetailsEvent({
+        passengers: [
+          {
+            travelDocument: {
+              idNumber: '1234',
+            },
+          },
+          {
+            travelDocument: {
+              idNumber: null,
+            },
+          },
+        ],
+      }),
+    ).toEqual({
+      timestamp: new Date(Date.now()),
+      type: 'EnterDetailsTimelineEvent',
+    });
   });
 });
