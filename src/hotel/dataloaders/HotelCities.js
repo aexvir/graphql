@@ -5,12 +5,15 @@ import Algolia from 'algoliasearch';
 import idx from 'idx';
 import stringify from 'json-stable-stringify';
 
+import { supportedLangs } from '../services/AlgoliaHelper';
+
 import type { HotelCity } from '../types/outputs/HotelCity';
 
 type SearchInput =
   | {|
       type: 'prefix',
       prefix: string,
+      language: string,
     |}
   | {| type: 'latLng', lat: number, lng: number |}
   | {| type: 'cityId', cityId: number |};
@@ -34,9 +37,10 @@ export default class LocationDataLoader {
     const responses = await Promise.all(
       inputs.map(input => {
         if (input.type === 'prefix') {
+          const nameAttribs = supportedLangs.map(lang => `name_${lang}`);
           return citiesIndex.search({
             query: input.prefix,
-            restrictSearchableAttributes: ['name'],
+            restrictSearchableAttributes: ['name', ...nameAttribs],
           });
         }
         if (input.type === 'latLng') {
@@ -60,8 +64,8 @@ export default class LocationDataLoader {
     });
   }
 
-  loadByPrefix(prefix: string): Promise<HotelCity[]> {
-    return this.dataLoader.load({ type: 'prefix', prefix });
+  loadByPrefix(prefix: string, language: string): Promise<HotelCity[]> {
+    return this.dataLoader.load({ type: 'prefix', prefix, language });
   }
 
   loadByLatLng(lat: number, lng: number): Promise<HotelCity[]> {
@@ -73,7 +77,7 @@ export default class LocationDataLoader {
   }
 }
 
-export function sanitizeHotelCities(cities: ValidResponse): HotelCity[] {
+export function sanitizeHotelCities(cities: ValidResponseItem[]): HotelCity[] {
   return cities.map(city => ({
     id: String(city.city_id),
     name: city.name,
@@ -85,7 +89,7 @@ export function sanitizeHotelCities(cities: ValidResponse): HotelCity[] {
   }));
 }
 
-type ValidResponse = Array<{|
+type ValidResponseItem = {|
   translations: Array<{|
     language: string,
     name: string,
@@ -98,4 +102,4 @@ type ValidResponse = Array<{|
   country: string,
   nr_hotels: number,
   city_id: number,
-|}>;
+|};

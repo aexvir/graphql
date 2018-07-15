@@ -43,7 +43,7 @@ number of hotels (desc). When the prefix is omitted top cities are returned.
     const dataLoader = context.dataLoader.hotel.cities;
     const cities = position
       ? dataLoader.loadByLatLng(position.lat, position.lng)
-      : dataLoader.loadByPrefix(prefix || '');
+      : dataLoader.loadByPrefix(prefix || '', context.locale.language);
     return connectionFromPromisedArray(cities, pagination);
   },
 };

@@ -8,3 +8,5 @@
 .env
 config/apolloEngine.json
 yarn-error.log
+allCities.json
+topCities.json

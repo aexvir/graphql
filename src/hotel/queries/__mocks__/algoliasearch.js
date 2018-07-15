@@ -2,6 +2,8 @@
 
 import stringify from 'json-stable-stringify';
 
+import { supportedLangs } from '../../services/AlgoliaHelper';
+
 const mockResponses = {};
 
 module.exports = () => ({
@@ -17,9 +19,10 @@ module.exports = () => ({
 });
 
 module.exports.setMatchedByPrefix = (cities: Object[], prefix?: string) => {
+  const nameAttribs = supportedLangs.map(lang => `name_${lang}`);
   const key = stringify({
     query: prefix ? prefix : '',
-    restrictSearchableAttributes: ['name'],
+    restrictSearchableAttributes: ['name', ...nameAttribs],
   });
   mockResponses[key] = cities;
 };
