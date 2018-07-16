@@ -4907,6 +4907,18 @@
             "deprecationReason": null
           },
           {
+            "name": "onlineCheckinIsAvailable",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "oneWay",
             "description": null,
             "args": [],
@@ -7225,6 +7237,18 @@
             "deprecationReason": null
           },
           {
+            "name": "onlineCheckinIsAvailable",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "trip",
             "description": null,
             "args": [],
@@ -7507,6 +7531,18 @@
             "type": {
               "kind": "OBJECT",
               "name": "WhitelabeledServices",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "onlineCheckinIsAvailable",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
               "ofType": null
             },
             "isDeprecated": false,
@@ -7905,6 +7941,18 @@
             "deprecationReason": null
           },
           {
+            "name": "onlineCheckinIsAvailable",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "outbound",
             "description": "Trip from origin to destination.",
             "args": [],
@@ -8199,6 +8247,18 @@
             "type": {
               "kind": "OBJECT",
               "name": "WhitelabeledServices",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "onlineCheckinIsAvailable",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
               "ofType": null
             },
             "isDeprecated": false,
@@ -11018,6 +11078,16 @@
             "kind": "OBJECT",
             "name": "NavigateToTerminalTimelineEvent",
             "ofType": null
+          },
+          {
+            "kind": "OBJECT",
+            "name": "TimeToCheckinTimelineEvent",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
+            "name": "CheckinClosingTimelineEvent",
+            "ofType": null
           }
         ]
       },
@@ -12708,6 +12778,64 @@
       {
         "kind": "OBJECT",
         "name": "NavigateToTerminalTimelineEvent",
+        "description": null,
+        "fields": [
+          {
+            "name": "timestamp",
+            "description": "Time of appearance in the timeline.",
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "DateTime",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [
+          {
+            "kind": "INTERFACE",
+            "name": "TimelineEvent",
+            "ofType": null
+          }
+        ],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "TimeToCheckinTimelineEvent",
+        "description": null,
+        "fields": [
+          {
+            "name": "timestamp",
+            "description": "Time of appearance in the timeline.",
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "DateTime",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [
+          {
+            "kind": "INTERFACE",
+            "name": "TimelineEvent",
+            "ofType": null
+          }
+        ],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "CheckinClosingTimelineEvent",
         "description": null,
         "fields": [
           {

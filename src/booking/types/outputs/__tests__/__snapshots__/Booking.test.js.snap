@@ -156,6 +156,13 @@ Object {
     "resolve": [Function],
     "type": "BookingOneWay",
   },
+  "onlineCheckinIsAvailable": Object {
+    "args": Array [],
+    "isDeprecated": false,
+    "name": "onlineCheckinIsAvailable",
+    "resolve": [Function],
+    "type": "Boolean",
+  },
   "passengerCount": Object {
     "args": Array [],
     "isDeprecated": false,

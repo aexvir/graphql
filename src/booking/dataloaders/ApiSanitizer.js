@@ -92,6 +92,17 @@ export function sanitizeDetail(apiData: Object): Booking {
     _ => _.config.allowed_to_change.flights,
   );
 
+  // document_need - States if there is travel document required for the flight. The value can be set to 0/1/2.
+  // see API documentation https://docs.kiwi.com/booking/
+  const isDocumentNeededed = [1, 2].includes(
+    idx(apiData, _ => _.document_options.document_need),
+  );
+  const someFlightDoesOnlineCheckin = (idx(apiData, _ => _.flights) || []).some(
+    flight => idx(flight, _ => _.airline.doing_online_checkin) === 1,
+  );
+  const onlineCheckinIsAvailable =
+    isDocumentNeededed && someFlightDoesOnlineCheckin;
+
   return {
     ...common,
     allowedBaggage: {
@@ -145,6 +156,7 @@ export function sanitizeDetail(apiData: Object): Booking {
     ),
     contactDetails: sanitizeContactDetails(apiData.contact),
     allowedToChangeFlights,
+    onlineCheckinIsAvailable,
   };
 }
 

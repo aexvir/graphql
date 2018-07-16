@@ -390,6 +390,7 @@ Object {
       "vehicleType": "aircraft",
     },
   ],
+  "onlineCheckinIsAvailable": false,
   "passengerCount": 1,
   "passengers": Array [
     Object {

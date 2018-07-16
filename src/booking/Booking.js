@@ -78,6 +78,7 @@ export type Booking = BookingsItem & {
   bookedServices: BookedService[],
   contactDetails: ContactDetails,
   allowedToChangeFlights: ?number,
+  onlineCheckinIsAvailable: boolean,
 };
 
 export type BoardingPass = {|

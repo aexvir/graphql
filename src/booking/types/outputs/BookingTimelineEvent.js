@@ -219,3 +219,17 @@ export const NavigateToTerminalTimelineEvent = new GraphQLObjectType({
   isTypeOf: value => value.type === 'NavigateToTerminalTimelineEvent',
   interfaces: [TimelineEvent],
 });
+
+export const TimeToCheckinTimelineEvent = new GraphQLObjectType({
+  name: 'TimeToCheckinTimelineEvent',
+  fields: commonFields,
+  isTypeOf: value => value.type === 'TimeToCheckinTimelineEvent',
+  interfaces: [TimelineEvent],
+});
+
+export const CheckinClosingTimelineEvent = new GraphQLObjectType({
+  name: 'CheckinClosingTimelineEvent',
+  fields: commonFields,
+  isTypeOf: value => value.type === 'CheckinClosingTimelineEvent',
+  interfaces: [TimelineEvent],
+});

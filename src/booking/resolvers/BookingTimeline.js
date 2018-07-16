@@ -22,7 +22,11 @@ import type {
   NoMoreEditsTimelineEvent as NoMoreEditsType,
   EnterDetailsTimelineEvent as EnterDetailsType,
 } from '../BookingTimeline';
+
 import generateNavigateToTerminalEvent from './bookingTimeline/navigateToTerminal';
+import generateTimeToCheckinEvent from './bookingTimeline/timeToCheckin';
+import generateCheckinClosingEvent from './bookingTimeline/checkinClosing';
+
 import type { Booking } from '../Booking';
 import type { Leg } from '../../flight/Flight';
 import type { TripData } from '../types/outputs/Trip';
@@ -39,6 +43,8 @@ export default function generateEventsFrom(
   const downloadETicketEvent = generateDownloadETicketEvent(booking);
   const noMoreEditsEvent = generateNoMoreEditsEvent(booking);
   const enterDetailsEvent = generateEnterDetailsEvent(booking);
+  const timeToCheckinEvent = generateTimeToCheckinEvent(booking);
+  const checkinClosingEvent = generateCheckinClosingEvent(booking);
 
   if (bookedFlightEvent) {
     events.push(bookedFlightEvent);
@@ -57,6 +63,12 @@ export default function generateEventsFrom(
   }
   if (enterDetailsEvent) {
     events.push(enterDetailsEvent);
+  }
+  if (timeToCheckinEvent) {
+    events.push(timeToCheckinEvent);
+  }
+  if (checkinClosingEvent) {
+    events.push(checkinClosingEvent);
   }
 
   if (noMoreEditsEvent) {

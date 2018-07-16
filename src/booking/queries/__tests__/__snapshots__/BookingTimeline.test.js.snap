@@ -178,6 +178,14 @@ Object {
           "timestamp": "2016-12-21T23:36:07.071Z",
         },
         Object {
+          "__typename": "TimeToCheckinTimelineEvent",
+          "timestamp": "2017-09-06T20:10:00.000Z",
+        },
+        Object {
+          "__typename": "CheckinClosingTimelineEvent",
+          "timestamp": "2017-09-06T21:10:00.000Z",
+        },
+        Object {
           "__typename": "NoMoreEditsTimelineEvent",
           "timestamp": "2017-09-07T21:10:00.000Z",
         },

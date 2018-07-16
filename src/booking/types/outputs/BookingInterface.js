@@ -236,6 +236,18 @@ export const commonFields = {
       booking,
     }),
   },
+
+  onlineCheckinIsAvailable: {
+    type: GraphQLBoolean,
+    resolve: async (
+      { id }: BookingInterfaceData,
+      args: Object,
+      { dataLoader }: GraphqlContextType,
+    ) => {
+      const { onlineCheckinIsAvailable } = await dataLoader.booking.load(id);
+      return onlineCheckinIsAvailable;
+    },
+  },
 };
 
 export default new GraphQLInterfaceType({
