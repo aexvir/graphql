@@ -43,6 +43,6 @@ export default {
       databaseId = originalId;
     }
 
-    return dataLoader.bookings.loadItem(databaseId);
+    return dataLoader.booking.load(databaseId);
   },
 };

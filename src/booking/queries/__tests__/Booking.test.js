@@ -38,6 +38,10 @@ describe('single booking query', () => {
   });
 
   it('should return valid fields', async () => {
+    RestApiMock.onGet(
+      'https://booking-api.skypicker.com/api/v0.1/users/self/bookings/2707251\\?simple_token=[0-9a-f-]{36}',
+    ).replyWithData(Booking2707251);
+
     const arrivalQuery = `{
       booking(id: 2707251) {
         destinationImageUrl
@@ -62,6 +66,10 @@ describe('single booking query', () => {
   });
 
   it('should work with opaque Booking id', async () => {
+    RestApiMock.onGet(
+      'https://booking-api.skypicker.com/api/v0.1/users/self/bookings/2707251\\?simple_token=[0-9a-f-]{36}',
+    ).replyWithData(Booking2707251);
+
     const query = `{
       booking(id: "Qm9va2luZzoyNzA3MjUx") {
         id
@@ -73,7 +81,7 @@ describe('single booking query', () => {
 
   it('should map skysilver and skygold to travel_basic/plus', async () => {
     RestApiMock.onGet(
-      'https://booking-api.skypicker.com/api/v0.1/users/self/bookings/2707251?simple_token=b206db64-718f-4608-babb-0b8abe6e1b9d',
+      'https://booking-api.skypicker.com/api/v0.1/users/self/bookings/2707251\\?simple_token=[0-9a-f-]{36}',
     ).replyWithData({
       ...Booking2707251,
       passengers: [
@@ -129,14 +137,35 @@ describe('single booking query', () => {
 
   it('should return vehicle type for each Leg', async () => {
     RestApiMock.onGet(
-      `${config.restApiEndpoint
-        .allBookings}/2707224\\?simple_token=[0-9a-f-]{36}`,
+      'https://booking-api.skypicker.com/api/v0.1/users/self/bookings/2707224\\?simple_token=[0-9a-f-]{36}',
     ).replyWithData(Booking2707224);
 
     const query = `{
       booking(id: 2707224) {
         legs {
           type
+        }
+      }
+    }`;
+    expect(await graphql(query)).toMatchSnapshot();
+  });
+
+  it('should return operation airline', async () => {
+    RestApiMock.onGet(
+      'https://booking-api.skypicker.com/api/v0.1/users/self/bookings/2707224\\?simple_token=[0-9a-f-]{36}',
+    ).replyWithData(Booking2707224);
+
+    const query = `{
+      booking(id: 2707224) {
+        oneWay {
+          trip {
+            legs {
+              operatingAirline {
+                iata
+                name
+              }
+            }
+          }
         }
       }
     }`;

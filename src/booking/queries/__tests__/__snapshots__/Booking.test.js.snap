@@ -17,6 +17,27 @@ Object {
 }
 `;
 
+exports[`single booking query should return operation airline 1`] = `
+Object {
+  "data": Object {
+    "booking": Object {
+      "oneWay": Object {
+        "trip": Object {
+          "legs": Array [
+            Object {
+              "operatingAirline": Object {
+                "iata": "OK",
+                "name": "Czech Airlines",
+              },
+            },
+          ],
+        },
+      },
+    },
+  },
+}
+`;
+
 exports[`single booking query should return valid fields 1`] = `
 Object {
   "data": Object {
