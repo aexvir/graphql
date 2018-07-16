@@ -212,3 +212,10 @@ export const EnterDetailsTimelineEvent = new GraphQLObjectType({
   isTypeOf: value => value.type === 'EnterDetailsTimelineEvent',
   interfaces: [TimelineEvent],
 });
+
+export const NavigateToTerminalTimelineEvent = new GraphQLObjectType({
+  name: 'NavigateToTerminalTimelineEvent',
+  fields: commonFields,
+  isTypeOf: value => value.type === 'NavigateToTerminalTimelineEvent',
+  interfaces: [TimelineEvent],
+});

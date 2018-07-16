@@ -22,6 +22,7 @@ import type {
   NoMoreEditsTimelineEvent as NoMoreEditsType,
   EnterDetailsTimelineEvent as EnterDetailsType,
 } from '../BookingTimeline';
+import generateNavigateToTerminalEvent from './bookingTimeline/navigateToTerminal';
 import type { Booking } from '../Booking';
 import type { Leg } from '../../flight/Flight';
 import type { TripData } from '../types/outputs/Trip';
@@ -110,7 +111,14 @@ function generateTripEvents(trip: ?TripData): Array<any> {
   }
 
   if (trip.legs) {
-    trip.legs.forEach(leg => {
+    trip.legs.forEach((leg, index) => {
+      if (index !== 0) {
+        const navigateToTerminalEvent = generateNavigateToTerminalEvent(leg);
+        if (navigateToTerminalEvent) {
+          tripEvents.push(navigateToTerminalEvent);
+        }
+      }
+
       const boardingEvent = generateBoardingEvent(leg);
       if (boardingEvent) {
         tripEvents.push(boardingEvent);

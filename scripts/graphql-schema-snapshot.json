@@ -11013,6 +11013,11 @@
             "kind": "OBJECT",
             "name": "EnterDetailsTimelineEvent",
             "ofType": null
+          },
+          {
+            "kind": "OBJECT",
+            "name": "NavigateToTerminalTimelineEvent",
+            "ofType": null
           }
         ]
       },
@@ -12674,6 +12679,35 @@
       {
         "kind": "OBJECT",
         "name": "EnterDetailsTimelineEvent",
+        "description": null,
+        "fields": [
+          {
+            "name": "timestamp",
+            "description": "Time of appearance in the timeline.",
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "DateTime",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [
+          {
+            "kind": "INTERFACE",
+            "name": "TimelineEvent",
+            "ofType": null
+          }
+        ],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "NavigateToTerminalTimelineEvent",
         "description": null,
         "fields": [
           {
