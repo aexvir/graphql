@@ -27,6 +27,7 @@ export function sanitizeApiResponse(location: Object): Location {
     alternativeNames: location.alternative_names,
     autonomousTerritory: sanitizeLocationArea(location.autonomous_territory),
     rank: Number(location.rank),
+    code: location.code,
   };
 }
 
@@ -36,6 +37,7 @@ function sanitizeLocationArea(area: null | Object): ?LocationArea {
         locationId: area.id,
         name: area.name,
         slug: area.slug,
+        code: area.code,
       }
     : null;
 }

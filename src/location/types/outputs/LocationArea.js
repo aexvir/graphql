@@ -19,5 +19,9 @@ export default new GraphQLObjectType({
       type: GraphQLString,
       resolve: ({ slug }: LocationArea): string => slug,
     },
+    code: {
+      type: GraphQLString,
+      resolve: ({ code }: LocationArea): string => code,
+    },
   },
 });

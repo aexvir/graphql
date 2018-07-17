@@ -8,11 +8,14 @@ Array [
       "alternativeNames": Array [],
       "autonomousTerritory": null,
       "city": Object {
+        "code": "PRG",
         "locationId": "prague_cz",
         "name": "Prague",
         "slug": "prague-czechia",
       },
+      "code": "PRG",
       "country": Object {
+        "code": "CZ",
         "locationId": "CZ",
         "name": "Czechia",
         "slug": "czechia",
@@ -36,7 +39,9 @@ Array [
       "alternativeNames": Array [],
       "autonomousTerritory": null,
       "city": null,
+      "code": "PRG",
       "country": Object {
+        "code": "CZ",
         "locationId": "CZ",
         "name": "Czechia",
         "slug": "czechia",
@@ -60,11 +65,14 @@ Array [
       "alternativeNames": Array [],
       "autonomousTerritory": null,
       "city": Object {
+        "code": "MED",
         "locationId": "medina_sa",
         "name": "Medina",
         "slug": "medina-saudi-arabia",
       },
+      "code": "MED",
       "country": Object {
+        "code": "SA",
         "locationId": "SA",
         "name": "Saudi Arabia",
         "slug": "saudi-arabia",
@@ -88,11 +96,14 @@ Array [
       "alternativeNames": Array [],
       "autonomousTerritory": null,
       "city": Object {
+        "code": "PRN",
         "locationId": "pristina_xk",
         "name": "Pristina",
         "slug": "pristina-kosovo",
       },
+      "code": "PRN",
       "country": Object {
+        "code": "XK",
         "locationId": "XK",
         "name": "Kosovo",
         "slug": "kosovo",
@@ -116,11 +127,14 @@ Array [
       "alternativeNames": Array [],
       "autonomousTerritory": null,
       "city": Object {
+        "code": "ELQ",
         "locationId": "gassim_sa",
         "name": "Al-Qassim Region",
         "slug": "al-qassim-region-saudi-arabia",
       },
+      "code": "ELQ",
       "country": Object {
+        "code": "SA",
         "locationId": "SA",
         "name": "Saudi Arabia",
         "slug": "saudi-arabia",
@@ -144,11 +158,14 @@ Array [
       "alternativeNames": Array [],
       "autonomousTerritory": null,
       "city": Object {
+        "code": "BCN",
         "locationId": "barcelona_es",
         "name": "Barcelona",
         "slug": "barcelona-spain",
       },
+      "code": "BCN",
       "country": Object {
+        "code": "ES",
         "locationId": "ES",
         "name": "Spain",
         "slug": "spain",
@@ -174,11 +191,14 @@ Array [
       "alternativeNames": Array [],
       "autonomousTerritory": null,
       "city": Object {
+        "code": "BRQ",
         "locationId": "brno_cz",
         "name": "Brno",
         "slug": "brno-czechia",
       },
+      "code": "BRQ",
       "country": Object {
+        "code": "CZ",
         "locationId": "CZ",
         "name": "Czechia",
         "slug": "czechia",
@@ -202,7 +222,9 @@ Array [
       "alternativeNames": Array [],
       "autonomousTerritory": null,
       "city": null,
+      "code": "BRQ",
       "country": Object {
+        "code": "CZ",
         "locationId": "CZ",
         "name": "Czechia",
         "slug": "czechia",
@@ -226,11 +248,14 @@ Array [
       "alternativeNames": Array [],
       "autonomousTerritory": null,
       "city": Object {
+        "code": "BRU",
         "locationId": "brussels_be",
         "name": "City of Brussels",
         "slug": "city-of-brussels-belgium",
       },
+      "code": "BRU",
       "country": Object {
+        "code": "BE",
         "locationId": "BE",
         "name": "Belgium",
         "slug": "belgium",
@@ -254,11 +279,14 @@ Array [
       "alternativeNames": Array [],
       "autonomousTerritory": null,
       "city": Object {
+        "code": "BNE",
         "locationId": "brisbane_ql_au",
         "name": "Brisbane",
         "slug": "brisbane-queensland-australia",
       },
+      "code": "BNE",
       "country": Object {
+        "code": "AU",
         "locationId": "AU",
         "name": "Australia",
         "slug": "australia",
@@ -282,7 +310,9 @@ Array [
       "alternativeNames": Array [],
       "autonomousTerritory": null,
       "city": null,
+      "code": "BNE",
       "country": Object {
+        "code": "AU",
         "locationId": "AU",
         "name": "Australia",
         "slug": "australia",
@@ -298,6 +328,7 @@ Array [
       "slug": "brisbane-queensland-australia",
       "stationsCount": 0,
       "subdivision": Object {
+        "code": "QLD",
         "locationId": "QL_AU",
         "name": "Queensland",
         "slug": "queensland-australia",
@@ -310,11 +341,14 @@ Array [
       "alternativeNames": Array [],
       "autonomousTerritory": null,
       "city": Object {
+        "code": "BRE",
         "locationId": "bremen_de",
         "name": "Bremen",
         "slug": "bremen-germany",
       },
+      "code": "BRE",
       "country": Object {
+        "code": "DE",
         "locationId": "DE",
         "name": "Germany",
         "slug": "germany",
@@ -344,11 +378,14 @@ Array [
     "alternativeNames": Array [],
     "autonomousTerritory": null,
     "city": Object {
+      "code": "PRG",
       "locationId": "prague_cz",
       "name": "Prague",
       "slug": "prague-czechia",
     },
+    "code": "PRG",
     "country": Object {
+      "code": "CZ",
       "locationId": "CZ",
       "name": "Czechia",
       "slug": "czechia",
@@ -372,7 +409,9 @@ Array [
     "alternativeNames": Array [],
     "autonomousTerritory": null,
     "city": null,
+    "code": "PRG",
     "country": Object {
+      "code": "CZ",
       "locationId": "CZ",
       "name": "Czechia",
       "slug": "czechia",
@@ -396,11 +435,14 @@ Array [
     "alternativeNames": Array [],
     "autonomousTerritory": null,
     "city": Object {
+      "code": "MED",
       "locationId": "medina_sa",
       "name": "Medina",
       "slug": "medina-saudi-arabia",
     },
+    "code": "MED",
     "country": Object {
+      "code": "SA",
       "locationId": "SA",
       "name": "Saudi Arabia",
       "slug": "saudi-arabia",
@@ -424,11 +466,14 @@ Array [
     "alternativeNames": Array [],
     "autonomousTerritory": null,
     "city": Object {
+      "code": "PRN",
       "locationId": "pristina_xk",
       "name": "Pristina",
       "slug": "pristina-kosovo",
     },
+    "code": "PRN",
     "country": Object {
+      "code": "XK",
       "locationId": "XK",
       "name": "Kosovo",
       "slug": "kosovo",
@@ -452,11 +497,14 @@ Array [
     "alternativeNames": Array [],
     "autonomousTerritory": null,
     "city": Object {
+      "code": "ELQ",
       "locationId": "gassim_sa",
       "name": "Al-Qassim Region",
       "slug": "al-qassim-region-saudi-arabia",
     },
+    "code": "ELQ",
     "country": Object {
+      "code": "SA",
       "locationId": "SA",
       "name": "Saudi Arabia",
       "slug": "saudi-arabia",
@@ -480,11 +528,14 @@ Array [
     "alternativeNames": Array [],
     "autonomousTerritory": null,
     "city": Object {
+      "code": "BCN",
       "locationId": "barcelona_es",
       "name": "Barcelona",
       "slug": "barcelona-spain",
     },
+    "code": "BCN",
     "country": Object {
+      "code": "ES",
       "locationId": "ES",
       "name": "Spain",
       "slug": "spain",
@@ -513,7 +564,9 @@ Array [
     "alternativeNames": Array [],
     "autonomousTerritory": null,
     "city": null,
+    "code": "PRG",
     "country": Object {
+      "code": "CZ",
       "locationId": "CZ",
       "name": "Česká republika",
       "slug": "ceska-republika",
@@ -537,11 +590,14 @@ Array [
     "alternativeNames": Array [],
     "autonomousTerritory": null,
     "city": Object {
+      "code": "PRG",
       "locationId": "prague_cz",
       "name": "Praha",
       "slug": "praha-ceska-republika",
     },
+    "code": "PRG",
     "country": Object {
+      "code": "CZ",
       "locationId": "CZ",
       "name": "Česká republika",
       "slug": "ceska-republika",
@@ -565,7 +621,9 @@ Array [
     "alternativeNames": Array [],
     "autonomousTerritory": null,
     "city": null,
+    "code": "LOP",
     "country": Object {
+      "code": "ID",
       "locationId": "ID",
       "name": "Indonésie",
       "slug": "indonesie",
@@ -589,11 +647,14 @@ Array [
     "alternativeNames": Array [],
     "autonomousTerritory": null,
     "city": Object {
+      "code": "LPQ",
       "locationId": "luang-prabang_la",
       "name": "Luang Prabang",
       "slug": "luang-prabang-laos",
     },
+    "code": "LPQ",
     "country": Object {
+      "code": "LA",
       "locationId": "LA",
       "name": "Laos",
       "slug": "laos",
@@ -617,7 +678,9 @@ Array [
     "alternativeNames": Array [],
     "autonomousTerritory": null,
     "city": null,
+    "code": "RAI",
     "country": Object {
+      "code": "CV",
       "locationId": "CV",
       "name": "Kapverdy",
       "slug": "kapverdy",
@@ -641,7 +704,9 @@ Array [
     "alternativeNames": Array [],
     "autonomousTerritory": null,
     "city": null,
+    "code": "LPQ",
     "country": Object {
+      "code": "LA",
       "locationId": "LA",
       "name": "Laos",
       "slug": "laos",
@@ -665,11 +730,14 @@ Array [
     "alternativeNames": Array [],
     "autonomousTerritory": null,
     "city": Object {
+      "code": "PAT",
       "locationId": "patna_in",
       "name": "Patna",
       "slug": "patna-indie",
     },
+    "code": "PAT",
     "country": Object {
+      "code": "IN",
       "locationId": "IN",
       "name": "Indie",
       "slug": "indie",
@@ -699,7 +767,9 @@ Array [
       "alternativeNames": Array [],
       "autonomousTerritory": null,
       "city": null,
+      "code": "PRG",
       "country": Object {
+        "code": "CZ",
         "locationId": "CZ",
         "name": "Česká republika",
         "slug": "ceska-republika",
@@ -723,11 +793,14 @@ Array [
       "alternativeNames": Array [],
       "autonomousTerritory": null,
       "city": Object {
+        "code": "PRG",
         "locationId": "prague_cz",
         "name": "Praha",
         "slug": "praha-ceska-republika",
       },
+      "code": "PRG",
       "country": Object {
+        "code": "CZ",
         "locationId": "CZ",
         "name": "Česká republika",
         "slug": "ceska-republika",
@@ -751,7 +824,9 @@ Array [
       "alternativeNames": Array [],
       "autonomousTerritory": null,
       "city": null,
+      "code": "LOP",
       "country": Object {
+        "code": "ID",
         "locationId": "ID",
         "name": "Indonésie",
         "slug": "indonesie",
@@ -775,11 +850,14 @@ Array [
       "alternativeNames": Array [],
       "autonomousTerritory": null,
       "city": Object {
+        "code": "LPQ",
         "locationId": "luang-prabang_la",
         "name": "Luang Prabang",
         "slug": "luang-prabang-laos",
       },
+      "code": "LPQ",
       "country": Object {
+        "code": "LA",
         "locationId": "LA",
         "name": "Laos",
         "slug": "laos",
@@ -803,7 +881,9 @@ Array [
       "alternativeNames": Array [],
       "autonomousTerritory": null,
       "city": null,
+      "code": "RAI",
       "country": Object {
+        "code": "CV",
         "locationId": "CV",
         "name": "Kapverdy",
         "slug": "kapverdy",
@@ -827,7 +907,9 @@ Array [
       "alternativeNames": Array [],
       "autonomousTerritory": null,
       "city": null,
+      "code": "LPQ",
       "country": Object {
+        "code": "LA",
         "locationId": "LA",
         "name": "Laos",
         "slug": "laos",
@@ -851,11 +933,14 @@ Array [
       "alternativeNames": Array [],
       "autonomousTerritory": null,
       "city": Object {
+        "code": "PAT",
         "locationId": "patna_in",
         "name": "Patna",
         "slug": "patna-indie",
       },
+      "code": "PAT",
       "country": Object {
+        "code": "IN",
         "locationId": "IN",
         "name": "Indie",
         "slug": "indie",
@@ -881,7 +966,9 @@ Array [
       "alternativeNames": Array [],
       "autonomousTerritory": null,
       "city": null,
+      "code": "PRG",
       "country": Object {
+        "code": "CZ",
         "locationId": "CZ",
         "name": "Česká republika",
         "slug": "ceska-republika",
@@ -905,11 +992,14 @@ Array [
       "alternativeNames": Array [],
       "autonomousTerritory": null,
       "city": Object {
+        "code": "PRG",
         "locationId": "prague_cz",
         "name": "Praha",
         "slug": "praha-ceska-republika",
       },
+      "code": "PRG",
       "country": Object {
+        "code": "CZ",
         "locationId": "CZ",
         "name": "Česká republika",
         "slug": "ceska-republika",
@@ -933,7 +1023,9 @@ Array [
       "alternativeNames": Array [],
       "autonomousTerritory": null,
       "city": null,
+      "code": "LOP",
       "country": Object {
+        "code": "ID",
         "locationId": "ID",
         "name": "Indonésie",
         "slug": "indonesie",
@@ -957,11 +1049,14 @@ Array [
       "alternativeNames": Array [],
       "autonomousTerritory": null,
       "city": Object {
+        "code": "LPQ",
         "locationId": "luang-prabang_la",
         "name": "Luang Prabang",
         "slug": "luang-prabang-laos",
       },
+      "code": "LPQ",
       "country": Object {
+        "code": "LA",
         "locationId": "LA",
         "name": "Laos",
         "slug": "laos",
@@ -985,7 +1080,9 @@ Array [
       "alternativeNames": Array [],
       "autonomousTerritory": null,
       "city": null,
+      "code": "RAI",
       "country": Object {
+        "code": "CV",
         "locationId": "CV",
         "name": "Kapverdy",
         "slug": "kapverdy",
@@ -1009,7 +1106,9 @@ Array [
       "alternativeNames": Array [],
       "autonomousTerritory": null,
       "city": null,
+      "code": "LPQ",
       "country": Object {
+        "code": "LA",
         "locationId": "LA",
         "name": "Laos",
         "slug": "laos",
@@ -1033,11 +1132,14 @@ Array [
       "alternativeNames": Array [],
       "autonomousTerritory": null,
       "city": Object {
+        "code": "PAT",
         "locationId": "patna_in",
         "name": "Patna",
         "slug": "patna-indie",
       },
+      "code": "PAT",
       "country": Object {
+        "code": "IN",
         "locationId": "IN",
         "name": "Indie",
         "slug": "indie",

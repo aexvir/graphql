@@ -2,6 +2,13 @@
 
 exports[`LocationArea type should have valid fields 1`] = `
 Object {
+  "code": Object {
+    "args": Array [],
+    "isDeprecated": false,
+    "name": "code",
+    "resolve": [Function],
+    "type": "String",
+  },
   "locationId": Object {
     "args": Array [],
     "isDeprecated": false,

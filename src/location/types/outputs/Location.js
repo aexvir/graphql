@@ -110,5 +110,10 @@ export default new GraphQLObjectType({
       type: GraphQLInt,
       resolve: ({ rank }: Location): number => rank,
     },
+
+    code: {
+      type: GraphQLString,
+      resolve: ({ code }: Location): string => code,
+    },
   },
 });

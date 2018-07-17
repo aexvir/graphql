@@ -7,13 +7,14 @@
       "code": "PRG",
       "alternative_names": [],
       "rank": 1,
-      "timezone": "Europe\/Prague",
+      "timezone": "Europe/Prague",
       "population": null,
       "airports": 2,
       "subdivision": null,
       "autonomous_territory": null,
       "country": {
         "id": "CZ",
+        "code": "CZ",
         "name": "\u010cesk\u00e1 republika",
         "slug": "ceska-republika"
       },
@@ -25,19 +26,22 @@
     },
     {
       "id": "PRG",
+      "code": "PRG",
       "name": "Leti\u0161t\u011b V\u00e1clava Havla Praha",
       "slug": "letiste-vaclava-havla-praha-praha-ceska-republika",
       "alternative_names": [],
       "rank": 1,
-      "timezone": "Europe\/Prague",
+      "timezone": "Europe/Prague",
       "city": {
         "id": "prague_cz",
+        "code": "PRG",
         "name": "Praha",
         "slug": "praha-ceska-republika",
         "subdivision": null,
         "autonomous_territory": null,
         "country": {
           "id": "CZ",
+          "code": "CZ",
           "name": "\u010cesk\u00e1 republika",
           "slug": "ceska-republika"
         }
@@ -55,13 +59,14 @@
       "code": "LOP",
       "alternative_names": [],
       "rank": 21,
-      "timezone": "Asia\/Makassar",
+      "timezone": "Asia/Makassar",
       "population": null,
       "airports": 1,
       "subdivision": null,
       "autonomous_territory": null,
       "country": {
         "id": "ID",
+        "code": "ID",
         "name": "Indon\u00e9sie",
         "slug": "indonesie"
       },
@@ -73,19 +78,22 @@
     },
     {
       "id": "LPQ",
+      "code": "LPQ",
       "name": "Luang Prabang International Airport",
       "slug": "luang-prabang-international-airport-luang-prabang-laos",
       "alternative_names": [],
       "rank": 17,
-      "timezone": "Asia\/Vientiane",
+      "timezone": "Asia/Vientiane",
       "city": {
         "id": "luang-prabang_la",
+        "code": "LPQ",
         "name": "Luang Prabang",
         "slug": "luang-prabang-laos",
         "subdivision": null,
         "autonomous_territory": null,
         "country": {
           "id": "LA",
+          "code": "LA",
           "name": "Laos",
           "slug": "laos"
         }
@@ -103,13 +111,14 @@
       "code": "RAI",
       "alternative_names": [],
       "rank": 33,
-      "timezone": "Atlantic\/Cape_Verde",
+      "timezone": "Atlantic/Cape_Verde",
       "population": null,
       "airports": 1,
       "subdivision": null,
       "autonomous_territory": null,
       "country": {
         "id": "CV",
+        "code": "CV",
         "name": "Kapverdy",
         "slug": "kapverdy"
       },
@@ -126,13 +135,14 @@
       "code": "LPQ",
       "alternative_names": [],
       "rank": 24,
-      "timezone": "Asia\/Vientiane",
+      "timezone": "Asia/Vientiane",
       "population": null,
       "airports": 1,
       "subdivision": null,
       "autonomous_territory": null,
       "country": {
         "id": "LA",
+        "code": "LA",
         "name": "Laos",
         "slug": "laos"
       },
@@ -148,15 +158,18 @@
       "slug": "jay-prakash-narayan-international-airport-patna-indie",
       "alternative_names": [],
       "rank": 31,
-      "timezone": "Asia\/Calcutta",
+      "timezone": "Asia/Calcutta",
+      "code": "PAT",
       "city": {
         "id": "patna_in",
+        "code": "PAT",
         "name": "Patna",
         "slug": "patna-indie",
         "subdivision": null,
         "autonomous_territory": null,
         "country": {
           "id": "IN",
+          "code": "IN",
           "name": "Indie",
           "slug": "indie"
         }

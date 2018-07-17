@@ -42,12 +42,14 @@ export type Location = {|
   alternativeNames: string[],
   autonomousTerritory: ?LocationArea,
   rank: number,
+  code: string,
 |};
 
 export type LocationArea = {|
   locationId: string,
   name: string,
   slug: string,
+  code: string,
 |};
 
 export type Options = {
