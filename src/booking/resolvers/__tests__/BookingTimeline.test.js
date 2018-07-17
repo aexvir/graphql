@@ -1,709 +1,637 @@
 // @flow
 
-import resolver, {
-  generateBookedFlightEvent,
-  generateBookingConfirmedEvent,
-  generatePaymentConfirmedEvent,
-  generateDownloadInvoiceEvent,
-  generateDownloadETicketEvent,
-  generateLeaveForAirportEvent,
-  generateAirportArrivalEvent,
-  generateBoardingEvent,
-  generateDepartureEvent,
-  generateArrivalEvent,
-  generateTransportFromAirportEvent,
-  generateNoMoreEditsEvent,
-  generateEnterDetailsEvent,
-} from '../BookingTimeline';
+import resolver from '../BookingTimeline';
+
+import type { Booking } from '../../Booking';
+import type { Leg } from '../../../flight/Flight';
 
 describe('resolver', () => {
-  const date = new Date('2018-05-03T14:10:57.000Z');
-  it('generates BookedFlight event', () => {
-    expect(
-      resolver(
-        // $FlowExpectedError: full Booking object is not needed for this test
-        {
-          created: date,
+  it('matches the snapshot', () => {
+    expect(resolver(booking)).toEqual([
+      {
+        timestamp: new Date('2017-03-30T07:28:55.000Z'),
+        type: 'BookedFlightTimelineEvent',
+        arrival: {
+          when: {
+            utc: new Date('2017-09-09T21:30:00.000Z'),
+            local: new Date('2017-09-09T23:30:00.000Z'),
+          },
+          where: {
+            code: 'CDG',
+            cityName: 'Paris',
+            cityId: 'paris_fr',
+            terminal: '2',
+          },
+          bid: 2707251,
+        },
+      },
+      {
+        timestamp: new Date('2017-03-30T07:28:55.000Z'),
+        type: 'BookingConfirmedTimelineEvent',
+      },
+      {
+        timestamp: new Date('2017-03-30T07:28:55.000Z'),
+        type: 'PaymentConfirmedTimelineEvent',
+      },
+      {
+        timestamp: new Date('2017-03-30T07:28:55.000Z'),
+        type: 'DownloadInvoiceTimelineEvent',
+        invoiceUrl: null,
+        numberPassengers: 2,
+        legs: [
+          {
+            id: '315289498',
+            bookingId: 2707251,
+            recheckRequired: false,
+            isReturn: false,
+            flightNo: 8773,
+            boardingPassAvailableAt: '2017-09-02',
+            departure: {
+              when: {
+                utc: new Date('2017-09-09T20:10:00.000Z'),
+                local: new Date('2017-09-09T21:10:00.000Z'),
+              },
+              where: {
+                code: 'LGW',
+                cityName: 'London',
+                cityId: 'london_gb',
+                terminal: 'E',
+              },
+              bid: 2707251,
+            },
+            arrival: {
+              when: {
+                utc: new Date('2017-09-09T21:30:00.000Z'),
+                local: new Date('2017-09-09T23:30:00.000Z'),
+              },
+              where: {
+                code: 'CDG',
+                cityName: 'Paris',
+                cityId: 'paris_fr',
+                terminal: '2',
+              },
+              bid: 2707251,
+            },
+            airlineCode: 'VY',
+            guarantee: false,
+            operatingAirline: {
+              iata: 'VY',
+              name: 'Vueling',
+            },
+            pnr: 'chat',
+            vehicle: {
+              manufacturer: 'Airbus',
+              model: 'A320',
+            },
+            vehicleType: 'AIRCRAFT',
+          },
+        ],
+      },
+      {
+        timestamp: new Date('2017-03-30T07:28:55.000Z'),
+        type: 'DownloadETicketTimelineEvent',
+        ticketUrl:
+          'https://skypicker-mailing.s3.amazonaws.com/2707/1490859068_E-ticket_passenger_and_1_more_e826fc3275a65a5db8808279d8fc7f8f.pdf?v=1490859069',
+      },
+      {
+        timestamp: new Date('2017-09-06T20:10:00.000Z'),
+        type: 'TimeToCheckinTimelineEvent',
+      },
+      {
+        timestamp: new Date('2017-09-06T21:10:00.000Z'),
+        type: 'CheckinClosingTimelineEvent',
+      },
+      {
+        timestamp: new Date('2017-09-07T21:10:00.000Z'),
+        type: 'NoMoreEditsTimelineEvent',
+      },
+      {
+        timestamp: new Date('2017-09-09T17:10:00.000Z'),
+        type: 'LeaveForAirportTimelineEvent',
+      },
+      {
+        timestamp: new Date('2017-09-09T19:10:00.000Z'),
+        type: 'AirportArrivalTimelineEvent',
+        departure: {
+          when: {
+            utc: new Date('2017-09-09T20:10:00.000Z'),
+            local: new Date('2017-09-09T21:10:00.000Z'),
+          },
+          where: {
+            code: 'LGW',
+            cityName: 'London',
+            cityId: 'london_gb',
+            terminal: 'E',
+          },
+          bid: 2707251,
+        },
+      },
+      {
+        timestamp: new Date('2017-09-09T21:10:00.000Z'),
+        type: 'DownloadBoardingPassTimelineEvent',
+        leg: {
+          id: '315289498',
+          bookingId: 2707251,
+          recheckRequired: false,
+          isReturn: false,
+          flightNo: 8773,
+          boardingPassAvailableAt: '2017-09-02',
+          departure: {
+            when: {
+              utc: new Date('2017-09-09T20:10:00.000Z'),
+              local: new Date('2017-09-09T21:10:00.000Z'),
+            },
+            where: {
+              code: 'LGW',
+              cityName: 'London',
+              cityId: 'london_gb',
+              terminal: 'E',
+            },
+            bid: 2707251,
+          },
           arrival: {
             when: {
-              local: new Date('2018-05-18T14:10:57.000Z'),
+              utc: new Date('2017-09-09T21:30:00.000Z'),
+              local: new Date('2017-09-09T23:30:00.000Z'),
             },
             where: {
-              cityName: 'Prague',
+              code: 'CDG',
+              cityName: 'Paris',
+              cityId: 'paris_fr',
+              terminal: '2',
             },
+            bid: 2707251,
           },
-        },
-      ),
-    ).toContainEqual({
-      timestamp: date,
-      type: 'BookedFlightTimelineEvent',
-      arrival: {
-        when: {
-          local: new Date('2018-05-18T14:10:57.000Z'),
-        },
-        where: {
-          cityName: 'Prague',
+          airlineCode: 'VY',
+          guarantee: false,
+          operatingAirline: {
+            iata: 'VY',
+            name: 'Vueling',
+          },
+          pnr: 'chat',
+          vehicle: {
+            manufacturer: 'Airbus',
+            model: 'A320',
+          },
+          vehicleType: 'AIRCRAFT',
         },
       },
-    });
-  });
-  it('generates only BookedFlight and PaymentConfirmed event if status is not confirmed', () => {
-    const res = resolver(
-      // $FlowExpectedError: full Booking object is not needed for this test
       {
-        created: date,
-        status: 'cancelled',
-        arrival: {
-          when: {
-            local: new Date('2018-05-18T14:10:57.000Z'),
-          },
-          where: {
-            cityName: 'Prague',
-          },
-        },
+        timestamp: new Date('2017-09-09T20:40:00.000Z'),
+        type: 'BoardingTimelineEvent',
+        terminal: 'E',
       },
-    );
-    expect(res).toContainEqual({
-      timestamp: date,
-      type: 'BookedFlightTimelineEvent',
-      arrival: {
-        when: {
-          local: new Date('2018-05-18T14:10:57.000Z'),
-        },
-        where: {
-          cityName: 'Prague',
-        },
-      },
-    });
-    expect(res).toContainEqual({
-      timestamp: date,
-      type: 'PaymentConfirmedTimelineEvent',
-    });
-    expect(res).not.toContainEqual({
-      timestamp: date,
-      type: 'BookingConfirmedTimelineEvent',
-    });
-  });
-
-  it('generates BookedFlight event and BookingConfirmed event if status confirmed', () => {
-    const res = resolver(
-      // $FlowExpectedError: full Booking object is not needed for this test
       {
-        created: date,
-        status: 'confirmed',
+        timestamp: new Date('2017-09-09T21:10:00.000Z'),
+        type: 'DepartureTimelineEvent',
         arrival: {
           when: {
-            local: new Date('2018-05-18T14:10:57.000Z'),
+            utc: new Date('2017-09-09T21:30:00.000Z'),
+            local: new Date('2017-09-09T23:30:00.000Z'),
           },
           where: {
-            cityName: 'Prague',
+            code: 'CDG',
+            cityName: 'Paris',
+            cityId: 'paris_fr',
+            terminal: '2',
           },
+          bid: 2707251,
         },
+        duration: 80,
+        airlineCode: 'VY',
+        flightNumber: 8773,
       },
-    );
-    expect(res).toContainEqual({
-      timestamp: date,
-      type: 'BookedFlightTimelineEvent',
-      arrival: {
-        when: {
-          local: new Date('2018-05-18T14:10:57.000Z'),
-        },
-        where: {
-          cityName: 'Prague',
-        },
-      },
-    });
-    expect(res).toContainEqual({
-      timestamp: date,
-      type: 'BookingConfirmedTimelineEvent',
-    });
-  });
-});
-
-describe('generateBookedFlightEvent', () => {
-  const date = new Date('2018-05-03T14:10:57.000Z');
-  it('returns BookedFlightEvent', () => {
-    expect(
-      // $FlowExpectedError: full Booking object is not needed for this test
-      generateBookedFlightEvent({
-        created: date,
+      {
+        timestamp: new Date('2017-09-09T23:30:00.000Z'),
+        type: 'ArrivalTimelineEvent',
         arrival: {
           when: {
-            local: new Date('2018-05-18T14:10:57.000Z'),
+            utc: new Date('2017-09-09T21:30:00.000Z'),
+            local: new Date('2017-09-09T23:30:00.000Z'),
           },
           where: {
-            cityName: 'Prague',
+            code: 'CDG',
+            cityName: 'Paris',
+            cityId: 'paris_fr',
+            terminal: '2',
           },
-        },
-      }),
-    ).toEqual({
-      timestamp: date,
-      type: 'BookedFlightTimelineEvent',
-      arrival: {
-        when: {
-          local: new Date('2018-05-18T14:10:57.000Z'),
-        },
-        where: {
-          cityName: 'Prague',
+          bid: 2707251,
         },
       },
-    });
+      {
+        timestamp: new Date('2017-09-09T23:45:00.000Z'),
+        type: 'TransportFromAirportTimelineEvent',
+      },
+    ]);
   });
 });
 
-describe('generateBookingConfirmedEvent', () => {
-  const date = new Date('2018-05-03T14:10:57.000Z');
-  it('returns BookingConfirmed event only when booking status is confirmed', () => {
-    expect(
-      // $FlowExpectedError: full Booking object is not needed for this test
-      generateBookingConfirmedEvent({
-        created: date,
-        status: 'confirmed',
-      }),
-    ).toEqual({
-      timestamp: date,
-      type: 'BookingConfirmedTimelineEvent',
-    });
-    expect(
-      // $FlowExpectedError: full Booking object is not needed for this test
-      generateBookingConfirmedEvent({
-        created: date,
-        status: 'cancelled',
-      }),
-    ).toBe(null);
-  });
-});
-
-describe('generatePaymentConfirmedEvent', () => {
-  const date = new Date('2018-05-03T14:10:57.000Z');
-  it('returns PaymentConfirmed event only when booking status is defined and not null', () => {
-    expect(
-      // $FlowExpectedError: full Booking object is not needed for this test
-      generatePaymentConfirmedEvent({
-        created: date,
-        status: 'confirmed',
-      }),
-    ).toEqual({
-      timestamp: date,
-      type: 'PaymentConfirmedTimelineEvent',
-    });
-    expect(
-      // $FlowExpectedError: full Booking object is not needed for this test
-      generatePaymentConfirmedEvent({
-        created: date,
-        status: 'cancelled',
-      }),
-    ).toEqual({
-      timestamp: date,
-      type: 'PaymentConfirmedTimelineEvent',
-    });
-    expect(
-      // $FlowExpectedError: full Booking object is not needed for this test
-      generatePaymentConfirmedEvent({
-        created: date,
-      }),
-    ).toBe(null);
-    expect(
-      // $FlowExpectedError: full Booking object is not needed for this test
-      generatePaymentConfirmedEvent({
-        created: date,
-        status: null,
-      }),
-    ).toBe(null);
-    expect(
-      // $FlowExpectedError: full Booking object is not needed for this test
-      generatePaymentConfirmedEvent({
-        created: date,
-        status: '',
-      }),
-    ).toBe(null);
-  });
-});
-
-describe('generateDownloadInvoiceEvent', () => {
-  const date = new Date('2018-05-03T14:10:57.000Z');
-  it('returns DownloadInvoice event', () => {
-    expect(
-      // $FlowExpectedError: full Booking object is not needed for this test
-      generateDownloadInvoiceEvent({
-        created: date,
-        passengers: [1],
-        legs: [
-          {
-            departure: {
-              where: {
-                cityName: 'Prague',
-              },
-            },
-            arrival: {
-              where: { cityName: 'Brno' },
-            },
-          },
-        ],
-      }),
-    ).toEqual({
-      timestamp: date,
-      type: 'DownloadInvoiceTimelineEvent',
-      invoiceUrl: null,
-      numberPassengers: 1,
-      legs: [
-        {
-          departure: {
-            where: {
-              cityName: 'Prague',
-            },
-          },
-          arrival: {
-            where: { cityName: 'Brno' },
-          },
-        },
-      ],
-    });
-    expect(
-      // $FlowExpectedError: full Booking object is not needed for this test
-      generateDownloadInvoiceEvent({
-        created: date,
-        assets: {
-          invoiceUrl: 'http://somecoolurl',
-        },
-        passengers: [1],
-        legs: [
-          {
-            departure: {
-              where: {
-                cityName: 'Prague',
-              },
-            },
-            arrival: {
-              where: { cityName: 'Brno' },
-            },
-          },
-        ],
-      }),
-    ).toEqual({
-      timestamp: date,
-      type: 'DownloadInvoiceTimelineEvent',
-      invoiceUrl: 'http://somecoolurl',
-      numberPassengers: 1,
-      legs: [
-        {
-          departure: {
-            where: {
-              cityName: 'Prague',
-            },
-          },
-          arrival: {
-            where: { cityName: 'Brno' },
-          },
-        },
-      ],
-    });
-  });
-});
-
-describe('generateDownloadETicketEvent', () => {
-  const date = new Date('2018-05-03T14:10:57.000Z');
-  it('returns DownloadETicket event', () => {
-    expect(
-      // $FlowExpectedError: full Booking object is not needed for this test
-      generateDownloadETicketEvent({
-        created: date,
-      }),
-    ).toEqual({
-      timestamp: date,
-      type: 'DownloadETicketTimelineEvent',
-      ticketUrl: null,
-    });
-    expect(
-      // $FlowExpectedError: full Booking object is not needed for this test
-      generateDownloadETicketEvent({
-        created: date,
-        assets: {
-          ticketUrl: 'http://somecoolurl',
-        },
-      }),
-    ).toEqual({
-      timestamp: new Date('2018-05-03T14:10:57.000Z'),
-      type: 'DownloadETicketTimelineEvent',
-      ticketUrl: 'http://somecoolurl',
-    });
-  });
-});
-
-describe('generateLeaveForAirportEvent', () => {
-  const date = new Date('2018-05-03T14:10:57.000Z');
-  it('returns LeaveForAirport event if departure.when.local is set', () => {
-    const leaveForAirportDate = new Date('2018-05-03T10:10:57.000Z'); // date - 4 hours
-    expect(
-      // $FlowExpectedError: full Booking object is not needed for this test
-      generateLeaveForAirportEvent({
-        departure: {
-          when: {
-            local: date,
-          },
-        },
-      }),
-    ).toEqual({
-      timestamp: leaveForAirportDate,
-      type: 'LeaveForAirportTimelineEvent',
-    });
-  });
-  it('returns null if departure.when.local is not set', () => {
-    expect(
-      // $FlowExpectedError: full Booking object is not needed for this test
-      generateLeaveForAirportEvent({}),
-    ).toBe(null);
-  });
-});
-
-describe('generateAirportArrivalEvent', () => {
-  const date = new Date('2018-05-03T14:10:57.000Z');
-  it('returns AirportArrival event if departure.when.local is set', () => {
-    const airportArrivalDate = new Date('2018-05-03T12:10:57.000Z'); // date - 2 hours
-    expect(
-      // $FlowExpectedError: full Booking object is not needed for this test
-      generateAirportArrivalEvent({
-        departure: {
-          when: {
-            local: date,
-          },
-        },
-      }),
-    ).toEqual({
-      timestamp: airportArrivalDate,
-      type: 'AirportArrivalTimelineEvent',
+const booking: Booking = {
+  id: 2707251,
+  departure: {
+    when: {
+      utc: new Date('2017-09-09T20:10:00.000Z'),
+      local: new Date('2017-09-09T21:10:00.000Z'),
+    },
+    where: {
+      code: 'LGW',
+      cityName: 'London',
+      cityId: 'london_gb',
+      terminal: 'E',
+    },
+    bid: 2707251,
+  },
+  arrival: {
+    when: {
+      utc: new Date('2017-09-09T21:30:00.000Z'),
+      local: new Date('2017-09-09T23:30:00.000Z'),
+    },
+    where: {
+      code: 'CDG',
+      cityName: 'Paris',
+      cityId: 'paris_fr',
+      terminal: '2',
+    },
+    bid: 2707251,
+  },
+  legs: [
+    {
+      id: '315289498',
+      bookingId: 2707251,
+      recheckRequired: false,
+      isReturn: false,
+      flightNo: 8773,
+      boardingPassAvailableAt: '2017-09-02',
       departure: {
         when: {
-          local: date,
-        },
-      },
-    });
-  });
-  it('returns null if departure.when.local is not set', () => {
-    expect(
-      // $FlowExpectedError: full Booking object is not needed for this test
-      generateAirportArrivalEvent({}),
-    ).toBe(null);
-  });
-  it('returns AirportArrival event if departure.when.local is set with city name if departure.where.cityName is set', () => {
-    const airportArrivalDate = new Date('2018-05-03T12:10:57.000Z'); // date - 2 hours
-    expect(
-      // $FlowExpectedError: full Booking object is not needed for this test
-      generateAirportArrivalEvent({
-        departure: {
-          when: {
-            local: date,
-          },
-          where: {
-            cityName: 'Prague',
-          },
-        },
-      }),
-    ).toEqual({
-      timestamp: airportArrivalDate,
-      type: 'AirportArrivalTimelineEvent',
-      departure: {
-        when: {
-          local: date,
+          utc: new Date('2017-09-09T20:10:00.000Z'),
+          local: new Date('2017-09-09T21:10:00.000Z'),
         },
         where: {
-          cityName: 'Prague',
+          code: 'LGW',
+          cityName: 'London',
+          cityId: 'london_gb',
+          terminal: 'E',
         },
+        bid: 2707251,
       },
-    });
-  });
-});
-
-describe('generateBoardingEvent', () => {
-  const date = new Date('2018-05-03T14:10:57.000Z');
-  it('returns Boarding event if departure.when.local is set', () => {
-    const boardingDate = new Date('2018-05-03T13:40:57.000Z'); // date - 30 minutes
-    expect(
-      // $FlowExpectedError: full Booking object is not needed for this test
-      generateBoardingEvent({
-        departure: {
-          when: {
-            local: date,
-          },
-          where: {
-            terminal: '1',
-          },
-        },
-      }),
-    ).toEqual({
-      timestamp: boardingDate,
-      type: 'BoardingTimelineEvent',
-      terminal: '1',
-    });
-  });
-  it('returns null if departure.when.local is not set', () => {
-    expect(
-      // $FlowExpectedError: full Booking object is not needed for this test
-      generateBoardingEvent({}),
-    ).toBe(null);
-  });
-});
-
-describe('generateDepartureEvent', () => {
-  const date = new Date('2018-06-22T05:00:00.000Z');
-  it('returns Departure event if departure.when.local is set', () => {
-    const departureDate = date;
-    expect(
-      // $FlowExpectedError: full Booking object is not needed for this test
-      generateDepartureEvent({
-        departure: {
-          when: {
-            local: departureDate,
-            utc: departureDate,
-          },
-        },
-        arrival: {
-          when: {
-            local: new Date('2018-06-22T08:00:00.000Z'),
-            utc: new Date('2018-06-22T08:00:00.000Z'),
-          },
-        },
-        airlineCode: 'FR',
-        flightNo: 1111,
-      }),
-    ).toEqual({
-      timestamp: departureDate,
-      type: 'DepartureTimelineEvent',
       arrival: {
         when: {
-          local: new Date('2018-06-22T08:00:00.000Z'),
-          utc: new Date('2018-06-22T08:00:00.000Z'),
-        },
-      },
-      duration: 180,
-      airlineCode: 'FR',
-      flightNumber: 1111,
-    });
-  });
-  it('returns null if departure.when.local is not set', () => {
-    expect(
-      // $FlowExpectedError: full Booking object is not needed for this test
-      generateDepartureEvent({}),
-    ).toBe(null);
-  });
-  it('returns Departure event if departure.when.local is set with city name if departure.where.cityName is set', () => {
-    const departureDate = date;
-    expect(
-      // $FlowExpectedError: full Booking object is not needed for this test
-      generateDepartureEvent({
-        departure: {
-          when: {
-            local: departureDate,
-            utc: departureDate,
-          },
-        },
-        arrival: {
-          when: {
-            local: new Date('2018-06-22T08:00:00.000Z'),
-            utc: new Date('2018-06-22T08:00:00.000Z'),
-          },
-          where: {
-            cityName: 'Prague',
-          },
-        },
-      }),
-    ).toEqual({
-      timestamp: departureDate,
-      type: 'DepartureTimelineEvent',
-      arrival: {
-        when: {
-          local: new Date('2018-06-22T08:00:00.000Z'),
-          utc: new Date('2018-06-22T08:00:00.000Z'),
+          utc: new Date('2017-09-09T21:30:00.000Z'),
+          local: new Date('2017-09-09T23:30:00.000Z'),
         },
         where: {
-          cityName: 'Prague',
+          code: 'CDG',
+          cityName: 'Paris',
+          cityId: 'paris_fr',
+          terminal: '2',
         },
+        bid: 2707251,
       },
-      duration: 180,
-    });
-  });
-});
-
-describe('generateArrivalEvent', () => {
-  const date = new Date('2018-05-03T14:10:57.000Z');
-  it('returns Arrival event if arrival.when.local is set', () => {
-    const arrivalDate = date;
-    expect(
-      // $FlowExpectedError: full Booking object is not needed for this test
-      generateArrivalEvent({
-        arrival: {
-          when: {
-            local: date,
+      airlineCode: 'VY',
+      guarantee: false,
+      operatingAirline: {
+        iata: 'VY',
+        name: 'Vueling',
+      },
+      pnr: 'chat',
+      vehicle: {
+        manufacturer: 'Airbus',
+        model: 'A320',
+      },
+      vehicleType: 'AIRCRAFT',
+    },
+  ],
+  price: {
+    amount: 74.61,
+    currency: 'USD',
+  },
+  created: new Date('2017-03-30T07:28:55.000Z'),
+  authToken: 'b206db64-718f-4608-babb-0b8abe6e1b9d',
+  status: 'confirmed',
+  type: 'BookingOneWay',
+  passengerCount: 2,
+  passengers: [
+    {
+      id: 4095455,
+      firstname: 'chatbot',
+      lastname: 'test',
+      insuranceType: 'none',
+      title: 'mr',
+      birthday: '1985-01-01',
+      nationality: 'us',
+      travelDocument: {
+        idNumber: '1234578098',
+        expiration: new Date('2019-02-14'),
+      },
+      travelInfo: [
+        {
+          visa: [
+            {
+              status: 'critical',
+              timestamp: 1447710495,
+              info:
+                '<div class="content"><p>\n</p><p>Visa required.</p>\n\n<h3>Additional information:</h3>\n<p>\n</p><p>\n</p><p>Schengen visa is also valid for French Guiana, French West Indies and Reunion, provided endorsed "Also valid for French territories being in observation ofthe respective French territories".</p>\n\n<p>\nVisitors are required to hold proof of sufficient funds to cover their stay and documents required for their next destination. \n</p>\n\n</div>',
+              country: 'FR',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: 4095456,
+      firstname: 'TEST',
+      lastname: 'TEST',
+      insuranceType: 'none',
+      title: 'mr',
+      birthday: '1985-01-01',
+      nationality: 'us',
+      travelDocument: {
+        idNumber: '12345',
+        expiration: new Date('2019-02-13'),
+      },
+      travelInfo: [
+        {
+          visa: [
+            {
+              status: 'critical',
+              timestamp: 1447710495,
+              info:
+                '<div class="content"><p>\n</p><p>Visa required.</p>\n\n<h3>Additional information:</h3>\n<p>\n</p><p>\n</p><p>Schengen visa is also valid for French Guiana, French West Indies and Reunion, provided endorsed "Also valid for French territories being in observation ofthe respective French territories".</p>\n\n<p>\nVisitors are required to hold proof of sufficient funds to cover their stay and documents required for their next destination. \n</p>\n\n</div>',
+              country: 'FR',
+            },
+          ],
+        },
+      ],
+    },
+  ],
+  allowedBaggage: {
+    additionalBaggage: [
+      {
+        price: {
+          amount: 23.65,
+          currency: 'EUR',
+        },
+        quantity: 1,
+      },
+      {
+        price: {
+          amount: 47.3,
+          currency: 'EUR',
+        },
+        quantity: 2,
+      },
+    ],
+    cabin: [
+      {
+        height: 20,
+        length: 55,
+        width: 40,
+        weight: 10,
+        note: null,
+      },
+      {
+        height: null,
+        length: null,
+        width: null,
+        weight: null,
+        note: null,
+      },
+    ],
+    checked: [
+      {
+        height: 79,
+        length: 250,
+        width: 112,
+        weight: 23,
+        note: 'max 180cm (length + width + height)',
+      },
+    ],
+  },
+  assets: {
+    ticketUrl:
+      'https://skypicker-mailing.s3.amazonaws.com/2707/1490859068_E-ticket_passenger_and_1_more_e826fc3275a65a5db8808279d8fc7f8f.pdf?v=1490859069',
+    invoiceUrl: null,
+    boardingPasses: [
+      {
+        boardingPassUrl: 'https://very.real/pass.pdf',
+        flightNumber: '315289498',
+        availableAt: '2017-09-02',
+        leg: {
+          id: '315289498',
+          bookingId: 2707251,
+          recheckRequired: false,
+          isReturn: false,
+          flightNo: 8773,
+          boardingPassAvailableAt: '2017-09-02',
+          departure: {
+            when: {
+              utc: new Date('2017-09-09T20:10:00.000Z'),
+              local: new Date('2017-09-09T21:10:00.000Z'),
+            },
+            where: {
+              code: 'LGW',
+              cityName: 'London',
+              cityId: 'london_gb',
+              terminal: 'E',
+            },
+            bid: 2707251,
           },
-        },
-      }),
-    ).toEqual({
-      timestamp: arrivalDate,
-      type: 'ArrivalTimelineEvent',
-      arrival: {
-        when: {
-          local: date,
+          arrival: {
+            when: {
+              utc: new Date('2017-09-09T21:30:00.000Z'),
+              local: new Date('2017-09-09T23:30:00.000Z'),
+            },
+            where: {
+              code: 'CDG',
+              cityName: 'Paris',
+              cityId: 'paris_fr',
+              terminal: '2',
+            },
+            bid: 2707251,
+          },
+          airlineCode: 'VY',
+          guarantee: false,
+          operatingAirline: {
+            iata: 'VY',
+            name: 'Vueling',
+          },
+          pnr: 'chat',
+          vehicle: {
+            manufacturer: 'Airbus',
+            model: 'A320',
+          },
+          vehicleType: 'AIRCRAFT',
         },
       },
-    });
-  });
-  it('returns null if arrival.when.local is not set', () => {
-    expect(
-      // $FlowExpectedError: full Booking object is not needed for this test
-      generateArrivalEvent({}),
-    ).toBe(null);
-  });
-  it('returns Arrival event if arrival.when.local is set with city name if arrival.where.cityName is set', () => {
-    const arrivalDate = date;
-    expect(
-      // $FlowExpectedError: full Booking object is not needed for this test
-      generateArrivalEvent({
-        arrival: {
+      {
+        boardingPassUrl: 'https://very.real/all.pdf',
+        flightNumber: 'all',
+        availableAt: '2017-09-02',
+        leg: {
+          id: '315289498',
+          bookingId: 2707251,
+          recheckRequired: false,
+          isReturn: false,
+          flightNo: 8773,
+          boardingPassAvailableAt: '2017-09-02',
+          departure: {
+            when: {
+              utc: new Date('2017-09-09T20:10:00.000Z'),
+              local: new Date('2017-09-09T21:10:00.000Z'),
+            },
+            where: {
+              code: 'LGW',
+              cityName: 'London',
+              cityId: 'london_gb',
+              terminal: 'E',
+            },
+            bid: 2707251,
+          },
+          arrival: {
+            when: {
+              utc: new Date('2017-09-09T21:30:00.000Z'),
+              local: new Date('2017-09-09T23:30:00.000Z'),
+            },
+            where: {
+              code: 'CDG',
+              cityName: 'Paris',
+              cityId: 'paris_fr',
+              terminal: '2',
+            },
+            bid: 2707251,
+          },
+          airlineCode: 'VY',
+          guarantee: false,
+          operatingAirline: {
+            iata: 'VY',
+            name: 'Vueling',
+          },
+          pnr: 'chat',
+          vehicle: {
+            manufacturer: 'Airbus',
+            model: 'A320',
+          },
+          vehicleType: 'AIRCRAFT',
+        },
+      },
+    ],
+    legs: [
+      {
+        id: '315289498',
+        bookingId: 2707251,
+        recheckRequired: false,
+        isReturn: false,
+        flightNo: 8773,
+        boardingPassAvailableAt: '2017-09-02',
+        departure: {
           when: {
-            local: date,
+            utc: new Date('2017-09-09T20:10:00.000Z'),
+            local: new Date('2017-09-09T21:10:00.000Z'),
           },
           where: {
-            cityName: 'Prague',
+            code: 'LGW',
+            cityName: 'London',
+            cityId: 'london_gb',
+            terminal: 'E',
           },
+          bid: 2707251,
         },
-      }),
-    ).toEqual({
-      timestamp: arrivalDate,
-      type: 'ArrivalTimelineEvent',
-      arrival: {
-        when: {
-          local: date,
-        },
-        where: {
-          cityName: 'Prague',
-        },
-      },
-    });
-  });
-});
-
-describe('generateTransportFromAirportEvent', () => {
-  const date = new Date('2018-05-03T14:10:57.000Z');
-  it('returns TransportFromAirport event if arrival.when.local is set', () => {
-    const arrivalDate = new Date('2018-05-03T14:25:57.000Z'); // date + 15 minutes
-    expect(
-      // $FlowExpectedError: full Booking object is not needed for this test
-      generateTransportFromAirportEvent({
         arrival: {
           when: {
-            local: date,
+            utc: new Date('2017-09-09T21:30:00.000Z'),
+            local: new Date('2017-09-09T23:30:00.000Z'),
           },
+          where: {
+            code: 'CDG',
+            cityName: 'Paris',
+            cityId: 'paris_fr',
+            terminal: '2',
+          },
+          bid: 2707251,
         },
-      }),
-    ).toEqual({
-      timestamp: arrivalDate,
-      type: 'TransportFromAirportTimelineEvent',
-    });
-  });
-  it('returns null if arrival.when.local is not set', () => {
-    expect(
-      // $FlowExpectedError: full Booking object is not needed for this test
-      generateTransportFromAirportEvent({}),
-    ).toBe(null);
-  });
-});
-
-describe('generateNoMoreEditsEvent', () => {
-  const date = new Date('2018-05-03T14:10:57.000Z');
-  it('should return NoMoreEditsEvent if apiData.config.allowedToChange.flights is a number', () => {
-    expect(
-      // $FlowExpectedError: full Booking object is not needed for this test
-      generateNoMoreEditsEvent({
-        departure: {
-          when: {
-            local: date,
-          },
+        airlineCode: 'VY',
+        guarantee: false,
+        operatingAirline: {
+          iata: 'VY',
+          name: 'Vueling',
         },
-        allowedToChangeFlights: 48,
-      }),
-    ).toEqual({
-      timestamp: new Date('2018-05-01T14:10:57.000Z'),
-      type: 'NoMoreEditsTimelineEvent',
-    });
-  });
-  it('should return NoMoreEditsEvent if apiData.config.allowedToChange.flights is null', () => {
-    expect(
-      // $FlowExpectedError: full Booking object is not needed for this test
-      generateNoMoreEditsEvent({
-        departure: {
-          when: {
-            local: date,
-          },
+        pnr: 'chat',
+        vehicle: {
+          manufacturer: 'Airbus',
+          model: 'A320',
         },
-        allowedToChangeFlights: null,
-      }),
-    ).toBe(null);
-  });
-  it('should return NoMoreEditsEvent if apiData.config.allowedToChange.flights is not given', () => {
-    expect(
-      // $FlowExpectedError: full Booking object is not needed for this test
-      generateNoMoreEditsEvent({
-        departure: {
-          when: {
-            local: date,
-          },
-        },
-      }),
-    ).toBe(null);
-  });
-});
+        vehicleType: 'AIRCRAFT',
+      },
+    ],
+  },
+  bookedServices: [
+    {
+      category: 'bags',
+      status: 'expired',
+    },
+    {
+      category: 'bags',
+      status: 'expired',
+    },
+    {
+      category: 'bags',
+      status: 'expired',
+    },
+  ],
+  contactDetails: {
+    phone: '+1 000',
+    email: 'kiwicomtester@gmail.com',
+  },
+  allowedToChangeFlights: 48,
+  onlineCheckinIsAvailable: true,
+};
 
-describe('generateEnterDetailsEvent', () => {
-  const dateNow = Date.now;
+const leg: Leg = {
+  id: '315289498',
+  bookingId: 2707251,
+  recheckRequired: false,
+  isReturn: false,
+  flightNo: 8773,
+  boardingPassAvailableAt: '2017-09-02',
+  departure: {
+    when: {
+      utc: new Date('2017-09-09T20:10:00.000Z'),
+      local: new Date('2017-09-09T21:10:00.000Z'),
+    },
+    where: {
+      code: 'LGW',
+      cityName: 'London',
+      cityId: 'london_gb',
+      terminal: 'E',
+    },
+    bid: 2707251,
+  },
+  arrival: {
+    when: {
+      utc: new Date('2017-09-09T21:30:00.000Z'),
+      local: new Date('2017-09-09T23:30:00.000Z'),
+    },
+    where: {
+      code: 'CDG',
+      cityName: 'Paris',
+      cityId: 'paris_fr',
+      terminal: '2',
+    },
+    bid: 2707251,
+  },
+  airlineCode: 'VY',
+  guarantee: false,
+  operatingAirline: {
+    iata: 'VY',
+    name: 'Vueling',
+  },
+  pnr: 'chat',
+  vehicle: {
+    manufacturer: 'Airbus',
+    model: 'A320',
+  },
+  vehicleType: 'AIRCRAFT',
+};
 
-  beforeEach(() => {
-    global.Date.now = jest.fn(() => 1482363367071);
-  });
-
-  afterEach(() => {
-    global.Date.now = dateNow;
-  });
-
-  it('should return null if all passengers have filled in their document id', () => {
-    expect(
-      // $FlowExpectedError: full Booking object is not needed for this test
-      generateEnterDetailsEvent({
-        passengers: [
-          {
-            travelDocument: {
-              idNumber: '1234',
-            },
-          },
-          {
-            travelDocument: {
-              idNumber: '12345',
-            },
-          },
-        ],
-      }),
-    ).toBe(null);
-  });
-
-  it('should return EnterDetails event if at least one of the passengers does not have their document id filled in', () => {
-    expect(
-      // $FlowExpectedError: full Booking object is not needed for this test
-      generateEnterDetailsEvent({
-        passengers: [
-          {
-            travelDocument: {
-              idNumber: '1234',
-            },
-          },
-          {
-            travelDocument: {
-              idNumber: null,
-            },
-          },
-        ],
-      }),
-    ).toEqual({
-      timestamp: new Date(Date.now()),
-      type: 'EnterDetailsTimelineEvent',
-    });
-  });
-});
+export { booking, leg };

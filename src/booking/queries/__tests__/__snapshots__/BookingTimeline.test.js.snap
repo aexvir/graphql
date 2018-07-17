@@ -79,13 +79,13 @@ Object {
           "timestamp": "2017-08-18T20:05:00.000Z",
         },
         Object {
+          "__typename": "DownloadBoardingPassTimelineEvent",
+          "timestamp": "2017-08-18T22:05:00.000Z",
+        },
+        Object {
           "__typename": "BoardingTimelineEvent",
           "terminal": "1",
           "timestamp": "2017-08-18T21:35:00.000Z",
-        },
-        Object {
-          "__typename": "DownloadBoardingPassTimelineEvent",
-          "timestamp": "2017-08-18T22:05:00.000Z",
         },
         Object {
           "__typename": "DepartureTimelineEvent",
@@ -207,13 +207,13 @@ Object {
           "timestamp": "2017-09-09T19:10:00.000Z",
         },
         Object {
+          "__typename": "DownloadBoardingPassTimelineEvent",
+          "timestamp": "2017-09-09T21:10:00.000Z",
+        },
+        Object {
           "__typename": "BoardingTimelineEvent",
           "terminal": null,
           "timestamp": "2017-09-09T20:40:00.000Z",
-        },
-        Object {
-          "__typename": "DownloadBoardingPassTimelineEvent",
-          "timestamp": "2017-09-09T21:10:00.000Z",
         },
         Object {
           "__typename": "DepartureTimelineEvent",

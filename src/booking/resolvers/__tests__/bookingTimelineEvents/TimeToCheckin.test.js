@@ -1,11 +1,7 @@
 // @flow
 
 import generateTimeToCheckinEvent from '../../bookingTimeline/timeToCheckin';
-import type { Booking } from '../../../Booking';
-import { sanitizeDetail } from '../../../dataloaders/ApiSanitizer';
-import Booking2707251 from '../../../datasets/booking-2707251.json';
-
-const booking: Booking = sanitizeDetail(Booking2707251);
+import { booking } from '../BookingTimeline.test';
 
 describe('generateTimeToCheckinEvent', () => {
   it('should generate TimeToCheckin event if online checkin is available', () => {
@@ -15,7 +11,7 @@ describe('generateTimeToCheckinEvent', () => {
         onlineCheckinIsAvailable: true,
       }),
     ).toEqual({
-      timestamp: new Date('2017-09-06T22:10:00.000+02:00'),
+      timestamp: new Date('2017-09-06T20:10:00.000Z'),
       type: 'TimeToCheckinTimelineEvent',
     });
   });
