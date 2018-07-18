@@ -41,6 +41,13 @@ Object {
     "resolve": [Function],
     "type": "WhitelabeledServices",
   },
+  "bags": Object {
+    "args": Array [],
+    "isDeprecated": false,
+    "name": "bags",
+    "resolve": [Function],
+    "type": "[Baggage]",
+  },
   "bookedServices": Object {
     "args": Array [],
     "isDeprecated": false,

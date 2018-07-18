@@ -4,6 +4,7 @@ import DataLoader from 'dataloader';
 
 import IdentityDataloader from '../../identity/dataloaders/Identity';
 import createBookingLoader from '../../booking/dataloaders/Booking';
+import createBagsLoader from '../../booking/dataloaders/Bags';
 import createCurrencyLoader from '../../currency/dataloaders/Currency';
 import createAirlineLoader from '../../flight/dataloaders/Airline';
 import createRatesLoader from '../dataloaders/Rates';
@@ -29,6 +30,7 @@ import DynamicPackagesLoader from '../../dynamicPackage/dataloaders/DynamicPacka
 
 import type { Booking } from '../../booking/Booking';
 import type { Args as SingleBookingArgs } from '../../booking/dataloaders/SingleBooking';
+import type { BagArray } from '../../booking/Baggage';
 import type { Airline } from '../../flight/Flight';
 import type { CurrencyDetail } from '../../currency/CurrencyDetail';
 import type { HotelType } from '../../hotel/dataloaders/flow/HotelType';
@@ -85,6 +87,7 @@ export type GraphqlContextType = {|
     FAQCategories: FAQCategoriesLoader,
     FAQArticle: DataLoader<FAQCArticleArgs, FAQArticleDetail>,
     dynamicPackages: DynamicPackagesLoader,
+    bags: DataLoader<number, BagArray>,
   |},
   options: OptionsStorage,
   _traceCollector?: Object,
@@ -145,6 +148,7 @@ export function createContext(
       FAQCategories: new FAQCategoriesLoader(locale.language, FAQ_CATEGORY_ID),
       FAQArticle: createFAQArticleLoader(locale.language),
       dynamicPackages: new DynamicPackagesLoader(location),
+      bags: createBagsLoader(token),
     },
     options: new OptionsStorage(),
   };

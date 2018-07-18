@@ -31,5 +31,15 @@ export default new GraphQLObjectType({
       type: GraphQLString,
       resolve: ({ note }: Baggage) => note,
     },
+
+    dimensionSum: {
+      type: GraphQLInt,
+      resolve: ({ dimensionSum }: Baggage) => dimensionSum,
+    },
+
+    category: {
+      type: GraphQLString,
+      resolve: ({ category }: Baggage) => category,
+    },
   },
 });

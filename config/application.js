@@ -27,6 +27,10 @@ export default {
         queryParameters,
       ),
     rates: 'https://api.skypicker.com/rates',
+    bags: (bookingId: number) =>
+      queryWithParameters(
+        `https://booking-api.skypicker.com/mmb/v1/bookings/${bookingId}/bags`,
+      ),
   },
   auth: {
     basicToken: String(process.env.AUTH_BASIC_TOKEN),

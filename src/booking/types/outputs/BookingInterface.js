@@ -15,6 +15,7 @@ import { globalIdField } from '../../../common/services/OpaqueIdentifier';
 import type { GraphqlContextType } from '../../../common/services/GraphqlContext';
 import type { BookingAssets, BookingsItem } from '../../Booking';
 import type { AllowedBaggage } from '../../Baggage';
+import GraphQLBaggage from './Baggage';
 import GraphQLAllowedBaggage from './AllowedBaggage';
 import GraphQLInsurancePrice from './InsurancePrice';
 import GraphQLBookingAssets from './BookingAssets';
@@ -277,6 +278,17 @@ export const commonFields = {
     ) => {
       const { insurancePrices } = await dataLoader.booking.load(id);
       return insurancePrices;
+    },
+  },
+
+  bags: {
+    type: new GraphQLList(GraphQLBaggage),
+    resolve: (
+      { id }: BookingInterfaceData,
+      params: Object,
+      { dataLoader }: GraphqlContextType,
+    ) => {
+      return dataLoader.bags.load(id);
     },
   },
 };

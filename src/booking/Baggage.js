@@ -19,4 +19,8 @@ export type Baggage = {|
   width: ?number,
   weight: ?number,
   note: ?string,
+  dimensionSum?: number,
+  category?: string,
 |};
+
+export type BagArray = Array<Baggage>;
