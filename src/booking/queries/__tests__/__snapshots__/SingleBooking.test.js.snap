@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`singleBooking query should return valid fields 1`] = `
+Object {
+  "data": Object {
+    "singleBooking": Object {
+      "bookingDate": "2017-03-30",
+      "destinationImageUrl": "https://images.kiwi.com/photos/600x600/paris_fr.grayscale.jpg",
+      "directAccessURL": "https://kiwi.com/content/manage/2707251/b206db64-718f-4608-babb-0b8abe6e1b9d",
+      "id": "Qm9va2luZzoyNzA3MjUx",
+      "oneWay": Object {
+        "bookingDate": "2017-03-30",
+        "trip": Object {
+          "duration": 80,
+        },
+      },
+      "passengerCount": 2,
+      "price": Object {
+        "amount": 74.61,
+        "currency": "USD",
+      },
+    },
+  },
+}
+`;

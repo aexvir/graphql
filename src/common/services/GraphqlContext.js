@@ -10,6 +10,7 @@ import createRatesLoader from '../dataloaders/Rates';
 import createFAQLoader from '../../FAQ/dataloaders/searchFAQ';
 import createFAQCategoryLoader from '../../FAQ/dataloaders/FAQCategories';
 import createFAQArticleLoader from '../../FAQ/dataloaders/FAQArticle';
+import createSingleBookingLoader from '../../booking/dataloaders/SingleBooking';
 import BookingsLoader from '../../booking/dataloaders/Bookings';
 import LocationsLoader from '../../location/dataloaders/Locations';
 import LocationLoader from '../../location/dataloaders/Location';
@@ -27,6 +28,7 @@ import PriceStatsLoader from '../../hotel/dataloaders/PriceStats';
 import DynamicPackagesLoader from '../../dynamicPackage/dataloaders/DynamicPackages';
 
 import type { Booking } from '../../booking/Booking';
+import type { Args as SingleBookingArgs } from '../../booking/dataloaders/SingleBooking';
 import type { Airline } from '../../flight/Flight';
 import type { CurrencyDetail } from '../../currency/CurrencyDetail';
 import type { HotelType } from '../../hotel/dataloaders/flow/HotelType';
@@ -64,6 +66,7 @@ export type GraphqlContextType = {|
     airline: DataLoader<string, ?Airline>,
     booking: DataLoader<number | string, Booking>,
     bookings: BookingsLoader,
+    singleBooking: DataLoader<SingleBookingArgs, Booking>,
     currency: DataLoader<string, CurrencyDetail>,
     flight: FlightLoader,
     identity: IdentityDataloader,
@@ -126,6 +129,7 @@ export function createContext(
       airline: createAirlineLoader(),
       booking: createBookingLoader(token, bookings),
       bookings: bookings,
+      singleBooking: createSingleBookingLoader(),
       currency: createCurrencyLoader(),
       flight: new FlightLoader(location, locations),
       identity: new IdentityDataloader(token),

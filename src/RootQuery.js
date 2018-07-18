@@ -26,6 +26,7 @@ import NearestBooking from './booking/queries/NearestBooking';
 import BookingTimeline from './booking/queries/BookingTimeline';
 import { nodeField } from './node/node';
 import AirHelpPlusOffer from './bookingAncillaries/queries/AirHelpPlusOffer';
+import SingleBooking from './booking/queries/SingleBooking';
 
 export default new GraphQLObjectType({
   name: 'RootQuery',
@@ -55,5 +56,6 @@ export default new GraphQLObjectType({
     bookingTimeline: BookingTimeline,
     node: nodeField,
     airHelpPlusOffer: AirHelpPlusOffer,
+    singleBooking: SingleBooking,
   },
 });
