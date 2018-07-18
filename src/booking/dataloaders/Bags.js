@@ -4,6 +4,7 @@ import DataLoader from 'dataloader';
 import Config from '../../../config/application';
 
 import { get } from '../../common/services/HttpRequest';
+import sanitizeBaggageData from './BagApiSanitizer';
 
 const batchLoad = (accessToken: ?string) => {
   if (typeof accessToken !== 'string') {
@@ -20,18 +21,7 @@ const load = async (id: number, authToken: string) => {
     authorization: '213321213',
   });
 
-  const setPending = isPending => booking => ({
-    ...booking,
-    isPending,
-  });
-
-  return []
-    .concat(data.baggage.map(setPending(false)))
-    .concat(data.pending_baggage.map(setPending(true)))
-    .map(baggage => ({
-      ...baggage.bag,
-      isPending: baggage.isPending,
-    }));
+  return sanitizeBaggageData(data);
 };
 
 export default function createInstance(accessToken: ?string) {
