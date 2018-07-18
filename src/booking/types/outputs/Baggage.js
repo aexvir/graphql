@@ -1,6 +1,11 @@
 // @flow
 
-import { GraphQLObjectType, GraphQLInt, GraphQLString } from 'graphql';
+import {
+  GraphQLObjectType,
+  GraphQLInt,
+  GraphQLString,
+  GraphQLBoolean,
+} from 'graphql';
 
 import type { Baggage } from '../../Baggage';
 
@@ -40,6 +45,11 @@ export default new GraphQLObjectType({
     category: {
       type: GraphQLString,
       resolve: ({ category }: Baggage) => category,
+    },
+
+    isPending: {
+      type: GraphQLBoolean,
+      resolve: ({ isPending }: Baggage) => isPending,
     },
   },
 });

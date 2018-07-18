@@ -21,6 +21,7 @@ export type Baggage = {|
   note: ?string,
   dimensionSum?: number,
   category?: string,
+  isPending?: boolean,
 |};
 
 export type BagArray = Array<Baggage>;

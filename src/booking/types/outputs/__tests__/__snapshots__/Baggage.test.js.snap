@@ -23,6 +23,13 @@ Object {
     "resolve": [Function],
     "type": "Int",
   },
+  "isPending": Object {
+    "args": Array [],
+    "isDeprecated": false,
+    "name": "isPending",
+    "resolve": [Function],
+    "type": "Boolean",
+  },
   "length": Object {
     "args": Array [],
     "isDeprecated": false,

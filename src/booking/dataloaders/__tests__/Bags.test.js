@@ -5,8 +5,8 @@ import createBagsDataLoader from '../Bags';
 jest.mock('../../../common/services/JsonFetcher', () => ({
   fetchJson: () => {
     const fakeData = {
-      baggage: [{ bag: 'foo' }, { bag: 'bar' }],
-      pending_baggage: [{ bag: 'baz' }],
+      baggage: [{ bag: { x: 'foo' } }, { bag: { x: 'bar' } }],
+      pending_baggage: [{ bag: { x: 'baz' } }],
     };
     return Promise.resolve(fakeData);
   },

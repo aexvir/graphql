@@ -2,8 +2,17 @@
 
 exports[`returns baggage AND pending baggage 1`] = `
 Array [
-  "foo",
-  "bar",
-  "baz",
+  Object {
+    "isPending": false,
+    "x": "foo",
+  },
+  Object {
+    "isPending": false,
+    "x": "bar",
+  },
+  Object {
+    "isPending": true,
+    "x": "baz",
+  },
 ]
 `;

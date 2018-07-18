@@ -20,10 +20,18 @@ const load = async (id: number, authToken: string) => {
     authorization: '213321213',
   });
 
+  const setPending = isPending => booking => ({
+    ...booking,
+    isPending,
+  });
+
   return []
-    .concat(data.baggage)
-    .concat(data.pending_baggage)
-    .map(baggage => baggage.bag);
+    .concat(data.baggage.map(setPending(false)))
+    .concat(data.pending_baggage.map(setPending(true)))
+    .map(baggage => ({
+      ...baggage.bag,
+      isPending: baggage.isPending,
+    }));
 };
 
 export default function createInstance(accessToken: ?string) {
