@@ -13,7 +13,7 @@ export type AllowedBaggage = {|
   checked: Array<Baggage>,
 |};
 
-export type Baggage = {|
+export type Baggage = {
   height: ?number,
   length: ?number,
   width: ?number,
@@ -22,6 +22,6 @@ export type Baggage = {|
   dimensionSum?: number,
   category?: string,
   isPending?: boolean,
-|};
+};
 
 export type BagArray = Array<Baggage>;
