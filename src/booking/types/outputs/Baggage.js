@@ -39,6 +39,7 @@ export default new GraphQLObjectType({
 
     dimensionSum: {
       type: GraphQLInt,
+      description: 'Maximum allowed sum of weight, length and width',
       resolve: ({ dimensionSum }: Baggage) => dimensionSum,
     },
 

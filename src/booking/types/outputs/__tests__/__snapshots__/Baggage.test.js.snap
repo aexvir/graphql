@@ -11,6 +11,7 @@ Object {
   },
   "dimensionSum": Object {
     "args": Array [],
+    "description": "Maximum allowed sum of weight, length and width",
     "isDeprecated": false,
     "name": "dimensionSum",
     "resolve": [Function],

@@ -6498,7 +6498,7 @@
           },
           {
             "name": "dimensionSum",
-            "description": null,
+            "description": "Maximum allowed sum of weight, length and width",
             "args": [],
             "type": {
               "kind": "SCALAR",
