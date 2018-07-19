@@ -3,7 +3,13 @@
 import type { BagArray } from '../../booking/Baggage';
 
 type BaggageDataItem = {
-  bag: Object,
+  bag: $ReadOnly<{|
+    height: number,
+    length: number,
+    weight: number,
+    width: number,
+    note?: string,
+  |}>,
 };
 
 type BaggageData = {|
