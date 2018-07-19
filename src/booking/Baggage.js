@@ -24,4 +24,4 @@ export type Baggage = {
   isPending?: boolean,
 };
 
-export type BagArray = Array<Baggage>;
+export type BagArray = $ReadOnlyArray<Baggage>;
