@@ -20,7 +20,7 @@ export type Baggage = {
   weight: ?number,
   note: ?string,
   dimensionSum?: number,
-  category?: string,
+  category?: 'hold_bag' | 'personal_item' | 'cabin_bag',
   isPending?: boolean,
 };
 
