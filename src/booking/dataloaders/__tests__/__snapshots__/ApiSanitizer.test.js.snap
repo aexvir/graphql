@@ -400,6 +400,12 @@ Object {
       "insuranceType": "none",
       "lastname": "TEST",
       "nationality": "us",
+      "pkpasses": Array [
+        Object {
+          "flightNumber": "SP1123103_1678074",
+          "url": "https://pk.pass.lol",
+        },
+      ],
       "title": "mr",
       "travelDocument": Object {
         "expiration": 1608768000,
@@ -566,6 +572,7 @@ Object {
       "insuranceType": "none",
       "lastname": "TEST",
       "nationality": "us",
+      "pkpasses": null,
       "title": "mr",
       "travelDocument": Object {
         "expiration": 1608768000,
@@ -1055,6 +1062,7 @@ Object {
       "insuranceType": "none",
       "lastname": "Doe",
       "nationality": "cz",
+      "pkpasses": null,
       "title": "ms",
       "travelDocument": Object {
         "expiration": 1786838400,
@@ -1069,6 +1077,7 @@ Object {
       "insuranceType": "none",
       "lastname": "Smith",
       "nationality": "cz",
+      "pkpasses": null,
       "title": "mr",
       "travelDocument": Object {
         "expiration": 1793500000,

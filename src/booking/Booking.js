@@ -47,6 +47,11 @@ export type TravelInfo = {|
   visa: Visa[],
 |};
 
+export type Pkpass = {|
+  +flightNumber: string,
+  +url: string,
+|};
+
 export type Passenger = {|
   id: number,
   firstname: string,
@@ -57,6 +62,7 @@ export type Passenger = {|
   nationality: string,
   travelDocument: TravelDocument,
   travelInfo: TravelInfo[],
+  pkpasses: $ReadOnlyArray<Pkpass> | null,
 |};
 
 export type BookedService = {|

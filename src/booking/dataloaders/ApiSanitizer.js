@@ -8,6 +8,7 @@ import type {
   Booking,
   BookingType,
   BoardingPass,
+  Pkpass,
 } from '../Booking';
 import type { Leg } from '../../flight/Flight';
 import type { TripData } from '../types/outputs/Trip';
@@ -200,6 +201,20 @@ function sanitizePassengers(passengers: Object[], travelInfo: Object) {
       expiration: passenger.travel_document.expiration,
     },
     travelInfo: sanitizeVisaStatus(travelInfo, passenger.id),
+    pkpasses: sanitizePkpass(passenger.pkpass),
+  }));
+}
+
+function sanitizePkpass(
+  pkpass: ?{| [string]: string |},
+): $ReadOnlyArray<Pkpass> | null {
+  if (pkpass == null) {
+    return null;
+  }
+
+  return Object.entries(pkpass).map(([key, value]) => ({
+    url: typeof value === 'string' ? value : '',
+    flightNumber: key,
   }));
 }
 

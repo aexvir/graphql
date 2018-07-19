@@ -229,7 +229,9 @@
         "expiration": 1608768000
       },
       "lastname": "TEST",
-      "pkpass": null,
+      "pkpass": {
+        "SP1123103_1678074": "https://pk.pass.lol"
+      },
       "title": "mr",
       "hand_bags": {},
       "birthday": "1985-01-01",

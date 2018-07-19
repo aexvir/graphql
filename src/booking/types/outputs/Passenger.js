@@ -5,12 +5,14 @@ import {
   GraphQLString,
   GraphQLEnumType,
   GraphQLInt,
+  GraphQLList,
 } from 'graphql';
 import { GraphQLDateTime } from 'graphql-iso-date';
 import { uniq } from 'ramda';
 
 import type { Passenger } from '../../Booking';
 import GraphQLVisa from './Visa';
+import GraphQLPkpass from './Pkpass';
 
 const InsuranceTypeEnum = new GraphQLEnumType({
   name: 'InsuranceType',
@@ -115,6 +117,10 @@ export default new GraphQLObjectType({
           okIn: uniq(okIn),
         };
       },
+    },
+    pkpasses: {
+      type: new GraphQLList(GraphQLPkpass),
+      description: 'Url needed for apple wallet integration',
     },
   },
 });

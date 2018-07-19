@@ -324,6 +324,7 @@ const booking: Booking = {
         idNumber: '1234578098',
         expiration: new Date('2019-02-14'),
       },
+      pkpasses: null,
       travelInfo: [
         {
           visa: [
@@ -346,6 +347,7 @@ const booking: Booking = {
       title: 'mr',
       birthday: '1985-01-01',
       nationality: 'us',
+      pkpasses: null,
       travelDocument: {
         idNumber: '12345',
         expiration: new Date('2019-02-13'),
