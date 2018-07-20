@@ -7,7 +7,10 @@ import { getCurrencies } from '../api';
 import { currencyConnection } from '../types/outputs/CurrencyDetail';
 import { connectionFromArray } from '../../common/services/ArrayConnection';
 
-const arrayByID = R.compose(R.sortBy(R.prop('id')), R.values);
+const arrayByID = R.compose(
+  R.sortBy(R.prop('id')),
+  R.values,
+);
 
 const currencyQuery = {
   type: currencyConnection,

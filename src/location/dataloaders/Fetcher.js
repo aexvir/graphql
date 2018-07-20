@@ -28,8 +28,8 @@ export async function batchGetLocations(
   );
 
   return responseArray.map(response => {
-    return response.locations.map((location): Location =>
-      sanitizeApiResponse(location),
+    return response.locations.map(
+      (location): Location => sanitizeApiResponse(location),
     );
   });
 }

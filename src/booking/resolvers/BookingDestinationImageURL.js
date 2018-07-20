@@ -12,9 +12,9 @@ export function castURL(
   cityId: string,
   isPastBooking: boolean,
 ) {
-  return `https://images.kiwi.com/photos/${dimensions}/${cityId}${isPastBooking
-    ? '.grayscale'
-    : ''}.jpg`;
+  return `https://images.kiwi.com/photos/${dimensions}/${cityId}${
+    isPastBooking ? '.grayscale' : ''
+  }.jpg`;
 }
 
 export default (booking: Booking, args: { dimensions: string }): string => {

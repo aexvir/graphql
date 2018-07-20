@@ -23,38 +23,40 @@ import type { InboundOutboundData } from '../types/outputs/BookingReturn';
 export function sanitizeListItem(apiData: Object): BookingsItem {
   const bid = parseInt(apiData.bid);
 
-  const legs = apiData.flights.map((flight): Leg => ({
-    id: flight.id,
-    bookingId: bid,
-    recheckRequired: flight.bags_recheck_required,
-    isReturn: flight.return === 1,
-    flightNo: flight.flight_no,
-    boardingPassAvailableAt: idx(flight, _ => _.ticket_available_at),
-    departure: sanitizeRoute({
-      utc: idx(flight.departure, _ => _.when.utc),
-      local: idx(flight.departure, _ => _.when.local),
-      code: idx(flight.departure, _ => _.where.code),
-      cityName: idx(flight.departure, _ => _.where.name),
-      cityId: idx(flight.departure, _ => _.where.city_id),
-      terminal: idx(flight.departure, _ => _.where.terminal),
-      bid,
+  const legs = apiData.flights.map(
+    (flight): Leg => ({
+      id: flight.id,
+      bookingId: bid,
+      recheckRequired: flight.bags_recheck_required,
+      isReturn: flight.return === 1,
+      flightNo: flight.flight_no,
+      boardingPassAvailableAt: idx(flight, _ => _.ticket_available_at),
+      departure: sanitizeRoute({
+        utc: idx(flight.departure, _ => _.when.utc),
+        local: idx(flight.departure, _ => _.when.local),
+        code: idx(flight.departure, _ => _.where.code),
+        cityName: idx(flight.departure, _ => _.where.name),
+        cityId: idx(flight.departure, _ => _.where.city_id),
+        terminal: idx(flight.departure, _ => _.where.terminal),
+        bid,
+      }),
+      arrival: sanitizeRoute({
+        utc: idx(flight.arrival, _ => _.when.utc),
+        local: idx(flight.arrival, _ => _.when.local),
+        code: idx(flight.arrival, _ => _.where.code),
+        cityName: idx(flight.arrival, _ => _.where.name),
+        cityId: idx(flight.arrival, _ => _.where.city_id),
+        terminal: idx(flight.arrival, _ => _.where.terminal),
+        bid,
+      }),
+      airlineCode: flight.airline.iata,
+      vehicleType: idx(flight, _ => _.vehicle.type),
+      guarantee: flight.guarantee,
+      vehicle: flight.vehicle,
+      operatingAirline: flight.operating_airline,
+      pnr: flight.reservation_number,
     }),
-    arrival: sanitizeRoute({
-      utc: idx(flight.arrival, _ => _.when.utc),
-      local: idx(flight.arrival, _ => _.when.local),
-      code: idx(flight.arrival, _ => _.where.code),
-      cityName: idx(flight.arrival, _ => _.where.name),
-      cityId: idx(flight.arrival, _ => _.where.city_id),
-      terminal: idx(flight.arrival, _ => _.where.terminal),
-      bid,
-    }),
-    airlineCode: flight.airline.iata,
-    vehicleType: idx(flight, _ => _.vehicle.type),
-    guarantee: flight.guarantee,
-    vehicle: flight.vehicle,
-    operatingAirline: flight.operating_airline,
-    pnr: flight.reservation_number,
-  }));
+  );
   const lastLeg = legs[legs.length - 1];
   const firstLeg = legs[0];
   const type = detectType(apiData);

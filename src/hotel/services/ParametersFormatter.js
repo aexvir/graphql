@@ -107,11 +107,11 @@ export function prepareRoomsRequestParameters(
 ) {
   return Object.assign(
     {},
-    ...formatRoomsConfigurationForAPI(
-      roomsConfiguration,
-    ).map((configuration, index) => ({
-      [`room${index + 1}`]: configuration,
-    })),
+    ...formatRoomsConfigurationForAPI(roomsConfiguration).map(
+      (configuration, index) => ({
+        [`room${index + 1}`]: configuration,
+      }),
+    ),
   );
 }
 

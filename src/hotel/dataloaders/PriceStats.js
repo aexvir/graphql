@@ -50,10 +50,12 @@ const PriceStats = async (
   return response.result.map(hotel => Math.round(hotel.price / nights));
 };
 
-export default new DataLoader(async (keys): Promise<Array<number>> => {
-  return Promise.all(
-    keys.map(({ searchParams, boundary }) =>
-      PriceStats(searchParams, boundary),
-    ),
-  );
-});
+export default new DataLoader(
+  async (keys): Promise<Array<number>> => {
+    return Promise.all(
+      keys.map(({ searchParams, boundary }) =>
+        PriceStats(searchParams, boundary),
+      ),
+    );
+  },
+);
