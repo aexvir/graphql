@@ -10,6 +10,7 @@ import type {
   BoardingPass,
   Pkpass,
   Passenger,
+  InsurancePrice,
 } from '../Booking';
 import type { Leg } from '../../flight/Flight';
 import type { TripData } from '../types/outputs/Trip';
@@ -162,6 +163,10 @@ export function sanitizeDetail(apiData: Object): Booking {
     contactDetails: sanitizeContactDetails(apiData.contact),
     allowedToChangeFlights,
     onlineCheckinIsAvailable,
+    insurancePrices: parseInsurancePrices(
+      apiData.insurance_price,
+      apiData.currency,
+    ),
   };
 }
 
@@ -346,4 +351,19 @@ function detectType(apiData): BookingType {
   }
 
   return 'BookingOneWay';
+}
+
+function parseInsurancePrices(insurancePrice, currency): InsurancePrice[] {
+  const types = Object.keys(insurancePrice);
+
+  return types
+    .filter(type => type === 'travel_plus' || type === 'travel_basic')
+    .map(type => ({
+      type,
+      price: {
+        amount: insurancePrice[type],
+        currency,
+      },
+    }))
+    .concat({ type: 'none', price: null });
 }

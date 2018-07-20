@@ -262,6 +262,12 @@
     "id": "D",
     "time": 240
   },
+  "insurance_price": {
+    "skygold": 42.89,
+    "skysilver": 21.89,
+    "travel_basic": 21.89,
+    "travel_plus": 42.89
+  },
   "max_bags": null,
   "netverify_requested": null,
   "original_currency": "CZK",

@@ -3,7 +3,6 @@
 import {
   GraphQLObjectType,
   GraphQLString,
-  GraphQLEnumType,
   GraphQLInt,
   GraphQLList,
 } from 'graphql';
@@ -13,16 +12,7 @@ import { uniq } from 'ramda';
 import type { Passenger } from '../../Booking';
 import GraphQLVisa from './Visa';
 import GraphQLPkpass from './Pkpass';
-
-const InsuranceTypeEnum = new GraphQLEnumType({
-  name: 'InsuranceType',
-  description: 'The possible insurance type values',
-  values: {
-    NONE: { value: 'none' },
-    TRAVEL_BASIC: { value: 'travel_basic' },
-    TRAVEL_PLUS: { value: 'travel_plus' },
-  },
-});
+import InsuranceTypeEnum from './InsuranceTypeEnum';
 
 const TravelDocumentType = new GraphQLObjectType({
   name: 'TravelDocument',

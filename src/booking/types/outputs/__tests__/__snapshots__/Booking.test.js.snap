@@ -126,6 +126,13 @@ Object {
     "resolve": [Function],
     "type": "ID!",
   },
+  "insurancePrices": Object {
+    "args": Array [],
+    "isDeprecated": false,
+    "name": "insurancePrices",
+    "resolve": [Function],
+    "type": "[InsurancePrice]",
+  },
   "isPastBooking": Object {
     "args": Array [],
     "isDeprecated": false,

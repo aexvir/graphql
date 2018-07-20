@@ -345,6 +345,26 @@ The max. stay is granted within 180 days.
     },
   },
   "id": 2968389,
+  "insurancePrices": Array [
+    Object {
+      "price": Object {
+        "amount": 29.32,
+        "currency": "EUR",
+      },
+      "type": "travel_plus",
+    },
+    Object {
+      "price": Object {
+        "amount": 13.32,
+        "currency": "EUR",
+      },
+      "type": "travel_basic",
+    },
+    Object {
+      "price": null,
+      "type": "none",
+    },
+  ],
   "legs": Array [
     Object {
       "airlineCode": "LO",

@@ -16,6 +16,7 @@ import type { GraphqlContextType } from '../../../common/services/GraphqlContext
 import type { BookingAssets, BookingsItem } from '../../Booking';
 import type { AllowedBaggage } from '../../Baggage';
 import GraphQLAllowedBaggage from './AllowedBaggage';
+import GraphQLInsurancePrice from './InsurancePrice';
 import GraphQLBookingAssets from './BookingAssets';
 import GraphQLBookingStatus from '../enums/BookingStatus';
 import Price from '../../../common/types/outputs/Price';
@@ -246,6 +247,18 @@ export const commonFields = {
     ) => {
       const { onlineCheckinIsAvailable } = await dataLoader.booking.load(id);
       return onlineCheckinIsAvailable;
+    },
+  },
+
+  insurancePrices: {
+    type: new GraphQLList(GraphQLInsurancePrice),
+    resolve: async (
+      { id }: BookingInterfaceData,
+      args: Object,
+      { dataLoader }: GraphqlContextType,
+    ) => {
+      const { insurancePrices } = await dataLoader.booking.load(id);
+      return insurancePrices;
     },
   },
 };

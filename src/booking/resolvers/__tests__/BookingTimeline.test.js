@@ -589,6 +589,22 @@ const booking: Booking = {
   },
   allowedToChangeFlights: 48,
   onlineCheckinIsAvailable: true,
+  insurancePrices: [
+    {
+      type: 'travel_basic',
+      price: {
+        amount: 49.2,
+        currency: 'EUR',
+      },
+    },
+    {
+      type: 'travel_plus',
+      price: {
+        amount: 120.95,
+        currency: 'EUR',
+      },
+    },
+  ],
 };
 
 const leg: Leg = {

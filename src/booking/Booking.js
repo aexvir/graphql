@@ -86,6 +86,7 @@ export type Booking = BookingsItem & {
   contactDetails: ContactDetails,
   allowedToChangeFlights: ?number,
   onlineCheckinIsAvailable: boolean,
+  insurancePrices: InsurancePrice[],
 };
 
 export type BoardingPass = {|
@@ -102,3 +103,8 @@ export type BookingAssets = {
   boardingPasses: BoardingPass[],
   legs: Leg[],
 };
+
+export type InsurancePrice = {|
+  +type: 'travel_basic' | 'travel_plus' | 'none',
+  +price: Price | null,
+|};
