@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`allDocuments query should return allDocuments documents 1`] = `
+Object {
+  "data": Object {
+    "allDocuments": Object {
+      "edges": Array [
+        Object {
+          "node": Object {
+            "__typename": "InsuranceTerms",
+            "url": "https://s3-eu-west-1.amazonaws.com/skypicker-pdf/insurance/VPPCP-Kiwi.com_ENG-CZE.pdf",
+          },
+        },
+      ],
+    },
+  },
+}
+`;

@@ -22,6 +22,8 @@ import TimelineEvent, {
   TimeToCheckinTimelineEvent,
   CheckinClosingTimelineEvent,
 } from './booking/types/outputs/BookingTimelineEvent';
+import DocumentInterface from './documents/types/outputs/DocumentInterface';
+import InsuranceTerms from './documents/types/outputs/InsuranceTerms';
 
 export default new GraphQLSchema({
   query: RootQuery,
@@ -45,5 +47,7 @@ export default new GraphQLSchema({
     TimeToCheckinTimelineEvent,
     CheckinClosingTimelineEvent,
     TimelineEvent,
+    InsuranceTerms,
+    DocumentInterface,
   ],
 });

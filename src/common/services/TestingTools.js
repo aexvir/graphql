@@ -68,8 +68,15 @@ export class BookingComApiMock {
 export const graphql = async (
   query: string,
   variables: ?Object,
+  acceptLanguage: ?string,
 ): Promise<Object> =>
-  originalGraphQL(schema, query, null, createContext('test_token'), variables);
+  originalGraphQL(
+    schema,
+    query,
+    null,
+    createContext('test_token', acceptLanguage),
+    variables,
+  );
 
 export const validate = (query: string) => {
   return originalValidate(

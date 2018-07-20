@@ -27,6 +27,7 @@ import BookingTimeline from './booking/queries/BookingTimeline';
 import { nodeField } from './node/node';
 import AirHelpPlusOffer from './bookingAncillaries/queries/AirHelpPlusOffer';
 import SingleBooking from './booking/queries/SingleBooking';
+import AllDocuments from './documents/queries/AllDocuments';
 
 export default new GraphQLObjectType({
   name: 'RootQuery',
@@ -35,6 +36,7 @@ export default new GraphQLObjectType({
     airHelpPlusOffer: AirHelpPlusOffer,
     allAvailableHotels: AllAvailableHotels,
     allBookings: AllBookings,
+    allDocuments: AllDocuments,
     allDynamicPackages: AllDynamicPackages,
     allFAQCategories: AllFAQCategories,
     allFAQs: AllFAQs,

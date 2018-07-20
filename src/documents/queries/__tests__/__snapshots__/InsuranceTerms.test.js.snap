@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`insuranceTerms query should return insuranceTerms documents 1`] = `
+Object {
+  "data": Object {
+    "allDocuments": Object {
+      "edges": Array [
+        Object {
+          "node": Object {
+            "__typename": "InsuranceTerms",
+            "url": "https://s3-eu-west-1.amazonaws.com/skypicker-pdf/insurance/VPPCP-Kiwi.com_ENG-CZE.pdf",
+          },
+        },
+      ],
+    },
+  },
+}
+`;
+
+exports[`insuranceTerms query with cs locale should return insuranceTerms documents for cs locale 1`] = `
+Object {
+  "data": Object {
+    "allDocuments": Object {
+      "edges": Array [
+        Object {
+          "node": Object {
+            "__typename": "InsuranceTerms",
+            "url": "https://s3-eu-west-1.amazonaws.com/skypicker-pdf/insurance/VPPCP-Kiwi.com_CZE-ENG.pdf",
+          },
+        },
+      ],
+    },
+  },
+}
+`;
