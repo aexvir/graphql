@@ -5,7 +5,7 @@ import { graphql } from '../../../common/services/TestingTools';
 describe('airHelpPlusOffer query', () => {
   it('should work', async () => {
     const resultsQuery = `{
-      airHelpPlusOffer(bookingId: "abc123") {
+      airHelpPlusOffer {
         isPossible
         pricePerPerson {
           amount
