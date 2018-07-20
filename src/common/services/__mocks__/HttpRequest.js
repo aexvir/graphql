@@ -30,11 +30,27 @@ export async function post(absoluteApiUrl: string): Promise<Object> {
   throw new Error(`Data mock not found for path: ${absoluteApiUrl}`);
 }
 
+export async function patch(absoluteApiUrl: string): Promise<Object> {
+  const mockResponse = stackOfMockResponses.PATCH[absoluteApiUrl];
+  if (mockResponse !== undefined) {
+    return Promise.resolve(mockResponse);
+  }
+
+  const patterns = Object.keys(stackOfMockResponses.PATCH);
+  const mockResponseRegex = matchRegex(absoluteApiUrl, patterns);
+  if (mockResponseRegex !== undefined) {
+    return Promise.resolve(stackOfMockResponses.PATCH[mockResponseRegex]);
+  }
+
+  throw new Error(`Data mock not found for path: ${absoluteApiUrl}`);
+}
+
 const stackOfMockResponses: {
   [string]: Object,
 } = {
   POST: {},
   GET: {},
+  PATCH: {},
 };
 
 export function __setMockData(

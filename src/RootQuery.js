@@ -32,6 +32,7 @@ export default new GraphQLObjectType({
   name: 'RootQuery',
   description: 'Root Query',
   fields: {
+    airHelpPlusOffer: AirHelpPlusOffer,
     allAvailableHotels: AllAvailableHotels,
     allBookings: AllBookings,
     allDynamicPackages: AllDynamicPackages,
@@ -42,6 +43,7 @@ export default new GraphQLObjectType({
     allSubLocations: AllSubLocations,
     availableHotel: AvailableHotel,
     booking: Booking,
+    bookingTimeline: BookingTimeline,
     currencies: Currencies,
     currency: Currency,
     currentUser: CurrentUser,
@@ -53,9 +55,7 @@ export default new GraphQLObjectType({
     hotelCities: HotelCities,
     location: Location,
     nearestBooking: NearestBooking,
-    bookingTimeline: BookingTimeline,
     node: nodeField,
-    airHelpPlusOffer: AirHelpPlusOffer,
     singleBooking: SingleBooking,
   },
 });

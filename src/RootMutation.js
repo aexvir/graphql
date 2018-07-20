@@ -5,6 +5,7 @@ import { GraphQLObjectType } from 'graphql';
 import Login from './identity/mutations/Login';
 import ResetPassword from './identity/mutations/ResetPassword';
 import addFAQArticleComment from './FAQ/mutations/addFAQArticleComment';
+import UpdatePassenger from './booking/mutations/UpdatePassenger';
 
 export default new GraphQLObjectType({
   name: 'RootMutation',
@@ -13,5 +14,6 @@ export default new GraphQLObjectType({
     addFAQArticleComment,
     login: Login,
     resetPassword: ResetPassword,
+    updatePassenger: UpdatePassenger,
   },
 });

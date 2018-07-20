@@ -20,7 +20,7 @@ class MockResponse {
   absoluteUrl: string;
   httpMethod: string;
 
-  constructor(httpMethod: 'GET' | 'POST', absoluteUrl: string) {
+  constructor(httpMethod: 'GET' | 'POST' | 'PATCH', absoluteUrl: string) {
     this.httpMethod = httpMethod;
     this.absoluteUrl = absoluteUrl;
   }
@@ -53,6 +53,9 @@ export class RestApiMock {
 
   static onPost(absoluteUrl: string) {
     return new MockResponse('POST', absoluteUrl);
+  }
+  static onPatch(absoluteUrl: string) {
+    return new MockResponse('PATCH', absoluteUrl);
   }
 }
 

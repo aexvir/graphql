@@ -14,6 +14,33 @@
         "description": "Root Query",
         "fields": [
           {
+            "name": "airHelpPlusOffer",
+            "description": "AirHelp+ offer that can be purchased with booking",
+            "args": [
+              {
+                "name": "bookingId",
+                "description": null,
+                "type": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  }
+                },
+                "defaultValue": null
+              }
+            ],
+            "type": {
+              "kind": "OBJECT",
+              "name": "AirHelpPlusOffer",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "allAvailableHotels",
             "description": "Search for all available hotels in one location. It's necessary to send checkin and checkout dates as well as rooms configuration to get availability info.",
             "args": [
@@ -698,6 +725,33 @@
             "deprecationReason": "Use \"node\" query instead."
           },
           {
+            "name": "bookingTimeline",
+            "description": "Get the timeline for your booking.",
+            "args": [
+              {
+                "name": "id",
+                "description": "Only Booking id can be used as ID.",
+                "type": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "SCALAR",
+                    "name": "ID",
+                    "ofType": null
+                  }
+                },
+                "defaultValue": null
+              }
+            ],
+            "type": {
+              "kind": "OBJECT",
+              "name": "BookingTimeline",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "currencies",
             "description": "Currencies used on Kiwi.com frontend",
             "args": [
@@ -1103,33 +1157,6 @@
             "deprecationReason": null
           },
           {
-            "name": "bookingTimeline",
-            "description": "Get the timeline for your booking.",
-            "args": [
-              {
-                "name": "id",
-                "description": "Only Booking id can be used as ID.",
-                "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "ID",
-                    "ofType": null
-                  }
-                },
-                "defaultValue": null
-              }
-            ],
-            "type": {
-              "kind": "OBJECT",
-              "name": "BookingTimeline",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "node",
             "description": "Fetches an object given its ID",
             "args": [
@@ -1151,33 +1178,6 @@
             "type": {
               "kind": "INTERFACE",
               "name": "Node",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "airHelpPlusOffer",
-            "description": "AirHelp+ offer that can be purchased with booking",
-            "args": [
-              {
-                "name": "bookingId",
-                "description": null,
-                "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  }
-                },
-                "defaultValue": null
-              }
-            ],
-            "type": {
-              "kind": "OBJECT",
-              "name": "AirHelpPlusOffer",
               "ofType": null
             },
             "isDeprecated": false,
@@ -1227,6 +1227,106 @@
         ],
         "inputFields": null,
         "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "SCALAR",
+        "name": "String",
+        "description": "The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.",
+        "fields": null,
+        "inputFields": null,
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "AirHelpPlusOffer",
+        "description": "AirHelp+ offer as a booking ancillary",
+        "fields": [
+          {
+            "name": "isPossible",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "pricePerPerson",
+            "description": "Price per passenger",
+            "args": [],
+            "type": {
+              "kind": "OBJECT",
+              "name": "Price",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "SCALAR",
+        "name": "Boolean",
+        "description": "The `Boolean` scalar type represents `true` or `false`.",
+        "fields": null,
+        "inputFields": null,
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "Price",
+        "description": null,
+        "fields": [
+          {
+            "name": "amount",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Float",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "currency",
+            "description": "An ISO-4217 currency code.",
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "SCALAR",
+        "name": "Float",
+        "description": "The `Float` scalar type represents signed double-precision fractional values as specified by [IEEE 754](http://en.wikipedia.org/wiki/IEEE_floating_point). ",
+        "fields": null,
+        "inputFields": null,
+        "interfaces": null,
         "enumValues": null,
         "possibleTypes": null
       },
@@ -1327,26 +1427,6 @@
             "defaultValue": null
           }
         ],
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "SCALAR",
-        "name": "Float",
-        "description": "The `Float` scalar type represents signed double-precision fractional values as specified by [IEEE 754](http://en.wikipedia.org/wiki/IEEE_floating_point). ",
-        "fields": null,
-        "inputFields": null,
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "SCALAR",
-        "name": "String",
-        "description": "The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.",
-        "fields": null,
-        "inputFields": null,
         "interfaces": null,
         "enumValues": null,
         "possibleTypes": null
@@ -1910,16 +1990,6 @@
             "defaultValue": null
           }
         ],
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "SCALAR",
-        "name": "Boolean",
-        "description": "The `Boolean` scalar type represents `true` or `false`.",
-        "fields": null,
-        "inputFields": null,
         "interfaces": null,
         "enumValues": null,
         "possibleTypes": null
@@ -3241,41 +3311,6 @@
         "fields": null,
         "inputFields": null,
         "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "OBJECT",
-        "name": "Price",
-        "description": null,
-        "fields": [
-          {
-            "name": "amount",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "Float",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "currency",
-            "description": "An ISO-4217 currency code.",
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "String",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          }
-        ],
-        "inputFields": null,
-        "interfaces": [],
         "enumValues": null,
         "possibleTypes": null
       },
@@ -10452,6 +10487,142 @@
       },
       {
         "kind": "OBJECT",
+        "name": "BookingTimeline",
+        "description": null,
+        "fields": [
+          {
+            "name": "events",
+            "description": "List of events of the Bookingtimeline",
+            "args": [],
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "INTERFACE",
+                "name": "TimelineEvent",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INTERFACE",
+        "name": "TimelineEvent",
+        "description": null,
+        "fields": [
+          {
+            "name": "timestamp",
+            "description": "Time of appearance in the timeline.",
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "DateTime",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": [
+          {
+            "kind": "OBJECT",
+            "name": "BookedFlightTimelineEvent",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
+            "name": "BookingConfirmedTimelineEvent",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
+            "name": "PaymentConfirmedTimelineEvent",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
+            "name": "DownloadInvoiceTimelineEvent",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
+            "name": "DownloadETicketTimelineEvent",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
+            "name": "DownloadBoardingPassTimelineEvent",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
+            "name": "LeaveForAirportTimelineEvent",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
+            "name": "AirportArrivalTimelineEvent",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
+            "name": "BoardingTimelineEvent",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
+            "name": "DepartureTimelineEvent",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
+            "name": "ArrivalTimelineEvent",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
+            "name": "TransportFromAirportTimelineEvent",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
+            "name": "NoMoreEditsTimelineEvent",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
+            "name": "EnterDetailsTimelineEvent",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
+            "name": "NavigateToTerminalTimelineEvent",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
+            "name": "TimeToCheckinTimelineEvent",
+            "ofType": null
+          },
+          {
+            "kind": "OBJECT",
+            "name": "CheckinClosingTimelineEvent",
+            "ofType": null
+          }
+        ]
+      },
+      {
+        "kind": "OBJECT",
         "name": "CurrencyDetailConnection",
         "description": "A connection to a list of items.",
         "fields": [
@@ -11073,177 +11244,6 @@
       },
       {
         "kind": "OBJECT",
-        "name": "BookingTimeline",
-        "description": null,
-        "fields": [
-          {
-            "name": "events",
-            "description": "List of events of the Bookingtimeline",
-            "args": [],
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "INTERFACE",
-                "name": "TimelineEvent",
-                "ofType": null
-              }
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          }
-        ],
-        "inputFields": null,
-        "interfaces": [],
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "INTERFACE",
-        "name": "TimelineEvent",
-        "description": null,
-        "fields": [
-          {
-            "name": "timestamp",
-            "description": "Time of appearance in the timeline.",
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "DateTime",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          }
-        ],
-        "inputFields": null,
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": [
-          {
-            "kind": "OBJECT",
-            "name": "BookedFlightTimelineEvent",
-            "ofType": null
-          },
-          {
-            "kind": "OBJECT",
-            "name": "BookingConfirmedTimelineEvent",
-            "ofType": null
-          },
-          {
-            "kind": "OBJECT",
-            "name": "PaymentConfirmedTimelineEvent",
-            "ofType": null
-          },
-          {
-            "kind": "OBJECT",
-            "name": "DownloadInvoiceTimelineEvent",
-            "ofType": null
-          },
-          {
-            "kind": "OBJECT",
-            "name": "DownloadETicketTimelineEvent",
-            "ofType": null
-          },
-          {
-            "kind": "OBJECT",
-            "name": "DownloadBoardingPassTimelineEvent",
-            "ofType": null
-          },
-          {
-            "kind": "OBJECT",
-            "name": "LeaveForAirportTimelineEvent",
-            "ofType": null
-          },
-          {
-            "kind": "OBJECT",
-            "name": "AirportArrivalTimelineEvent",
-            "ofType": null
-          },
-          {
-            "kind": "OBJECT",
-            "name": "BoardingTimelineEvent",
-            "ofType": null
-          },
-          {
-            "kind": "OBJECT",
-            "name": "DepartureTimelineEvent",
-            "ofType": null
-          },
-          {
-            "kind": "OBJECT",
-            "name": "ArrivalTimelineEvent",
-            "ofType": null
-          },
-          {
-            "kind": "OBJECT",
-            "name": "TransportFromAirportTimelineEvent",
-            "ofType": null
-          },
-          {
-            "kind": "OBJECT",
-            "name": "NoMoreEditsTimelineEvent",
-            "ofType": null
-          },
-          {
-            "kind": "OBJECT",
-            "name": "EnterDetailsTimelineEvent",
-            "ofType": null
-          },
-          {
-            "kind": "OBJECT",
-            "name": "NavigateToTerminalTimelineEvent",
-            "ofType": null
-          },
-          {
-            "kind": "OBJECT",
-            "name": "TimeToCheckinTimelineEvent",
-            "ofType": null
-          },
-          {
-            "kind": "OBJECT",
-            "name": "CheckinClosingTimelineEvent",
-            "ofType": null
-          }
-        ]
-      },
-      {
-        "kind": "OBJECT",
-        "name": "AirHelpPlusOffer",
-        "description": "AirHelp+ offer as a booking ancillary",
-        "fields": [
-          {
-            "name": "isPossible",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "pricePerPerson",
-            "description": "Price per passenger",
-            "args": [],
-            "type": {
-              "kind": "OBJECT",
-              "name": "Price",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          }
-        ],
-        "inputFields": null,
-        "interfaces": [],
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "OBJECT",
         "name": "RootMutation",
         "description": "Root Mutation.",
         "fields": [
@@ -11369,6 +11369,65 @@
             },
             "isDeprecated": false,
             "deprecationReason": null
+          },
+          {
+            "name": "updatePassenger",
+            "description": null,
+            "args": [
+              {
+                "name": "id",
+                "description": "The global booking id",
+                "type": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "SCALAR",
+                    "name": "ID",
+                    "ofType": null
+                  }
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "simpleToken",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "String",
+                  "ofType": null
+                },
+                "defaultValue": null
+              },
+              {
+                "name": "passengers",
+                "description": null,
+                "type": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "LIST",
+                    "name": null,
+                    "ofType": {
+                      "kind": "NON_NULL",
+                      "name": null,
+                      "ofType": {
+                        "kind": "INPUT_OBJECT",
+                        "name": "PassengerInput",
+                        "ofType": null
+                      }
+                    }
+                  }
+                },
+                "defaultValue": null
+              }
+            ],
+            "type": {
+              "kind": "OBJECT",
+              "name": "UpdatePassenger",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
           }
         ],
         "inputFields": null,
@@ -11467,6 +11526,82 @@
       {
         "kind": "OBJECT",
         "name": "ResetPasswordResponse",
+        "description": null,
+        "fields": [
+          {
+            "name": "success",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "INPUT_OBJECT",
+        "name": "PassengerInput",
+        "description": null,
+        "fields": null,
+        "inputFields": [
+          {
+            "name": "passengerId",
+            "description": null,
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Int",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "documentExpiry",
+            "description": "Expiry date of travel document",
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Date",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "documentNumber",
+            "description": "Number of travel document",
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          }
+        ],
+        "interfaces": null,
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "UpdatePassenger",
         "description": null,
         "fields": [
           {
