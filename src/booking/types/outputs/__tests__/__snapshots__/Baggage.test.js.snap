@@ -7,7 +7,7 @@ Object {
     "isDeprecated": false,
     "name": "category",
     "resolve": [Function],
-    "type": "String",
+    "type": "BaggageCategory",
   },
   "dimensionSum": Object {
     "args": Array [],
