@@ -4,6 +4,7 @@ import url from 'url';
 
 export default {
   restApiEndpoint: {
+    // DEPRECATED - setting the urls for REST API here is discouraged
     allBookings:
       'https://booking-api.skypicker.com/api/v0.1/users/self/bookings',
     singleBooking: (bookingId: number, simpleToken: string) =>
@@ -27,10 +28,6 @@ export default {
         queryParameters,
       ),
     rates: 'https://api.skypicker.com/rates',
-    bags: (bookingId: number) =>
-      queryWithParameters(
-        `https://booking-api.skypicker.com/mmb/v1/bookings/${bookingId}/bags`,
-      ),
   },
   auth: {
     basicToken: String(process.env.AUTH_BASIC_TOKEN),

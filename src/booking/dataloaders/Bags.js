@@ -1,7 +1,6 @@
 // @flow
 
 import DataLoader from 'dataloader';
-import Config from '../../../config/application';
 
 import { get } from '../../common/services/HttpRequest';
 import sanitizeBaggageData from './BagApiSanitizer';
@@ -18,8 +17,12 @@ const batchLoad = (
     Promise.all(ids.map(id => load(id, accessToken || '')));
 };
 
-const load = async (id: number, authToken: string): Promise<BagArray> => {
-  const data = await get(Config.restApiEndpoint.bags(id), undefined, {
+const load = async (
+  bookingId: number,
+  authToken: string,
+): Promise<BagArray> => {
+  const url = `https://booking-api.skypicker.com/mmb/v1/bookings/${bookingId}/bags`;
+  const data = await get(url, undefined, {
     'KW-User-Token': authToken,
     authorization: '213321213',
   });
