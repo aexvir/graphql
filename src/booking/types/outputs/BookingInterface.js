@@ -71,11 +71,14 @@ export const commonFields = {
   allowedBaggage: {
     type: GraphQLAllowedBaggage,
     resolve: async (
-      { id }: BookingInterfaceData,
+      { id, authToken }: BookingInterfaceData,
       params: Object,
       { dataLoader }: GraphqlContextType,
     ): Promise<AllowedBaggage> => {
-      const { allowedBaggage } = await dataLoader.booking.load(id);
+      const { allowedBaggage } = await dataLoader.singleBooking.load({
+        id,
+        authToken,
+      });
       return allowedBaggage;
     },
   },
@@ -84,11 +87,14 @@ export const commonFields = {
     type: GraphQLBookingAssets,
     description: 'Static assets related to this booking.',
     resolve: async (
-      { id }: BookingInterfaceData,
+      { id, authToken }: BookingInterfaceData,
       params: Object,
       { dataLoader }: GraphqlContextType,
     ): Promise<BookingAssets> => {
-      const { assets } = await dataLoader.booking.load(id);
+      const { assets } = await dataLoader.singleBooking.load({
+        id,
+        authToken,
+      });
       return assets;
     },
   },
@@ -96,11 +102,14 @@ export const commonFields = {
   passengers: {
     type: new GraphQLList(Passenger),
     resolve: async (
-      { id }: BookingInterfaceData,
+      { id, authToken }: BookingInterfaceData,
       args: Object,
       { dataLoader }: GraphqlContextType,
     ) => {
-      const { passengers } = await dataLoader.booking.load(id);
+      const { passengers } = await dataLoader.singleBooking.load({
+        id,
+        authToken,
+      });
       return passengers;
     },
   },
@@ -196,11 +205,14 @@ export const commonFields = {
   bookedServices: {
     type: new GraphQLList(GraphQLBookedServices),
     resolve: async (
-      { id }: BookingInterfaceData,
+      { id, authToken }: BookingInterfaceData,
       args: Object,
       { dataLoader }: GraphqlContextType,
     ) => {
-      const { bookedServices } = await dataLoader.booking.load(id);
+      const { bookedServices } = await dataLoader.singleBooking.load({
+        id,
+        authToken,
+      });
       return bookedServices;
     },
   },
@@ -208,11 +220,14 @@ export const commonFields = {
   contactDetails: {
     type: GraphQLContactDetails,
     resolve: async (
-      { id }: BookingInterfaceData,
+      { id, authToken }: BookingInterfaceData,
       args: Object,
       { dataLoader }: GraphqlContextType,
     ) => {
-      const { contactDetails } = await dataLoader.booking.load(id);
+      const { contactDetails } = await dataLoader.singleBooking.load({
+        id,
+        authToken,
+      });
       return contactDetails;
     },
   },
@@ -241,11 +256,14 @@ export const commonFields = {
   onlineCheckinIsAvailable: {
     type: GraphQLBoolean,
     resolve: async (
-      { id }: BookingInterfaceData,
+      { id, authToken }: BookingInterfaceData,
       args: Object,
       { dataLoader }: GraphqlContextType,
     ) => {
-      const { onlineCheckinIsAvailable } = await dataLoader.booking.load(id);
+      const { onlineCheckinIsAvailable } = await dataLoader.singleBooking.load({
+        id,
+        authToken,
+      });
       return onlineCheckinIsAvailable;
     },
   },

@@ -1233,15 +1233,15 @@
                   "name": null,
                   "ofType": {
                     "kind": "SCALAR",
-                    "name": "ID",
+                    "name": "Int",
                     "ofType": null
                   }
                 },
                 "defaultValue": null
               },
               {
-                "name": "simpleToken",
-                "description": "Simple Token that lets you fetch a unique booking.",
+                "name": "authToken",
+                "description": "Simple auth token that lets you fetch a unique booking.",
                 "type": {
                   "kind": "NON_NULL",
                   "name": null,
@@ -1255,8 +1255,8 @@
               }
             ],
             "type": {
-              "kind": "OBJECT",
-              "name": "Booking",
+              "kind": "INTERFACE",
+              "name": "BookingInterface",
               "ofType": null
             },
             "isDeprecated": false,
