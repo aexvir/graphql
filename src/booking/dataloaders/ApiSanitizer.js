@@ -9,6 +9,7 @@ import type {
   BookingType,
   BoardingPass,
   Pkpass,
+  Passenger,
 } from '../Booking';
 import type { Leg } from '../../flight/Flight';
 import type { TripData } from '../types/outputs/Trip';
@@ -151,6 +152,7 @@ export function sanitizeDetail(apiData: Object): Booking {
       boardingPasses: sanitizeBoardingPasses(
         idx(apiData, _ => _.assets.boarding_passes),
         common.legs,
+        common.passengers,
       ),
       legs: common.legs,
     },
@@ -166,6 +168,7 @@ export function sanitizeDetail(apiData: Object): Booking {
 function sanitizeBoardingPasses(
   boardingPasses: ?{ [string]: Object },
   legs: Leg[],
+  passengers: $ReadOnlyArray<Passenger>,
 ): BoardingPass[] {
   if (!boardingPasses) {
     return [];
@@ -173,11 +176,28 @@ function sanitizeBoardingPasses(
 
   return Object.entries(boardingPasses).map(([key, value]) => {
     const leg = legs.find(leg => leg.id === key);
+
     return {
       boardingPassUrl: value,
       flightNumber: key,
       availableAt: idx(leg, _ => _.boardingPassAvailableAt),
       leg,
+      pkpasses: passengers
+        .filter(passenger => {
+          return (
+            passenger.pkpasses !== null &&
+            passenger.pkpasses.find(pass => pass.flightNumber === key)
+          );
+        })
+        .map(passenger => {
+          const pkpasses = idx(passenger, _ => _.pkpasses) || [];
+          const pkpass = pkpasses.find(pass => pass.flightNumber === key) || {};
+          return {
+            flightNumber: key,
+            url: pkpass.url,
+            passenger,
+          };
+        }),
     };
   });
 }

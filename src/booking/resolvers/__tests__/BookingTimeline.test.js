@@ -419,6 +419,7 @@ const booking: Booking = {
         boardingPassUrl: 'https://very.real/pass.pdf',
         flightNumber: '315289498',
         availableAt: '2017-09-02',
+        pkpasses: [],
         leg: {
           id: '315289498',
           bookingId: 2707251,
@@ -470,6 +471,7 @@ const booking: Booking = {
         boardingPassUrl: 'https://very.real/all.pdf',
         flightNumber: 'all',
         availableAt: '2017-09-02',
+        pkpasses: [],
         leg: {
           id: '315289498',
           bookingId: 2707251,

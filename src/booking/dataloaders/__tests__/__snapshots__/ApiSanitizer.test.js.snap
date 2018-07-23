@@ -99,12 +99,66 @@ Object {
           },
           "vehicleType": "aircraft",
         },
+        "pkpasses": Array [
+          Object {
+            "flightNumber": "SP1123103_1678074",
+            "passenger": Object {
+              "birthday": "1985-01-01",
+              "firstname": "TEST",
+              "id": 4492972,
+              "insuranceType": "none",
+              "lastname": "TEST",
+              "nationality": "us",
+              "pkpasses": Array [
+                Object {
+                  "flightNumber": "SP1123103_1678074",
+                  "url": "https://pk.pass.lol",
+                },
+              ],
+              "title": "mr",
+              "travelDocument": Object {
+                "expiration": 1608768000,
+                "idNumber": "12345678XY",
+              },
+              "travelInfo": Array [
+                Object {
+                  "visa": Array [
+                    Object {
+                      "country": "PL",
+                      "info": "<div class=\\"content\\"><p>
+Visa required.  
+</p>
+<h3>The following are exempt from holding a visa:</h3>
+<p>
+Nationals of USA for a maximum stay of 90 days.  
+</p><p>
+The max. stay is granted within 180 days.
+</p>
+
+</div>",
+                      "status": "critical",
+                      "timestamp": 1447264497,
+                    },
+                    Object {
+                      "country": "PL",
+                      "info": "<div class=\\"content\\"><p><b>The passenger is arriving on a domestic or common border area flight and no immigration regulations apply for this segment.  See Entry Requirements for previous segment.</b></p></div>",
+                      "status": "ok",
+                      "timestamp": 1447264497,
+                    },
+                  ],
+                },
+              ],
+            },
+            "url": "https://pk.pass.lol",
+          },
+        ],
       },
       Object {
         "availableAt": undefined,
         "boardingPassUrl": null,
         "flightNumber": "all",
         "leg": undefined,
+        "pkpasses": Array [],
       },
       Object {
         "availableAt": null,
@@ -159,6 +213,7 @@ Object {
           },
           "vehicleType": "aircraft",
         },
+        "pkpasses": Array [],
       },
     ],
     "invoiceUrl": "https://booking.skypicker.com/api/v0.1/get_file/2968389?file_id=337020126&simple_token=b9cb406d-f797-434c-bc21-a0612b92f201",

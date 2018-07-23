@@ -50,6 +50,7 @@ export type TravelInfo = {|
 export type Pkpass = {|
   +flightNumber: string,
   +url: string,
+  +passenger?: Passenger,
 |};
 
 export type Passenger = {|
@@ -92,6 +93,7 @@ export type BoardingPass = {|
   +flightNumber: string,
   +availableAt: ?string,
   +leg: ?Leg,
+  +pkpasses: $ReadOnlyArray<Pkpass>,
 |};
 
 export type BookingAssets = {

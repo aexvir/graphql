@@ -1,8 +1,9 @@
 // @flow
 
-import { GraphQLObjectType, GraphQLString } from 'graphql';
+import { GraphQLObjectType, GraphQLString, GraphQLList } from 'graphql';
 import { GraphQLDate } from 'graphql-iso-date';
 import Leg from '../../../flight/types/outputs/Leg';
+import GraphQLPkpass from './Pkpass';
 
 export default new GraphQLObjectType({
   name: 'BoardingPass',
@@ -26,6 +27,11 @@ export default new GraphQLObjectType({
       description:
         'The date when the boarding pass will be available for download',
       reslove: ({ availableAt }) => availableAt,
+    },
+    pkpasses: {
+      type: new GraphQLList(GraphQLPkpass),
+      description: 'pkpasses connected to the boarding pass',
+      resolve: ({ pkpasses }) => (pkpasses.length === 0 ? null : pkpasses),
     },
   }),
 });

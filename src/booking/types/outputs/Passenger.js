@@ -42,7 +42,7 @@ const TravelDocumentType = new GraphQLObjectType({
 export default new GraphQLObjectType({
   name: 'Passenger',
   description: 'The passengers associated with the booking',
-  fields: {
+  fields: () => ({
     databaseId: {
       type: GraphQLInt,
       resolve: ({ id }: Passenger) => id,
@@ -121,6 +121,7 @@ export default new GraphQLObjectType({
     pkpasses: {
       type: new GraphQLList(GraphQLPkpass),
       description: 'Url needed for apple wallet integration',
+      deprecationReason: 'Use pkpass under boarding pass instead',
     },
-  },
+  }),
 });
