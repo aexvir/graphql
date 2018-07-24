@@ -43,8 +43,6 @@ import type {
   Args as FAQCArticleArgs,
   FAQArticleDetail,
 } from '../../FAQ/dataloaders/FAQArticle';
-import type { SearchParameters as DynamicPackagesSearchParams } from '../../dynamicPackage/dataloaders/DynamicPackages';
-import type { DynamicPackage } from '../../dynamicPackage/dataloaders/DynamicPackageType';
 
 /**
  * FIXME:
@@ -90,7 +88,7 @@ export type GraphqlContextType = {|
     FAQ: DataLoader<FAQArgs, FAQArticleItem[]>,
     FAQCategories: DataLoader<FAQCategoriesArgs, FAQCategoryItem[]>,
     FAQArticle: DataLoader<FAQCArticleArgs, FAQArticleDetail>,
-    dynamicPackages: DataLoader<DynamicPackagesSearchParams, DynamicPackage[]>,
+    dynamicPackages: DynamicPackagesLoader,
   |},
   options: OptionsStorage,
   _traceCollector?: Object,
@@ -150,7 +148,7 @@ export function createContext(
       FAQ: createFAQLoader(locale.language, FAQ_CATEGORY_ID),
       FAQCategories: createFAQCategoryLoader(locale.language, FAQ_CATEGORY_ID),
       FAQArticle: createFAQArticleLoader(locale.language),
-      dynamicPackages: DynamicPackagesLoader,
+      dynamicPackages: new DynamicPackagesLoader(location),
     },
     options: new OptionsStorage(),
   };
