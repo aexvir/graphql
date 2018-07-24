@@ -28,8 +28,7 @@ export default {
     { dataLoader }: GraphqlContextType,
   ) => {
     const results = await dataLoader.FAQCategories.load({
-      // dataloader needs to be called with value => null can't be used as default
-      section: section || 'all',
+      section: section,
     });
 
     return connectionFromArray(results, args);

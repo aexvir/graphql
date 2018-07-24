@@ -21,24 +21,24 @@ export type FAQCategoryItem = $ReadOnly<{
   ancestors: $ReadOnlyArray<FAQCategoryItem>,
 }>;
 
-export type FAQSectionType =
+type FAQSectionType =
   | 'beforeBooking'
   | 'upcomingBooking'
   | 'urgentBooking'
   | 'pastBooking';
 
 export type Args = {|
-  section: FAQSectionType | 'all',
+  section?: FAQSectionType,
 |};
 
-const sectionToCategories: { [FAQSectionType]: number } = {
+export const sectionToCategories: { [FAQSectionType]: number } = {
   beforeBooking: 76,
   upcomingBooking: 77,
   urgentBooking: 78,
   pastBooking: 100,
 };
 
-const listFAQ = async (
+const fetchFAQCategories = async (
   section: FAQSectionType | 'all',
   language: string,
   rootCategoryId: string,
@@ -68,8 +68,12 @@ const batchLoad = async (
   language: string,
   rootCategoryId: string,
 ) => {
-  const promises = args.map(({ section }) =>
-    listFAQ(section, language, rootCategoryId),
+  const promises = args.map(args =>
+    fetchFAQCategories(
+      (args && args.section) || 'all',
+      language,
+      rootCategoryId,
+    ),
   );
 
   return Promise.all(promises);

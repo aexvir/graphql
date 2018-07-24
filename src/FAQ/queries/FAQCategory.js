@@ -7,6 +7,7 @@ import FAQCategory from '../types/outputs/FAQCategory';
 import FAQSection from '../types/enums/FAQSection';
 import type { GraphqlContextType } from '../../common/services/GraphqlContext';
 import type { FAQCategoryItem } from '../dataloaders/FAQCategories';
+import { sectionToCategories } from '../dataloaders/FAQCategories';
 
 const findCategory = (
   categories: $ReadOnlyArray<FAQCategoryItem>,
@@ -30,6 +31,13 @@ const findCategory = (
   return null;
 };
 
+const sectionCategories = new Set(Object.values(sectionToCategories));
+const omitSectionCategories = category => ({
+  ...category,
+  ancestors: category.ancestors.filter(c => !sectionCategories.has(c.id)),
+  subcategories: category.subcategories.map(omitSectionCategories),
+});
+
 export default {
   type: FAQCategory,
   description:
@@ -42,19 +50,18 @@ export default {
     section: {
       type: FAQSection,
       description:
+        'DEPRECATED: Subsection of FAQ is handled automatically now, this has no effect.' +
         'Fetch only subsection of FAQ based on the current situation of customer.',
     },
   },
   resolve: async (
     ancestor: mixed,
-    { id, section }: Object,
+    { id }: Object,
     { dataLoader }: GraphqlContextType,
   ) => {
     const categoryId = Number(fromGlobalId(id).id);
-    const categories = await dataLoader.FAQCategories.load({
-      // dataloader needs to be called with value => null can't be used as default
-      section: section || 'all',
-    });
+    // dataloader needs to be called with value, that's why {}
+    const categories = await dataLoader.FAQCategories.load({});
 
     const category = findCategory(categories, categoryId);
 
@@ -62,6 +69,6 @@ export default {
       throw new Error(`No FAQ category found with ID ${id}`);
     }
 
-    return category;
+    return omitSectionCategories(category);
   },
 };
