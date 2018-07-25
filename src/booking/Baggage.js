@@ -21,9 +21,5 @@ export type Baggage = {
   width: ?number,
   weight: ?number,
   note: ?string,
-  dimensionSum?: number,
   category?: BaggageCategory,
-  isPending?: boolean,
 };
-
-export type BagArray = $ReadOnlyArray<Baggage>;

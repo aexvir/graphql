@@ -4,23 +4,24 @@ import DataLoader from 'dataloader';
 
 import { get } from '../../common/services/HttpRequest';
 import sanitizeBaggageData from './BagApiSanitizer';
-import type { BagArray } from '../../booking/Baggage';
+import type { BookingBaggageData } from '../types/outputs/BookingBaggage';
 
-const batchLoad = (
-  accessToken: ?string,
-): (($ReadOnlyArray<number>) => Promise<Array<BagArray>>) => {
-  if (typeof accessToken !== 'string') {
-    return () => Promise.reject(new Error('Undefined access token'));
-  }
+const batchLoad = (accessToken: ?string, ids: $ReadOnlyArray<number>) => {
+  const promises = ids.map(id => {
+    if (typeof accessToken !== 'string') {
+      throw new Error('Undefined access token');
+    }
 
-  return (ids: $ReadOnlyArray<number>) =>
-    Promise.all(ids.map(id => load(id, accessToken || '')));
+    return load(id, accessToken || '');
+  });
+
+  return Promise.all(promises);
 };
 
 const load = async (
   bookingId: number,
   authToken: string,
-): Promise<BagArray> => {
+): Promise<$ReadOnlyArray<BookingBaggageData>> => {
   const url = `https://booking-api.skypicker.com/mmb/v1/bookings/${bookingId}/bags`;
   const data = await get(url, undefined, {
     'KW-User-Token': authToken,
@@ -32,7 +33,7 @@ const load = async (
 
 export default function createInstance(accessToken: ?string) {
   return new DataLoader(
-    (ids: $ReadOnlyArray<number>) => batchLoad(accessToken)(ids),
+    (ids: $ReadOnlyArray<number>) => batchLoad(accessToken, ids),
     {
       cacheKeyFn: key => parseInt(key, 10),
     },

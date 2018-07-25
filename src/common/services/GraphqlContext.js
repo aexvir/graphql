@@ -30,7 +30,6 @@ import DynamicPackagesLoader from '../../dynamicPackage/dataloaders/DynamicPacka
 
 import type { Booking } from '../../booking/Booking';
 import type { Args as SingleBookingArgs } from '../../booking/dataloaders/SingleBooking';
-import type { BagArray } from '../../booking/Baggage';
 import type { Airline } from '../../flight/Flight';
 import type { CurrencyDetail } from '../../currency/CurrencyDetail';
 import type { HotelType } from '../../hotel/dataloaders/flow/HotelType';
@@ -41,6 +40,7 @@ import type {
   Args as FAQCArticleArgs,
   FAQArticleDetail,
 } from '../../FAQ/dataloaders/FAQArticle';
+import type { BookingBaggageData } from '../../booking/types/outputs/BookingBaggage';
 
 /**
  * FIXME:
@@ -87,7 +87,7 @@ export type GraphqlContextType = {|
     FAQCategories: FAQCategoriesLoader,
     FAQArticle: DataLoader<FAQCArticleArgs, FAQArticleDetail>,
     dynamicPackages: DynamicPackagesLoader,
-    bags: DataLoader<number, BagArray>,
+    bags: DataLoader<number, $ReadOnlyArray<BookingBaggageData>>,
   |},
   options: OptionsStorage,
   _traceCollector?: Object,

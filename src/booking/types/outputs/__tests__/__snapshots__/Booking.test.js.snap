@@ -4,7 +4,8 @@ exports[`Booking type should have valid fields 1`] = `
 Object {
   "allowedBaggage": Object {
     "args": Array [],
-    "isDeprecated": false,
+    "deprecationReason": "Use \\"baggage\\" field instead.",
+    "isDeprecated": true,
     "name": "allowedBaggage",
     "resolve": [Function],
     "type": "AllowedBaggage",
@@ -41,12 +42,12 @@ Object {
     "resolve": [Function],
     "type": "WhitelabeledServices",
   },
-  "bags": Object {
+  "baggage": Object {
     "args": Array [],
     "isDeprecated": false,
-    "name": "bags",
+    "name": "baggage",
     "resolve": [Function],
-    "type": "[Baggage]",
+    "type": "[BookingBaggage]",
   },
   "bookedServices": Object {
     "args": Array [],

@@ -9,27 +9,12 @@ Object {
     "resolve": [Function],
     "type": "BaggageCategory",
   },
-  "dimensionSum": Object {
-    "args": Array [],
-    "description": "Maximum allowed sum of weight, length and width",
-    "isDeprecated": false,
-    "name": "dimensionSum",
-    "resolve": [Function],
-    "type": "Int",
-  },
   "height": Object {
     "args": Array [],
     "isDeprecated": false,
     "name": "height",
     "resolve": [Function],
     "type": "Int",
-  },
-  "isPending": Object {
-    "args": Array [],
-    "isDeprecated": false,
-    "name": "isPending",
-    "resolve": [Function],
-    "type": "Boolean",
   },
   "length": Object {
     "args": Array [],

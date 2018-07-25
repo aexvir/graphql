@@ -1,6 +1,7 @@
 // @flow
 
-import type { BagArray } from '../../booking/Baggage';
+import type { BaggageCategory } from '../Baggage';
+import type { BookingBaggageData } from '../types/outputs/BookingBaggage';
 
 type BaggageDataItem = {
   bag: $ReadOnly<{|
@@ -9,7 +10,14 @@ type BaggageDataItem = {
     weight: number,
     width: number,
     note?: string,
+    category: BaggageCategory,
   |}>,
+  +booking_id: number,
+  +flight_id: number,
+  +passenger_id: number,
+  +index: number,
+  +price: number,
+  +currency: string,
 };
 
 type BaggageData = {|
@@ -17,18 +25,45 @@ type BaggageData = {|
   pending_baggage: [BaggageDataItem],
 |};
 
-const setPending = (isPending: boolean) => (baggage: BaggageDataItem) => ({
-  ...baggage,
-  isPending,
-});
+const baggageByCategory = (
+  baggages: Map<BaggageCategory, BookingBaggageData>,
+  baggage: BaggageDataItem,
+) => {
+  const category = baggage.bag.category;
+  const prevBaggage = baggages.get(category);
 
-const sanitizeBaggageData = (data: BaggageData): BagArray =>
-  []
-    .concat(data.baggage.map(setPending(false)))
-    .concat(data.pending_baggage.map(setPending(true)))
-    .map(baggage => ({
-      ...baggage.bag,
-      isPending: baggage.isPending,
-    }));
+  if (prevBaggage) {
+    return baggages.set(category, {
+      ...prevBaggage,
+      quantity: prevBaggage.quantity + 1,
+      passengers: [...prevBaggage.passengers, baggage.passenger_id],
+    });
+  }
+
+  return baggages.set(category, {
+    quantity: 1,
+    passengers: [baggage.passenger_id],
+    bag: baggage.bag,
+    bookingId: baggage.booking_id,
+  });
+};
+
+const sanitizeBaggageData = (
+  data: BaggageData,
+): $ReadOnlyArray<BookingBaggageData> => {
+  const bags = [].concat(data.baggage).concat(data.pending_baggage);
+
+  if (!bags.length) {
+    return [];
+  }
+
+  const sampleLegId = bags[0].flight_id;
+  const baggage = bags
+    .filter(baggage => baggage.flight_id === sampleLegId)
+    .reduce(baggageByCategory, new Map())
+    .values();
+
+  return Array.from(baggage);
+};
 
 export default sanitizeBaggageData;

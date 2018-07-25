@@ -4,7 +4,6 @@ import {
   GraphQLObjectType,
   GraphQLInt,
   GraphQLString,
-  GraphQLBoolean,
   GraphQLEnumType,
 } from 'graphql';
 
@@ -47,20 +46,9 @@ export default new GraphQLObjectType({
       resolve: ({ note }: Baggage) => note,
     },
 
-    dimensionSum: {
-      type: GraphQLInt,
-      description: 'Maximum allowed sum of weight, length and width',
-      resolve: ({ dimensionSum }: Baggage) => dimensionSum,
-    },
-
     category: {
       type: BaggageCategory,
       resolve: ({ category }: Baggage) => category,
-    },
-
-    isPending: {
-      type: GraphQLBoolean,
-      resolve: ({ isPending }: Baggage) => isPending,
     },
   },
 });
