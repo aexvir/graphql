@@ -9,19 +9,25 @@ import GraphQLPassengerInputType from '../types/inputs/PassengerInput';
 import type { GraphqlContextType } from '../../common/services/GraphqlContext';
 
 const getPayload = passengers =>
-  passengers.reduce((acc, curr) => {
+  passengers.reduce((acc: Object, curr: PassengerInputType) => {
+    let document = {
+      document_number: curr.documentNumber,
+    };
+    if (curr.documentExpiry) {
+      document = {
+        ...document,
+        document_expiry: curr.documentExpiry,
+      };
+    }
     return {
       ...acc,
-      [curr.passengerId]: {
-        document_expiry: curr.documentExpiry,
-        document_number: curr.documentNumber,
-      },
+      [curr.passengerId]: document,
     };
   }, {});
 
 type PassengerInputType = {|
   +passengerId: number,
-  +documentExpiry: Date,
+  +documentExpiry: Date | null,
   +documentNumber: string,
 |};
 

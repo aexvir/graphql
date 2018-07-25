@@ -15,7 +15,7 @@ export default new GraphQLInputObjectType({
       type: GraphQLNonNull(GraphQLInt),
     },
     documentExpiry: {
-      type: GraphQLNonNull(GraphQLDate),
+      type: GraphQLDate,
       description: 'Expiry date of travel document',
     },
     documentNumber: {

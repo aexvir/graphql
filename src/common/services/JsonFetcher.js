@@ -32,5 +32,9 @@ export async function fetchJson(
   if (response.status >= 300) {
     throw new ProxiedError(response.statusText, response.status, url);
   }
+  if (response.status === 204) {
+    // response.json is undefined if there is no body
+    return null;
+  }
   return response.json();
 }
