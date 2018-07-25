@@ -6259,19 +6259,7 @@
         "interfaces": null,
         "enumValues": [
           {
-            "name": "NEW",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "REFUNDED",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "PENDING",
+            "name": "CLOSED",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
@@ -6283,28 +6271,40 @@
             "deprecationReason": null
           },
           {
-            "name": "CANCELLED",
+            "name": "REFUNDED",
             "description": null,
             "isDeprecated": false,
             "deprecationReason": null
+          },
+          {
+            "name": "NEW",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Never valid value for Booking Status, only for Booking Extra Status"
+          },
+          {
+            "name": "PENDING",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Never valid value for Booking Status, only for Booking Extra Status"
+          },
+          {
+            "name": "CANCELLED",
+            "description": null,
+            "isDeprecated": true,
+            "deprecationReason": "Never valid value for Booking Status, only for Booking Extra Status"
           },
           {
             "name": "DELETED",
             "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "CLOSED",
-            "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
+            "isDeprecated": true,
+            "deprecationReason": "Never valid value for Booking Status, only for Booking Extra Status"
           },
           {
             "name": "EXPIRED",
             "description": null,
-            "isDeprecated": false,
-            "deprecationReason": null
+            "isDeprecated": true,
+            "deprecationReason": "Never valid value for Booking Status, only for Booking Extra Status"
           }
         ],
         "possibleTypes": null
