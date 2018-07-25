@@ -991,7 +991,7 @@
               },
               {
                 "name": "section",
-                "description": "Fetch only subsection of FAQ based on the current situation of customer.",
+                "description": "DEPRECATED: Subsection of FAQ is handled automatically now, this has no effect.Fetch only subsection of FAQ based on the current situation of customer.",
                 "type": {
                   "kind": "ENUM",
                   "name": "FAQSection",

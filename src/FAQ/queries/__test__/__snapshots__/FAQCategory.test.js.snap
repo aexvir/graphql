@@ -34,34 +34,7 @@ Object {
           "title": "Manage My Booking",
         },
       ],
-      "ancestors": Array [
-        Object {
-          "id": "RkFRQ2F0ZWdvcnk6Nzc=",
-          "subcategories": Array [
-            Object {
-              "id": "RkFRQ2F0ZWdvcnk6ODg=",
-              "title": "Baggage",
-            },
-            Object {
-              "id": "RkFRQ2F0ZWdvcnk6ODc=",
-              "title": "Travelling",
-            },
-            Object {
-              "id": "RkFRQ2F0ZWdvcnk6ODM=",
-              "title": "Additional services",
-            },
-            Object {
-              "id": "RkFRQ2F0ZWdvcnk6ODQ=",
-              "title": "Documents & planning",
-            },
-            Object {
-              "id": "RkFRQ2F0ZWdvcnk6ODY=",
-              "title": "Changes & cancellations",
-            },
-          ],
-          "title": "After booking",
-        },
-      ],
+      "ancestors": Array [],
       "id": "RkFRQ2F0ZWdvcnk6ODg=",
       "title": "Baggage",
     },
