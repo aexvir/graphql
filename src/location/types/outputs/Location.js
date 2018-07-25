@@ -70,10 +70,10 @@ export default new GraphQLObjectType({
 
     countryFlagURL: {
       type: GraphQLString,
-      resolve: ({ country }: Location): string => {
-        if (country) {
-          const countryCode = country.locationId.toLowerCase();
-          return `https://images.kiwi.com/flags/32x32/${countryCode}.png`;
+      resolve: ({ country, type, locationId }: Location): string => {
+        if (country || type === 'country') {
+          const countryCode = country ? country.locationId : locationId;
+          return `https://images.kiwi.com/flags/32x32/${countryCode.toLowerCase()}.png`;
         } else {
           return 'https://images.kiwi.com/flags/32x32/anywhere.png';
         }

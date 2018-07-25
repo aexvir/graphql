@@ -9,10 +9,18 @@ it('resolves to the correct URL', () => {
   expect(
     evaluateResolver(fields.countryFlagURL, {
       country: {
-        locationId: 'cz',
+        locationId: 'CZ',
       },
     }),
   ).toBe('https://images.kiwi.com/flags/32x32/cz.png');
+
+  expect(
+    evaluateResolver(fields.countryFlagURL, {
+      locationId: 'DE',
+      type: 'country',
+      country: null,
+    }),
+  ).toBe('https://images.kiwi.com/flags/32x32/de.png');
 
   expect(
     evaluateResolver(fields.countryFlagURL, {
