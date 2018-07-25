@@ -8,7 +8,7 @@ import createCurrencyLoader from '../../currency/dataloaders/Currency';
 import createAirlineLoader from '../../flight/dataloaders/Airline';
 import createRatesLoader from '../dataloaders/Rates';
 import createFAQLoader from '../../FAQ/dataloaders/searchFAQ';
-import createFAQCategoryLoader from '../../FAQ/dataloaders/FAQCategories';
+import FAQCategoriesLoader from '../../FAQ/dataloaders/FAQCategories';
 import createFAQArticleLoader from '../../FAQ/dataloaders/FAQArticle';
 import createSingleBookingLoader from '../../booking/dataloaders/SingleBooking';
 import BookingsLoader from '../../booking/dataloaders/Bookings';
@@ -34,11 +34,7 @@ import type { CurrencyDetail } from '../../currency/CurrencyDetail';
 import type { HotelType } from '../../hotel/dataloaders/flow/HotelType';
 import type { City } from '../../hotel/dataloaders/flow/City';
 import type { Args as FAQArgs } from '../../FAQ/dataloaders/searchFAQ';
-import type {
-  FAQArticleItem,
-  FAQCategoryItem,
-  Args as FAQCategoriesArgs,
-} from '../../FAQ/dataloaders/FAQCategories';
+import type { FAQArticleItem } from '../../FAQ/dataloaders/FAQCategories';
 import type {
   Args as FAQCArticleArgs,
   FAQArticleDetail,
@@ -86,7 +82,7 @@ export type GraphqlContextType = {|
       >,
     },
     FAQ: DataLoader<FAQArgs, FAQArticleItem[]>,
-    FAQCategories: DataLoader<FAQCategoriesArgs, FAQCategoryItem[]>,
+    FAQCategories: FAQCategoriesLoader,
     FAQArticle: DataLoader<FAQCArticleArgs, FAQArticleDetail>,
     dynamicPackages: DynamicPackagesLoader,
   |},
@@ -146,7 +142,7 @@ export function createContext(
         priceStats: PriceStatsLoader,
       },
       FAQ: createFAQLoader(locale.language, FAQ_CATEGORY_ID),
-      FAQCategories: createFAQCategoryLoader(locale.language, FAQ_CATEGORY_ID),
+      FAQCategories: new FAQCategoriesLoader(locale.language, FAQ_CATEGORY_ID),
       FAQArticle: createFAQArticleLoader(locale.language),
       dynamicPackages: new DynamicPackagesLoader(location),
     },

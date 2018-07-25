@@ -1,6 +1,8 @@
 // @flow
 
 import Dataloader from 'dataloader';
+import { fromGlobalId } from 'graphql-relay';
+
 import { get } from '../../common/services/HttpRequest';
 
 export type FAQArticleItem = $ReadOnly<{|
@@ -27,11 +29,11 @@ type FAQSectionType =
   | 'urgentBooking'
   | 'pastBooking';
 
-export type Args = {|
+type Args = {
   section?: FAQSectionType,
-|};
+};
 
-export const sectionToCategories: { [FAQSectionType]: number } = {
+const sectionToCategories: { [FAQSectionType]: number } = {
   beforeBooking: 76,
   upcomingBooking: 77,
   urgentBooking: 78,
@@ -102,11 +104,60 @@ const addAncestors = (category, ancestor = null) => {
   };
 };
 
-export default function createFAQLoader(
-  language: string,
-  rootCategoryId: string,
-) {
-  return new Dataloader(queries =>
-    batchLoad(queries, language, rootCategoryId),
-  );
+const findCategory = (
+  categories: $ReadOnlyArray<FAQCategoryItem>,
+  categoryId: number,
+): FAQCategoryItem | null => {
+  const parentCategory = categories.find(c => c.id === categoryId);
+
+  if (parentCategory) {
+    return parentCategory;
+  }
+
+  for (const category of categories) {
+    const subcategories = category.subcategories || [];
+    const subcategory = findCategory(subcategories, categoryId);
+
+    if (subcategory) {
+      return subcategory;
+    }
+  }
+
+  return null;
+};
+
+const sectionCategories = new Set(Object.values(sectionToCategories));
+const omitSectionCategories = (category: FAQCategoryItem): FAQCategoryItem => ({
+  ...category,
+  ancestors: category.ancestors.filter(c => !sectionCategories.has(c.id)),
+  subcategories: category.subcategories.map(omitSectionCategories),
+});
+
+export default class FAQCategoriesLoader {
+  dataLoader: Dataloader<Args, FAQCategoryItem[]>;
+
+  constructor(language: string, rootCategoryId: string) {
+    this.dataLoader = new Dataloader(queries =>
+      batchLoad(queries, language, rootCategoryId),
+    );
+  }
+
+  loadOneById = async (id: string) => {
+    const categoryId = Number(fromGlobalId(id).id);
+    // dataloader needs to be called with value, that's why {}
+    const categories = await this.dataLoader.load({});
+    const category = findCategory(categories, categoryId);
+
+    if (!category) {
+      throw new Error(`No FAQ category found with ID ${id}`);
+    }
+
+    return omitSectionCategories(category);
+  };
+
+  loadAllBySection = (section?: FAQSectionType) => {
+    return this.dataLoader.load({
+      section: section,
+    });
+  };
 }

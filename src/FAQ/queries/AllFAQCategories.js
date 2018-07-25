@@ -27,9 +27,7 @@ export default {
     { section, ...args }: Object,
     { dataLoader }: GraphqlContextType,
   ) => {
-    const results = await dataLoader.FAQCategories.load({
-      section: section,
-    });
+    const results = await dataLoader.FAQCategories.loadAllBySection(section);
 
     return connectionFromArray(results, args);
   },
