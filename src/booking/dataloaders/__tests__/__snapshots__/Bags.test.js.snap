@@ -1,18 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`returns baggage AND pending baggage 1`] = `
+exports[`BagsDataLoader returns baggage AND pending baggage 1`] = `
 Array [
   Object {
     "bag": Object {
-      "x": "foo",
+      "category": "hold_bag",
+      "height": 38,
+      "length": 70,
+      "weight": 23,
+      "width": 23,
     },
-    "bookingId": undefined,
+    "bookingId": 7708368,
     "passengers": Array [
-      undefined,
-      undefined,
-      undefined,
+      11751828,
+      11751827,
     ],
-    "quantity": 3,
+    "quantity": 2,
   },
 ]
 `;

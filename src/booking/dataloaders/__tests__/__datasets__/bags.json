@@ -1,0 +1,37 @@
+{
+  "baggage": [],
+  "pending_baggage": [
+    {
+      "additional_booking_id": null,
+      "bag": {
+        "category": "hold_bag",
+        "height": 38,
+        "length": 70,
+        "weight": 23,
+        "width": 23
+      },
+      "booking_id": 7708368,
+      "currency": "EUR",
+      "flight_id": 17503412,
+      "index": 1,
+      "passenger_id": 11751828,
+      "price": 0
+    },
+    {
+      "additional_booking_id": null,
+      "bag": {
+        "category": "hold_bag",
+        "height": 38,
+        "length": 70,
+        "weight": 23,
+        "width": 23
+      },
+      "booking_id": 7708368,
+      "currency": "EUR",
+      "flight_id": 17503412,
+      "index": 1,
+      "passenger_id": 11751827,
+      "price": 0
+    }
+  ]
+}

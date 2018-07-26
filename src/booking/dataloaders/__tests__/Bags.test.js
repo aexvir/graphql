@@ -1,19 +1,20 @@
 // @flow
 
+import { RestApiMock } from '../../../common/services/TestingTools';
+import bags from './__datasets__/bags.json';
 import createBagsDataLoader from '../Bags';
 
-jest.mock('../../../common/services/JsonFetcher', () => ({
-  fetchJson: () => {
-    const fakeData = {
-      baggage: [{ bag: { x: 'foo' } }, { bag: { x: 'bar' } }],
-      pending_baggage: [{ bag: { x: 'baz' } }],
-    };
-    return Promise.resolve(fakeData);
-  },
-}));
-
+const bookingId = 3243242;
 const BagsDataLoader = createBagsDataLoader('');
 
-it('returns baggage AND pending baggage', async () => {
-  await expect(BagsDataLoader.load(3243242)).resolves.toMatchSnapshot();
+describe('BagsDataLoader', () => {
+  beforeEach(() => {
+    RestApiMock.onGet(
+      `https://booking-api.skypicker.com/mmb/v1/bookings/${bookingId}/bags`,
+    ).replyWithData(bags);
+  });
+
+  it('returns baggage AND pending baggage', async () => {
+    await expect(BagsDataLoader.load(bookingId)).resolves.toMatchSnapshot();
+  });
 });

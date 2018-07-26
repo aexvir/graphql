@@ -4851,6 +4851,22 @@
               "name": "AllowedBaggage",
               "ofType": null
             },
+            "isDeprecated": true,
+            "deprecationReason": "Use \"baggage\" field instead."
+          },
+          {
+            "name": "baggage",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "BookingBaggage",
+                "ofType": null
+              }
+            },
             "isDeprecated": false,
             "deprecationReason": null
           },
@@ -5042,22 +5058,6 @@
               "ofType": {
                 "kind": "OBJECT",
                 "name": "InsurancePrice",
-                "ofType": null
-              }
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "bags",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "OBJECT",
-                "name": "Baggage",
                 "ofType": null
               }
             },
@@ -6485,36 +6485,12 @@
             "deprecationReason": null
           },
           {
-            "name": "dimensionSum",
-            "description": "Maximum allowed sum of weight, length and width",
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "Int",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "category",
             "description": null,
             "args": [],
             "type": {
               "kind": "ENUM",
               "name": "BaggageCategory",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "isPending",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "SCALAR",
-              "name": "Boolean",
               "ofType": null
             },
             "isDeprecated": false,
@@ -6553,6 +6529,57 @@
             "deprecationReason": null
           }
         ],
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "BookingBaggage",
+        "description": null,
+        "fields": [
+          {
+            "name": "quantity",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "passengers",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "Passenger",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "bag",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "OBJECT",
+              "name": "Baggage",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
         "possibleTypes": null
       },
       {
@@ -7416,6 +7443,22 @@
               "name": "AllowedBaggage",
               "ofType": null
             },
+            "isDeprecated": true,
+            "deprecationReason": "Use \"baggage\" field instead."
+          },
+          {
+            "name": "baggage",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "BookingBaggage",
+                "ofType": null
+              }
+            },
             "isDeprecated": false,
             "deprecationReason": null
           },
@@ -7607,22 +7650,6 @@
               "ofType": {
                 "kind": "OBJECT",
                 "name": "InsurancePrice",
-                "ofType": null
-              }
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "bags",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "OBJECT",
-                "name": "Baggage",
                 "ofType": null
               }
             },
@@ -7748,6 +7775,22 @@
               "name": "AllowedBaggage",
               "ofType": null
             },
+            "isDeprecated": true,
+            "deprecationReason": "Use \"baggage\" field instead."
+          },
+          {
+            "name": "baggage",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "BookingBaggage",
+                "ofType": null
+              }
+            },
             "isDeprecated": false,
             "deprecationReason": null
           },
@@ -7939,22 +7982,6 @@
               "ofType": {
                 "kind": "OBJECT",
                 "name": "InsurancePrice",
-                "ofType": null
-              }
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "bags",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "OBJECT",
-                "name": "Baggage",
                 "ofType": null
               }
             },
@@ -8184,6 +8211,22 @@
               "name": "AllowedBaggage",
               "ofType": null
             },
+            "isDeprecated": true,
+            "deprecationReason": "Use \"baggage\" field instead."
+          },
+          {
+            "name": "baggage",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "BookingBaggage",
+                "ofType": null
+              }
+            },
             "isDeprecated": false,
             "deprecationReason": null
           },
@@ -8375,22 +8418,6 @@
               "ofType": {
                 "kind": "OBJECT",
                 "name": "InsurancePrice",
-                "ofType": null
-              }
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "bags",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "OBJECT",
-                "name": "Baggage",
                 "ofType": null
               }
             },
@@ -8528,6 +8555,22 @@
               "name": "AllowedBaggage",
               "ofType": null
             },
+            "isDeprecated": true,
+            "deprecationReason": "Use \"baggage\" field instead."
+          },
+          {
+            "name": "baggage",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "LIST",
+              "name": null,
+              "ofType": {
+                "kind": "OBJECT",
+                "name": "BookingBaggage",
+                "ofType": null
+              }
+            },
             "isDeprecated": false,
             "deprecationReason": null
           },
@@ -8719,22 +8762,6 @@
               "ofType": {
                 "kind": "OBJECT",
                 "name": "InsurancePrice",
-                "ofType": null
-              }
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "bags",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "LIST",
-              "name": null,
-              "ofType": {
-                "kind": "OBJECT",
-                "name": "Baggage",
                 "ofType": null
               }
             },
