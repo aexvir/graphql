@@ -15,8 +15,8 @@ describe('singleBooking query', () => {
     ).replyWithData(Booking2707251);
 
     const query = `
-    query($id: ID!, $simpleToken: String!) {
-      singleBooking(id: $id, simpleToken: $simpleToken) {
+    query($id: Int!, $authToken: String!) {
+      singleBooking(id: $id, authToken: $authToken) {
         id
         price{
           amount
@@ -26,18 +26,19 @@ describe('singleBooking query', () => {
         destinationImageUrl
         directAccessURL
         passengerCount
-        oneWay {
-          bookingDate
-          trip {
-            duration
-          }
+        passengers {
+          nationality
+        }
+        bookingDate
+        assets{
+          ticketUrl
         }
       }
     }`;
     expect(
       await graphql(query, {
         id: 2707251,
-        simpleToken: 'b834267c-def7-4dc8-1661-a5283d25d5e9',
+        authToken: 'b834267c-def7-4dc8-1661-a5283d25d5e9',
       }),
     ).toMatchSnapshot();
   });

@@ -3,12 +3,12 @@
 import DataLoader from 'dataloader';
 import stringify from 'json-stable-stringify';
 import { get } from '../../common/services/HttpRequest';
-import Config from '../../../config/application';
 import { sanitizeDetail } from './ApiSanitizer';
-import type { Booking } from '../Booking';
+import { queryWithParameters } from '../../../config/application';
+import type { BookingInterfaceData } from '../types/outputs/BookingInterface';
 
 export type Args = {|
-  +simpleToken: string,
+  +authToken: string,
   +id: number,
 |};
 
@@ -24,13 +24,21 @@ export default function createSingleBookingLoader() {
 async function batchLoad(
   bookings: $ReadOnlyArray<Args>,
 ): Promise<Array<Object>> {
-  const promises = bookings.map(({ id, simpleToken }: Args) =>
-    fetchFAQ(id, simpleToken),
+  const promises = bookings.map(({ id, authToken }: Args) =>
+    fetch(id, authToken),
   );
   const responses = await Promise.all(promises);
   return responses.map(result => sanitizeDetail(result));
 }
 
-async function fetchFAQ(bid: number, simpleToken: string): Promise<Booking> {
-  return await get(Config.restApiEndpoint.singleBooking(bid, simpleToken));
+async function fetch(
+  bid: number,
+  authToken: string,
+): Promise<BookingInterfaceData> {
+  return await get(
+    queryWithParameters(
+      `https://booking-api.skypicker.com/api/v0.1/users/self/bookings/${bid}`,
+      { simple_token: authToken },
+    ),
+  );
 }
