@@ -80,7 +80,7 @@ Object {
         },
         Object {
           "__typename": "DownloadBoardingPassTimelineEvent",
-          "timestamp": "2017-08-18T22:05:00.000Z",
+          "timestamp": "2017-08-18T21:30:00.000Z",
         },
         Object {
           "__typename": "BoardingTimelineEvent",
@@ -208,7 +208,7 @@ Object {
         },
         Object {
           "__typename": "DownloadBoardingPassTimelineEvent",
-          "timestamp": "2017-09-09T21:10:00.000Z",
+          "timestamp": "2017-09-09T20:35:00.000Z",
         },
         Object {
           "__typename": "BoardingTimelineEvent",

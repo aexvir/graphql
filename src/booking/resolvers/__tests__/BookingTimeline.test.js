@@ -127,7 +127,7 @@ describe('resolver', () => {
         },
       },
       {
-        timestamp: new Date('2017-09-09T21:10:00.000Z'),
+        timestamp: new Date('2017-09-09T20:35:00.000Z'),
         type: 'DownloadBoardingPassTimelineEvent',
         leg: {
           id: '315289498',
@@ -223,6 +223,23 @@ describe('resolver', () => {
         type: 'TransportFromAirportTimelineEvent',
       },
     ]);
+  });
+
+  test("DownloadBoardingPassEvent should have timestamp 5 minutes earlier than BoardingEvent's", () => {
+    const result = resolver(booking);
+
+    const boardingEvent = result.find(
+      event => event.type === 'BoardingTimelineEvent',
+    );
+    const downloadBPEvent = result.find(
+      event => event.type === 'DownloadBoardingPassTimelineEvent',
+    );
+
+    if (boardingEvent && downloadBPEvent) {
+      expect(boardingEvent.timestamp - downloadBPEvent.timestamp).toBe(
+        5 * 60 * 1000,
+      );
+    }
   });
 });
 
