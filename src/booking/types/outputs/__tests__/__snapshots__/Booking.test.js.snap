@@ -25,6 +25,13 @@ Object {
     "resolve": [Function],
     "type": "BookingAssets",
   },
+  "authToken": Object {
+    "args": Array [],
+    "isDeprecated": false,
+    "name": "authToken",
+    "resolve": [Function],
+    "type": "String",
+  },
   "availableServices": Object {
     "args": Array [],
     "description": "All services provided directly by Kiwi.com.",

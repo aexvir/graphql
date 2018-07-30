@@ -279,6 +279,10 @@ export const commonFields = {
       return insurancePrices;
     },
   },
+  authToken: {
+    type: GraphQLString,
+    resolve: ({ authToken }: BookingInterfaceData): string => authToken,
+  },
 };
 
 export default new GraphQLInterfaceType({
