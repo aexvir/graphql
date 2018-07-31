@@ -29,6 +29,7 @@ export function sanitizeListItem(apiData: Object): BookingsItem {
     (flight): Leg => ({
       id: flight.id,
       bookingId: bid,
+      authToken: apiData.auth_token,
       recheckRequired: flight.bags_recheck_required,
       isReturn: flight.return === 1,
       flightNo: flight.flight_no,
@@ -41,6 +42,7 @@ export function sanitizeListItem(apiData: Object): BookingsItem {
         cityId: idx(flight.departure, _ => _.where.city_id),
         terminal: idx(flight.departure, _ => _.where.terminal),
         bid,
+        authToken: apiData.auth_token,
       }),
       arrival: sanitizeRoute({
         utc: idx(flight.arrival, _ => _.when.utc),
@@ -50,6 +52,7 @@ export function sanitizeListItem(apiData: Object): BookingsItem {
         cityId: idx(flight.arrival, _ => _.where.city_id),
         terminal: idx(flight.arrival, _ => _.where.terminal),
         bid,
+        authToken: apiData.auth_token,
       }),
       airlineCode: flight.airline.iata,
       vehicleType: idx(flight, _ => _.vehicle.type),

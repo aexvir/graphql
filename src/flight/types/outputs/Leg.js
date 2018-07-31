@@ -99,7 +99,7 @@ export default new GraphQLObjectType({
     type: {
       type: VehicleTypes,
       resolve: async (
-        { id, vehicleType, bookingId }: Leg,
+        { id, vehicleType, bookingId, authToken }: Leg,
         args: Object,
         { dataLoader }: GraphqlContextType,
       ): Promise<?VehicleType> => {
@@ -107,9 +107,12 @@ export default new GraphQLObjectType({
           return vehicleType;
         }
 
-        if (bookingId) {
+        if (bookingId && authToken) {
           // needs to be fetched for booking loaded via "dataLoader.bookings.load"
-          const booking = await dataLoader.booking.load(bookingId);
+          const booking = await dataLoader.singleBooking.load({
+            id: bookingId,
+            authToken,
+          });
 
           if (booking && Array.isArray(booking.legs)) {
             const leg = booking.legs.find(leg => leg.id === id);
@@ -133,14 +136,17 @@ export default new GraphQLObjectType({
       type: BoardingPass,
       description: 'Boarding pass for this leg',
       resolve: async (
-        { id, bookingId }: { id: string, bookingId: string },
+        { id, bookingId, authToken }: Leg,
         _,
         { dataLoader }: GraphqlContextType,
       ) => {
-        if (!bookingId) {
+        if (!bookingId || !authToken) {
           return null;
         }
-        const booking = await dataLoader.booking.load(bookingId);
+        const booking = await dataLoader.singleBooking.load({
+          id: bookingId,
+          authToken,
+        });
         const boardingPasses = idx(booking, _ => _.assets.boardingPasses) || [];
         const boardingPass =
           boardingPasses.find(

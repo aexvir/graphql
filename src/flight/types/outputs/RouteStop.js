@@ -51,12 +51,15 @@ export default new GraphQLObjectType({
         args: Object,
         { dataLoader }: GraphqlContextType,
       ): Promise<?string> => {
-        const { bid } = parent;
+        const { bid, authToken } = parent;
 
-        if (!bid) {
+        if (!bid || !authToken) {
           return null;
         }
-        const booking = await dataLoader.booking.load(bid);
+        const booking = await dataLoader.singleBooking.load({
+          id: bid,
+          authToken,
+        });
 
         const possibleFlights = booking.legs
           .map(leg => [leg.departure, leg.arrival])

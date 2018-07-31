@@ -27,6 +27,7 @@ describe('generateDownloadBoardingPassEvent', () => {
             terminal: 'E',
           },
           bid: 2707251,
+          authToken: 'token-lol',
         },
         arrival: {
           when: {
@@ -40,6 +41,7 @@ describe('generateDownloadBoardingPassEvent', () => {
             terminal: '2',
           },
           bid: 2707251,
+          authToken: 'token-lol',
         },
         airlineCode: 'VY',
         guarantee: false,
