@@ -11,6 +11,69 @@ Object {
 }
 `;
 
+exports[`single booking timeline query should work with authToken 1`] = `
+Object {
+  "data": Object {
+    "bookingTimeline": Object {
+      "events": Array [
+        Object {
+          "__typename": "BookedFlightTimelineEvent",
+          "timestamp": "2017-03-30T07:24:24.000Z",
+        },
+        Object {
+          "__typename": "BookingConfirmedTimelineEvent",
+          "timestamp": "2017-03-30T07:24:24.000Z",
+        },
+        Object {
+          "__typename": "PaymentConfirmedTimelineEvent",
+          "timestamp": "2017-03-30T07:24:24.000Z",
+        },
+        Object {
+          "__typename": "DownloadInvoiceTimelineEvent",
+          "timestamp": "2017-03-30T07:24:24.000Z",
+        },
+        Object {
+          "__typename": "DownloadETicketTimelineEvent",
+          "timestamp": "2017-03-30T07:24:24.000Z",
+        },
+        Object {
+          "__typename": "NoMoreEditsTimelineEvent",
+          "timestamp": "2017-08-16T22:05:00.000Z",
+        },
+        Object {
+          "__typename": "LeaveForAirportTimelineEvent",
+          "timestamp": "2017-08-18T18:05:00.000Z",
+        },
+        Object {
+          "__typename": "AirportArrivalTimelineEvent",
+          "timestamp": "2017-08-18T20:05:00.000Z",
+        },
+        Object {
+          "__typename": "DownloadBoardingPassTimelineEvent",
+          "timestamp": "2017-08-18T21:30:00.000Z",
+        },
+        Object {
+          "__typename": "BoardingTimelineEvent",
+          "timestamp": "2017-08-18T21:35:00.000Z",
+        },
+        Object {
+          "__typename": "DepartureTimelineEvent",
+          "timestamp": "2017-08-18T22:05:00.000Z",
+        },
+        Object {
+          "__typename": "ArrivalTimelineEvent",
+          "timestamp": "2017-08-19T03:40:00.000Z",
+        },
+        Object {
+          "__typename": "TransportFromAirportTimelineEvent",
+          "timestamp": "2017-08-19T03:55:00.000Z",
+        },
+      ],
+    },
+  },
+}
+`;
+
 exports[`single booking timeline query should work with opaque Booking id (terminal included) 1`] = `
 Object {
   "data": Object {

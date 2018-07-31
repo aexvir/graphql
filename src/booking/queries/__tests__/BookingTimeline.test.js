@@ -213,4 +213,24 @@ describe('single booking timeline query', () => {
     }`;
     expect(await graphql(query)).toMatchSnapshot();
   });
+
+  it('should work with authToken', async () => {
+    const query = `
+      query($id: ID!, $authToken: String!) {
+        bookingTimeline(id: $id, authToken: $authToken) {
+          events {
+            __typename
+              timestamp
+          }
+        }
+      }
+    `;
+
+    expect(
+      await graphql(query, {
+        id: 'Qm9va2luZzoyNzA3MjI04o',
+        authToken: 'c3f29dd0-18a7-4062-9162-b58f4022fc70',
+      }),
+    ).toMatchSnapshot();
+  });
 });

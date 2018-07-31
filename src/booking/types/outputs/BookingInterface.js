@@ -271,11 +271,14 @@ export const commonFields = {
   insurancePrices: {
     type: new GraphQLList(GraphQLInsurancePrice),
     resolve: async (
-      { id }: BookingInterfaceData,
+      { id, authToken }: BookingInterfaceData,
       args: Object,
       { dataLoader }: GraphqlContextType,
     ) => {
-      const { insurancePrices } = await dataLoader.booking.load(id);
+      const { insurancePrices } = await dataLoader.singleBooking.load({
+        id,
+        authToken,
+      });
       return insurancePrices;
     },
   },
