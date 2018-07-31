@@ -20,6 +20,7 @@ describe('generateDepartureEvent', () => {
           terminal: '2',
         },
         bid: 2707251,
+        authToken: 'token-lol',
       },
       duration: 80,
       airlineCode: 'VY',

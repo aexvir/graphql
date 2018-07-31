@@ -20,6 +20,7 @@ describe('generateBookedFlightEvent', () => {
           terminal: '2',
         },
         bid: 2707251,
+        authToken: 'token-lol',
       },
     });
   });

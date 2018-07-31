@@ -23,6 +23,7 @@ describe('resolver', () => {
             terminal: '2',
           },
           bid: 2707251,
+          authToken: 'token-lol',
         },
       },
       {
@@ -58,6 +59,7 @@ describe('resolver', () => {
                 terminal: 'E',
               },
               bid: 2707251,
+              authToken: 'token-lol',
             },
             arrival: {
               when: {
@@ -71,6 +73,7 @@ describe('resolver', () => {
                 terminal: '2',
               },
               bid: 2707251,
+              authToken: 'token-lol',
             },
             airlineCode: 'VY',
             guarantee: false,
@@ -124,6 +127,7 @@ describe('resolver', () => {
             terminal: 'E',
           },
           bid: 2707251,
+          authToken: 'token-lol',
         },
       },
       {
@@ -148,6 +152,7 @@ describe('resolver', () => {
               terminal: 'E',
             },
             bid: 2707251,
+            authToken: 'token-lol',
           },
           arrival: {
             when: {
@@ -161,6 +166,7 @@ describe('resolver', () => {
               terminal: '2',
             },
             bid: 2707251,
+            authToken: 'token-lol',
           },
           airlineCode: 'VY',
           guarantee: false,
@@ -196,6 +202,7 @@ describe('resolver', () => {
             terminal: '2',
           },
           bid: 2707251,
+          authToken: 'token-lol',
         },
         duration: 80,
         airlineCode: 'VY',
@@ -216,6 +223,7 @@ describe('resolver', () => {
             terminal: '2',
           },
           bid: 2707251,
+          authToken: 'token-lol',
         },
       },
       {
@@ -257,6 +265,7 @@ const booking: Booking = {
       terminal: 'E',
     },
     bid: 2707251,
+    authToken: 'token-lol',
   },
   arrival: {
     when: {
@@ -270,6 +279,7 @@ const booking: Booking = {
       terminal: '2',
     },
     bid: 2707251,
+    authToken: 'token-lol',
   },
   legs: [
     {
@@ -291,6 +301,7 @@ const booking: Booking = {
           terminal: 'E',
         },
         bid: 2707251,
+        authToken: 'token-lol',
       },
       arrival: {
         when: {
@@ -304,6 +315,7 @@ const booking: Booking = {
           terminal: '2',
         },
         bid: 2707251,
+        authToken: 'token-lol',
       },
       airlineCode: 'VY',
       guarantee: false,
@@ -456,6 +468,7 @@ const booking: Booking = {
               terminal: 'E',
             },
             bid: 2707251,
+            authToken: 'token-lol',
           },
           arrival: {
             when: {
@@ -469,6 +482,7 @@ const booking: Booking = {
               terminal: '2',
             },
             bid: 2707251,
+            authToken: 'token-lol',
           },
           airlineCode: 'VY',
           guarantee: false,
@@ -508,6 +522,7 @@ const booking: Booking = {
               terminal: 'E',
             },
             bid: 2707251,
+            authToken: 'token-lol',
           },
           arrival: {
             when: {
@@ -521,6 +536,7 @@ const booking: Booking = {
               terminal: '2',
             },
             bid: 2707251,
+            authToken: 'token-lol',
           },
           airlineCode: 'VY',
           guarantee: false,
@@ -557,6 +573,7 @@ const booking: Booking = {
             terminal: 'E',
           },
           bid: 2707251,
+          authToken: 'token-lol',
         },
         arrival: {
           when: {
@@ -570,6 +587,7 @@ const booking: Booking = {
             terminal: '2',
           },
           bid: 2707251,
+          authToken: 'token-lol',
         },
         airlineCode: 'VY',
         guarantee: false,
@@ -643,6 +661,7 @@ const leg: Leg = {
       terminal: 'E',
     },
     bid: 2707251,
+    authToken: 'token-lol',
   },
   arrival: {
     when: {
@@ -656,6 +675,7 @@ const leg: Leg = {
       terminal: '2',
     },
     bid: 2707251,
+    authToken: 'token-lol',
   },
   airlineCode: 'VY',
   guarantee: false,
