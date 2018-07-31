@@ -64,15 +64,18 @@ export default {
   ): Promise<UpdatePassengerResponse> => {
     const { id: bookingId } = fromGlobalId(args.id);
     const payload = getPayload(args.passengers);
-    const token = args.simpleToken || context.apiToken;
 
-    if (!token) {
+    if (!args.simpleToken && !context.apiToken) {
       throw new Error('You must be logged in to update passenger.');
     }
 
-    const headers = {
-      'kw-user-token': token,
-    };
+    const headers = {};
+    if (context.apiToken) {
+      headers['kw-user-token'] = context.apiToken;
+    }
+    if (args.simpleToken) {
+      headers['kw-simple-token'] = args.simpleToken;
+    }
 
     await patch(
       `https://booking-api.skypicker.com/mmb/v1/bookings/${bookingId}/passengers`,
