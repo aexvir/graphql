@@ -91,4 +91,45 @@ describe('UpdatePassenger', () => {
       { 'kw-user-token': 'test_token' },
     );
   });
+
+  it('should set kw-simple-token header', async () => {
+    const spy = jest.spyOn(Http, 'patch');
+    await graphql(
+      `
+        mutation(
+          $id: ID!
+          $passengers: [PassengerInput!]!
+          $simpleToken: String!
+        ) {
+          updatePassenger(
+            id: $id
+            passengers: $passengers
+            simpleToken: $simpleToken
+          ) {
+            success
+          }
+        }
+      `,
+      {
+        id: 'Qm9va2luZ1JldHVybjoxMjM0NTY=',
+        simpleToken: 'lol-token',
+        passengers: [
+          {
+            passengerId: 123,
+            documentExpiry: null,
+            documentNumber: '123321',
+          },
+        ],
+      },
+    );
+    expect(spy).toHaveBeenCalledWith(
+      'https://booking-api.skypicker.com/mmb/v1/bookings/123456/passengers',
+      {
+        '123': {
+          document_number: '123321',
+        },
+      },
+      { 'kw-user-token': 'test_token', 'kw-simple-token': 'lol-token' },
+    );
+  });
 });

@@ -115,7 +115,7 @@ Send `Accept-Language` HTTP header with ISO locale string in format `language_te
 
 Some queries relies on input argument `Locale` or `Language`. There input parameters are now deprecated.
 
-## Booking type
+## Fetching Customer Bookings
 
 There are currently three different types of bookings:
 
@@ -125,7 +125,7 @@ There are currently three different types of bookings:
 
 As each type requires different shape of data to display such booking info optimally. Possible query using fragments could look like this:
 
-```
+```graphql
 query ManageMyBooking {
   customerBookings {
     edges {
@@ -148,6 +148,21 @@ query ManageMyBooking {
 ```
 
 And then, based on `__typename`, you decide what fragment to use. Not familiar with this "inline fragments" syntax in GraphQL? [Check this...](https://graphql.org/learn/queries/#inline-fragments)
+
+It's also very simple to fetch already filtered future and past bookings using `only` query argument:
+
+```graphql
+query ManageMyBooking {
+  future: customerBookings(only: FUTURE) {
+    ...IBookingFragment_future
+  }
+  past: customerBookings(only: PAST) {
+    ...IBookingFragment_past
+  }
+}
+```
+
+This way you can fetch and render future and past bookings differently (even though they will probably share most of the logic). The same applies to one-way/return/multicity bookings - you can start rendering them differently but at the end you should reuse many components.
 
 ## Output Types
 

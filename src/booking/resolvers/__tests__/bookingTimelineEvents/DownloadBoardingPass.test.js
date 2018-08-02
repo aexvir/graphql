@@ -6,7 +6,7 @@ import { leg } from '../BookingTimeline.test';
 describe('generateDownloadBoardingPassEvent', () => {
   it('returns DownloadBoardingPass event', () => {
     expect(generateDownloadBoardingPassEvent(leg)).toEqual({
-      timestamp: new Date('2017-09-09T21:10:00.000Z'),
+      timestamp: new Date('2017-09-09T20:35:00.000Z'),
       type: 'DownloadBoardingPassTimelineEvent',
       leg: {
         id: '315289498',
@@ -27,6 +27,7 @@ describe('generateDownloadBoardingPassEvent', () => {
             terminal: 'E',
           },
           bid: 2707251,
+          authToken: 'token-lol',
         },
         arrival: {
           when: {
@@ -40,6 +41,7 @@ describe('generateDownloadBoardingPassEvent', () => {
             terminal: '2',
           },
           bid: 2707251,
+          authToken: 'token-lol',
         },
         airlineCode: 'VY',
         guarantee: false,

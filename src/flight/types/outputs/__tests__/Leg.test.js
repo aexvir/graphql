@@ -44,7 +44,7 @@ describe('boardingPass resolver', () => {
     };
     const fakeContext = {
       dataLoader: {
-        booking: {
+        singleBooking: {
           load: jest.fn(async () => fakeBoardingPassData),
         },
       },
@@ -54,6 +54,7 @@ describe('boardingPass resolver', () => {
       {
         id: '32432424',
         bookingId: 'X324-324A24',
+        authToken: 'lol-token',
       },
       undefined,
       fakeContext,

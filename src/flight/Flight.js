@@ -15,6 +15,7 @@ export type DepartureArrival = {|
     terminal: ?string,
   |},
   bid?: ?number,
+  authToken?: string,
 |};
 
 export type Flight = {|
@@ -51,6 +52,7 @@ export type Leg = {|
   vehicle: Vehicle,
   operatingAirline: OperatingAirline,
   pnr: string,
+  authToken?: string,
 |};
 
 export type Airline = {|

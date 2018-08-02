@@ -23,6 +23,7 @@ describe('resolver', () => {
             terminal: '2',
           },
           bid: 2707251,
+          authToken: 'token-lol',
         },
       },
       {
@@ -58,6 +59,7 @@ describe('resolver', () => {
                 terminal: 'E',
               },
               bid: 2707251,
+              authToken: 'token-lol',
             },
             arrival: {
               when: {
@@ -71,6 +73,7 @@ describe('resolver', () => {
                 terminal: '2',
               },
               bid: 2707251,
+              authToken: 'token-lol',
             },
             airlineCode: 'VY',
             guarantee: false,
@@ -124,10 +127,11 @@ describe('resolver', () => {
             terminal: 'E',
           },
           bid: 2707251,
+          authToken: 'token-lol',
         },
       },
       {
-        timestamp: new Date('2017-09-09T21:10:00.000Z'),
+        timestamp: new Date('2017-09-09T20:35:00.000Z'),
         type: 'DownloadBoardingPassTimelineEvent',
         leg: {
           id: '315289498',
@@ -148,6 +152,7 @@ describe('resolver', () => {
               terminal: 'E',
             },
             bid: 2707251,
+            authToken: 'token-lol',
           },
           arrival: {
             when: {
@@ -161,6 +166,7 @@ describe('resolver', () => {
               terminal: '2',
             },
             bid: 2707251,
+            authToken: 'token-lol',
           },
           airlineCode: 'VY',
           guarantee: false,
@@ -196,6 +202,7 @@ describe('resolver', () => {
             terminal: '2',
           },
           bid: 2707251,
+          authToken: 'token-lol',
         },
         duration: 80,
         airlineCode: 'VY',
@@ -216,6 +223,7 @@ describe('resolver', () => {
             terminal: '2',
           },
           bid: 2707251,
+          authToken: 'token-lol',
         },
       },
       {
@@ -223,6 +231,23 @@ describe('resolver', () => {
         type: 'TransportFromAirportTimelineEvent',
       },
     ]);
+  });
+
+  test("DownloadBoardingPassEvent should have timestamp 5 minutes earlier than BoardingEvent's", () => {
+    const result = resolver(booking);
+
+    const boardingEvent = result.find(
+      event => event.type === 'BoardingTimelineEvent',
+    );
+    const downloadBPEvent = result.find(
+      event => event.type === 'DownloadBoardingPassTimelineEvent',
+    );
+
+    if (boardingEvent && downloadBPEvent) {
+      expect(boardingEvent.timestamp - downloadBPEvent.timestamp).toBe(
+        5 * 60 * 1000,
+      );
+    }
   });
 });
 
@@ -240,6 +265,7 @@ const booking: Booking = {
       terminal: 'E',
     },
     bid: 2707251,
+    authToken: 'token-lol',
   },
   arrival: {
     when: {
@@ -253,6 +279,7 @@ const booking: Booking = {
       terminal: '2',
     },
     bid: 2707251,
+    authToken: 'token-lol',
   },
   legs: [
     {
@@ -274,6 +301,7 @@ const booking: Booking = {
           terminal: 'E',
         },
         bid: 2707251,
+        authToken: 'token-lol',
       },
       arrival: {
         when: {
@@ -287,6 +315,7 @@ const booking: Booking = {
           terminal: '2',
         },
         bid: 2707251,
+        authToken: 'token-lol',
       },
       airlineCode: 'VY',
       guarantee: false,
@@ -439,6 +468,7 @@ const booking: Booking = {
               terminal: 'E',
             },
             bid: 2707251,
+            authToken: 'token-lol',
           },
           arrival: {
             when: {
@@ -452,6 +482,7 @@ const booking: Booking = {
               terminal: '2',
             },
             bid: 2707251,
+            authToken: 'token-lol',
           },
           airlineCode: 'VY',
           guarantee: false,
@@ -491,6 +522,7 @@ const booking: Booking = {
               terminal: 'E',
             },
             bid: 2707251,
+            authToken: 'token-lol',
           },
           arrival: {
             when: {
@@ -504,6 +536,7 @@ const booking: Booking = {
               terminal: '2',
             },
             bid: 2707251,
+            authToken: 'token-lol',
           },
           airlineCode: 'VY',
           guarantee: false,
@@ -540,6 +573,7 @@ const booking: Booking = {
             terminal: 'E',
           },
           bid: 2707251,
+          authToken: 'token-lol',
         },
         arrival: {
           when: {
@@ -553,6 +587,7 @@ const booking: Booking = {
             terminal: '2',
           },
           bid: 2707251,
+          authToken: 'token-lol',
         },
         airlineCode: 'VY',
         guarantee: false,
@@ -626,6 +661,7 @@ const leg: Leg = {
       terminal: 'E',
     },
     bid: 2707251,
+    authToken: 'token-lol',
   },
   arrival: {
     when: {
@@ -639,6 +675,7 @@ const leg: Leg = {
       terminal: '2',
     },
     bid: 2707251,
+    authToken: 'token-lol',
   },
   airlineCode: 'VY',
   guarantee: false,

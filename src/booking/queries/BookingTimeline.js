@@ -1,6 +1,6 @@
 // @flow
 
-import { GraphQLNonNull, GraphQLID } from 'graphql';
+import { GraphQLNonNull, GraphQLID, GraphQLString } from 'graphql';
 import { fromGlobalId } from 'graphql-relay';
 
 import GraphQLBookingTimeline from '../types/outputs/BookingTimeline';
@@ -17,10 +17,13 @@ export default {
       type: new GraphQLNonNull(GraphQLID),
       description: 'Only Booking id can be used as ID.',
     },
+    authToken: {
+      type: GraphQLString,
+    },
   },
   resolve: async (
     ancestor: mixed,
-    { id }: Object,
+    { id, authToken }: Object,
     { dataLoader }: GraphqlContextType,
   ): Promise<BookingTimelineData> => {
     const { id: originalId, type } = fromGlobalId(id);
@@ -39,8 +42,17 @@ export default {
           `Please use opaque ID of the Booking.`,
       );
     }
+    // This should be changed to use only singleBooking when client is changed accordingly
+    let booking = {};
 
-    const booking = await dataLoader.booking.load(originalId);
+    if (authToken == null) {
+      booking = await dataLoader.booking.load(originalId);
+    } else {
+      booking = await dataLoader.singleBooking.load({
+        id: parseInt(originalId),
+        authToken: authToken,
+      });
+    }
 
     const events = generateEventsFrom(booking);
 

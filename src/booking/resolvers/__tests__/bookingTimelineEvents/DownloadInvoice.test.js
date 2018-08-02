@@ -38,6 +38,7 @@ describe('generateDownloadInvoiceEvent', () => {
               terminal: 'E',
             },
             bid: 2707251,
+            authToken: 'token-lol',
           },
           arrival: {
             when: {
@@ -51,6 +52,7 @@ describe('generateDownloadInvoiceEvent', () => {
               terminal: '2',
             },
             bid: 2707251,
+            authToken: 'token-lol',
           },
           airlineCode: 'VY',
           guarantee: false,
@@ -100,6 +102,7 @@ describe('generateDownloadInvoiceEvent', () => {
               terminal: 'E',
             },
             bid: 2707251,
+            authToken: 'token-lol',
           },
           arrival: {
             when: {
@@ -113,6 +116,7 @@ describe('generateDownloadInvoiceEvent', () => {
               terminal: '2',
             },
             bid: 2707251,
+            authToken: 'token-lol',
           },
           airlineCode: 'VY',
           guarantee: false,
