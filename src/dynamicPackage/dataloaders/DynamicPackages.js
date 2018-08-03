@@ -36,7 +36,7 @@ export default class DynamicPackageDataLoader {
       ): Promise<Array<DynamicPackage[]>> => await this.fetchPackages(params),
     );
     this.locationDataLoader = location;
-    this.supportedMarkets = new Set(['ES', 'GB', 'IT', 'DE', 'FR', 'PT']);
+    this.supportedMarkets = new Set(['ES', 'GB', 'IT', 'DE', 'FR', 'PT', 'IE']);
   }
 
   async load(params: SearchParameters): Promise<DynamicPackage[]> {
