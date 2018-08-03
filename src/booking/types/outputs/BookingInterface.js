@@ -92,7 +92,7 @@ export const commonFields = {
       params: Object,
       { dataLoader }: GraphqlContextType,
     ): Promise<$ReadOnlyArray<BookingBaggageData>> => {
-      return dataLoader.bags.load(id);
+      return dataLoader.baggage.load(id);
     },
   },
 

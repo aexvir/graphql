@@ -3,7 +3,7 @@
 import DataLoader from 'dataloader';
 
 import { get } from '../../common/services/HttpRequest';
-import sanitizeBaggageData from './BagApiSanitizer';
+import sanitizeBaggageData from './BaggageApiSanitizer';
 import type { BookingBaggageData } from '../types/outputs/BookingBaggage';
 
 const batchLoad = (accessToken: ?string, ids: $ReadOnlyArray<number>) => {

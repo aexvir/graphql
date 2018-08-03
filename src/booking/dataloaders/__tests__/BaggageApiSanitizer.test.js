@@ -1,9 +1,9 @@
 // @flow
 
-import sanitizeBaggageData from '../BagApiSanitizer';
+import sanitizeBaggageData from '../BaggageApiSanitizer';
 import bags from './__datasets__/bags.json';
 
-describe('BagApiSanitizer', () => {
+describe('BaggageApiSanitizer', () => {
   it('should group bags by category', () => {
     const result = sanitizeBaggageData(bags);
 

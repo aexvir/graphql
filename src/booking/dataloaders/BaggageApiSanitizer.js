@@ -51,14 +51,14 @@ const baggageByCategory = (
 const sanitizeBaggageData = (
   data: BaggageData,
 ): $ReadOnlyArray<BookingBaggageData> => {
-  const bags = [].concat(data.baggage).concat(data.pending_baggage);
+  const rawBaggage = [].concat(data.baggage).concat(data.pending_baggage);
 
-  if (!bags.length) {
+  if (!rawBaggage.length) {
     return [];
   }
 
-  const sampleLegId = bags[0].flight_id;
-  const baggage = bags
+  const sampleLegId = rawBaggage[0].flight_id;
+  const baggage = rawBaggage
     .filter(baggage => baggage.flight_id === sampleLegId)
     .reduce(baggageByCategory, new Map())
     .values();

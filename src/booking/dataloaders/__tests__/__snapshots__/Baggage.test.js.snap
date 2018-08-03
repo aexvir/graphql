@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BagsDataLoader returns baggage AND pending baggage 1`] = `
+exports[`BaggageDataLoader returns baggage AND pending baggage 1`] = `
 Array [
   Object {
     "bag": Object {

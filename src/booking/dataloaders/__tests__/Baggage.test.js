@@ -2,12 +2,12 @@
 
 import { RestApiMock } from '../../../common/services/TestingTools';
 import bags from './__datasets__/bags.json';
-import createBagsDataLoader from '../Bags';
+import createBaggageDataLoader from '../Baggage';
 
 const bookingId = 3243242;
-const BagsDataLoader = createBagsDataLoader('');
+const BaggageDataLoader = createBaggageDataLoader('');
 
-describe('BagsDataLoader', () => {
+describe('BaggageDataLoader', () => {
   beforeEach(() => {
     RestApiMock.onGet(
       `https://booking-api.skypicker.com/mmb/v1/bookings/${bookingId}/bags`,
@@ -15,6 +15,6 @@ describe('BagsDataLoader', () => {
   });
 
   it('returns baggage AND pending baggage', async () => {
-    await expect(BagsDataLoader.load(bookingId)).resolves.toMatchSnapshot();
+    await expect(BaggageDataLoader.load(bookingId)).resolves.toMatchSnapshot();
   });
 });
