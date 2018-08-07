@@ -2,7 +2,7 @@
 
 import DataLoader from 'dataloader';
 
-import Logger from './Logger';
+import parseAcceptLanguage from './context/ParseAcceptLanguage';
 
 import IdentityDataloader from '../../identity/dataloaders/Identity';
 import createBookingLoader from '../../booking/dataloaders/Booking';
@@ -107,23 +107,11 @@ export function createContext(
   const location = new LocationLoader();
   const hotelCities = new HotelCities();
 
-  const lang = acceptLanguage ? acceptLanguage : 'en_US';
-
-  let [language, territory] = lang.split('_');
-  if (
-    !language ||
-    language.length !== 2 ||
-    !territory ||
-    territory.length !== 2
-  ) {
-    Logger.warning('Accept-Language is not set properly!');
-    language = 'en';
-    territory = 'US';
-  }
+  const [language, territory] = parseAcceptLanguage(acceptLanguage);
 
   const locale = {
     language,
-    territory: territory.toUpperCase(),
+    territory: territory,
     format: {
       underscored: language + '_' + territory,
       dashed: language + '-' + territory,
