@@ -17,6 +17,7 @@ beforeEach(() => {
       cityName: 'string',
       cityId: 'string',
       terminal: 'string',
+      gate: null,
     },
     bid: 0,
   };
@@ -33,6 +34,7 @@ beforeEach(() => {
       cityName: 'string',
       cityId: 'string',
       terminal: 'string',
+      gate: null,
     },
     bid: 0,
   };
@@ -47,6 +49,7 @@ beforeEach(() => {
       cityName: 'string',
       cityId: 'string',
       terminal: 'string',
+      gate: null,
     },
     bid: 0,
   };

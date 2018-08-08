@@ -43,7 +43,7 @@
           "country": "GB",
           "code": "STN",
           "name": "London",
-          "gate": null
+          "gate": "4B"
         }
       },
       "airline": {
