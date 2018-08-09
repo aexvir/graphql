@@ -16,6 +16,7 @@ export default {
     allFlights: (queryParameters: ?Object = null) =>
       queryWithParameters('https://api.skypicker.com/flights', {
         ...queryParameters,
+        vehicle_type: 'aircraft,bus,train',
         v: 3,
       }),
     login: 'https://auth.skypicker.com/v1/user.login',

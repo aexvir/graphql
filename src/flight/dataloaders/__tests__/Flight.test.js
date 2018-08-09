@@ -80,6 +80,7 @@ it('calls the same URL only once', async () => {
       'returnFrom=30%2F12%2F2020&' +
       'returnTo=30%2F12%2F2020&' +
       'typeFlight=return&' +
+      'vehicle_type=aircraft%2Cbus%2Ctrain&' +
       'v=3',
     'https://api.skypicker.com/flights?' +
       'flyFrom=PRG&' +
@@ -89,6 +90,7 @@ it('calls the same URL only once', async () => {
       'returnFrom=30%2F12%2F2020&' +
       'returnTo=30%2F12%2F2020&' +
       'typeFlight=return&' +
+      'vehicle_type=aircraft%2Cbus%2Ctrain&' +
       'v=3',
   ]);
 });
