@@ -13,6 +13,7 @@ export type DepartureArrival = {|
     cityName: string,
     cityId: string,
     terminal: ?string,
+    gate?: ?string,
   |},
   bid?: ?number,
   authToken?: string,

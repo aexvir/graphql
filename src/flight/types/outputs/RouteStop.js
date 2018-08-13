@@ -75,5 +75,11 @@ export default new GraphQLObjectType({
         return findMyFlight ? findMyFlight.where.terminal : null;
       },
     },
+
+    gate: {
+      type: GraphQLString,
+      description: 'Gate for the route stop',
+      resolve: ({ where }: DepartureArrival): ?string => where.gate,
+    },
   },
 });

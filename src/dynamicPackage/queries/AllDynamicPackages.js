@@ -33,10 +33,11 @@ export default {
   resolve: async (
     ancestor: mixed,
     { simpleSearch, currency, ...pagination }: Object,
-    { dataLoader }: GraphqlContextType,
+    { dataLoader, locale }: GraphqlContextType,
   ) => {
     const packages = await dataLoader.dynamicPackages.load({
       currency,
+      language: locale.language,
       ...simpleSearch,
     });
     return connectionFromArray(packages, pagination);

@@ -1,0 +1,211 @@
+{
+  "locations": [
+    {
+      "id": "ZPM",
+      "int_id": 11659,
+      "active": true,
+      "code": "ZPM",
+      "name": "Regensburg Hbf Railway Station",
+      "slug": "regensburg-hbf-railway-station-regensburg-germany",
+      "alternative_names": [],
+      "rank": 127,
+      "timezone": "Europe/Berlin",
+      "city": {
+        "id": "regensburg_de",
+        "name": "Regensburg",
+        "code": "ZPM",
+        "slug": "regensburg-germany",
+        "subdivision": null,
+        "autonomous_territory": null,
+        "country": {
+          "id": "DE",
+          "name": "Germany",
+          "slug": "germany",
+          "code": "DE"
+        },
+        "region": {
+          "id": "central-europe",
+          "name": "Central Europe",
+          "slug": "central-europe"
+        },
+        "continent": {
+          "id": "europe",
+          "name": "Europe",
+          "slug": "europe",
+          "code": "EU"
+        }
+      },
+      "special": [
+        {
+          "id": "karlstejn-castle_poi",
+          "name": "Karlstejn Castle",
+          "slug": "karlstejn-castle"
+        }
+      ],
+      "location": {
+        "lat": 49.012084,
+        "lon": 12.099879
+      },
+      "alternative_departure_points": [
+        {
+          "id": "XGZ",
+          "distance": 301.84,
+          "duration": 10404
+        },
+        {
+          "id": "QDI",
+          "distance": 314.44,
+          "duration": 10800
+        },
+        {
+          "id": "ERF",
+          "distance": 339,
+          "duration": 10800
+        },
+        {
+          "id": "PFL",
+          "distance": 267.76,
+          "duration": 9432
+        },
+        {
+          "id": "FDH",
+          "distance": 316.22,
+          "duration": 11196
+        },
+        {
+          "id": "ZEI",
+          "distance": 212.72,
+          "duration": 8172
+        },
+        {
+          "id": "XHI",
+          "distance": 125.52,
+          "duration": 4644
+        },
+        {
+          "id": "ZNQ",
+          "distance": 94.76,
+          "duration": 3492
+        },
+        {
+          "id": "INN",
+          "distance": 298.18,
+          "duration": 10548
+        },
+        {
+          "id": "IOB",
+          "distance": 291.95,
+          "duration": 10656
+        },
+        {
+          "id": "KLV",
+          "distance": 204.53,
+          "duration": 7452
+        },
+        {
+          "id": "ZIK",
+          "distance": 194.1,
+          "duration": 6840
+        },
+        {
+          "id": "XOH",
+          "distance": 254.01,
+          "duration": 9792
+        },
+        {
+          "id": "LNZ",
+          "distance": 215.12,
+          "duration": 7920
+        },
+        {
+          "id": "LZS",
+          "distance": 231.37,
+          "duration": 8100
+        },
+        {
+          "id": "FMM",
+          "distance": 233.96,
+          "duration": 8820
+        },
+        {
+          "id": "ZMU",
+          "distance": 127.28,
+          "duration": 5040
+        },
+        {
+          "id": "MUC",
+          "distance": 116.95,
+          "duration": 4032
+        },
+        {
+          "id": "NUE",
+          "distance": 119.3,
+          "duration": 4356
+        },
+        {
+          "id": "ZAQ",
+          "distance": 105.44,
+          "duration": 4284
+        },
+        {
+          "id": "ZPF",
+          "distance": 118.34,
+          "duration": 4572
+        },
+        {
+          "id": "XYG",
+          "distance": 268.13,
+          "duration": 9720
+        },
+        {
+          "id": "SZG",
+          "distance": 264.38,
+          "duration": 9288
+        },
+        {
+          "id": "ZSB",
+          "distance": 272.14,
+          "duration": 9648
+        },
+        {
+          "id": "XOW",
+          "distance": 249.43,
+          "duration": 10188
+        },
+        {
+          "id": "XOO",
+          "distance": 374.2,
+          "duration": 14184
+        },
+        {
+          "id": "XOV",
+          "distance": 396.09,
+          "duration": 14184
+        },
+        {
+          "id": "STR",
+          "distance": 284.93,
+          "duration": 9828
+        },
+        {
+          "id": "ZWS",
+          "distance": 296.53,
+          "duration": 10620
+        },
+        {
+          "id": "PRG",
+          "distance": 256.17,
+          "duration": 9180
+        }
+      ],
+      "tags": [],
+      "type": "station"
+    }
+  ],
+  "meta": {
+    "locale": {
+      "code": "en-US",
+      "status": "OK"
+    }
+  }
+}

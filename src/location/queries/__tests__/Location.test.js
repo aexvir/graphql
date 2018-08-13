@@ -7,6 +7,7 @@ import Location from '../Location';
 import PragueDataset from '../../datasets/prague.json';
 import PragueCzDataset from '../../datasets/prague-cs-CZ.json';
 import UnknownDataset from '../../datasets/unknown.json';
+import RegensburgRailway from '../../datasets/regensburg-railway.json';
 
 RestApiMock.onGet(
   config.restApiEndpoint.allLocations({
@@ -39,6 +40,14 @@ RestApiMock.onGet(
     locale: 'en-US',
   }),
 ).replyWithData(UnknownDataset);
+
+RestApiMock.onGet(
+  config.restApiEndpoint.allLocations({
+    type: 'id',
+    id: 'ZPM',
+    locale: 'en-US',
+  }),
+).replyWithData(RegensburgRailway);
 
 describe('location query', () => {
   it('should of type location', () => {
@@ -130,5 +139,22 @@ describe('location query with opaque ID', () => {
         }
       }`;
     expect(await graphql(query, { id })).toMatchSnapshot();
+  });
+
+  it('should return country for type station', async () => {
+    const query = `
+    query Location($id: String!) {
+      location(id: $id) {
+        name
+        type
+        country {
+          name
+          code
+        }
+      }
+    }
+    `;
+    const response = await graphql(query, { id: 'ZPM ' });
+    expect(response.data.location.country.name).toEqual('Germany');
   });
 });

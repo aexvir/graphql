@@ -22,6 +22,7 @@ export type SearchParameters = {|
   returnDate: Date,
   passengers: { adults: number, infants: number },
   currency: ?string,
+  language: ?string,
 |};
 
 export default class DynamicPackageDataLoader {
@@ -36,7 +37,7 @@ export default class DynamicPackageDataLoader {
       ): Promise<Array<DynamicPackage[]>> => await this.fetchPackages(params),
     );
     this.locationDataLoader = location;
-    this.supportedMarkets = new Set(['ES', 'GB', 'IT', 'DE', 'FR', 'PT']);
+    this.supportedMarkets = new Set(['ES', 'GB', 'IT', 'DE', 'FR', 'PT', 'IE']);
   }
 
   async load(params: SearchParameters): Promise<DynamicPackage[]> {
@@ -85,7 +86,7 @@ export default class DynamicPackageDataLoader {
         Adults: params.passengers.adults || 0,
         Children: params.passengers.infants || 0,
       },
-      Language: 'en', // FIX: use language input
+      Language: params.language || 'en',
       Currency: params.currency || 'EUR',
       Ordering: {
         Value: 'Price',

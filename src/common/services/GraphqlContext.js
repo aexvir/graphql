@@ -2,6 +2,8 @@
 
 import DataLoader from 'dataloader';
 
+import parseAcceptLanguage from './context/ParseAcceptLanguage';
+
 import IdentityDataloader from '../../identity/dataloaders/Identity';
 import createBookingLoader from '../../booking/dataloaders/Booking';
 import createBaggageDataLoader from '../../booking/dataloaders/Baggage';
@@ -108,11 +110,11 @@ export function createContext(
   const location = new LocationLoader();
   const hotelCities = new HotelCities();
 
-  const acceptedLanguage = acceptLanguage ? acceptLanguage : 'en_US';
-  const [language, territory] = acceptedLanguage.split('_');
+  const [language, territory] = parseAcceptLanguage(acceptLanguage);
+
   const locale = {
     language,
-    territory,
+    territory: territory,
     format: {
       underscored: language + '_' + territory,
       dashed: language + '-' + territory,

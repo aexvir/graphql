@@ -18,7 +18,7 @@ export function sanitizeApiResponse(location: Object): Location {
     city: sanitizeLocationArea(location.city),
     subdivision: sanitizeLocationArea(location.subdivision),
     country:
-      location.type === 'airport'
+      location.type === 'airport' || location.type === 'station'
         ? sanitizeLocationArea(location.city.country)
         : sanitizeLocationArea(location.country),
     isActive: location.active,

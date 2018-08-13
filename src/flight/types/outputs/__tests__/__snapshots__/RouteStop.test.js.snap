@@ -17,6 +17,14 @@ Object {
     "resolve": [Function],
     "type": "String",
   },
+  "gate": Object {
+    "args": Array [],
+    "description": "Gate for the route stop",
+    "isDeprecated": false,
+    "name": "gate",
+    "resolve": [Function],
+    "type": "String",
+  },
   "localTime": Object {
     "args": Array [],
     "isDeprecated": false,
