@@ -6,7 +6,7 @@ import { GraphQLEnumType } from 'graphql';
 import { connectionFromArray } from '../../common/services/ArrayConnection';
 import GraphQLBooking from '../types/outputs/Booking';
 import type { GraphqlContextType } from '../../common/services/GraphqlContext';
-import { filterOnlyBookings } from './AllBookingsFilters';
+import { filterOnlyBookings } from '../services/AllBookingsFilters';
 import { sortBookingsByDate } from './AllBookingsSort';
 
 const { connectionType: AllBookingsConnection } = connectionDefinitions({

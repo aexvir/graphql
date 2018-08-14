@@ -3,7 +3,7 @@
 import idx from 'idx';
 import { DateTime } from 'luxon';
 
-import { groupBookings } from './AllBookingsFilters';
+import { groupBookings } from '../services/AllBookingsFilters';
 import BookingInterface from '../types/outputs/BookingInterface';
 import type { GraphqlContextType } from '../../common/services/GraphqlContext';
 import type { BookingsItem } from '../Booking';

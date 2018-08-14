@@ -1,6 +1,6 @@
 // @flow
 
-import { isPastBooking } from '../queries/AllBookingsFilters';
+import { isPastBooking } from '../services/AllBookingsFilters';
 import type { Booking } from '../Booking';
 
 export function getCityId(legs: Object[]) {

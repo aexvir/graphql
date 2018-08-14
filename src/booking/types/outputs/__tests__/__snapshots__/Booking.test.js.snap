@@ -221,5 +221,13 @@ Object {
     "resolve": [Function],
     "type": "BookingType",
   },
+  "upcomingLeg": Object {
+    "args": Array [],
+    "description": "Nearest upcoming leg by arrival time.",
+    "isDeprecated": false,
+    "name": "upcomingLeg",
+    "resolve": [Function],
+    "type": "Leg",
+  },
 }
 `;

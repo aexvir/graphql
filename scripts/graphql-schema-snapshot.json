@@ -5083,6 +5083,18 @@
             "deprecationReason": null
           },
           {
+            "name": "upcomingLeg",
+            "description": "Nearest upcoming leg by arrival time.",
+            "args": [],
+            "type": {
+              "kind": "OBJECT",
+              "name": "Leg",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "oneWay",
             "description": null,
             "args": [],
@@ -7728,6 +7740,18 @@
             "deprecationReason": null
           },
           {
+            "name": "upcomingLeg",
+            "description": "Nearest upcoming leg by arrival time.",
+            "args": [],
+            "type": {
+              "kind": "OBJECT",
+              "name": "Leg",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "trip",
             "description": null,
             "args": [],
@@ -8050,6 +8074,18 @@
             "type": {
               "kind": "SCALAR",
               "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "upcomingLeg",
+            "description": "Nearest upcoming leg by arrival time.",
+            "args": [],
+            "type": {
+              "kind": "OBJECT",
+              "name": "Leg",
               "ofType": null
             },
             "isDeprecated": false,
@@ -8488,6 +8524,18 @@
             "deprecationReason": null
           },
           {
+            "name": "upcomingLeg",
+            "description": "Nearest upcoming leg by arrival time.",
+            "args": [],
+            "type": {
+              "kind": "OBJECT",
+              "name": "Leg",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "outbound",
             "description": "Trip from origin to destination.",
             "args": [],
@@ -8822,6 +8870,18 @@
             "type": {
               "kind": "SCALAR",
               "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "upcomingLeg",
+            "description": "Nearest upcoming leg by arrival time.",
+            "args": [],
+            "type": {
+              "kind": "OBJECT",
+              "name": "Leg",
               "ofType": null
             },
             "isDeprecated": false,
