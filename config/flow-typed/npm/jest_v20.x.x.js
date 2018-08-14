@@ -17,7 +17,7 @@ type JestMockFn = {
      * An array that contains all the object instances that have been
      * instantiated from this mock function.
      */
-    instances: mixed
+    instances: mixed,
   },
   /**
    * Resets all information stored in the mockFn.mock.calls and
@@ -54,14 +54,14 @@ type JestMockFn = {
   /**
    * Sugar for only returning a value once inside your mock
    */
-  mockReturnValueOnce(value: any): JestMockFn
+  mockReturnValueOnce(value: any): JestMockFn,
 };
 
 type JestAsymmetricEqualityType = {
   /**
    * A custom Jasmine equality tester
    */
-  asymmetricMatch(value: mixed): boolean
+  asymmetricMatch(value: mixed): boolean,
 };
 
 type JestCallsType = {
@@ -71,19 +71,19 @@ type JestCallsType = {
   count(): number,
   first(): mixed,
   mostRecent(): mixed,
-  reset(): void
+  reset(): void,
 };
 
 type JestClockType = {
   install(): void,
   mockDate(date: Date): void,
   tick(): void,
-  uninstall(): void
+  uninstall(): void,
 };
 
 type JestMatcherResult = {
   message?: string | (() => string),
-  pass: boolean
+  pass: boolean,
 };
 
 type JestMatcher = (actual: any, expected: any) => JestMatcherResult;
@@ -98,7 +98,7 @@ type JestPromiseType = {
    * Use resolves to unwrap the value of a fulfilled promise so any other
    * matcher can be chained. If the promise is rejected the assertion fails.
    */
-  resolves(): JestExpectType
+  resolves(): JestExpectType,
 };
 
 type JestExpectType = {
@@ -224,6 +224,10 @@ type JestExpectType = {
    */
   toMatchSnapshot(name?: string): void,
   /**
+   * This ensures that a React component matches the most recent snapshot.
+   */
+  toMatchInlineSnapshot(snapshot: string): void,
+  /**
    * Use .toThrow to test that a function throws when it is called.
    */
   toThrow(message?: string | Error): void,
@@ -237,7 +241,7 @@ type JestExpectType = {
    * Use .toThrowErrorMatchingSnapshot to test that a function throws a error
    * matching the most recent snapshot when it is called.
    */
-  toThrowErrorMatchingSnapshot(): void
+  toThrowErrorMatchingSnapshot(): void,
 };
 
 type JestObjectType = {
@@ -364,11 +368,11 @@ type JestObjectType = {
    * Creates a mock function similar to jest.fn but also tracks calls to
    * object[methodName].
    */
-  spyOn(object: Object, methodName: string): JestMockFn
+  spyOn(object: Object, methodName: string): JestMockFn,
 };
 
 type JestSpyType = {
-  calls: JestCallsType
+  calls: JestCallsType,
 };
 
 /** Runs this function after every test inside this context */
@@ -411,7 +415,7 @@ declare var it: {
    * @param {string} Name of Test
    * @param {Function} Test
    */
-  concurrent(name: string, fn?: Function): ?Promise<void>
+  concurrent(name: string, fn?: Function): ?Promise<void>,
 };
 declare function fit(name: string, fn: Function): ?Promise<void>;
 /** An individual test unit */
@@ -441,7 +445,7 @@ declare var expect: {
   objectContaining(value: Object): void,
   /** Matches any received string that contains the exact expected string. */
   stringContaining(value: string): void,
-  stringMatching(value: string | RegExp): void
+  stringMatching(value: string | RegExp): void,
 };
 
 // TODO handle return type
@@ -464,8 +468,8 @@ declare var jasmine: {
   createSpy(name: string): JestSpyType,
   createSpyObj(
     baseName: string,
-    methodNames: Array<string>
+    methodNames: Array<string>,
   ): { [methodName: string]: JestSpyType },
   objectContaining(value: Object): void,
-  stringMatching(value: string): void
+  stringMatching(value: string): void,
 };

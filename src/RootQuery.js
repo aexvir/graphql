@@ -28,6 +28,7 @@ import { nodeField } from './node/node';
 import AirHelpPlusOffer from './bookingAncillaries/queries/AirHelpPlusOffer';
 import SingleBooking from './booking/queries/SingleBooking';
 import AllDocuments from './documents/queries/AllDocuments';
+import CustomerSupportNumber from './customerSupport/queries/CustomerSupportNumber';
 
 export default new GraphQLObjectType({
   name: 'RootQuery',
@@ -50,6 +51,7 @@ export default new GraphQLObjectType({
     currency: Currency,
     currentUser: CurrentUser,
     customerBookings: CustomerBookings,
+    customerSupportNumber: CustomerSupportNumber,
     FAQArticle: FAQArticle,
     FAQCategory: FAQCategory,
     geoIP: GeoIP,

@@ -28,6 +28,7 @@ import HotelRoomAvailabilityLoader from '../../hotel/dataloaders/HotelRoomAvaila
 import HotelRoomBeddingLoader from '../../hotel/dataloaders/RoomBedding';
 import PriceStatsLoader from '../../hotel/dataloaders/PriceStats';
 import DynamicPackagesLoader from '../../dynamicPackage/dataloaders/DynamicPackages';
+import createCustomerSupportNumberLoader from '../../customerSupport/dataloaders/CustomerSupportNumber';
 
 import type { Booking } from '../../booking/Booking';
 import type { Args as SingleBookingArgs } from '../../booking/dataloaders/SingleBooking';
@@ -41,6 +42,7 @@ import type {
   Args as FAQCArticleArgs,
   FAQArticleDetail,
 } from '../../FAQ/dataloaders/FAQArticle';
+import type { CustomerSupportNumber } from '../../customerSupport/types/CustomerSupportNumber';
 
 /**
  * FIXME:
@@ -87,6 +89,7 @@ export type GraphqlContextType = {|
     FAQCategories: FAQCategoriesLoader,
     FAQArticle: DataLoader<FAQCArticleArgs, FAQArticleDetail>,
     dynamicPackages: DynamicPackagesLoader,
+    customerSupportNumber: DataLoader<string, ?CustomerSupportNumber>,
   |},
   options: OptionsStorage,
   _traceCollector?: Object,
@@ -147,6 +150,7 @@ export function createContext(
       FAQCategories: new FAQCategoriesLoader(locale.language, FAQ_CATEGORY_ID),
       FAQArticle: createFAQArticleLoader(locale.language),
       dynamicPackages: new DynamicPackagesLoader(location),
+      customerSupportNumber: createCustomerSupportNumberLoader(),
     },
     options: new OptionsStorage(),
   };

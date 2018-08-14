@@ -5,7 +5,6 @@ import { evaluateResolver } from '../../../../common/services/TestingTools';
 
 describe('Boarding pass', () => {
   it('should have valid fields', () => {
-    // $FlowExpectedError: Missing types for jest 23.x.x https://github.com/flow-typed/flow-typed/issues/2264
     expect(BoardingPass.getFields()).toMatchInlineSnapshot(`
 Object {
   "availableAt": Object {

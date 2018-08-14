@@ -955,6 +955,18 @@
             "deprecationReason": null
           },
           {
+            "name": "customerSupportNumber",
+            "description": "Get customer support number for your locale",
+            "args": [],
+            "type": {
+              "kind": "OBJECT",
+              "name": "CustomerSupportNumber",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "FAQArticle",
             "description": "Retrieve single FAQ article.",
             "args": [
@@ -11416,6 +11428,41 @@
                 "name": "String",
                 "ofType": null
               }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          }
+        ],
+        "inputFields": null,
+        "interfaces": [],
+        "enumValues": null,
+        "possibleTypes": null
+      },
+      {
+        "kind": "OBJECT",
+        "name": "CustomerSupportNumber",
+        "description": null,
+        "fields": [
+          {
+            "name": "localeTerritory",
+            "description": "Customer Support phone number locale territory",
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "number",
+            "description": "Customer Support phone number",
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
             },
             "isDeprecated": false,
             "deprecationReason": null
