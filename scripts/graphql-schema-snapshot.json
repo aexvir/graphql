@@ -5557,18 +5557,6 @@
             "deprecationReason": null
           },
           {
-            "name": "vehicle",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "OBJECT",
-              "name": "Vehicle",
-              "ofType": null
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "arrival",
             "description": null,
             "args": [],
@@ -5647,6 +5635,18 @@
             "type": {
               "kind": "SCALAR",
               "name": "Boolean",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "vehicle",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "OBJECT",
+              "name": "Vehicle",
               "ofType": null
             },
             "isDeprecated": false,
