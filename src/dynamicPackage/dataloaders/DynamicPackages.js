@@ -29,6 +29,7 @@ export default class DynamicPackageDataLoader {
   dataLoader: DataLoader<Object, DynamicPackage[]>;
   locationDataLoader: LocationDataLoader;
   supportedMarkets: Set<string>;
+  supportedLangs: Set<string>;
 
   constructor(location: LocationDataLoader) {
     this.dataLoader = new DataLoader(
@@ -38,6 +39,7 @@ export default class DynamicPackageDataLoader {
     );
     this.locationDataLoader = location;
     this.supportedMarkets = new Set(['ES', 'GB', 'IT', 'DE', 'FR', 'PT', 'IE']);
+    this.supportedLangs = new Set(['es', 'en', 'fr', 'it', 'de', 'pt', 'ie']);
   }
 
   async load(params: SearchParameters): Promise<DynamicPackage[]> {
@@ -63,6 +65,8 @@ export default class DynamicPackageDataLoader {
 
   async prepareParams(params: SearchParameters) {
     const apiKey = await this.getApiKey(params.fromAirport);
+    const lang = params.language || '';
+    const language = this.supportedLangs.has(lang) ? params.language : 'en';
     return {
       ApiKey: apiKey,
       Origin: params.fromAirport,
@@ -86,7 +90,7 @@ export default class DynamicPackageDataLoader {
         Adults: params.passengers.adults || 0,
         Children: params.passengers.infants || 0,
       },
-      Language: params.language || 'en',
+      Language: language,
       Currency: params.currency || 'EUR',
       Ordering: {
         Value: 'Price',
