@@ -50,7 +50,7 @@ export type Leg = {|
   guarantee: boolean,
   boardingPass?: BoardingPass,
   boardingPassAvailableAt?: ?string,
-  vehicle: Vehicle,
+  vehicle: ?Vehicle,
   operatingAirline: OperatingAirline,
   pnr: string,
   authToken?: string,

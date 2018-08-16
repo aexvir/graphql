@@ -52,11 +52,6 @@ export default new GraphQLObjectType({
       resolve: ({ operatingAirline }: Leg) => operatingAirline,
     },
 
-    vehicle: {
-      type: GraphQLVehicle,
-      resolve: ({ vehicle }: Leg) => vehicle,
-    },
-
     arrival: {
       type: GraphQLRouteStop,
       resolve: ({ arrival }: Leg): DepartureArrival => arrival,
@@ -96,32 +91,37 @@ export default new GraphQLObjectType({
       resolve: ({ isReturn }): boolean => isReturn,
     },
 
+    vehicle: {
+      type: GraphQLVehicle,
+      resolve: async (
+        originalLeg: Leg,
+        args: Object,
+        { dataLoader }: GraphqlContextType,
+      ) => {
+        if (originalLeg.vehicle) {
+          return originalLeg.vehicle;
+        }
+
+        const leg = await loadLeg(dataLoader, originalLeg);
+
+        return leg ? leg.vehicle : null;
+      },
+    },
+
     type: {
       type: VehicleTypes,
       resolve: async (
-        { id, vehicleType, bookingId, authToken }: Leg,
+        originalLeg: Leg,
         args: Object,
         { dataLoader }: GraphqlContextType,
       ): Promise<?VehicleType> => {
-        if (vehicleType) {
-          return vehicleType;
+        if (originalLeg.vehicleType) {
+          return originalLeg.vehicleType;
         }
 
-        if (bookingId && authToken) {
-          // needs to be fetched for booking loaded via "dataLoader.bookings.load"
-          const booking = await dataLoader.singleBooking.load({
-            id: bookingId,
-            authToken,
-          });
+        const leg = await loadLeg(dataLoader, originalLeg);
 
-          if (booking && Array.isArray(booking.legs)) {
-            const leg = booking.legs.find(leg => leg.id === id);
-
-            return leg ? leg.vehicleType : null;
-          }
-        }
-
-        return null;
+        return leg ? leg.vehicleType : null;
       },
     },
 
@@ -158,3 +158,19 @@ export default new GraphQLObjectType({
     },
   }),
 });
+
+const loadLeg = async (dataLoader, { bookingId, authToken, id }) => {
+  if (bookingId && authToken) {
+    // needs to be fetched for booking loaded via "dataLoader.bookings.load"
+    const booking = await dataLoader.singleBooking.load({
+      id: bookingId,
+      authToken,
+    });
+
+    if (booking && Array.isArray(booking.legs)) {
+      return booking.legs.find(leg => leg.id === id);
+    }
+  }
+
+  return null;
+};
