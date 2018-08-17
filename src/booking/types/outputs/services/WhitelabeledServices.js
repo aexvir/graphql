@@ -6,6 +6,7 @@ import idx from 'idx';
 import CarRentalService from './CarRentalService';
 import LoungeService from './LoungeService';
 import ParkingService from './ParkingService';
+import HotelService from './HotelService';
 import ParkingServiceAvailability from './ParkingServiceAvailability';
 import AvailableLoungesDataloader from '../../../dataloaders/AvailableLounges';
 import WhitelabelCarRentalResolver from '../../../resolvers/WhitelabelCarRental';
@@ -83,6 +84,29 @@ export default new GraphQLObjectType({
     carRental: {
       type: CarRentalService,
       resolve: WhitelabelCarRentalResolver,
+    },
+
+    hotel: {
+      type: HotelService,
+      resolve: ({ booking }: AncestorType) => {
+        let relevantLocationCodes = [];
+
+        if (booking.trips) {
+          relevantLocationCodes = booking.trips.map(
+            trip => trip.arrival.where.code,
+          );
+        } else if (booking.outbound && booking.inbound) {
+          relevantLocationCodes = [
+            booking.outbound.arrival.where.code,
+            booking.inbound.arrival.where.code,
+          ];
+        } else if (booking.arrival) {
+          relevantLocationCodes = [booking.arrival.where.code];
+        }
+        return {
+          relevantLocationCodes,
+        };
+      },
     },
   },
 });
