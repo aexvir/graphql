@@ -29,6 +29,7 @@ import HotelRoomAvailabilityLoader from '../../hotel/dataloaders/HotelRoomAvaila
 import HotelRoomBeddingLoader from '../../hotel/dataloaders/RoomBedding';
 import PriceStatsLoader from '../../hotel/dataloaders/PriceStats';
 import DynamicPackagesLoader from '../../dynamicPackage/dataloaders/DynamicPackages';
+import createCustomerSupportNumberLoader from '../../customerSupport/dataloaders/CustomerSupportNumber';
 
 import type { Booking } from '../../booking/Booking';
 import type { Args as SingleBookingArgs } from '../../booking/dataloaders/SingleBooking';
@@ -43,6 +44,7 @@ import type {
   FAQArticleDetail,
 } from '../../FAQ/dataloaders/FAQArticle';
 import type { BookingBaggageData } from '../../booking/types/outputs/BookingBaggage';
+import type { CustomerSupportNumber } from '../../customerSupport/types/CustomerSupportNumber';
 
 /**
  * FIXME:
@@ -90,6 +92,7 @@ export type GraphqlContextType = {|
     FAQArticle: DataLoader<FAQCArticleArgs, FAQArticleDetail>,
     dynamicPackages: DynamicPackagesLoader,
     baggage: DataLoader<number, $ReadOnlyArray<BookingBaggageData>>,
+    customerSupportNumber: DataLoader<string, ?CustomerSupportNumber>,
   |},
   options: OptionsStorage,
   _traceCollector?: Object,
@@ -151,6 +154,7 @@ export function createContext(
       FAQArticle: createFAQArticleLoader(locale.language),
       dynamicPackages: new DynamicPackagesLoader(location),
       baggage: createBaggageDataLoader(token),
+      customerSupportNumber: createCustomerSupportNumberLoader(),
     },
     options: new OptionsStorage(),
   };

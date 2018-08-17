@@ -1,0 +1,19 @@
+{
+  "contacts": {
+    "phones": {
+      "enabled": false,
+      "locales": {
+        "wonderland": {
+          "number": "123 456789",
+          "id": "wonderland",
+          "native_support": "Support Available in English 24/7"
+        },
+        "default": {
+          "number": "123 666666",
+          "id": "westeros",
+          "native_support": "Support Available in English 24/7"
+        }
+      }
+    }
+  }
+}

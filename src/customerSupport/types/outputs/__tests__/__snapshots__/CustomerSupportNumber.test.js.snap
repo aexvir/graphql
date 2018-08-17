@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CustomerSupportNumber type should have valid fields 1`] = `
+Object {
+  "localeTerritory": Object {
+    "args": Array [],
+    "description": "Customer Support phone number locale territory",
+    "isDeprecated": false,
+    "name": "localeTerritory",
+    "resolve": [Function],
+    "type": "String",
+  },
+  "number": Object {
+    "args": Array [],
+    "description": "Customer Support phone number",
+    "isDeprecated": false,
+    "name": "number",
+    "resolve": [Function],
+    "type": "String",
+  },
+}
+`;

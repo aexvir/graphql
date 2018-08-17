@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CustomerBookings should return vehicle info 1`] = `
+Object {
+  "data": Object {
+    "customerBookings": Object {
+      "edges": Array [
+        Object {
+          "node": Object {
+            "databaseId": 2707224,
+            "trip": Object {
+              "legs": Array [
+                Object {
+                  "type": "AIRCRAFT",
+                  "vehicle": Object {
+                    "manufacturer": "Airbus",
+                    "model": "A330",
+                  },
+                },
+              ],
+            },
+          },
+        },
+      ],
+    },
+  },
+}
+`;

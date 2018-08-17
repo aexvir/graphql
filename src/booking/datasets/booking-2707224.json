@@ -54,9 +54,9 @@
         "name": "Czech Airlines"
       },
       "vehicle": {
-        "manufacturer": null,
+        "manufacturer": "Airbus",
         "meal": null,
-        "model": null,
+        "model": "A330",
         "seats": null,
         "type": "aircraft"
       },
