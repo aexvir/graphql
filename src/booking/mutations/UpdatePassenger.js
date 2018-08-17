@@ -62,7 +62,18 @@ export default {
     args: Args,
     context: GraphqlContextType,
   ): Promise<UpdatePassengerResponse> => {
-    const { id: bookingId } = fromGlobalId(args.id);
+    const { id: bookingId, type } = fromGlobalId(args.id);
+
+    if (
+      !['BookingOneWay', 'BookingReturn', 'BookingMulticity'].includes(type)
+    ) {
+      throw new Error(
+        `Booking ID mishmash. You cannot query Booking with ID ` +
+          `'${bookingId}' because this ID is not ID of the Booking. ` +
+          `Please use opaque ID of the Booking.`,
+      );
+    }
+
     const payload = getPayload(args.passengers);
 
     if (!args.simpleToken && !context.apiToken) {
