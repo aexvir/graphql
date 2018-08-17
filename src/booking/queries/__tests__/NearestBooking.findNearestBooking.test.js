@@ -3,14 +3,7 @@
 import MockDate from 'mockdate';
 
 import { findNearestBooking } from '../NearestBooking';
-
-const createLeg = milliseconds => ({
-  arrival: {
-    when: {
-      utc: new Date(milliseconds),
-    },
-  },
-});
+import { createLeg } from '../../services/testUtils';
 
 MockDate.set(1000);
 

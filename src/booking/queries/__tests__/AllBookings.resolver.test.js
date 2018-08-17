@@ -1,9 +1,9 @@
 // @flow
 
 import AllBookings from '../AllBookings';
-import { filterOnlyBookings } from '../AllBookingsFilters';
+import { filterOnlyBookings } from '../../services/AllBookingsFilters';
 
-jest.mock('../AllBookingsFilters', () => ({
+jest.mock('../../services/AllBookingsFilters', () => ({
   filterOnlyBookings: jest.fn(() => []),
 }));
 

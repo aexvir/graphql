@@ -27,9 +27,14 @@ import Carrier, { getUniqueCarriers, type CarrierData } from './Carrier';
 import BookingType from '../enums/BookingType';
 import Passenger from './Passenger';
 import GraphQLContactDetails from './BookingContactDetails';
-import { isPastBooking } from '../../queries/AllBookingsFilters';
+import {
+  findUpcomingLeg,
+  isPastBooking,
+} from '../../services/AllBookingsFilters';
 import Services from './services/Services';
 import WhitelabeledServices from './services/WhitelabeledServices';
+import Leg from '../../../flight/types/outputs/Leg';
+import type { Leg as LegType } from '../../../flight/Flight';
 
 export type BookingInterfaceData = BookingsItem;
 
@@ -285,6 +290,13 @@ export const commonFields = {
   authToken: {
     type: GraphQLString,
     resolve: ({ authToken }: BookingInterfaceData): string => authToken,
+  },
+
+  upcomingLeg: {
+    type: Leg,
+    description: 'Nearest upcoming leg by arrival time.',
+    resolve: ({ legs }: BookingInterfaceData): ?LegType =>
+      findUpcomingLeg(legs),
   },
 };
 

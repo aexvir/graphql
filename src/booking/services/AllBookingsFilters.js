@@ -1,8 +1,10 @@
 // @flow
 
+import idx from 'idx';
 import { DateTime } from 'luxon';
 
 import type { BookingsItem } from '../Booking';
+import type { Leg } from '../../flight/Flight';
 
 export function groupBookings(bookings: $ReadOnlyArray<BookingsItem>) {
   return bookings.reduce(
@@ -50,4 +52,22 @@ export function isPastBooking(singleBooking: BookingsItem) {
       .diffNow('milliseconds')
       .toObject().milliseconds < 0
   );
+}
+
+export function findUpcomingLeg(legs: Leg[]) {
+  return [...legs]
+    .filter(leg => {
+      const date = idx(leg, _ => _.arrival.when.utc);
+      return date
+        ? DateTime.fromJSDate(date, { zone: 'utc' }).diffNow('milliseconds')
+            .milliseconds > 0
+        : false;
+    })
+    .sort((legA, legB) => {
+      const dateA = idx(legA, _ => _.arrival.when.utc);
+      const dateB = idx(legB, _ => _.arrival.when.utc);
+
+      return dateA && dateB ? dateA - dateB : 0;
+    })
+    .shift();
 }
