@@ -3,6 +3,7 @@
 import { GraphQLObjectType } from 'graphql';
 import idx from 'idx';
 
+import TransportationService from './TransportationService';
 import CarRentalService from './CarRentalService';
 import LoungeService from './LoungeService';
 import ParkingService from './ParkingService';
@@ -10,11 +11,16 @@ import HotelService from './HotelService';
 import ParkingServiceAvailability from './ParkingServiceAvailability';
 import AvailableLoungesDataloader from '../../../dataloaders/AvailableLounges';
 import WhitelabelCarRentalResolver from '../../../resolvers/WhitelabelCarRental';
+import TransportationServiceResolver from '../../../resolvers/TransportationService';
 import { ProxiedError } from '../../../../common/services/errors/ProxiedError';
 import type { BookingsItem } from '../../../Booking';
 
 type AncestorType = {|
   +booking: BookingsItem,
+|};
+
+type RelevantLocationCodes = {|
+  +relevantLocationCodes: $ReadOnlyArray<string>,
 |};
 
 export default new GraphQLObjectType({
@@ -88,7 +94,7 @@ export default new GraphQLObjectType({
 
     hotel: {
       type: HotelService,
-      resolve: ({ booking }: AncestorType) => {
+      resolve: ({ booking }: AncestorType): RelevantLocationCodes => {
         let relevantLocationCodes = [];
 
         if (booking.trips) {
@@ -107,6 +113,10 @@ export default new GraphQLObjectType({
           relevantLocationCodes,
         };
       },
+    },
+    transportation: {
+      type: TransportationService,
+      resolve: TransportationServiceResolver,
     },
   },
 });

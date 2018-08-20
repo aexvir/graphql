@@ -33,6 +33,21 @@ export default class LocationDataLoader {
     return processResponse(locations)[0];
   }
 
+  async loadMany(
+    ids: $ReadOnlyArray<string>,
+    locale?: string,
+  ): Promise<Location[]> {
+    const locations = await this.dataLoader.loadMany(
+      ids.map(id => ({
+        type: 'id',
+        id,
+        locale: typeof locale === 'string' ? locale.replace('_', '-') : locale,
+      })),
+    );
+
+    return locations.map(item => processResponse(item)[0]);
+  }
+
   async loadBySlug(slug: string, locale?: string): Promise<Location> {
     try {
       const locations = await this.dataLoader.load({
