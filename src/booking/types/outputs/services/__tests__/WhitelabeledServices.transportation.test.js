@@ -76,22 +76,18 @@ Array [
     "date": 1970-01-01T00:00:00.001Z,
     "location": "OSL",
   },
-  Array [
-    Object {
-      "date": 1970-01-01T00:00:00.002Z,
-      "location": Object {
-        "locationId": "BCN",
-      },
+  Object {
+    "date": 1970-01-01T00:00:00.002Z,
+    "location": Object {
+      "locationId": "BCN",
     },
-  ],
-  Array [
-    Object {
-      "date": 1970-01-01T00:00:00.002Z,
-      "location": Object {
-        "locationId": "OSL",
-      },
+  },
+  Object {
+    "date": 1970-01-01T00:00:00.002Z,
+    "location": Object {
+      "locationId": "OSL",
     },
-  ],
+  },
 ]
 `);
 });
@@ -138,22 +134,18 @@ Array [
     "date": 1970-01-01T00:00:00.001Z,
     "location": "OSL",
   },
-  Array [
-    Object {
-      "date": 1970-01-01T00:00:00.002Z,
-      "location": Object {
-        "locationId": "BCN",
-      },
+  Object {
+    "date": 1970-01-01T00:00:00.002Z,
+    "location": Object {
+      "locationId": "BCN",
     },
-  ],
-  Array [
-    Object {
-      "date": 1970-01-01T00:00:00.002Z,
-      "location": Object {
-        "locationId": "OSL",
-      },
+  },
+  Object {
+    "date": 1970-01-01T00:00:00.002Z,
+    "location": Object {
+      "locationId": "OSL",
     },
-  ],
+  },
 ]
 `);
 });

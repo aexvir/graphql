@@ -1,6 +1,7 @@
 // @flow
 
 import idx from 'idx';
+import { flatten } from 'ramda';
 
 import type { BookingsItem } from '../Booking';
 import type { GraphqlContextType } from '../../common/services/GraphqlContext';
@@ -30,16 +31,21 @@ const resolveMulticityTrips = async (booking: BookingsItem, dataLoader) => {
     getLocationsFromLegs(trip.legs, dataLoader),
   );
 
-  return await Promise.all(promises);
+  const locations = await Promise.all(promises);
+
+  return flatten(locations);
 };
 
 const resolveReturnTrip = async (booking: BookingsItem, dataLoader) => {
   const outbound = idx(booking.outbound, _ => _.legs) || [];
   const inbound = idx(booking.inbound, _ => _.legs) || [];
-  return await Promise.all([
+
+  const locations = await Promise.all([
     getLocationsFromLegs(outbound, dataLoader),
     getLocationsFromLegs(inbound, dataLoader),
   ]);
+
+  return flatten(locations);
 };
 
 export default async function TransportationService(
