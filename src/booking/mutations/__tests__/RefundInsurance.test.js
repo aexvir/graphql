@@ -134,7 +134,7 @@ Object {
       'https://booking-api.skypicker.com/mmb/v1/bookings/123456/insurances',
       {
         insurances: [
-          { passenger_id: 123, insurance_type: 'none' },
+          { passenger_id: 123, insurance_type: null },
           { passenger_id: 1234, insurance_type: 'travel_basic' },
         ],
         price: {

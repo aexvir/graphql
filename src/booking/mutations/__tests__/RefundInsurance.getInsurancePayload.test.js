@@ -24,7 +24,7 @@ describe('getInsurancesPayload', () => {
       },
       {
         passenger_id: 1234,
-        insurance_type: 'none',
+        insurance_type: null,
       },
     ]);
   });

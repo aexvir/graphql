@@ -30,6 +30,11 @@ type Args = {
   +simpleToken: string,
 };
 
+type InsurancePayloadType = {|
+  passenger_id: number,
+  insurance_type: 'travel_plus' | 'travel_basic' | null,
+|}[];
+
 export default {
   type: GraphQLBooking,
   args: {
@@ -206,11 +211,9 @@ export function computeAmount(
     }, 0);
 }
 
-export function getInsurancesPayload(
-  changes: Change[],
-): Array<{| passenger_id: number, insurance_type: InsuranceType |}> {
+export function getInsurancesPayload(changes: Change[]): InsurancePayloadType {
   return changes.filter(change => change.from !== change.to).map(change => ({
     passenger_id: change.passengerId,
-    insurance_type: change.to,
+    insurance_type: change.to === 'none' ? null : change.to,
   }));
 }
