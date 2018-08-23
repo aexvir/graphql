@@ -12,15 +12,12 @@ import ParkingServiceAvailability from './ParkingServiceAvailability';
 import AvailableLoungesDataloader from '../../../dataloaders/AvailableLounges';
 import WhitelabelCarRentalResolver from '../../../resolvers/WhitelabelCarRental';
 import TransportationServiceResolver from '../../../resolvers/TransportationService';
+import HotelServicesResolver from '../../../resolvers/HotelServices';
 import { ProxiedError } from '../../../../common/services/errors/ProxiedError';
 import type { BookingsItem } from '../../../Booking';
 
 type AncestorType = {|
   +booking: BookingsItem,
-|};
-
-type RelevantLocationCodes = {|
-  +relevantLocationCodes: $ReadOnlyArray<string>,
 |};
 
 export default new GraphQLObjectType({
@@ -94,25 +91,7 @@ export default new GraphQLObjectType({
 
     hotel: {
       type: HotelService,
-      resolve: ({ booking }: AncestorType): RelevantLocationCodes => {
-        let relevantLocationCodes = [];
-
-        if (booking.trips) {
-          relevantLocationCodes = booking.trips.map(
-            trip => trip.arrival.where.code,
-          );
-        } else if (booking.outbound && booking.inbound) {
-          relevantLocationCodes = [
-            booking.outbound.arrival.where.code,
-            booking.inbound.arrival.where.code,
-          ];
-        } else if (booking.arrival) {
-          relevantLocationCodes = [booking.arrival.where.code];
-        }
-        return {
-          relevantLocationCodes,
-        };
-      },
+      resolve: HotelServicesResolver,
     },
     transportation: {
       type: TransportationService,
