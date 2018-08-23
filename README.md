@@ -48,7 +48,7 @@ We consider `master` branch to be stable and all green commits are being immedia
 1. CircleCI triggers deployment script in VPN
 2. this script downloads tested commit and starts building it (see `scripts/build.sh`)
 3. this build is added to the Docker image (see `Dockerfile` in this repo)
-4. this new build is deployed using [kiwicom/crate](https://github.com/kiwicom/crane)
+4. this new build is deployed using [kiwicom/crane](https://github.com/kiwicom/crane)
 
 Detailed overview:
 
