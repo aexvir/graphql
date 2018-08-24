@@ -5,6 +5,7 @@ test:
     image: node:9
     stage: test
     script:
+	- echo "New branch"
         - yarn install
         - yarn run test-ci
         - ( cd packages/eslint-plugin-kiwi-graphql ; yarn run test -- --ci --color )
